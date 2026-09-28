@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<link rel="preload" href="/logo-header.svg" as="image" type="image/svg+xml" fetchpriority="high">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>Sole trader vs limited company calculator | SJE Capital</title>
+<meta property="og:title" content="Sole trader vs limited company calculator | SJE Capital">
+<meta property="og:description" content="Would you keep more as a sole trader or a limited company in 2026/27? Enter your profit and see tax, take-home, retained profit and payments on account, worked.">
+<meta property="og:url" content="https://www.sjecapital.co.uk/sole-trader-vs-limited-company-calculator">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.sjecapital.co.uk/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://www.sjecapital.co.uk/sole-trader-vs-limited-company-calculator">
+<link rel="icon" href="favicon-512.png" type="image/png" sizes="512x512">
+<meta property="og:site_name" content="SJE Capital">
+<meta name="description" content="Would you keep more as a sole trader or a limited company in 2026/27? Enter your profit and see tax, take-home, retained profit and payments on account, worked.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/eb-garamond.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{ font-family:"EB Garamond"; src:url(/fonts/eb-garamond.woff2) format("woff2"); font-weight:500 700; font-style:normal; font-display:swap; }
+  @font-face{ font-family:"Source Serif 4"; src:url(/fonts/source-serif-4.woff2) format("woff2"); font-weight:400 700; font-style:normal; font-display:swap; }
+
+  :root{ color-scheme:light;
+    --ink:#14382B; --ink-soft:#2A5340; --leaf:#1E6B4A; --leaf-deep:#155238;
+    --paper:#F2F5EF; --paper-hi:#FBFCF9; --rule:#C7D4C6; --rule-soft:#DCE5DA; --focus:#0E8A5F;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  body{ font-family:"Source Serif 4", Georgia, serif; background:var(--paper); color:var(--ink); font-size:1.0625rem; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3{ font-family:"EB Garamond", Georgia, serif; }
+  a{ color:var(--leaf); text-decoration-thickness:1px; text-underline-offset:3px; }
+  a:hover{ color:var(--leaf-deep); }
+  :focus-visible{ outline:3px solid var(--focus); outline-offset:3px; border-radius:2px; }
+  .wrap{ max-width:1060px; margin:0 auto; padding:0 24px; }
+  header{ background:var(--ink); border-bottom:1px solid #2A5340; }
+  .masthead{ display:flex; align-items:center; justify-content:space-between; gap:24px; padding:18px 24px; max-width:1060px; margin:0 auto; }
+  .wordmark{ display:flex; align-items:center; text-decoration:none; }
+  nav{ display:flex; gap:26px; align-items:center; }
+  nav a{ color:#DCE8DE; text-decoration:none; font-size:.9375rem; font-weight:500; border-bottom:2px solid transparent; padding-bottom:2px; }
+  nav a:hover{ border-bottom-color:#9FD8B7; color:#fff; }
+  .nav-cta{ background:var(--paper-hi); color:var(--ink) !important; padding:9px 18px 10px; border-radius:3px; border-bottom:none !important; }
+  .nav-cta:hover{ background:#fff; color:var(--leaf-deep) !important; }
+  @media (max-width:760px){
+    .masthead{ flex-direction:column; align-items:center; gap:16px; padding-top:18px; padding-bottom:18px; }
+    .wordmark{ justify-content:center; }
+    nav{ width:100%; justify-content:center; gap:10px 18px; flex-wrap:wrap; align-items:center; }
+    nav a{ padding:4px 0; font-size:.9rem; }
+    .nav-cta{ flex:1 0 100%; text-align:center; margin-top:6px; padding:12px 16px 13px; }
+  }
+  .page-head{ padding-top:64px; padding-bottom:10px; }
+  h1{ font-size:clamp(2rem, 4.5vw, 3rem); font-weight:600; letter-spacing:-.015em; }
+  .page-head p{ color:var(--ink-soft); margin-top:10px; max-width:60ch; }
+  .dates{ padding-top:34px; padding-bottom:60px; }
+  .dates{ display:grid; grid-template-columns:1fr 1fr; gap:0 64px; align-items:start; }
+  .dates > h2, .timeline-wrap, .timeline-note, .disclaimer{ grid-column:1 / -1; }
+  .date-block:last-child{ grid-column:1 / -1; }
+  @media (max-width:820px){ .dates{ grid-template-columns:1fr; } }
+
+  .date-block{ border-top:2px solid var(--ink); padding:24px 4px 26px; }
+  .date-block + .date-block{ border-top:1px solid var(--rule); }
+  .date-block h2{ font-size:1.4rem; font-weight:600; margin-bottom:12px; }
+  .date-block dl div{ display:grid; grid-template-columns:minmax(0,200px) 1fr; gap:18px; padding:9px 0; border-bottom:1px solid var(--rule-soft); }
+  .date-block dt{ font-weight:600; font-size:.9875rem; }
+  .date-block dd{ font-size:.9875rem; color:var(--ink-soft); max-width:64ch; }
+  @media (max-width:600px){ .date-block dl div{ grid-template-columns:1fr; gap:2px; } }
+  .timeline-wrap{ overflow-x:auto; margin:18px 0 40px; }
+  .timeline-wrap svg{ min-width:760px; width:100%; height:auto; display:block; }
+  .timeline-note{ font-size:.875rem; color:var(--ink-soft); margin:-18px 0 40px; }
+  .disclaimer{ max-width:78ch; font-size:.875rem; color:var(--ink-soft); border:1px solid var(--rule); border-left:3px solid var(--leaf); background:var(--paper-hi); padding:14px 18px; margin-bottom:34px; }
+  .cta-band{ background:var(--ink); color:var(--paper-hi); padding:48px 0 54px; }
+  .cta-band h2{ color:#fff; font-size:1.6rem; margin-bottom:8px; }
+  .cta-band p{ color:#CBDACD; margin-bottom:22px; max-width:56ch; }
+  .btn{ display:inline-block; background:var(--paper-hi); color:var(--ink); text-decoration:none; padding:13px 24px 14px; font-weight:600; border-radius:3px; }
+  .btn:hover{ background:#fff; color:var(--leaf-deep); }
+  footer{ background:var(--ink); color:#9FBFA8; font-size:.875rem; padding:26px 0; border-top:1px solid #2A5340; }
+  footer .wrap{ display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; max-width:1060px; }
+
+  @media (max-width:760px){
+    .page-head{ padding-top:36px; padding-bottom:6px; }
+    .page-head h1{ font-size:2rem; }
+    .dates{ padding-top:22px; padding-bottom:44px; }
+    .date-block{ padding:20px 0 22px; }
+    .timeline-wrap{ margin:14px 0 22px; }
+    .timeline-note{ margin:0 0 28px; }
+    .disclaimer{ padding:12px 14px; margin-bottom:26px; }
+    .cta-band{ padding:40px 0 44px; }
+    .posts{ padding-top:20px; padding-bottom:56px; }
+    .res-grid{ padding-top:20px; padding-bottom:50px; }
+    .calc-layout{ padding-top:14px; padding-bottom:50px; }
+    .article-head{ padding-top:36px; padding-bottom:6px; }
+    .article-head h1{ font-size:2rem; }
+    .article-body{ padding-top:24px; margin-top:26px; }
+    .quick-read{ padding:20px 18px 22px; }
+    .article{ gap:32px; }
+    footer .wrap{ flex-direction:column; gap:6px; }
+  }
+
+  .calc-layout{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.6fr); gap:56px; align-items:start; padding-top:20px; padding-bottom:70px; }
+  .calc-results{ position:sticky; top:24px; }
+  .calc-input label{ display:block; font-size:.9375rem; font-weight:600; color:var(--ink); margin:22px 0 6px; }
+  .calc-input > label:first-child{ margin-top:0; }
+  .calc-input .amount{ font-family:"EB Garamond", Georgia, serif; font-size:2.3rem; font-weight:600; letter-spacing:-.02em; font-variant-numeric:tabular-nums; margin-bottom:4px; }
+  .calc-input input[type=range]{ width:100%; accent-color:var(--leaf); cursor:pointer; margin:4px 0 6px; }
+  .calc-input input[type=number], .calc-input input[type=text], .calc-input select{ font-family:inherit; font-size:1rem; padding:10px 12px; border:1px solid var(--rule); border-radius:3px; width:100%; background:var(--paper-hi); color:var(--ink); transition:border-color .15s, box-shadow .15s; }
+  .calc-input input[type=number]:focus, .calc-input input[type=text]:focus, .calc-input select:focus, .calc-input input[type=number]:focus-visible, .calc-input input[type=text]:focus-visible, .calc-input select:focus-visible{ outline:none; border-color:var(--leaf); box-shadow:0 0 0 3px rgba(30,107,74,.14); }
+  input[type=number]{ -moz-appearance:textfield; appearance:textfield; }
+  input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button{ -webkit-appearance:none; margin:0; }
+  .calc-input .row{ display:grid; grid-template-columns:1fr 1fr; gap:14px; align-items:end; }
+  .calc-input .row label{ margin-top:0; }
+  .calc-input .check{ display:flex; gap:10px; align-items:flex-start; margin-top:14px; font-size:.9375rem; }
+  .calc-input .check input{ margin-top:5px; accent-color:var(--leaf); width:16px; height:16px; }
+  .calc-input .hint{ font-size:.85rem; line-height:1.5; color:var(--ink-soft); margin-top:6px; }
+  .calc-input .hint a{ color:var(--leaf); }
+  .calc-input .explain{ font-size:.875rem; line-height:1.55; color:var(--ink-soft); background:var(--paper-hi); border:1px solid var(--rule); border-left:3px solid var(--leaf); padding:12px 14px; margin-top:10px; }
+  .calc-input .explain strong{ color:var(--ink); }
+  .calc-input .sub{ margin-left:0; padding:14px 16px 4px; border-left:2px solid var(--rule); margin-top:8px; }
+  .seg{ display:inline-flex; border:1px solid var(--ink); border-radius:3px; overflow:hidden; margin-top:8px; }
+  .seg button{ font-family:inherit; font-size:.9rem; font-weight:600; padding:8px 14px 9px; background:transparent; color:var(--ink); border:none; cursor:pointer; }
+  .seg button[aria-pressed="true"]{ background:var(--ink); color:var(--paper-hi); }
+  .seg button:focus-visible{ outline:3px solid var(--focus); outline-offset:-3px; }
+  details.more{ margin-top:26px; }
+  details.more > summary{ cursor:pointer; list-style:none; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 16px; border:1px solid var(--ink); border-radius:3px; background:var(--paper-hi); font-weight:600; color:var(--ink); }
+  details.more > summary:hover{ background:var(--ink); color:var(--paper-hi); }
+  details.more > summary::-webkit-details-marker{ display:none; }
+  details.more > summary::after{ content:"\25BE"; font-size:1.1rem; transition:transform .2s; }
+  details[open].more > summary::after{ transform:rotate(180deg); }
+  details[open].more > summary{ border-bottom-left-radius:0; border-bottom-right-radius:0; }
+  details.more .more-body{ border:1px solid var(--rule); border-top:none; padding:6px 16px 18px; background:var(--paper-hi); }
+  .assume{ font-size:.875rem; color:var(--ink-soft); margin-top:24px; border-top:1px solid var(--rule); padding-top:14px; }
+  .assume li{ margin-left:18px; margin-bottom:4px; }
+  .view-switch{ display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap; margin-bottom:16px; }
+  .view-switch .lbl{ font-size:.9rem; color:var(--ink-soft); }
+  .routes{ display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  .routes.one{ grid-template-columns:1fr; }
+  .route{ border:1px solid var(--rule); border-top:2px solid var(--ink); background:var(--paper-hi); padding:24px 24px 26px; }
+  .route.best{ background:var(--ink); color:var(--paper-hi); border-color:var(--ink); }
+  .route .kicker{ font-size:.8rem; letter-spacing:.08em; text-transform:uppercase; color:var(--leaf); margin-bottom:6px; }
+  .route.best .kicker{ color:#9FD8B7; }
+  .route h2{ font-size:1.25rem; font-weight:600; margin-bottom:14px; }
+  .route .big{ font-family:"EB Garamond", Georgia, serif; font-size:2.3rem; font-weight:600; letter-spacing:-.02em; font-variant-numeric:tabular-nums; line-height:1; }
+  .route .biglabel{ font-size:.875rem; color:var(--ink-soft); margin:6px 0 18px; }
+  .route.best .biglabel{ color:#CBDACD; }
+  .route dl div{ display:flex; justify-content:space-between; gap:12px; padding:7px 0; border-bottom:1px solid var(--rule-soft); font-size:.9375rem; font-variant-numeric:tabular-nums; }
+  .route.best dl div{ border-bottom-color:#2A5340; }
+  .route dl div.total{ font-weight:600; border-bottom:2px solid currentColor; }
+  .route dl div[hidden], .route[hidden]{ display:none; }
+  .route .note{ font-size:.85rem; color:var(--ink-soft); margin-top:12px; line-height:1.5; }
+  .route.best .note{ color:#CBDACD; }
+  .marginal{ margin-top:24px; border:1px solid var(--rule); border-left:3px solid var(--leaf); background:var(--paper-hi); padding:16px 20px; display:grid; grid-template-columns:auto 1fr; gap:6px 20px; align-items:center; }
+  .marginal b{ font-family:"EB Garamond", Georgia, serif; font-size:2rem; font-weight:600; font-variant-numeric:tabular-nums; line-height:1; grid-row:span 2; }
+  .marginal .m-title{ font-weight:600; }
+  .marginal .m-sub{ font-size:.875rem; color:var(--ink-soft); line-height:1.5; }
+  details.workings{ margin-top:22px; border:1px solid var(--rule); background:var(--paper-hi); }
+  details.workings summary{ cursor:pointer; padding:14px 18px; font-weight:600; list-style:none; }
+  details.workings summary::-webkit-details-marker{ display:none; }
+  details.workings summary::before{ content:"+"; display:inline-block; width:18px; color:var(--leaf); font-weight:700; }
+  details[open].workings summary::before{ content:"\2212"; }
+  details.workings .inner{ padding:0 18px 18px; font-size:.9375rem; }
+  details.workings h3{ font-size:1.05rem; font-weight:600; margin:14px 0 8px; }
+  details.workings ol{ margin-left:20px; }
+  details.workings li{ margin-bottom:6px; font-variant-numeric:tabular-nums; }
+  .related{ margin-top:14px; font-size:.9375rem; color:var(--ink-soft); }
+  @media (max-width:900px){ .calc-layout{ grid-template-columns:1fr; gap:36px; } .calc-results{ position:static; } .routes{ grid-template-columns:1fr; } }
+  @media (max-width:760px){ .calc-layout{ padding-top:14px; padding-bottom:50px; } .page-head{ padding-top:36px; padding-bottom:6px; } .page-head h1{ font-size:2rem; } .cta-band{ padding:40px 0 44px; } footer .wrap{ flex-direction:column; gap:6px; } }
+
+  /* distinct tab-style buttons */
+  .tabs{ display:flex; gap:8px; flex-wrap:wrap; }
+  .tabs button{ font-family:inherit; font-size:.9rem; font-weight:600; padding:9px 16px 10px; background:var(--paper-hi); color:var(--ink); border:1px solid var(--ink); border-radius:3px; cursor:pointer; transition:background .15s, color .15s; }
+  .tabs button:hover{ background:var(--rule-soft); }
+  .tabs button[aria-pressed="true"]{ background:var(--ink); color:var(--paper-hi); }
+  .tabs button:focus-visible{ outline:3px solid var(--focus); outline-offset:2px; }
+  /* where to find it callout */
+  .findit{ margin-top:8px; font-size:.85rem; line-height:1.5; background:var(--paper-hi); border:1px solid var(--rule); border-left:3px solid var(--leaf); padding:10px 12px; color:var(--ink); }
+  .findit strong{ color:var(--leaf); display:block; margin-bottom:2px; letter-spacing:.02em; }
+  /* headline difference panel (director) */
+  .headline-diff{ margin-top:24px; background:var(--ink); color:var(--paper-hi); padding:22px 24px; display:grid; grid-template-columns:auto 1fr; gap:4px 22px; align-items:center; }
+  .headline-diff b{ font-family:"EB Garamond", Georgia, serif; font-size:2.6rem; font-weight:600; font-variant-numeric:tabular-nums; line-height:1; color:#fff; grid-row:span 2; }
+  .headline-diff .d-title{ font-weight:600; font-size:1.05rem; color:#fff; }
+  .headline-diff .d-sub{ font-size:.9rem; color:#CBDACD; line-height:1.5; }
+  .calc-input .taxcode{ text-transform:uppercase; letter-spacing:.06em; font-variant-numeric:tabular-nums; }
+  .calc-input .warn{ color:var(--ink); font-weight:600; font-size:.85rem; margin-top:6px; }
+  .workings-part[hidden]{ display:none; }
+
+  details.info{ margin-top:6px; }
+  details.info summary{ list-style:none; cursor:pointer; display:inline-flex; align-items:center; gap:6px; font-size:.85rem; font-weight:600; color:var(--leaf); padding:2px 0; }
+  details.info summary::-webkit-details-marker{ display:none; }
+  details.info summary::after{ content:"\25BE"; font-size:.9rem; transition:transform .2s; display:inline-block; text-decoration:none; }
+  details[open].info summary::after{ transform:rotate(180deg); }
+  details.info summary:hover span{ text-decoration:underline; text-underline-offset:3px; }
+  details.info .hint, details.info .findit, details.info .explain{ margin-top:8px; }
+
+  .sched{ margin-top:10px; border-top:1px solid var(--rule); }
+  .sched-row{ display:grid; grid-template-columns:150px 1fr auto; gap:16px; padding:11px 0; border-bottom:1px solid var(--rule-soft); align-items:start; font-size:.9375rem; }
+  .sched-row strong{ font-family:"EB Garamond", Georgia, serif; font-size:1.05rem; font-weight:600; line-height:1.3; }
+  .sched-row p{ font-size:.875rem; color:var(--ink-soft); line-height:1.5; margin:0; }
+  .sched-row span{ font-weight:600; white-space:nowrap; text-align:right; font-variant-numeric:tabular-nums; }
+  @media (max-width:700px){ .sched-row{ grid-template-columns:1fr; gap:4px; } .sched-row span{ text-align:left; } }
+
+  .tabs button.find{ background:var(--leaf); color:#fff; border-color:var(--leaf-deep); }
+  .tabs button.find:hover{ background:var(--leaf-deep); }
+  .breakeven{ margin-top:12px; background:var(--ink); color:var(--paper-hi); padding:16px 18px; font-size:.9375rem; line-height:1.55; }
+  .breakeven strong{ color:#fff; }
+  .breakeven .be-big{ font-family:"EB Garamond", Georgia, serif; font-size:1.6rem; font-weight:600; display:block; margin-bottom:6px; color:#fff; }
+  .breakeven .be-small{ margin-top:10px; }
+  .breakeven .be-muted{ margin-top:10px; color:#CBDACD; }
+
+  .money-wrap{ position:relative; display:block; }
+  .money-wrap::before{ content:"£"; position:absolute; left:12px; top:50%; transform:translateY(-50%); color:var(--ink-soft); font-size:1rem; pointer-events:none; }
+  .money-wrap input.money{ padding-left:26px; }
+
+  .be-ledger{ margin:14px 0 4px; border-top:1px solid #4A6B5A; font-variant-numeric:tabular-nums; }
+  .be-ledger div{ display:flex; justify-content:space-between; gap:14px; padding:6px 0; border-bottom:1px solid #2A5340; font-size:.9375rem; }
+  .be-ledger div small{ display:block; font-size:.8rem; color:#9FBFA8; }
+  .be-ledger div.sub{ font-weight:600; border-top:1px solid #6A8B7A; }
+  .be-ledger div.tot{ font-weight:700; color:#fff; border-bottom:3px double #F2F5EF; }
+  .breakeven p{ margin-top:8px; }
+
+  .wk{ border-top:1px solid var(--rule); margin:6px 0 14px; font-variant-numeric:tabular-nums; }
+  .wk div{ display:grid; grid-template-columns:1fr auto; gap:12px; padding:7px 0; border-bottom:1px solid var(--rule-soft); font-size:.9375rem; align-items:start; }
+  .wk .lbl small{ display:block; font-size:.8rem; color:var(--ink-soft); line-height:1.45; margin-top:2px; }
+  .wk .amt{ white-space:nowrap; text-align:right; }
+  .wk div.sub{ font-weight:600; border-top:1px solid var(--rule); }
+  .wk div.tot{ font-weight:700; border-bottom:3px double var(--ink); }
+  .wk div.info .amt{ color:var(--ink-soft); }
+  details.workings h3{ margin-top:18px; }
+  details.workings .aside{ font-size:.875rem; color:var(--ink-soft); margin-top:6px; line-height:1.5; }
+
+  /* ---------- brand select (replaces native dropdown) ---------- */
+  .bs{ position:relative; }
+  .bs select{ position:absolute; opacity:0; pointer-events:none; width:1px; height:1px; }
+  .bs-btn{ width:100%; text-align:left; font-family:inherit; font-size:1rem; padding:10px 40px 10px 12px; border:1px solid var(--rule); border-radius:3px; background:var(--paper-hi); color:var(--ink); cursor:pointer; position:relative; }
+  .bs-btn::after{ content:"\25BE"; position:absolute; right:12px; top:50%; transform:translateY(-50%); color:var(--ink-soft); }
+  .bs-btn:focus-visible, .bs.open .bs-btn{ outline:none; border-color:var(--leaf); box-shadow:0 0 0 3px rgba(30,107,74,.14); }
+  .bs-list{ position:absolute; z-index:30; top:calc(100% + 6px); left:0; right:0; background:var(--paper-hi); border:1px solid var(--rule); border-top:2px solid var(--ink); box-shadow:0 10px 30px rgba(20,56,43,.14); padding:6px; max-height:280px; overflow:auto; }
+  .bs-list[hidden]{ display:none; }
+  .bs-list button{ display:block; width:100%; text-align:left; font-family:inherit; font-size:.95rem; padding:9px 10px; border:none; border-radius:3px; background:none; color:var(--ink); cursor:pointer; }
+  .bs-list button:hover{ background:var(--rule-soft); }
+  .bs-list button.sel{ background:var(--ink); color:var(--paper-hi); }
+  .bs-list button.sel:hover{ background:var(--ink); }
+  @media print{ .bs-list{ display:none !important; } }
+
+  @media (max-width:700px){ .headline-diff{ grid-template-columns:1fr; gap:8px; } .headline-diff b{ grid-row:auto; } }
+  footer a{ color:#CBDACD; }
+  footer a:hover{ color:#fff; }
+  .next-step{ margin-top:24px; background:var(--paper-hi); border-top:2px solid var(--leaf); padding:18px 20px 20px; }
+  .next-step .ns-kicker{ font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; color:var(--leaf); font-weight:600; margin:0 0 4px; }
+  .next-step .ns-title{ font-family:"EB Garamond", Georgia, serif; font-size:1.35rem; font-weight:600; line-height:1.25; color:var(--ink); margin:0; }
+  .next-step .ns-text{ color:var(--ink-soft); margin:6px 0 14px; font-size:.95rem; line-height:1.55; }
+  .next-step .ns-actions{ display:flex; flex-wrap:wrap; align-items:center; gap:10px 18px; }
+  .next-step .ns-btn{ display:inline-block; background:var(--leaf); color:#fff; border:1px solid var(--leaf-deep); padding:11px 18px; border-radius:3px; text-decoration:none; font-weight:600; }
+  .next-step .ns-btn:hover{ background:var(--leaf-deep); }
+  .next-step .ns-link{ color:var(--leaf); font-weight:600; text-decoration:none; }
+  .next-step .ns-link:hover{ text-decoration:underline; }
+  @media print{ .next-step{ display:none !important; } }
+  .feedback{ font-size:.85rem; color:var(--ink-soft); margin-top:10px; }
+  .feedback a{ color:var(--leaf); font-weight:600; }
+  @media print{ .feedback{ display:none; } }
+</style>
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "SJE Capital",
+   "item": "https://www.sjecapital.co.uk/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Resources",
+   "item": "https://www.sjecapital.co.uk/resources"
+  },
+  {
+   "@type": "ListItem",
+   "position": 3,
+   "name": "Sole trader vs limited company calculator",
+   "item": "https://www.sjecapital.co.uk/sole-trader-vs-limited-company-calculator"
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "WebApplication",
+ "name": "Sole trader vs limited company calculator",
+ "url": "https://www.sjecapital.co.uk/sole-trader-vs-limited-company-calculator",
+ "description": "Would you keep more as a sole trader or a limited company in 2026/27? Enter your profit and see tax, take-home, retained profit and payments on account, worked.",
+ "applicationCategory": "FinanceApplication",
+ "operatingSystem": "Any (runs in the browser)",
+ "isAccessibleForFree": true,
+ "offers": {
+  "@type": "Offer",
+  "price": "0",
+  "priceCurrency": "GBP"
+ },
+ "inLanguage": "en-GB",
+ "provider": {
+  "@type": "Organization",
+  "name": "SJE Capital Limited",
+  "url": "https://www.sjecapital.co.uk/"
+ }
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="masthead">
+    <a class="wordmark" href="/" aria-label="SJE Capital Limited home">
+      <img src="/logo-header.svg" width="272" height="90" alt="" fetchpriority="high">
+    </a>
+    <nav aria-label="Main">
+      <a href="/#about">About</a>
+      <a href="/#services">Services</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/blog">Blog</a>
+      <a href="/resources">Resources</a>
+      <a class="nav-cta" href="/#contact">Get a quote</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap page-head">
+    <h1>Sole trader vs limited company calculator 2026/27</h1>
+    <p>Would you keep more of your profit as a sole trader or through a limited company? Enter your numbers and see both side by side, including what a company lets you keep back, and how a sole trader actually pays the bill. Every line of the working is shown.</p>
+  </div>
+
+  <div class="wrap calc-layout">
+    <div class="calc-input">
+      <label for="profit">Business profit for the year</label>
+      <input type="text" inputmode="numeric" class="money" id="profit" value="60,000" aria-label="Business profit for the year">
+      <details class="info"><summary><span>More info</span></summary>
+        <p class="hint">Your sales minus your business costs, before any tax and before you pay yourself anything. If you already trade, use last year's figure from your accounts or tax return. If you are starting out, use your best estimate.</p>
+      </details>
+
+      <label>How much of it do you need to take out to live on?</label>
+      <div class="tabs" role="group" aria-label="Drawings">
+        <button type="button" id="draw-all" aria-pressed="true">All of it</button>
+        <button type="button" id="draw-some" aria-pressed="false">Only some of it</button>
+        <button type="button" id="find-be" class="find">Find my break-even</button>
+      </div>
+      <div class="breakeven" id="be-box" hidden></div>
+      <details class="info"><summary><span>More info</span></summary>
+        <p class="hint">This is the question that decides the answer. As a sole trader you are taxed on all your profit whether you spend it or not. A company is only taxed at company rates on profit you leave in it, so if you can afford to leave some in the business, a company starts to win.</p>
+      </details>
+      <div class="sub" id="draw-box" hidden>
+        <label for="drawings">Amount you need to take out per year</label>
+        <input type="text" inputmode="numeric" class="money" id="drawings" value="40,000">
+      </div>
+
+      <label for="costs">Extra yearly cost of running a company</label>
+      <input type="text" inputmode="numeric" class="money" id="costs" value="1,000">
+      <details class="info"><summary><span>More info</span></summary>
+        <p class="hint">A company needs statutory accounts, a Corporation Tax return, a confirmation statement, payroll for your salary and dividend paperwork, on top of your personal tax return. Accountancy fees are usually several hundred to over a thousand pounds a year more than for a sole trader. We treat this as a company cost, so it reduces the company's tax too. Leave at 0 if you want to compare tax alone.</p>
+      </details>
+
+      <details class="more">
+        <summary>Tailor it to you: pension, other income, more than one director, children, Scottish tax</summary>
+        <div class="more-body">
+          <label for="pension">Pension contribution you want to make (per year, the gross amount landing in your pension)</label>
+          <input type="text" inputmode="numeric" class="money" id="pension" value="0">
+          <details class="info"><summary><span>More info</span></summary>
+            <p class="hint">How much you want to end up in your pension this year. The two structures get there differently. A sole trader pays in personally: you pay 80% and the provider adds 20% relief, and HMRC extends your basic rate band by the gross amount. A company pays the whole amount in as an employer contribution, which reduces the company's profit before Corporation Tax and carries no National Insurance or personal tax. Leave at 0 to compare without pensions.</p>
+          </details>
+          <label for="other">Your other taxable income (per year)</label>
+          <input type="text" inputmode="numeric" class="money" id="other" value="0">
+          <details class="info"><summary><span>More info</span></summary>
+            <p class="hint">Any income outside this business, such as a part-time job, a pension or rent from a property. HMRC taxes it alongside your business profit or salary, and before any dividends. We show only the extra tax your business adds on top of it. Leave at 0 if none.</p>
+          </details>
+          <label for="kids">Number of children you receive Child Benefit for</label>
+          <select id="kids"><option value="0">None</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select>
+          <details class="info"><summary><span>More info</span></summary>
+            <p class="hint">If the higher earner's income goes over £60,000, some Child Benefit is taken back through tax, and all of it once you reach £80,000. A company can help here, because profit left in the company does not count as your income.</p>
+          </details>
+          <label class="check"><input type="checkbox" id="ea"> <span>The company would have two or more directors, or other employees</span></label>
+          <details class="info"><summary><span>More info</span></summary>
+            <p class="hint">By default we assume you would be the company's only director and only employee. A company like that cannot claim the Employment Allowance. If there would be two or more directors, or you would employ staff, the company can usually claim it: a discount of up to £10,500 a year on the National Insurance it pays as an employer, which wipes out the £1,136 charged on your £12,570 salary. It can also make a higher salary worth considering, which you can explore in the director take-home calculator.</p>
+          </details>
+          <label for="region">Where you pay Income Tax</label>
+          <select id="region"><option value="uk">England, Wales or Northern Ireland</option><option value="scot">Scotland</option></select>
+          <details class="info"><summary><span>More info</span></summary>
+            <p class="hint">Scotland sets its own Income Tax bands for trading profits and salaries. Choose Scotland if your tax code starts with an S. Dividends and National Insurance are the same UK-wide.</p>
+          </details>
+        </div>
+      </details>
+
+      <div class="assume">
+        <strong>Assumptions</strong>
+        <ul>
+          <li>Tax year 2026/27 rates. The company pays you the usual £12,570 salary and the rest as dividends.</li>
+          <li>Corporation Tax uses the full-year limits of £50,000 and £250,000, for a company with a 12-month accounting period and no associated companies. Shorter periods and associated companies reduce both limits.</li>
+          <li>Assumes you would be the company's sole director and only employee, so no Employment Allowance, unless you tick the option under "Tailor it to you".</li>
+          <li>Sole traders pay Class 4 NI only; Class 2 is no longer payable for most.</li>
+          <li>Pension contributions, if entered, are personal (relief at source) for the sole trader and employer contributions for the company. Ignores student loans, VAT and the one-off costs of setting up a company.</li>
+          <li>Figures are worked to the penny: each amount is rounded to the nearest penny as it is calculated, and every later figure is built from those amounts, so every line adds up exactly. HMRC's own systems may round some figures down to whole pounds, which can differ by a few pence. Illustrative, not advice.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="calc-results">
+      <div class="routes" id="routes">
+        <div class="route" id="card-sole">
+          <p class="kicker">Sole trader</p>
+          <h2>You keep</h2>
+          <div class="big" id="s-take">£46,111.40</div>
+          <p class="biglabel" id="s-label">after tax, all of it yours to spend or save</p>
+          <dl>
+            <div><dt>Profit</dt><dd id="s-profit">£60,000.00</dd></div>
+            <div><dt>Income Tax</dt><dd id="s-it">£11,432.00</dd></div>
+            <div><dt>Class 4 National Insurance</dt><dd id="s-ni">£2,456.60</dd></div>
+            <div id="s-cb-row" hidden=""><dt>Child Benefit charge</dt><dd id="s-cb">£0.00</dd></div>
+            <div id="s-pen-row" hidden=""><dt>Paid into your pension (net)</dt><dd id="s-pen">£0.00</dd></div>
+            <div class="total"><dt>Total tax</dt><dd id="s-tax">£13,888.60</dd></div>
+          </dl>
+          <p class="note" id="s-poa">How you pay it, if this is your first year in Self Assessment:</p>
+          <div id="s-sched" class="sched">
+            <div class="sched-row"><strong>31 January 2028</strong><p id="s-d1">The full £13,888.60 for 2026/27, plus a first payment on account of £6,944.30 towards 2027/28.</p><span id="s-a1">£20,832.90</span></div>
+            <div class="sched-row"><strong>31 July 2028</strong><p id="s-d2">Second payment on account towards 2027/28.</p><span id="s-a2">£6,944.30</span></div>
+            <div class="sched-row"><strong>31 January 2029 onwards</strong><p id="s-d3">The balance for 2027/28, plus the first payment on account for 2028/29. The pattern then repeats each year.</p><span></span></div>
+          </div>
+          <p class="note" id="s-sched-note">That first 31 January is £20,832.90, one and a half years of tax at once, which is why we tell every new sole trader to set money aside monthly. If you already pay on account, HMRC will have collected estimates on 31 January and 31 July 2027 and you settle only the difference.</p>
+        </div>
+        <div class="route best" id="card-ltd">
+          <p class="kicker">Limited company</p>
+          <h2>You keep</h2>
+          <div class="big" id="l-total">£45,368.27</div>
+          <p class="biglabel" id="l-label">in your pocket after tax</p>
+          <dl>
+            <div><dt>Salary</dt><dd id="l-sal">£12,570.00</dd></div>
+            <div><dt>Dividends</dt><dd id="l-div">£36,688.54</dd></div>
+            <div id="l-now-row" hidden=""><dt>Available to spend now</dt><dd id="l-take">£45,368.27</dd></div>
+            <div id="l-ret-row" hidden=""><dt>Kept in the company for later</dt><dd id="l-ret">£0.00</dd></div>
+            <div id="l-cost-row"><dt>Extra running costs</dt><dd id="l-cost">£1,000.00</dd></div>
+            <div><dt>Employer NI</dt><dd id="l-erni">£1,135.50</dd></div>
+            <div><dt>Corporation Tax</dt><dd id="l-ct">£8,605.96</dd></div>
+            <div><dt>Income Tax on salary</dt><dd id="l-it">£0.00</dd></div>
+            <div><dt>Dividend tax</dt><dd id="l-dt">£3,890.27</dd></div>
+            <div id="l-cb-row" hidden=""><dt>Child Benefit charge</dt><dd id="l-cb">£0.00</dd></div>
+            <div id="l-pen-row" hidden=""><dt>Paid into your pension by the company</dt><dd id="l-pen">£0.00</dd></div>
+            <div class="total"><dt>Total tax</dt><dd id="l-tax">£13,631.73</dd></div>
+          </dl>
+          <p class="note" id="l-note" hidden="">Money kept in the company is still yours. It has paid Corporation Tax but no personal tax yet, and you only pay dividend tax if and when you take it out, ideally in a year when your income is lower. Think of it as saved for later rather than lost.</p>
+        </div>
+      </div>
+      <div class="headline-diff">
+        <b id="diff">£743.13</b>
+        <div class="d-title" id="diff-title">more kept overall as a sole trader on £60,000.00 of profit</div>
+        <div class="d-sub" id="diff-sub">£45,368.27 as a company versus £46,111.40 as a sole trader, all of it taken out and spent in the year. Includes £1,000.00 of extra company running costs.</div>
+      </div>
+      <aside class="next-step" aria-label="Next step">
+        <p class="ns-kicker">Next step</p>
+        <p class="ns-title">Thinking about setting up a limited company?</p>
+        <p class="ns-text">We check the numbers for your business first, and if a company is right for you, we set it up and run everything from day one.</p>
+        <div class="ns-actions"><a class="ns-btn" href="https://calendar.app.google/MgqokbUqk9WwncKk8" target="_blank" rel="noopener noreferrer" data-booking="">Book a free 15-minute call</a><a class="ns-link" href="/#contact">or get a free quote</a></div>
+      </aside>
+      <details class="workings">
+        <summary>Show the workings</summary>
+        <div class="inner" id="workings"><h3>Sole trader</h3><div class="wk"><div><span class="lbl">Profit</span><span class="amt">£60,000.00</span></div><div><span class="lbl">Less UK Income Tax<small>allowance £12,570.00; £37,700.00 of profit and other income at 20% = £7,540.00; £9,730.00 of profit and other income at 40% = £3,892.00</small></span><span class="amt">−£11,432.00</span></div><div><span class="lbl">Less Class 4 National Insurance<small>6% between £12,570 and £50,270, plus 2% above; no Class 2</small></span><span class="amt">−£2,456.60</span></div><div class="tot"><span class="lbl">You keep<small>all of it yours now</small></span><span class="amt">£46,111.40</span></div><div class="sub"><span class="lbl">Total tax</span><span class="amt">£13,888.60</span></div></div><h3>Limited company</h3><div class="wk"><div><span class="lbl">Profit</span><span class="amt">£60,000.00</span></div><div><span class="lbl">Less salary</span><span class="amt">−£12,570.00</span></div><div><span class="lbl">Less employer NI<small>(£12,570.00 − £5,000) × 15%</small></span><span class="amt">−£1,135.50</span></div><div><span class="lbl">Less extra running costs<small>deductible</small></span><span class="amt">−£1,000.00</span></div><div class="sub"><span class="lbl">Taxable profit</span><span class="amt">£45,294.50</span></div><div><span class="lbl">Less Corporation Tax<small>£45,294.50 × 19% = £8,605.96</small></span><span class="amt">−£8,605.96</span></div><div class="sub"><span class="lbl">Available after tax</span><span class="amt">£36,688.54</span></div><div class="sub"><span class="lbl">Dividends paid to you</span><span class="amt">£36,688.54</span></div></div><div class="wk"><div><span class="lbl">Salary plus dividends received<small>Personal Allowance £12,570.00</small></span><span class="amt">£49,258.54</span></div><div><span class="lbl">Less UK Income Tax on salary<small>covered by the allowance</small></span><span class="amt">−£0.00</span></div><div><span class="lbl">Less dividend tax<small>first £500.00 tax-free; £36,188.54 of dividends at 10.75% = £3,890.27</small></span><span class="amt">−£3,890.27</span></div><div class="tot"><span class="lbl">In your pocket</span><span class="amt">£45,368.27</span></div><div class="sub"><span class="lbl">Total tax</span><span class="amt">£13,631.73</span></div></div><p class="aside">Difference in your pocket: £45,368.27 − £46,111.40 = <strong>−£743.13</strong>.</p></div>
+      </details>
+      <p class="related">Already a company director? Fine-tune your salary and dividends in the <a href="/take-home-calculator">director take-home calculator</a>. For the full reasoning behind these numbers, read <a href="/blog/sole-trader-vs-limited-company-2026-27">our article on the choice in 2026/27</a>.</p>
+      <p class="feedback">Spotted something that looks wrong? <a href="mailto:spencer@sjecapital.co.uk?subject=Calculator%20feedback%3A%20Sole%20trader%20vs%20limited%20company">Tell us</a> and we will check it straight away.</p>
+    </div>
+  </div>
+</main>
+
+<div class="cta-band">
+  <div class="wrap">
+    <h2>If the numbers point to a company, we will set it up and run it</h2>
+    <p>SJE Capital works with limited companies. If incorporating makes sense for you, we handle the formation, the payroll, the dividends and every filing from day one. Free initial conversation, no obligation.</p>
+    <a class="btn" href="/#contact">Get a free consultation</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 SJE Capital Limited. Registered in England &amp; Wales, company no. 15837169. Based in Hampshire, serving companies across the UK.</span>
+    <span>ICB Certified · Xero Certified Advisor · CIMA Dip MA · <a href="https://www.linkedin.com/company/sje-capital-limited" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+  </div>
+</footer>
+<script>
+(function(){
+  var PA_FULL=12570, UK={tops:[37700,125140,Infinity],rates:[0.2,0.4,0.45]}, SCOT={tops:[3967,16956,31092,62430,112570,Infinity],rates:[0.19,0.20,0.21,0.42,0.45,0.48]},
+      DIV={tops:[37700,125140,Infinity],rates:[0.1075,0.3575,0.3935]}, DIV_ALLOW=500, ST=5000, PT=12570, UEL=50270, CB1=27.05, CBN=17.90, SAL=12570;
+  function r2(x){ return Math.round((x+(x>=0?1e-9:-1e-9))*100)/100; }
+  var fmt=function(n){ var v=Math.abs(n)<0.005?0:n; return (v<0?'\u2212':'')+'£'+Math.abs(v).toLocaleString('en-GB',{minimumFractionDigits:2,maximumFractionDigits:2}); };
+  var fmtR=function(n){ return '£'+Math.round(n).toLocaleString('en-GB'); };
+  var fmtX=function(n){ var s=(Math.round(n*10000)/10000).toLocaleString('en-GB',{minimumFractionDigits:2,maximumFractionDigits:4}); return '£'+s; };
+  var pct=function(r){ return (r*100).toFixed(2).replace(/\.?0+$/,'')+'%'; };
+  function personalAllowance(ani){ return ani<=100000 ? PA_FULL : Math.max(0, r2(PA_FULL-(ani-100000)/2)); }
+  function bandTax(amount,pos,b,label){ var t=0,lines=[],rem=amount,p=pos; for(var i=0;i<b.tops.length;i++){ var room=Math.max(0,b.tops[i]-p),amt=Math.min(rem,room); if(amt>0){ t=r2(t+r2(amt*b.rates[i])); lines.push(fmt(amt)+' of '+label+' at '+pct(b.rates[i])+' = '+fmt(r2(amt*b.rates[i]))); } p+=amt; rem-=amt; if(rem<=0) break; } return {tax:t,lines:lines,pos:p}; }
+  function hicbc(ani,kids){ if(!kids||ani<=60000) return 0; var cb=(CB1+CBN*(kids-1))*52; return r2(cb*Math.min(100,Math.floor((ani-60000)/200))/100); }
+  function corpTax(p){ p=r2(p); if(p<=0) return {tax:0,note:'no profit left, so £0.00',calc:'no taxable profit, so £0.00'};
+    if(p<=50000){ var t1=r2(p*0.19); return {tax:t1,note:'small profits rate 19%',calc:fmt(p)+' \u00d7 19% = '+fmt(t1)}; }
+    if(p>=250000){ var t2=r2(p*0.25); return {tax:t2,note:'main rate 25%',calc:fmt(p)+' \u00d7 25% = '+fmt(t2)}; }
+    var exact=p*0.25-(250000-p)*0.015, t=r2(exact), above=r2(p-50000), gross=p*0.25, relief=(250000-p)*0.015;
+    var roundNote=Math.abs(exact*100-Math.round(exact*100))>1e-6?', which is '+fmtX(exact)+' before rounding to the penny':'';
+    return {tax:t,note:'19% on the first £50,000 and an effective 26.5% above it',calc:'£50,000.00 \u00d7 19% = £9,500.00, plus '+fmt(above)+' \u00d7 26.5% = '+fmt(r2(t-9500))+', total '+fmt(t)+'. HMRC\'s formula gives the same: '+fmt(p)+' \u00d7 25% = '+fmtX(gross)+', less marginal relief of (£250,000.00 \u2212 '+fmt(p)+') \u00d7 3/200 = '+fmtX(relief)+roundNote}; }
+  function wrow(label,amt,cls,small){ return '<div'+(cls?' class="'+cls+'"':'')+'><span class="lbl">'+label+(small?'<small>'+small+'</small>':'')+'</span><span class="amt">'+amt+'</span></div>'; }
+  var M='\u2212';
+  function set(id,v){ var e=document.getElementById(id); if(e) e.textContent=v; }
+  function show(id,on){ var e=document.getElementById(id); if(e) e.hidden=!on; }
+  function num(id){ return Math.max(0,+String(document.getElementById(id).value).replace(/[^\d.]/g,'')||0); }
+  function fmtInput(e){ var v=String(e.value).replace(/[^\d.]/g,''), i=v.indexOf('.'), ip=i<0?v:v.slice(0,i), dp=i<0?null:v.slice(i+1).replace(/\./g,'').slice(0,2); ip=ip.replace(/^0+(?=\d)/,''); var out=ip?(+ip).toLocaleString('en-GB'):(dp!==null?'0':''); if(dp!==null) out+='.'+dp; e.value=out; }
+  document.querySelectorAll('input.money').forEach(function(e){
+    if(!e.parentElement.classList.contains('money-wrap')){ var w=document.createElement('span'); w.className='money-wrap'; e.parentNode.insertBefore(w,e); w.appendChild(e); }
+    fmtInput(e); e.addEventListener('input',function(){ fmtInput(e); }); });
+  var drawAll=true;
+
+  function sole(P, other, region, kids, pen){
+    pen=pen||0; var B0=region==='scot'?SCOT:UK, B={tops:B0.tops.map(function(t){ return t===Infinity?t:t+pen; }),rates:B0.rates};
+    var base=bandTax(Math.max(0,other-personalAllowance(other)),0,B,'other income').tax, baseCB=hicbc(other,kids);
+    var ani=other+P-pen, pa=personalAllowance(ani), it=bandTax(Math.max(0,other+P-pa),0,B,'profit and other income');
+    var ni=r2(Math.max(0,Math.min(P,UEL)-PT)*0.06)+r2(Math.max(0,P-UEL)*0.02);  // Class 4 on trading profit
+    var cb=Math.max(0,hicbc(ani,kids)-baseCB), itP=Math.max(0,it.tax-base);
+    var penNet=r2(pen*0.8);
+    return {pa:pa, it:it, itP:itP, base:base, ni:ni, cb:cb, tax:itP+ni+cb, take:P-itP-ni-cb-penNet, pen:pen, penNet:penNet, ani:ani};
+  }
+  function ltd(P, other, region, kids, costs, drawings, ea, pen){
+    var penIn=pen||0; var B=region==='scot'?SCOT:UK;
+    var erniF=function(x){ var n=r2(Math.max(0,(x-ST)*0.15)); return ea?Math.max(0,r2(n-10500)):n; };
+    var room=Math.max(0,r2(P-costs)), sal=SAL;
+    if(sal+erniF(sal)>room+1e-9){ sal=r2(room<=ST?room:(ea?room:(room+ST*0.15)/1.15)); while(sal>0&&sal+erniF(sal)>room+1e-9) sal=r2(sal-0.01); }
+    var erni=erniF(sal); pen=Math.min(penIn, Math.max(0,r2(room-sal-erni)));
+    var taxableProfit=r2(P-sal-erni-costs-pen), loss=taxableProfit<0?r2(-taxableProfit):0, ct=corpTax(Math.max(0,taxableProfit)), avail=Math.max(0,r2(taxableProfit-ct.tax));
+    var wantDiv = drawings===null ? avail : Math.max(0, drawings-sal);
+    var div=Math.min(avail,wantDiv), retained=avail-div;
+    var base=bandTax(Math.max(0,other-personalAllowance(other)),0,B,'other income').tax, baseCB=hicbc(other,kids);
+    var ani=other+sal+div, pa=personalAllowance(ani), nonDiv=other+sal, ndTaxable=Math.max(0,nonDiv-pa), paLeft=Math.max(0,pa-nonDiv);
+    var it=bandTax(ndTaxable,0,B,'salary and other income'), itP=Math.max(0,it.tax-base);
+    var divTaxable=Math.max(0,div-paLeft), allow=Math.min(DIV_ALLOW,divTaxable), dt=bandTax(divTaxable-allow, ndTaxable+allow, DIV,'dividends');
+    var cb=Math.max(0,hicbc(ani,kids)-baseCB);
+    return {erni:erni, taxableProfit:taxableProfit, ct:ct, avail:avail, div:div, retained:retained, pa:pa, it:it, itP:itP, base:base, allow:allow, dt:dt, cb:cb, tax:erni+ct.tax+itP+dt.tax+cb, take:sal+div-itP-dt.tax-cb, loss:loss, pen:pen, penIn:penIn, sal:sal, ani:ani};
+  }
+  function render(){
+    var beb=document.getElementById('be-box'); if(beb && !beb.dataset.fresh) beb.hidden=true; if(beb) delete beb.dataset.fresh;
+    var P=num('profit'), other=num('other'), costs=num('costs'), kids=+document.getElementById('kids').value, region=document.getElementById('region').value, ea=document.getElementById('ea').checked, pen=Math.min(num('pension'), P);
+    var drawings = drawAll ? null : Math.min(num('drawings'), P);
+    var s=sole(P,other,region,kids,pen), l=ltd(P,other,region,kids,costs,drawings,ea,pen);
+    set('s-profit',fmt(P)); set('s-it',fmt(s.itP)); set('s-ni',fmt(s.ni)); set('s-cb',fmt(s.cb)); set('s-tax',fmt(s.tax)); set('s-take',fmt(s.take)); show('s-cb-row',kids>0); set('s-pen',fmt(s.penNet)); show('s-pen-row',pen>0); set('l-pen',fmt(pen)); show('l-pen-row',pen>0);
+    var total=l.take+l.retained;
+    set('s-label', pen>0 ? 'after tax and after paying '+fmt(s.penNet)+' into your pension (worth '+fmt(pen)+' with relief)' : 'after tax, all of it yours to spend or save');
+    set('l-sal',fmt(l.sal)); set('l-div',fmt(l.div)); set('l-ret',fmt(l.retained)); set('l-cost',fmt(costs)); set('l-erni',fmt(l.erni)); set('l-ct',fmt(l.ct.tax)); set('l-it',fmt(l.itP)); set('l-dt',fmt(l.dt.tax)); set('l-cb',fmt(l.cb)); set('l-tax',fmt(l.tax)); set('l-take',fmt(l.take)); set('l-total',fmt(total));
+    show('l-ret-row',l.retained>0); show('l-now-row',l.retained>0); show('l-note',l.retained>0); show('l-cost-row',costs>0); show('l-cb-row',kids>0);
+    set('l-label', l.retained>0 ? 'in total after tax: '+fmt(l.take)+' to spend now and '+fmt(l.retained)+' kept in the company for later' : 'in your pocket after tax');
+    // payments on account note
+    var liab=s.itP+s.ni, poa = liab>1000 ? liab/2 : 0;
+    if(poa){
+      set('s-poa','How you pay it, if this is your first year in Self Assessment:');
+      set('s-a1',fmt(liab+poa)); set('s-a2',fmt(poa));
+      set('s-d1','The full '+fmt(liab)+' for 2026/27, plus a first payment on account of '+fmt(poa)+' towards 2027/28.');
+      set('s-d2','Second payment on account towards 2027/28.');
+      set('s-d3','The balance for 2027/28, plus the first payment on account for 2028/29. The pattern then repeats each year.');
+      set('s-sched-note','That first 31 January is '+fmt(liab+poa)+', one and a half years of tax at once, which is why we tell every new sole trader to set money aside monthly. If you already pay on account, HMRC will have collected estimates on 31 January and 31 July 2027 and you settle only the difference.');
+    } else {
+      set('s-poa','How you pay it: the full '+fmt(liab)+' through Self Assessment by 31 January 2028. Bills under £1,000 do not trigger payments on account.');
+    }
+    show('s-sched',poa>0); show('s-sched-note',poa>0);
+    // headline
+    var pocket=l.take-s.take, overall=total-s.take;
+    var winner = overall>=0 ? 'limited company' : 'sole trader';
+    set('diff', fmt(Math.abs(overall)));
+    set('diff-title', 'more kept overall as a '+winner+' on '+fmt(P)+' of profit');
+    var sub;
+    if(l.retained>0){
+      sub = 'As a sole trader you keep '+fmt(s.take)+', all available now. As a company you keep '+fmt(total)+': '+fmt(l.take)+' to spend now and '+fmt(l.retained)+' still yours inside the company, taxed only at company rates until you choose to draw it.';
+    } else {
+      sub = fmt(total)+' as a company versus '+fmt(s.take)+' as a sole trader, all of it taken out and spent in the year.';
+    }
+    if(costs>0) sub += ' Includes '+fmt(costs)+' of extra company running costs.';
+    set('diff-sub', sub);
+    var regionName=region==='scot'?'Scottish':'UK';
+    var w='<h3>Sole trader</h3><div class="wk">'
+      +wrow('Profit',fmt(P),'',other?'plus '+fmt(other)+' other income = '+fmt(s.ani)+' total income':'')
+      +wrow('Less '+regionName+' Income Tax',M+fmt(s.itP),'','allowance '+fmt(s.pa)+(s.pa<PA_FULL?' (tapered above £100,000)':'')+'; '+(s.it.lines.length?s.it.lines.join('; '):'£0')+(other?'; less '+fmt(s.base)+' already due on other income alone':''))
+      +wrow('Less Class 4 National Insurance',M+fmt(s.ni),'','6% between '+fmtR(PT)+' and '+fmtR(UEL)+(P>UEL?', plus 2% above':'')+'; no Class 2')
+      +(pen?wrow('Less pension paid personally',M+fmt(s.penNet),'',fmt(pen)+' gross: you pay 80%, the provider adds 20%; your basic rate band is extended by '+fmt(pen)):'')
+      +(kids?wrow('Less Child Benefit charge',M+fmt(s.cb),'','at income '+fmt(s.ani)):'')
+      +wrow('You keep',fmt(s.take),'tot','all of it yours now')
+      +wrow('Total tax',fmt(s.tax),'sub')
+      +'</div>'
+      +'<h3>Limited company</h3><div class="wk">'
+      +wrow('Profit',fmt(P))
+      +wrow('Less salary',M+fmt(l.sal),'',l.sal<SAL-0.004?'limited to '+fmt(l.sal)+', the most this profit can pay once employer NI is added':'')
+      +wrow('Less employer NI',M+fmt(l.erni),'','('+fmt(l.sal)+' '+M+' '+fmtR(ST)+') \u00d7 15%'+(ea?', wiped out by the Employment Allowance':''))
+      +(costs?wrow('Less extra running costs',M+fmt(costs),'','deductible'):'')
+      +(l.pen?wrow('Less employer pension contribution',M+fmt(l.pen),'','paid by the company, no NI, no personal tax'+(l.pen<l.penIn-0.004?'; limited to what is left after salary, NI and costs':'')):'')
+      +wrow('Taxable profit',fmt(l.taxableProfit),'sub',l.loss?'a loss: the costs are more than the profit':'')
+      +wrow('Less Corporation Tax',M+fmt(l.ct.tax),'',l.ct.calc)
+      +wrow('Available after tax',fmt(l.loss?-l.loss:l.avail),'sub')
+      +(l.loss?wrow('Plus loss carried forward',fmt(l.loss),'','there is nothing to pay out this year; the loss can reduce the company\'s Corporation Tax in later years'):'')
+      +(l.retained>0?wrow('Less kept in the company',M+fmt(l.retained),'','to reach your '+fmt(drawings)+' target'):'')
+      +wrow('Dividends paid to you',fmt(l.div),'sub')
+      +'</div><div class="wk">'
+      +wrow('Salary plus dividends received',fmt(l.sal+l.div),'','Personal Allowance '+fmt(l.pa)+(l.pa<PA_FULL?', tapered above £100,000':'')+(other&&l.pa>0?'; your other income uses it first':''))
+      +wrow('Less '+regionName+' Income Tax on salary',M+fmt(l.itP),'',l.it.lines.length?l.it.lines.join('; ')+(other?'; less '+fmt(l.base)+' on other income alone':''):'covered by the allowance')
+      +wrow('Less dividend tax',M+fmt(l.dt.tax),'','first '+fmt(l.allow)+' tax-free'+(l.dt.lines.length?'; '+l.dt.lines.join('; '):''))
+      +(kids?wrow('Less Child Benefit charge',M+fmt(l.cb),'','at income '+fmt(l.ani)+(l.retained>0?'; profit kept in the company does not count':'')):'')
+      +wrow('In your pocket',fmt(l.take),'tot')
+      +(l.retained>0?wrow('Plus kept in the company',fmt(l.retained),'info','already taxed at company rates'):'')
+      +wrow('Total tax',fmt(l.tax),'sub')
+      +'</div>'
+      +'<p class="aside">Difference in your pocket: '+fmt(l.take)+' '+M+' '+fmt(s.take)+' = <strong>'+fmt(pocket)+'</strong>'+(l.retained>0?'. Including money kept in the company: '+fmt(overall)+'.':'.')+'</p>';
+    document.getElementById('workings').innerHTML=w;
+  }
+  function setDraw(all){ drawAll=all; document.getElementById('draw-all').setAttribute('aria-pressed',all); document.getElementById('draw-some').setAttribute('aria-pressed',!all); document.getElementById('draw-box').hidden=all; render(); }
+  document.getElementById('draw-all').addEventListener('click',function(){ setDraw(true); });
+  document.getElementById('draw-some').addEventListener('click',function(){ setDraw(false); });
+
+  // Break-even: smallest amount left in the company at which the company route keeps more overall
+  document.getElementById('find-be').addEventListener('click', function(){
+    var P=num('profit'), other=num('other'), costs=num('costs'), kids=+document.getElementById('kids').value, region=document.getElementById('region').value, ea=document.getElementById('ea').checked;
+    var pen=Math.min(num('pension'),P); var so=sole(P,other,region,kids,pen), box=document.getElementById('be-box'); box.hidden=false; box.dataset.fresh='1';
+    var full=ltd(P,other,region,kids,costs,null,ea,pen);
+    if(full.take+full.retained >= so.take){
+      box.innerHTML='<span class="be-big">A company keeps more even if you take everything out</span>At '+fmt(P)+' of profit with your settings, the company route keeps '+fmt(full.take)+' against '+fmt(so.take)+' as a sole trader, before leaving anything in the business. That is unusual on 2026/27 rates: it is the Employment Allowance, your other income or your Child Benefit position doing the work.<div class="be-muted">Illustrative, not advice. Non-tax reasons (liability, clients, pensions) still matter.</div>';
+      return;
+    }
+    var found=null;
+    for(var d=Math.floor(P/50)*50; d>=SAL; d-=50){
+      var l=ltd(P,other,region,kids,costs,d,ea,pen);
+      if(l.take+l.retained >= so.take){ found={draw:d, l:l}; break; }
+    }
+    if(!found){
+      box.innerHTML='<span class="be-big">At this profit, stay a sole trader</span>Even if you left every spare pound in the company, it would not keep more than the '+fmt(so.take)+' you keep as a sole trader once '+fmt(costs)+' of extra running costs are counted. Below roughly £20,000 of profit, the fixed costs of a company outweigh any tax saving.<div class="be-muted">Illustrative, not advice. A company may still be right for non-tax reasons: limited liability, clients who insist on it, or a company pension.</div>';
+      return;
+    }
+    var keep=found.l.retained, L=found.l;
+    var row=function(label,val,cls,small){ return '<div'+(cls?' class="'+cls+'"':'')+'><span>'+label+(small?'<small>'+small+'</small>':'')+'</span><span>'+val+'</span></div>'; };
+    box.innerHTML='<span class="be-big">Break-even: leave at least '+fmt(keep)+' a year in the company, after tax</span>'
+      +'<p>Take out <strong>no more than '+fmt(found.draw)+'</strong> a year in salary and dividends, and a company keeps more overall. Need more than that to live on? A sole trader keeps more on 2026/27 rates.</p>'
+      +'<div class="be-ledger">'
+      +row('Profit',fmt(P))
+      +row('Less salary','\u2212'+fmt(L.sal))
+      +row('Less employer NI','\u2212'+fmt(L.erni))
+      +(costs?row('Less extra running costs','\u2212'+fmt(costs)):'')
+      +(L.pen?row('Less employer pension contribution','\u2212'+fmt(L.pen)):'')
+      +row('Taxable profit',fmt(L.taxableProfit),'sub')
+      +row('Less Corporation Tax','\u2212'+fmt(L.ct.tax),'',L.ct.calc)
+      +row('Available after tax',fmt(L.avail),'sub')
+      +row('Less dividends you take','\u2212'+fmt(L.div))
+      +row('Left in the company',fmt(keep),'tot')
+      +'</div>'
+      +'<div class="be-muted">The calculator below is now set to '+fmt(found.draw)+' of drawings so you can see the full working. Money left in the company will owe dividend tax if you draw it later, so the saving is real only if you can genuinely leave it, or draw it in a lower-income year.</div>';
+    // set the tool to the break-even so they can see it
+    document.getElementById('drawings').value=found.draw.toLocaleString('en-GB');
+    box.dataset.fresh='1'; setDraw(false); box.hidden=false;
+  });
+  ['profit','drawings','costs','other','pension'].forEach(function(id){ document.getElementById(id).addEventListener('input',render); });
+  ['kids','region','ea'].forEach(function(id){ document.getElementById(id).addEventListener('change',render); });
+
+  // ---- brand select: enhances every <select> in the inputs ----
+  (function(){
+    document.querySelectorAll('.calc-input select').forEach(function(sel){
+      var wrap=document.createElement('div'); wrap.className='bs'; sel.parentNode.insertBefore(wrap,sel); wrap.appendChild(sel);
+      var btn=document.createElement('button'); btn.type='button'; btn.className='bs-btn'; btn.setAttribute('aria-haspopup','listbox'); btn.setAttribute('aria-expanded','false');
+      var list=document.createElement('div'); list.className='bs-list'; list.hidden=true; list.setAttribute('role','listbox');
+      wrap.appendChild(btn); wrap.appendChild(list);
+      function label(){ var o=sel.options[sel.selectedIndex]; btn.textContent=o?o.textContent:''; }
+      function build(){ list.innerHTML=''; Array.prototype.forEach.call(sel.options,function(o,i){ if(o.disabled) return; var b=document.createElement('button'); b.type='button'; b.setAttribute('role','option'); b.textContent=o.textContent; if(i===sel.selectedIndex) b.className='sel'; b.addEventListener('click',function(){ sel.selectedIndex=i; sel.dispatchEvent(new Event('change')); label(); close(); btn.focus(); }); list.appendChild(b); }); }
+      function open(){ build(); list.hidden=false; wrap.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+      function close(){ list.hidden=true; wrap.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+      btn.addEventListener('click',function(){ list.hidden?open():close(); });
+      btn.addEventListener('keydown',function(e){ if(e.key==='ArrowDown'||e.key==='ArrowUp'){ e.preventDefault(); var n=sel.selectedIndex+(e.key==='ArrowDown'?1:-1); while(sel.options[n]&&sel.options[n].disabled) n+=(e.key==='ArrowDown'?1:-1); if(sel.options[n]){ sel.selectedIndex=n; sel.dispatchEvent(new Event('change')); label(); if(!list.hidden) build(); } } if(e.key==='Escape') close(); });
+      document.addEventListener('click',function(e){ if(!wrap.contains(e.target)) close(); });
+      sel.addEventListener('change',label);
+      label();
+    });
+  })();
+  render();
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "00529846a08f42db871a69a17e005ffd"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

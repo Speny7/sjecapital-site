@@ -1,0 +1,9 @@
+# Send every version of the second domain to the same page on the main domain (permanent redirect)
+http://sjecapital.xyz/*        https://www.sjecapital.co.uk/:splat    301!
+https://sjecapital.xyz/*       https://www.sjecapital.co.uk/:splat    301!
+http://www.sjecapital.xyz/*    https://www.sjecapital.co.uk/:splat    301!
+https://www.sjecapital.xyz/*   https://www.sjecapital.co.uk/:splat    301!
+
+# Clean address for the blog listing (the /blog/ folder holds the articles)
+/blog    /blog.html    200
+/blog/   /blog.html    200

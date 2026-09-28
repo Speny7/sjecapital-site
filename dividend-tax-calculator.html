@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<link rel="preload" href="/logo-header.svg" as="image" type="image/svg+xml" fetchpriority="high">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>Dividend tax calculator 2026/27 | SJE Capital</title>
+<meta property="og:title" content="Dividend tax calculator 2026/27 | SJE Capital">
+<meta property="og:description" content="Free 2026/27 dividend tax calculator for UK directors: tax band by band, how much more you can take at 10.75%, and when the Self Assessment bill is due.">
+<meta property="og:url" content="https://www.sjecapital.co.uk/dividend-tax-calculator">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.sjecapital.co.uk/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://www.sjecapital.co.uk/dividend-tax-calculator">
+<link rel="icon" href="favicon-512.png" type="image/png" sizes="512x512">
+<meta property="og:site_name" content="SJE Capital">
+<meta name="description" content="Free 2026/27 dividend tax calculator for UK directors: tax band by band, how much more you can take at 10.75%, and when the Self Assessment bill is due.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/eb-garamond.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{ font-family:"EB Garamond"; src:url(/fonts/eb-garamond.woff2) format("woff2"); font-weight:500 700; font-style:normal; font-display:swap; }
+  @font-face{ font-family:"Source Serif 4"; src:url(/fonts/source-serif-4.woff2) format("woff2"); font-weight:400 700; font-style:normal; font-display:swap; }
+
+  :root{ color-scheme:light;
+    --ink:#14382B; --ink-soft:#2A5340; --leaf:#1E6B4A; --leaf-deep:#155238;
+    --paper:#F2F5EF; --paper-hi:#FBFCF9; --rule:#C7D4C6; --rule-soft:#DCE5DA; --focus:#0E8A5F;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  body{ font-family:"Source Serif 4", Georgia, serif; background:var(--paper); color:var(--ink); font-size:1.0625rem; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3{ font-family:"EB Garamond", Georgia, serif; }
+  a{ color:var(--leaf); text-decoration-thickness:1px; text-underline-offset:3px; }
+  a:hover{ color:var(--leaf-deep); }
+  :focus-visible{ outline:3px solid var(--focus); outline-offset:3px; border-radius:2px; }
+  .wrap{ max-width:1060px; margin:0 auto; padding:0 24px; }
+  header{ background:var(--ink); border-bottom:1px solid #2A5340; }
+  .masthead{ display:flex; align-items:center; justify-content:space-between; gap:24px; padding:18px 24px; max-width:1060px; margin:0 auto; }
+  .wordmark{ display:flex; align-items:center; text-decoration:none; }
+  nav{ display:flex; gap:26px; align-items:center; }
+  nav a{ color:#DCE8DE; text-decoration:none; font-size:.9375rem; font-weight:500; border-bottom:2px solid transparent; padding-bottom:2px; }
+  nav a:hover{ border-bottom-color:#9FD8B7; color:#fff; }
+  .nav-cta{ background:var(--paper-hi); color:var(--ink) !important; padding:9px 18px 10px; border-radius:3px; border-bottom:none !important; }
+  .nav-cta:hover{ background:#fff; color:var(--leaf-deep) !important; }
+  @media (max-width:760px){
+    .masthead{ flex-direction:column; align-items:center; gap:16px; padding-top:18px; padding-bottom:18px; }
+    .wordmark{ justify-content:center; }
+    nav{ width:100%; justify-content:center; gap:10px 18px; flex-wrap:wrap; align-items:center; }
+    nav a{ padding:4px 0; font-size:.9rem; }
+    .nav-cta{ flex:1 0 100%; text-align:center; margin-top:6px; padding:12px 16px 13px; }
+  }
+  .page-head{ padding-top:64px; padding-bottom:10px; }
+  h1{ font-size:clamp(2rem, 4.5vw, 3rem); font-weight:600; letter-spacing:-.015em; }
+  .page-head p{ color:var(--ink-soft); margin-top:10px; max-width:60ch; }
+  .dates{ padding-top:34px; padding-bottom:60px; }
+  .dates{ display:grid; grid-template-columns:1fr 1fr; gap:0 64px; align-items:start; }
+  .dates > h2, .timeline-wrap, .timeline-note, .disclaimer{ grid-column:1 / -1; }
+  .date-block:last-child{ grid-column:1 / -1; }
+  @media (max-width:820px){ .dates{ grid-template-columns:1fr; } }
+
+  .date-block{ border-top:2px solid var(--ink); padding:24px 4px 26px; }
+  .date-block + .date-block{ border-top:1px solid var(--rule); }
+  .date-block h2{ font-size:1.4rem; font-weight:600; margin-bottom:12px; }
+  .date-block dl div{ display:grid; grid-template-columns:minmax(0,200px) 1fr; gap:18px; padding:9px 0; border-bottom:1px solid var(--rule-soft); }
+  .date-block dt{ font-weight:600; font-size:.9875rem; }
+  .date-block dd{ font-size:.9875rem; color:var(--ink-soft); max-width:64ch; }
+  @media (max-width:600px){ .date-block dl div{ grid-template-columns:1fr; gap:2px; } }
+  .timeline-wrap{ overflow-x:auto; margin:18px 0 40px; }
+  .timeline-wrap svg{ min-width:760px; width:100%; height:auto; display:block; }
+  .timeline-note{ font-size:.875rem; color:var(--ink-soft); margin:-18px 0 40px; }
+  .disclaimer{ max-width:78ch; font-size:.875rem; color:var(--ink-soft); border:1px solid var(--rule); border-left:3px solid var(--leaf); background:var(--paper-hi); padding:14px 18px; margin-bottom:34px; }
+  .cta-band{ background:var(--ink); color:var(--paper-hi); padding:48px 0 54px; }
+  .cta-band h2{ color:#fff; font-size:1.6rem; margin-bottom:8px; }
+  .cta-band p{ color:#CBDACD; margin-bottom:22px; max-width:56ch; }
+  .btn{ display:inline-block; background:var(--paper-hi); color:var(--ink); text-decoration:none; padding:13px 24px 14px; font-weight:600; border-radius:3px; }
+  .btn:hover{ background:#fff; color:var(--leaf-deep); }
+  footer{ background:var(--ink); color:#9FBFA8; font-size:.875rem; padding:26px 0; border-top:1px solid #2A5340; }
+  footer .wrap{ display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; max-width:1060px; }
+
+  @media (max-width:760px){
+    .page-head{ padding-top:36px; padding-bottom:6px; }
+    .page-head h1{ font-size:2rem; }
+    .dates{ padding-top:22px; padding-bottom:44px; }
+    .date-block{ padding:20px 0 22px; }
+    .timeline-wrap{ margin:14px 0 22px; }
+    .timeline-note{ margin:0 0 28px; }
+    .disclaimer{ padding:12px 14px; margin-bottom:26px; }
+    .cta-band{ padding:40px 0 44px; }
+    .posts{ padding-top:20px; padding-bottom:56px; }
+    .res-grid{ padding-top:20px; padding-bottom:50px; }
+    .calc-layout{ padding-top:14px; padding-bottom:50px; }
+    .article-head{ padding-top:36px; padding-bottom:6px; }
+    .article-head h1{ font-size:2rem; }
+    .article-body{ padding-top:24px; margin-top:26px; }
+    .quick-read{ padding:20px 18px 22px; }
+    .article{ gap:32px; }
+    footer .wrap{ flex-direction:column; gap:6px; }
+  }
+
+  .calc-layout{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.6fr); gap:56px; align-items:start; padding-top:20px; padding-bottom:70px; }
+  .calc-results{ position:sticky; top:24px; }
+  .calc-input label{ display:block; font-size:.9375rem; font-weight:600; color:var(--ink); margin:22px 0 6px; }
+  .calc-input > label:first-child{ margin-top:0; }
+  .calc-input .amount{ font-family:"EB Garamond", Georgia, serif; font-size:2.3rem; font-weight:600; letter-spacing:-.02em; font-variant-numeric:tabular-nums; margin-bottom:4px; }
+  .calc-input input[type=range]{ width:100%; accent-color:var(--leaf); cursor:pointer; margin:4px 0 6px; }
+  .calc-input input[type=number], .calc-input input[type=text], .calc-input select{ font-family:inherit; font-size:1rem; padding:10px 12px; border:1px solid var(--rule); border-radius:3px; width:100%; background:var(--paper-hi); color:var(--ink); transition:border-color .15s, box-shadow .15s; }
+  .calc-input input[type=number]:focus, .calc-input input[type=text]:focus, .calc-input select:focus, .calc-input input[type=number]:focus-visible, .calc-input input[type=text]:focus-visible, .calc-input select:focus-visible{ outline:none; border-color:var(--leaf); box-shadow:0 0 0 3px rgba(30,107,74,.14); }
+  input[type=number]{ -moz-appearance:textfield; appearance:textfield; }
+  input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button{ -webkit-appearance:none; margin:0; }
+  .calc-input .row{ display:grid; grid-template-columns:1fr 1fr; gap:14px; align-items:end; }
+  .calc-input .row label{ margin-top:0; }
+  .calc-input .check{ display:flex; gap:10px; align-items:flex-start; margin-top:14px; font-size:.9375rem; }
+  .calc-input .check input{ margin-top:5px; accent-color:var(--leaf); width:16px; height:16px; }
+  .calc-input .hint{ font-size:.85rem; line-height:1.5; color:var(--ink-soft); margin-top:6px; }
+  .calc-input .hint a{ color:var(--leaf); }
+  .calc-input .explain{ font-size:.875rem; line-height:1.55; color:var(--ink-soft); background:var(--paper-hi); border:1px solid var(--rule); border-left:3px solid var(--leaf); padding:12px 14px; margin-top:10px; }
+  .calc-input .explain strong{ color:var(--ink); }
+  .calc-input .sub{ margin-left:0; padding:14px 16px 4px; border-left:2px solid var(--rule); margin-top:8px; }
+  .seg{ display:inline-flex; border:1px solid var(--ink); border-radius:3px; overflow:hidden; margin-top:8px; }
+  .seg button{ font-family:inherit; font-size:.9rem; font-weight:600; padding:8px 14px 9px; background:transparent; color:var(--ink); border:none; cursor:pointer; }
+  .seg button[aria-pressed="true"]{ background:var(--ink); color:var(--paper-hi); }
+  .seg button:focus-visible{ outline:3px solid var(--focus); outline-offset:-3px; }
+  details.more{ margin-top:26px; }
+  details.more > summary{ cursor:pointer; list-style:none; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 16px; border:1px solid var(--ink); border-radius:3px; background:var(--paper-hi); font-weight:600; color:var(--ink); }
+  details.more > summary:hover{ background:var(--ink); color:var(--paper-hi); }
+  details.more > summary::-webkit-details-marker{ display:none; }
+  details.more > summary::after{ content:"\25BE"; font-size:1.1rem; transition:transform .2s; }
+  details[open].more > summary::after{ transform:rotate(180deg); }
+  details[open].more > summary{ border-bottom-left-radius:0; border-bottom-right-radius:0; }
+  details.more .more-body{ border:1px solid var(--rule); border-top:none; padding:6px 16px 18px; background:var(--paper-hi); }
+  .assume{ font-size:.875rem; color:var(--ink-soft); margin-top:24px; border-top:1px solid var(--rule); padding-top:14px; }
+  .assume li{ margin-left:18px; margin-bottom:4px; }
+  .view-switch{ display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap; margin-bottom:16px; }
+  .view-switch .lbl{ font-size:.9rem; color:var(--ink-soft); }
+  .routes{ display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  .routes.one{ grid-template-columns:1fr; }
+  .route{ border:1px solid var(--rule); border-top:2px solid var(--ink); background:var(--paper-hi); padding:24px 24px 26px; }
+  .route.best{ background:var(--ink); color:var(--paper-hi); border-color:var(--ink); }
+  .route .kicker{ font-size:.8rem; letter-spacing:.08em; text-transform:uppercase; color:var(--leaf); margin-bottom:6px; }
+  .route.best .kicker{ color:#9FD8B7; }
+  .route h2{ font-size:1.25rem; font-weight:600; margin-bottom:14px; }
+  .route .big{ font-family:"EB Garamond", Georgia, serif; font-size:2.3rem; font-weight:600; letter-spacing:-.02em; font-variant-numeric:tabular-nums; line-height:1; }
+  .route .biglabel{ font-size:.875rem; color:var(--ink-soft); margin:6px 0 18px; }
+  .route.best .biglabel{ color:#CBDACD; }
+  .route dl div{ display:flex; justify-content:space-between; gap:12px; padding:7px 0; border-bottom:1px solid var(--rule-soft); font-size:.9375rem; font-variant-numeric:tabular-nums; }
+  .route.best dl div{ border-bottom-color:#2A5340; }
+  .route dl div.total{ font-weight:600; border-bottom:2px solid currentColor; }
+  .route dl div[hidden], .route[hidden]{ display:none; }
+  .route .note{ font-size:.85rem; color:var(--ink-soft); margin-top:12px; line-height:1.5; }
+  .route.best .note{ color:#CBDACD; }
+  .route.best .note a{ color:#9FD8B7; font-weight:600; }
+  .marginal{ margin-top:24px; border:1px solid var(--rule); border-left:3px solid var(--leaf); background:var(--paper-hi); padding:16px 20px; display:grid; grid-template-columns:auto 1fr; gap:6px 20px; align-items:center; }
+  .marginal b{ font-family:"EB Garamond", Georgia, serif; font-size:2rem; font-weight:600; font-variant-numeric:tabular-nums; line-height:1; grid-row:span 2; }
+  .marginal .m-title{ font-weight:600; }
+  .marginal .m-sub{ font-size:.875rem; color:var(--ink-soft); line-height:1.5; }
+  details.workings{ margin-top:22px; border:1px solid var(--rule); background:var(--paper-hi); }
+  details.workings summary{ cursor:pointer; padding:14px 18px; font-weight:600; list-style:none; }
+  details.workings summary::-webkit-details-marker{ display:none; }
+  details.workings summary::before{ content:"+"; display:inline-block; width:18px; color:var(--leaf); font-weight:700; }
+  details[open].workings summary::before{ content:"\2212"; }
+  details.workings .inner{ padding:0 18px 18px; font-size:.9375rem; }
+  details.workings h3{ font-size:1.05rem; font-weight:600; margin:14px 0 8px; }
+  details.workings ol{ margin-left:20px; }
+  details.workings li{ margin-bottom:6px; font-variant-numeric:tabular-nums; }
+  .related{ margin-top:14px; font-size:.9375rem; color:var(--ink-soft); }
+  @media (max-width:900px){ .calc-layout{ grid-template-columns:1fr; gap:36px; } .calc-results{ position:static; } .routes{ grid-template-columns:1fr; } }
+  @media (max-width:760px){ .calc-layout{ padding-top:14px; padding-bottom:50px; } .page-head{ padding-top:36px; padding-bottom:6px; } .page-head h1{ font-size:2rem; } .cta-band{ padding:40px 0 44px; } footer .wrap{ flex-direction:column; gap:6px; } }
+
+  /* distinct tab-style buttons */
+  .tabs{ display:flex; gap:8px; flex-wrap:wrap; }
+  .tabs button{ font-family:inherit; font-size:.9rem; font-weight:600; padding:9px 16px 10px; background:var(--paper-hi); color:var(--ink); border:1px solid var(--ink); border-radius:3px; cursor:pointer; transition:background .15s, color .15s; }
+  .tabs button:hover{ background:var(--rule-soft); }
+  .tabs button[aria-pressed="true"]{ background:var(--ink); color:var(--paper-hi); }
+  .tabs button:focus-visible{ outline:3px solid var(--focus); outline-offset:2px; }
+  /* where to find it callout */
+  .findit{ margin-top:8px; font-size:.85rem; line-height:1.5; background:var(--paper-hi); border:1px solid var(--rule); border-left:3px solid var(--leaf); padding:10px 12px; color:var(--ink); }
+  .findit strong{ color:var(--leaf); display:block; margin-bottom:2px; letter-spacing:.02em; }
+  /* headline difference panel (director) */
+  .headline-diff{ margin-top:24px; background:var(--ink); color:var(--paper-hi); padding:22px 24px; display:grid; grid-template-columns:auto 1fr; gap:4px 22px; align-items:center; }
+  .headline-diff b{ font-family:"EB Garamond", Georgia, serif; font-size:2.6rem; font-weight:600; font-variant-numeric:tabular-nums; line-height:1; color:#fff; grid-row:span 2; }
+  .headline-diff .d-title{ font-weight:600; font-size:1.05rem; color:#fff; }
+  .headline-diff .d-sub{ font-size:.9rem; color:#CBDACD; line-height:1.5; }
+  .calc-input .taxcode{ text-transform:uppercase; letter-spacing:.06em; font-variant-numeric:tabular-nums; }
+  .calc-input .warn{ color:var(--ink); font-weight:600; font-size:.85rem; margin-top:6px; }
+  .workings-part[hidden]{ display:none; }
+
+  details.info{ margin-top:6px; }
+  details.info summary{ list-style:none; cursor:pointer; display:inline-flex; align-items:center; gap:6px; font-size:.85rem; font-weight:600; color:var(--leaf); padding:2px 0; }
+  details.info summary::-webkit-details-marker{ display:none; }
+  details.info summary::after{ content:"\25BE"; font-size:.9rem; transition:transform .2s; display:inline-block; text-decoration:none; }
+  details[open].info summary::after{ transform:rotate(180deg); }
+  details.info summary:hover span{ text-decoration:underline; text-underline-offset:3px; }
+  details.info .hint, details.info .findit, details.info .explain{ margin-top:8px; }
+
+  .money-wrap{ position:relative; display:block; }
+  .money-wrap::before{ content:"£"; position:absolute; left:12px; top:50%; transform:translateY(-50%); color:var(--ink-soft); font-size:1rem; pointer-events:none; }
+  .money-wrap input.money{ padding-left:26px; }
+
+  .wk{ border-top:1px solid var(--rule); margin:6px 0 14px; font-variant-numeric:tabular-nums; }
+  .wk div{ display:grid; grid-template-columns:1fr auto; gap:12px; padding:7px 0; border-bottom:1px solid var(--rule-soft); font-size:.9375rem; align-items:start; }
+  .wk .lbl small{ display:block; font-size:.8rem; color:var(--ink-soft); line-height:1.45; margin-top:2px; }
+  .wk .amt{ white-space:nowrap; text-align:right; }
+  .wk div.sub{ font-weight:600; border-top:1px solid var(--rule); }
+  .wk div.tot{ font-weight:700; border-bottom:3px double var(--ink); }
+  .wk div.info .amt{ color:var(--ink-soft); }
+  details.workings h3{ margin-top:18px; }
+  details.workings .aside{ font-size:.875rem; color:var(--ink-soft); margin-top:6px; line-height:1.5; }
+
+  .dl-row{ margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; }
+  .dl-row button.btn{ cursor:pointer; font-family:inherit; background:var(--paper-hi); color:var(--ink); border:1px solid var(--ink); }
+  .dl-row button.btn:hover{ background:var(--ink); color:var(--paper-hi); }
+  .sched{ margin-top:10px; border-top:1px solid var(--rule); }
+  .sched-row{ display:grid; grid-template-columns:150px 1fr auto; gap:16px; padding:11px 0; border-bottom:1px solid var(--rule-soft); align-items:start; font-size:.9375rem; }
+  .sched-row strong{ font-family:"EB Garamond", Georgia, serif; font-size:1.05rem; font-weight:600; line-height:1.3; }
+  .sched-row p{ font-size:.875rem; color:var(--ink-soft); line-height:1.5; margin:0; }
+  .sched-row span{ font-weight:600; white-space:nowrap; text-align:right; font-variant-numeric:tabular-nums; }
+  @media (max-width:700px){ .sched-row{ grid-template-columns:1fr; gap:4px; } .sched-row span{ text-align:left; } }
+  .print-only{ display:none; font-size:.85rem; color:var(--ink-soft); margin-top:16px; }
+  @media print{
+    header nav, .cta-band, footer, .dl-row, .calc-input, .related, details.info, .calc-results details.workings summary, .view-switch{ display:none !important; }
+    body{ background:#fff; color:#000; font-size:11pt; }
+    .calc-layout{ display:block; padding-top:10px; }
+    .calc-results{ position:static; }
+    .route.best{ background:#fff; color:#000; border:1px solid #000; }
+    .route.best .kicker, .route.best .biglabel, .route.best .note{ color:#000; }
+    .headline-diff{ background:#fff; color:#000; border:1px solid #000; }
+    .headline-diff b, .headline-diff .d-title, .headline-diff .d-sub{ color:#000; }
+    details.workings{ border:none; } details.workings .inner{ display:block !important; padding:0; }
+    .print-only{ display:block !important; }
+  }
+
+  /* ---------- brand select (replaces native dropdown) ---------- */
+  .bs{ position:relative; }
+  .bs select{ position:absolute; opacity:0; pointer-events:none; width:1px; height:1px; }
+  .bs-btn{ width:100%; text-align:left; font-family:inherit; font-size:1rem; padding:10px 40px 10px 12px; border:1px solid var(--rule); border-radius:3px; background:var(--paper-hi); color:var(--ink); cursor:pointer; position:relative; }
+  .bs-btn::after{ content:"\25BE"; position:absolute; right:12px; top:50%; transform:translateY(-50%); color:var(--ink-soft); }
+  .bs-btn:focus-visible, .bs.open .bs-btn{ outline:none; border-color:var(--leaf); box-shadow:0 0 0 3px rgba(30,107,74,.14); }
+  .bs-list{ position:absolute; z-index:30; top:calc(100% + 6px); left:0; right:0; background:var(--paper-hi); border:1px solid var(--rule); border-top:2px solid var(--ink); box-shadow:0 10px 30px rgba(20,56,43,.14); padding:6px; max-height:280px; overflow:auto; }
+  .bs-list[hidden]{ display:none; }
+  .bs-list button{ display:block; width:100%; text-align:left; font-family:inherit; font-size:.95rem; padding:9px 10px; border:none; border-radius:3px; background:none; color:var(--ink); cursor:pointer; }
+  .bs-list button:hover{ background:var(--rule-soft); }
+  .bs-list button.sel{ background:var(--ink); color:var(--paper-hi); }
+  .bs-list button.sel:hover{ background:var(--ink); }
+  @media print{ .bs-list{ display:none !important; } }
+
+  @media (max-width:700px){ .headline-diff{ grid-template-columns:1fr; gap:8px; } .headline-diff b{ grid-row:auto; } }
+  footer a{ color:#CBDACD; }
+  footer a:hover{ color:#fff; }
+  .next-step{ margin-top:24px; background:var(--paper-hi); border-top:2px solid var(--leaf); padding:18px 20px 20px; }
+  .next-step .ns-kicker{ font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; color:var(--leaf); font-weight:600; margin:0 0 4px; }
+  .next-step .ns-title{ font-family:"EB Garamond", Georgia, serif; font-size:1.35rem; font-weight:600; line-height:1.25; color:var(--ink); margin:0; }
+  .next-step .ns-text{ color:var(--ink-soft); margin:6px 0 14px; font-size:.95rem; line-height:1.55; }
+  .next-step .ns-actions{ display:flex; flex-wrap:wrap; align-items:center; gap:10px 18px; }
+  .next-step .ns-btn{ display:inline-block; background:var(--leaf); color:#fff; border:1px solid var(--leaf-deep); padding:11px 18px; border-radius:3px; text-decoration:none; font-weight:600; }
+  .next-step .ns-btn:hover{ background:var(--leaf-deep); }
+  .next-step .ns-link{ color:var(--leaf); font-weight:600; text-decoration:none; }
+  .next-step .ns-link:hover{ text-decoration:underline; }
+  @media print{ .next-step{ display:none !important; } }
+  .feedback{ font-size:.85rem; color:var(--ink-soft); margin-top:10px; }
+  .feedback a{ color:var(--leaf); font-weight:600; }
+  @media print{ .feedback{ display:none; } }
+</style>
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "SJE Capital",
+   "item": "https://www.sjecapital.co.uk/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Resources",
+   "item": "https://www.sjecapital.co.uk/resources"
+  },
+  {
+   "@type": "ListItem",
+   "position": 3,
+   "name": "Dividend tax calculator",
+   "item": "https://www.sjecapital.co.uk/dividend-tax-calculator"
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "WebApplication",
+ "name": "Dividend tax calculator",
+ "url": "https://www.sjecapital.co.uk/dividend-tax-calculator",
+ "description": "Free 2026/27 dividend tax calculator for UK directors: tax band by band, how much more you can take at 10.75%, and when the Self Assessment bill is due.",
+ "applicationCategory": "FinanceApplication",
+ "operatingSystem": "Any (runs in the browser)",
+ "isAccessibleForFree": true,
+ "offers": {
+  "@type": "Offer",
+  "price": "0",
+  "priceCurrency": "GBP"
+ },
+ "inLanguage": "en-GB",
+ "provider": {
+  "@type": "Organization",
+  "name": "SJE Capital Limited",
+  "url": "https://www.sjecapital.co.uk/"
+ }
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="masthead">
+    <a class="wordmark" href="/" aria-label="SJE Capital Limited home">
+      <img src="/logo-header.svg" width="272" height="90" alt="" fetchpriority="high">
+    </a>
+    <nav aria-label="Main">
+      <a href="/#about">About</a>
+      <a href="/#services">Services</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/blog">Blog</a>
+      <a href="/resources">Resources</a>
+      <a class="nav-cta" href="/#contact">Get a quote</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap page-head">
+    <h1>Dividend tax calculator 2026/27</h1>
+    <p>Enter your salary and the dividends you plan to take, and see the tax band by band at this year's higher rates, how much more you could take before the higher rate bites, and exactly when the bill is due. Every line of the working is shown.</p>
+  </div>
+
+  <div class="wrap calc-layout">
+    <div class="calc-input">
+      <label for="salary">Your salary from the company (per year)</label>
+      <input type="text" inputmode="numeric" class="money" id="salary" value="12,570">
+      <details class="info"><summary><span>More info</span></summary>
+        <p class="hint">The gross salary the company pays you through payroll. Most single-director companies use £12,570, which is exactly the tax-free Personal Allowance. Salary is taxed before dividends, so it decides which band your dividends start in.</p>
+      </details>
+
+      <label for="div">Dividends you plan to take (per year)</label>
+      <input type="text" inputmode="numeric" class="money" id="div" value="37,700">
+      <details class="info"><summary><span>More info</span></summary>
+        <p class="hint">Dividends are paid out of the company's profit after Corporation Tax. Each one needs the directors' decision recorded in board minutes, a dividend voucher for each shareholder, and enough profit in the company to cover it. £37,700 on top of a £12,570 salary takes you exactly to the top of the basic rate band.</p>
+      </details>
+
+      <details class="more">
+        <summary>Tailor it to you: other income, pension, student loan, children, Scottish tax</summary>
+        <div class="more-body">
+          <label for="other">Your other taxable income (per year)</label>
+          <input type="text" inputmode="numeric" class="money" id="other" value="0">
+          <details class="info"><summary><span>More info</span></summary>
+            <p class="hint">Any income outside this company, such as another job, a pension or rent from a property. HMRC taxes it alongside your salary, before your dividends, so it uses up allowance and basic rate band and can push your dividends into a higher band. Leave at 0 if none.</p>
+          </details>
+          <label for="pension">Pension contributions (per year)</label>
+          <input type="text" inputmode="numeric" class="money" id="pension" value="0">
+          <details class="info"><summary><span>More info</span></summary>
+            <p class="hint">Enter the amount paid in this year and choose below how it is paid. Contributions you pay personally get 20% added by the provider and extend your basic rate band, so more of your dividends stay at 10.75%. Contributions paid straight from the company into your SIPP do not change your personal tax at all, but they save the company Corporation Tax, and the calculator will show you that instead.</p>
+          </details>
+          <label for="pen-method">How you pay into the pension</label>
+          <select id="pen-method">
+            <option value="ras">Personally, into a personal pension or SIPP (relief at source)</option>
+            <option value="netpay">Through payroll, taken from salary before tax (net pay)</option>
+            <option value="employer">Straight from the company into my SIPP (employer contribution)</option>
+          </select>
+          <details class="info"><summary><span>Which one do I have?</span></summary>
+            <p class="hint"><strong>Relief at source</strong> (most personal pensions and SIPPs): you pay from your own bank, the provider adds 20%, and higher rate relief comes through your tax return by extending your basic rate band. Enter the amount that leaves your bank. <strong>Net pay</strong> (most workplace schemes): the contribution comes off your salary before tax is worked out, so relief is immediate and there is no band extension. Enter the amount shown on your payslip. <strong>Employer contribution</strong> (paid by the company directly into your SIPP): the company pays the gross amount; there is no National Insurance and nothing on your personal tax return, and it reduces the company's profit before Corporation Tax. Enter the amount the company pays. For a director this is usually the most efficient of the three. If you are not sure which you have, your pension provider's welcome letter or your payslip will say.</p>
+          </details>
+
+          <label for="plan">Student loan</label>
+          <select id="plan">
+            <option value="0">I do not have a student loan</option>
+            <option value="26900">Plan 1: started university before September 2012 (or studied in Northern Ireland)</option>
+            <option value="29385">Plan 2: started between September 2012 and July 2023</option>
+            <option value="33795">Plan 4: Scottish student loan</option>
+            <option value="25000">Plan 5: started September 2023 or later</option>
+          </select>
+          <label class="check"><input type="checkbox" id="pg"> <span>I also have a Postgraduate Loan (for a Master's or PhD)</span></label>
+          <details class="info"><summary><span>More info</span></summary>
+            <p class="hint">Dividends count as income for student loan repayments once your unearned income is over £2,000 in the year. HMRC then charges 9% (6% for a Postgraduate Loan) of everything above your plan's threshold, on your total income, through Self Assessment. Because a director's £12,570 salary is below every threshold, nothing is taken through payroll, so the whole repayment lands in the January bill. Repayments are not included in payments on account.</p>
+          </details>
+
+          <label for="kids">Number of children you receive Child Benefit for</label>
+          <select id="kids"><option value="0">None</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select>
+          <details class="info"><summary><span>More info</span></summary>
+            <p class="hint">Dividends count towards the income test for the High Income Child Benefit Charge. Above £60,000 of total income some Child Benefit is clawed back through your tax return, all of it by £80,000. Only the higher earner in a couple is counted.</p>
+          </details>
+          <label for="region">Where you pay Income Tax</label>
+          <select id="region"><option value="uk">England, Wales or Northern Ireland</option><option value="scot">Scotland</option></select>
+          <details class="info"><summary><span>More info</span></summary>
+            <p class="hint">Dividends are taxed at the same UK rates everywhere, but Scottish rates apply to your salary and other income, which can change where your dividends sit. Choose Scotland if your tax code starts with an S.</p>
+          </details>
+        </div>
+      </details>
+
+      <div class="assume">
+        <strong>Assumptions</strong>
+        <ul>
+          <li>Tax year 2026/27: dividend allowance £500. Dividend rates: 10.75% basic rate (total income up to £50,270), 35.75% higher rate (£50,270 to £125,140), 39.35% additional rate (above £125,140).</li>
+          <li>Salary and other income are taxed first; dividends sit on top. Personal Allowance tapers above £100,000 of total income.</li>
+          <li>Dividend tax is paid through Self Assessment, not payroll. Payments on account apply when the bill is over £1,000.</li>
+          <li>Pension contributions follow the method chosen: relief at source (grossed up by 20%, bands extended), net pay (deducted from salary before tax) or employer contribution (no personal tax effect; saves the company Corporation Tax at 19%, an effective 26.5% or 25% depending on its profits).</li>
+          <li>Student loan repayments: 9% (6% for a Postgraduate Loan) of total income above your plan's threshold once unearned income is over £2,000, collected through Self Assessment and excluded from payments on account.</li>
+          <li>Ignores other reliefs. Figures are worked to the penny: each amount is rounded to the nearest penny as it is calculated, and every later figure is built from those amounts, so every line adds up exactly. HMRC's own systems may round some figures down to whole pounds, which can differ by a few pence. Illustrative, not advice.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="calc-results">
+      <div class="route best">
+        <p class="kicker">Your dividends</p>
+        <h2>Dividend tax for 2026/27</h2>
+        <div class="big" id="tax">£3,999.00</div>
+        <p class="biglabel" id="tax-label">to pay through Self Assessment, 10.61% of your dividends</p>
+        <dl>
+          <div><dt>Dividends taken</dt><dd id="o-div">£37,700.00</dd></div>
+          <div><dt>Tax-free (dividend allowance)</dt><dd id="o-allow">£500.00</dd></div>
+          <div id="r-basic"><dt>Taxed at 10.75% (basic)</dt><dd id="o-basic">£37,200.00 → £3,999.00</dd></div>
+          <div id="r-higher" hidden=""><dt>Taxed at 35.75% (higher)</dt><dd id="o-higher">£0.00 → £0.00</dd></div>
+          <div id="r-add" hidden=""><dt>Taxed at 39.35% (additional)</dt><dd id="o-add">£0.00 → £0.00</dd></div>
+          <div id="r-cb" hidden=""><dt>Child Benefit charge</dt><dd id="o-cb">£0.00</dd></div>
+          <div id="r-xit" hidden=""><dt>Extra Income Tax on your salary (Personal Allowance lost)</dt><dd id="o-xit">£0.00</dd></div>
+          <div id="r-sl" hidden=""><dt>Student loan repayment via Self Assessment</dt><dd id="o-sl">£0.00</dd></div>
+          <div id="r-pen" hidden=""><dt>Saved by your pension contribution</dt><dd id="o-pensave">£0.00</dd></div>
+          <div class="total"><dt>Dividends after tax<span id="o-net-l"></span></dt><dd id="o-net">£33,701.00</dd></div>
+        </dl>
+        <p class="note" id="o-eff">Every extra £1 of dividend above this level costs you 35.75p in tax.</p>
+        <p class="note" id="o-emp" hidden=""></p>
+        <p class="note" id="o-pen" hidden=""></p>
+      </div>
+
+      <div class="headline-diff">
+        <b id="room">£0.00</b>
+        <div class="d-title" id="room-title">left at 10.75%. Your next £1 of dividend is taxed at 35.75%</div>
+        <div class="d-sub" id="room-sub">Your salary and dividends reach the £50,270 higher rate threshold to the pound, so you have used every pound of the basic rate band. From here dividends are taxed at 35.75% (higher rate) for the next £87,440.00, then 39.35% (additional rate) above £125,140 of total income. The three dividend rates for 2026/27: 10.75% (basic rate, total income up to £50,270), 35.75% (higher rate, up to £125,140), 39.35% (additional rate, above £125,140).</div>
+      </div>
+
+      <div class="route" style="margin-top:24px;">
+        <p class="kicker">When you pay it</p>
+        <h2>Your Self Assessment schedule</h2>
+        <p class="note" id="s-intro" style="margin-top:0;">Because the bill is over £1,000, HMRC also asks for payments on account towards next year. If this is your first year in Self Assessment:</p>
+        <div class="sched" id="sched"><div class="sched-row"><strong>31 January 2028</strong><p>The full £3,999.00 for 2026/27, plus a first payment on account of £1,999.50 towards 2027/28.</p><span>£5,998.50</span></div><div class="sched-row"><strong>31 July 2028</strong><p>Second payment on account towards 2027/28.</p><span>£1,999.50</span></div><div class="sched-row"><strong>31 January 2029 onwards</strong><p>The balance for 2027/28 plus the first payment on account for 2028/29. The pattern then repeats each year. If you already pay on account, HMRC will have collected estimates in 2027 and you settle only the difference.</p><span></span></div></div>
+      </div>
+
+      <aside class="next-step" aria-label="Next step">
+        <p class="ns-kicker">Next step</p>
+        <p class="ns-title">Want your dividends planned for the year?</p>
+        <p class="ns-text">We work out how much you can take and when, keep the board minutes and vouchers right, and forecast your January tax bill months ahead.</p>
+        <div class="ns-actions"><a class="ns-btn" href="https://calendar.app.google/MgqokbUqk9WwncKk8" target="_blank" rel="noopener noreferrer" data-booking="">Book a free 15-minute call</a><a class="ns-link" href="/#contact">or get a free quote</a></div>
+      </aside>
+      <div class="dl-row"><button type="button" class="btn" id="print">Print or save as PDF</button></div>
+      <details class="workings">
+        <summary>Show the workings</summary>
+        <div class="inner" id="workings"><div class="wk"><div><span class="lbl">Total income<small>£12,570.00 salary + £37,700.00 dividends</small></span><span class="amt">£50,270.00</span></div><div><span class="lbl">Personal Allowance<small>used first by salary</small></span><span class="amt">£12,570.00</span></div><div class="sub"><span class="lbl">Salary that is taxable<small>£12,570.00 − £12,570.00 allowance (UK rates, paid via payroll or elsewhere, not shown here)</small></span><span class="amt">£0.00</span></div><div><span class="lbl">Dividend allowance<small>first £500.00 of the remaining dividends at 0%</small></span><span class="amt">£500.00</span></div><div><span class="lbl">Basic rate dividends<small>the basic rate band ends at £37,700 of taxable income</small></span><span class="amt">£37,200.00 × 10.75% = £3,999.00</span></div><div class="tot"><span class="lbl">Tax to pay through Self Assessment</span><span class="amt">£3,999.00</span></div><div class="sub"><span class="lbl">Dividends after tax</span><span class="amt">£33,701.00</span></div></div><p class="aside">Remember the company has already paid Corporation Tax on the profit these dividends come from: 19% on profits up to £50,000, 25% on profits over £250,000, and an effective 26.5% on each pound in between because of marginal relief.</p></div>
+      </details>
+      <p class="print-only">Calculated at sjecapital.co.uk/dividend-tax-calculator. Illustrative, not advice. SJE Capital Limited, company no. 15837169.</p>
+      <p class="related">Deciding how much salary to take alongside dividends? Use the <a href="/take-home-calculator">director take-home calculator</a>, or read <a href="/blog/director-salary-dividends-2026-27">why £12,570 is usually the right salary, and when it is not</a>.</p>
+      <p class="feedback">Spotted something that looks wrong? <a href="mailto:spencer@sjecapital.co.uk?subject=Calculator%20feedback%3A%20Dividend%20tax">Tell us</a> and we will check it straight away.</p>
+    </div>
+  </div>
+</main>
+
+<div class="cta-band">
+  <div class="wrap">
+    <h2>Want the dividends done properly?</h2>
+    <p>Every SJE Capital plan covers the salary and dividend mix, the paperwork for each dividend, and your Self Assessment return, with the January bill forecast months ahead. Free initial conversation.</p>
+    <a class="btn" href="/#contact">Get a free consultation</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 SJE Capital Limited. Registered in England &amp; Wales, company no. 15837169. Based in Hampshire, serving companies across the UK.</span>
+    <span>ICB Certified · Xero Certified Advisor · CIMA Dip MA · <a href="https://www.linkedin.com/company/sje-capital-limited" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+  </div>
+</footer>
+<script>
+(function(){
+  var PA_FULL=12570, UK={tops:[37700,125140,Infinity],rates:[0.2,0.4,0.45]}, SCOT={tops:[3967,16956,31092,62430,112570,Infinity],rates:[0.19,0.20,0.21,0.42,0.45,0.48]},
+      DIV={tops:[37700,125140,Infinity],rates:[0.1075,0.3575,0.3935]}, DIV_ALLOW=500, CB1=27.05, CBN=17.90;
+  function r2(x){ return Math.round((x+(x>=0?1e-9:-1e-9))*100)/100; }
+  var fmt=function(n){ var v=Math.abs(n)<0.005?0:n; return (v<0?'\u2212':'')+'£'+Math.abs(v).toLocaleString('en-GB',{minimumFractionDigits:2,maximumFractionDigits:2}); };
+  var fmtR=function(n){ return '£'+Math.round(n).toLocaleString('en-GB'); };
+  var fmtX=function(n){ var s=(Math.round(n*10000)/10000).toLocaleString('en-GB',{minimumFractionDigits:2,maximumFractionDigits:4}); return '£'+s; };
+  var pct=function(r){ return (r*100).toFixed(2).replace(/\.?0+$/,'')+'%'; };
+  function personalAllowance(ani){ return ani<=100000 ? PA_FULL : Math.max(0, r2(PA_FULL-(ani-100000)/2)); }
+  function bandTax(amount,pos,b){ var t=0,parts=[0,0,0,0,0,0],rem=amount,p=pos; for(var i=0;i<b.tops.length;i++){ var room=Math.max(0,b.tops[i]-p),amt=Math.min(rem,room); parts[i]=amt; t=r2(t+r2(amt*b.rates[i])); p+=amt; rem-=amt; if(rem<=0) break; } return {tax:t,parts:parts,pos:p}; }
+  function hicbc(ani,kids){ if(!kids||ani<=60000) return 0; var cb=(CB1+CBN*(kids-1))*52; return r2(cb*Math.min(100,Math.floor((ani-60000)/200))/100); }
+  function set(id,v){ var e=document.getElementById(id); if(e) e.textContent=v; }
+  function show(id,on){ var e=document.getElementById(id); if(e) e.hidden=!on; }
+  function num(id){ return Math.max(0,+String(document.getElementById(id).value).replace(/[^\d.]/g,'')||0); }
+  function fmtInput(e){ var v=String(e.value).replace(/[^\d.]/g,''), i=v.indexOf('.'), ip=i<0?v:v.slice(0,i), dp=i<0?null:v.slice(i+1).replace(/\./g,'').slice(0,2); ip=ip.replace(/^0+(?=\d)/,''); var out=ip?(+ip).toLocaleString('en-GB'):(dp!==null?'0':''); if(dp!==null) out+='.'+dp; e.value=out; }
+  document.querySelectorAll('input.money').forEach(function(e){ if(!e.parentElement.classList.contains('money-wrap')){ var w=document.createElement('span'); w.className='money-wrap'; e.parentNode.insertBefore(w,e); w.appendChild(e); } fmtInput(e); e.addEventListener('input',function(){ fmtInput(e); }); });
+  function wrow(label,amt,cls,small){ return '<div'+(cls?' class="'+cls+'"':'')+'><span class="lbl">'+label+(small?'<small>'+small+'</small>':'')+'</span><span class="amt">'+amt+'</span></div>'; }
+  var M='\u2212';
+
+  function calc(sal,div,other,region,kids,penNet,method,planT,pg){
+    var employer=method==='employer', ras=method==='ras', penGross=ras?r2(penNet/0.8):penNet, ext=ras?penGross:0; if(method==='netpay') sal=Math.max(0,sal-penGross);
+    var B0=region==='scot'?SCOT:UK, B={tops:B0.tops.map(function(t,i){ return t===Infinity?t:t+ext; }),rates:B0.rates};
+    var DIVX={tops:DIV.tops.map(function(t){ return t===Infinity?t:t+ext; }),rates:DIV.rates};
+    var ani=other+sal+div-(ras?penGross:0), pa=personalAllowance(ani); var ctSaveLo=employer?r2(penNet*0.19):0, ctSaveHi=employer?r2(penNet*0.25):0, ctSaveMid=employer?r2(penNet*0.265):0;
+    var nonDiv=other+sal, ndTaxable=Math.max(0,nonDiv-pa), paLeft=Math.max(0,pa-nonDiv);
+    var it=bandTax(ndTaxable,0,B), itFull=bandTax(Math.max(0,nonDiv-PA_FULL),0,B), extraIT=Math.max(0,it.tax-itFull.tax);
+    var divTaxable=Math.max(0,div-paLeft), allow=Math.min(DIV_ALLOW,divTaxable), freePA=Math.min(div,paLeft);
+    var dt=bandTax(divTaxable-allow, ndTaxable+allow, DIVX);
+    var cbAll=hicbc(ani,kids), cbBase=hicbc(Math.max(0,other+sal-(ras?penGross:0)),kids), cb=Math.max(0,cbAll-cbBase);
+    var basicTop=37700+ext, used=ndTaxable+allow+dt.parts[0], room=Math.max(0, basicTop-used);
+    if(divTaxable-allow>basicTop-ndTaxable-allow) room=0;
+    var totalInc=other+sal+div, unearned=other+div, sl=0, slPaye=0, pgAmt=0;
+    if(planT&&unearned>2000){ sl=r2(Math.max(0,totalInc-planT)*0.09); slPaye=r2(Math.max(0,sal-planT)*0.09); sl=Math.max(0,r2(sl-slPaye)); }
+    if(pg&&unearned>2000){ pgAmt=r2(Math.max(0,totalInc-21000)*0.06)-r2(Math.max(0,sal-21000)*0.06); pgAmt=Math.max(0,pgAmt); }
+    var slTotal=sl+pgAmt;
+    return {ani:ani,pa:pa,ndTaxable:ndTaxable,paLeft:paLeft,freePA:freePA,allow:allow,dt:dt,cb:cb,tax:dt.tax+cb+extraIT,extraIT:extraIT,room:room,it:it,penGross:penGross,ext:ext,basicTop:basicTop,ras:ras,employer:employer,ctSaveLo:ctSaveLo,ctSaveHi:ctSaveHi,ctSaveMid:ctSaveMid,sl:slTotal,slMain:sl,slPG:pgAmt,totalInc:totalInc};
+  }
+  function render(){
+    var sal=num('salary'), div=num('div'), other=num('other'), region=document.getElementById('region').value, kids=+document.getElementById('kids').value, penNet=num('pension'), method=document.getElementById('pen-method').value, planT=+document.getElementById('plan').value, pg=document.getElementById('pg').checked;
+    var r=calc(sal,div,other,region,kids,penNet,method,planT,pg), r0=calc(sal,div,other,region,kids,0,method,planT,pg), penSave=Math.max(0,(r0.tax+r0.sl)-(r.tax+r.sl));
+    set('tax',fmt(r.tax)); set('o-div',fmt(div)); set('o-allow',fmt(r.freePA+r.allow)); set('o-basic',fmt(r.dt.parts[0])+' \u2192 '+fmt(r2(r.dt.parts[0]*0.1075))); set('o-higher',fmt(r.dt.parts[1])+' \u2192 '+fmt(r2(r.dt.parts[1]*0.3575))); set('o-add',fmt(r.dt.parts[2])+' \u2192 '+fmt(r2(r.dt.parts[2]*0.3935))); set('o-cb',fmt(r.cb)); set('o-sl',fmt(r.sl)); set('o-net',fmt(div-r.tax-r.sl)); set('o-net-l', r.sl?' and loan repayments':'');
+    show('r-basic',r.dt.parts[0]>0); show('r-higher',r.dt.parts[1]>0); show('r-add',r.dt.parts[2]>0); show('r-cb',r.cb>0); show('r-sl',r.sl>0); show('r-xit',r.extraIT>0); set('o-xit',fmt(r.extraIT));
+    set('tax',fmt(r.tax+r.sl)); set('tax-label', (r.tax+r.sl)>0 ? 'to pay through Self Assessment'+((r.sl||r.extraIT)?' (dividend tax '+fmt(r.dt.tax)+(r.extraIT?' plus '+fmt(r.extraIT)+' extra Income Tax on salary':'')+(r.cb?' plus '+fmt(r.cb)+' Child Benefit charge':'')+(r.sl?' plus '+fmt(r.sl)+' of student loan':'')+')':'')+', '+pct(div?(r.tax+r.sl)/div:0)+' of your dividends' : (div>0?'to pay: your dividends are covered by allowances':'to pay: enter the dividends you plan to take above'));
+    show('r-pen', penNet>0&&!r.employer); set('o-pensave',fmt(penSave));
+    show('o-pen', penNet>0&&!r.employer);
+    if(penNet>0&&!r.employer){ set('o-pen', r.ras
+      ? 'How your pension changes the bill: without the contribution you would pay '+fmt(r0.tax+r0.sl)+'; with it you pay '+fmt(r.tax+r.sl)+', a saving of '+fmt(penSave)+'. Your '+fmt(penNet)+' becomes '+fmt(r.penGross)+' in the pension with the provider\'s 20% added, and HMRC moves your higher rate threshold from '+fmtR(50270)+' to '+fmtR(50270+r.ext)+' of total income, so '+fmt(Math.min(r.ext, Math.max(0,r0.dt.parts[1]+r0.dt.parts[2])))+' more of your dividends are taxed at 10.75% instead of 35.75%'+(kids&&r0.cb>r.cb?', and less Child Benefit is clawed back':'')+'.'
+      : 'How your pension changes the bill: without the contribution you would pay '+fmt(r0.tax+r0.sl)+'; with it you pay '+fmt(r.tax+r.sl)+', a saving of '+fmt(penSave)+'. The '+fmt(penNet)+' comes off your salary before tax, so your taxable salary falls to '+fmt(Math.max(0,sal-penNet))+', which frees up allowance and band for your dividends'+(penSave===0?'. At a £12,570 salary there is no Income Tax to save, so the benefit here is nil; a personal or employer contribution would do more':'')+'.'); }
+    show('o-emp', r.employer&&penNet>0); if(r.employer&&penNet>0) set('o-emp','Your '+fmt(penNet)+' employer pension contribution does not appear above because it has no effect on your personal tax. It saves the company Corporation Tax of '+fmt(r.ctSaveLo)+' if its profits are up to £50,000 (19%), '+fmt(r.ctSaveMid)+' if they are between £50,000 and £250,000 (an effective 26.5% because of marginal relief), or '+fmt(r.ctSaveHi)+' above £250,000 (25%), and carries no National Insurance. To see the company side in full, use the <a href="/take-home-calculator">director take-home calculator</a>.'); document.getElementById('o-emp').innerHTML=document.getElementById('o-emp').textContent;
+    var rM=calc(sal,div+100,other,region,kids,penNet,method,planT,pg), mp=(Math.round(((rM.tax+rM.sl)-(r.tax+r.sl))*100)/100).toString();
+    set('o-eff', div>0 ? 'Every extra £1 of dividend above this level costs you '+mp+'p'+(r.sl||rM.sl?' in tax and student loan':' in tax')+(rM.extraIT>r.extraIT?', because each extra pound also removes 50p of your Personal Allowance':'')+(rM.cb>r.cb?', including lost Child Benefit':'')+'.' : '');
+    var over=r.dt.parts[1]+r.dt.parts[2], inAdd=r.dt.parts[2], posEnd=r.ndTaxable+Math.max(0,div-r.paLeft), roomAdd=Math.max(0,125140+r.ext-posEnd), HT=fmtR(50270+r.ext), AT=fmtR(125140+r.ext);
+    var ladder=' The three dividend rates for 2026/27: 10.75% (basic rate, total income up to '+HT+'), 35.75% (higher rate, up to '+AT+'), 39.35% (additional rate, above '+AT+').'+(r.ext?' Your pension contributions have moved these thresholds up by '+fmt(r.ext)+'.':'');
+    if(r.room>0){ set('room',fmt(r.room)); set('room-title','more dividend you could take at 10.75% before the higher rate of 35.75%'); set('room-sub','Your dividends are all in the basic rate band at 10.75%. You could take another '+fmt(r.room)+' (up to '+fmt(div+r.room)+' in total) at that rate. After that, dividends are taxed at 35.75%, and anything above '+AT+' of total income at 39.35%.'+ladder); }
+    else if(over<=0){ set('room',fmt(0)); set('room-title','left at 10.75%. Your next £1 of dividend is taxed at 35.75%'); set('room-sub','Your salary'+(other?', other income':'')+' and dividends reach the '+HT+' higher rate threshold to the pound, so you have used every pound of the basic rate band. From here dividends are taxed at 35.75% (higher rate) for the next '+fmt(roomAdd)+', then 39.35% (additional rate) above '+AT+' of total income.'+ladder); }
+    else if(inAdd<=0){ set('room',fmt(over)); set('room-title','of your dividends are taxed at the higher rate of 35.75%'); set('room-sub','Your salary'+(other?', other income':'')+' and dividends pass the '+HT+' threshold by '+fmt(over)+'. That slice is taxed at 35.75% instead of 10.75%. You could take another '+fmt(roomAdd)+' at 35.75% before reaching the additional rate of 39.35% at '+AT+' of total income. Taking '+fmt(over)+' less, leaving it in the company or paying it into a pension, would keep everything at 10.75%.'+ladder); }
+    else { set('room',fmt(inAdd)); set('room-title','of your dividends are taxed at the additional rate of 39.35%, the highest rate'); set('room-sub','Your total income passes '+AT+', so '+fmt(inAdd)+' of dividends are taxed at 39.35%, '+fmt(r.dt.parts[1])+' at 35.75% and '+fmt(r.dt.parts[0])+' at 10.75%. Above £100,000 your Personal Allowance is also being withdrawn, which is why the tax bill climbs so steeply here. Leaving profit in the company or making pension contributions would bring the rate down.'+ladder); }
+    // schedule
+    var liab=r.tax, poa=liab>1000?liab/2:0, h='', intro, slNote=r.sl?' plus '+fmt(r.sl)+' of student loan repayment (not included in payments on account)':'';
+    if(liab<=0&&r.sl<=0){ intro='No dividend tax to pay this year, but you should still expect to file a Self Assessment return as a director.'; }
+    else if(liab<=0){ intro='No dividend tax, but your student loan repayment is due through Self Assessment.'; h=schedRow('31 January 2028',fmt(r.sl),'Student loan repayment on your dividends for 2026/27.'); }
+    else if(!poa){ intro='Your bill is under £1,000, so there are no payments on account: one payment covers it.'; h=schedRow('31 January 2028',fmt(liab+r.sl),'Dividend tax for 2026/27'+slNote+', paid with your Self Assessment return.'); }
+    else { intro='Because the bill is over £1,000, HMRC also asks for payments on account towards next year. If this is your first year in Self Assessment:';
+      h=schedRow('31 January 2028',fmt(liab+poa+r.sl),'The full '+fmt(liab)+' for 2026/27'+slNote+', plus a first payment on account of '+fmt(poa)+' towards 2027/28.')
+       +schedRow('31 July 2028',fmt(poa),'Second payment on account towards 2027/28.')
+       +schedRow('31 January 2029 onwards','','The balance for 2027/28 plus the first payment on account for 2028/29. The pattern then repeats each year. If you already pay on account, HMRC will have collected estimates in 2027 and you settle only the difference.'); }
+    set('s-intro',intro); document.getElementById('sched').innerHTML=h;
+    // workings
+    var regionName=region==='scot'?'Scottish':'UK';
+    var w='<div class="wk">'
+      +wrow('Total income',fmt(r.ani),'',fmt(sal)+' salary'+(other?' + '+fmt(other)+' other income':'')+' + '+fmt(div)+' dividends')
+      +(penNet&&r.ras?wrow('Personal pension contributions, grossed up',fmt(r.penGross),'',fmt(penNet)+' paid ÷ 0.8, because the provider adds 20% relief. Extends your basic and higher rate bands by '+fmt(r.ext)+' and reduces income counted for the allowance taper and Child Benefit'):'')
+      +(penNet&&method==='netpay'?wrow('Pension taken from salary before tax',M+fmt(penNet),'','net pay arrangement: relief is immediate and there is no band extension, so your taxable salary becomes '+fmt(Math.max(0,sal-penNet))):'')
+      +(penNet&&r.employer?wrow('Employer pension contribution from the company',fmt(penNet),'info','no personal tax or National Insurance; saves the company '+fmt(r.ctSaveLo)+' (19%, profits up to £50,000), '+fmt(r.ctSaveMid)+' (effective 26.5%, profits £50,000 to £250,000) or '+fmt(r.ctSaveHi)+' (25%, over £250,000)'):'')
+      +wrow('Personal Allowance',fmt(r.pa),'',r.pa<PA_FULL?'reduced by £1 for every £2 over £100,000':'used first by salary'+(other?' and other income':''))
+      +wrow('Salary'+(other?' and other income':'')+' that is taxable',fmt(r.ndTaxable),'sub',fmt(sal+other)+' '+M+' '+fmt(Math.min(sal+other,r.pa))+' allowance ('+regionName+' rates, paid via payroll or elsewhere, not shown here)')
+      +(r.freePA>0?wrow('Dividends covered by unused Personal Allowance',fmt(r.freePA),'','your salary'+(other?' and other income':'')+' did not use all of the '+fmt(r.pa)+' allowance, so this slice of dividends is tax-free'):'')
+      +wrow('Dividend allowance',fmt(r.allow),'','first '+fmt(r.allow)+' of the remaining dividends at 0%')
+      +(r.dt.parts[0]?wrow('Basic rate dividends',fmt(r.dt.parts[0])+' \u00d7 10.75% = '+fmt(r2(r.dt.parts[0]*0.1075)),'','the basic rate band ends at '+fmtR(r.basicTop)+' of taxable income'+(r.ext?' after your pension extension':'')):'')
+      +(r.dt.parts[1]?wrow('Higher rate dividends',fmt(r.dt.parts[1])+' \u00d7 35.75% = '+fmt(r2(r.dt.parts[1]*0.3575)),'','between '+fmtR(r.basicTop)+' and '+fmtR(125140+r.ext)+' of taxable income'):'')
+      +(r.dt.parts[2]?wrow('Additional rate dividends',fmt(r.dt.parts[2])+' \u00d7 39.35% = '+fmt(r2(r.dt.parts[2]*0.3935)),'','above '+fmtR(125140+r.ext)+' of taxable income'):'')
+      +(kids?wrow('Child Benefit charge',fmt(r.cb),'',fmt((CB1+CBN*(kids-1))*52)+' a year of benefit, '+Math.min(100,Math.max(0,Math.floor((r.ani-60000)/200)))+'% clawed back at income '+fmt(r.ani)+(r.cb<hicbc(r.ani,kids)?'; only the part caused by dividends is shown':'')):'')
+      +(r.sl?wrow('Student loan repayment via Self Assessment',fmt(r.sl),'',(r.slMain?'9% of ('+fmt(r.totalInc)+' '+M+' '+fmtR(planT)+')'+(sal>planT?' less '+fmt(Math.max(0,sal-planT)*0.09)+' already taken through payroll':'')+' = '+fmt(r.slMain):'')+(r.slMain&&r.slPG?'; ':'')+(r.slPG?'Postgraduate 6% above £21,000 = '+fmt(r.slPG):'')+'. Unearned income over £2,000, so dividends count'):'')
+      +(penNet&&!r.employer?wrow('Saved by your pension contribution',fmt(penSave),'info','tax without the contribution '+fmt(r0.tax+r0.sl)+' '+M+' with it '+fmt(r.tax+r.sl)):'')
+      +(r.extraIT>0?wrow('Extra Income Tax on your salary',fmt(r.extraIT),'','your total income is over £100,000, so your Personal Allowance falls to '+fmt(r.pa)+'. Payroll assumed the full £12,570, so the extra tax on your salary ('+fmt(r.it.tax)+' '+M+' '+fmt(r.it.tax-r.extraIT)+' already collected) is due through Self Assessment'):'')
+      +wrow('Tax to pay through Self Assessment',fmt(r.tax),'tot',r.extraIT>0?'dividend tax'+(r.cb?', Child Benefit charge':'')+' and extra Income Tax on salary':'')
+      +(r.sl?wrow('Total due through Self Assessment',fmt(r.tax+r.sl),'sub','dividend tax plus student loan'):'')
+      +wrow('Dividends after tax'+(r.sl?' and loan repayments':''),fmt(div-r.tax-r.sl),'sub')
+      +'</div><p class="aside">Remember the company has already paid Corporation Tax on the profit these dividends come from: 19% on profits up to £50,000, 25% on profits over £250,000, and an effective 26.5% on each pound in between because of marginal relief.</p>';
+    document.getElementById('workings').innerHTML=w;
+  }
+  function schedRow(date,amt,note){ return '<div class="sched-row"><strong>'+date+'</strong><p>'+note+'</p><span>'+amt+'</span></div>'; }
+  ['salary','div','other','pension'].forEach(function(id){ document.getElementById(id).addEventListener('input',render); });
+  ['kids','region','pen-method','plan','pg'].forEach(function(id){ document.getElementById(id).addEventListener('change',render); });
+  document.getElementById('print').addEventListener('click',function(){ document.querySelector('details.workings').open=true; window.print(); });
+
+  // ---- brand select: enhances every <select> in the inputs ----
+  (function(){
+    document.querySelectorAll('.calc-input select').forEach(function(sel){
+      var wrap=document.createElement('div'); wrap.className='bs'; sel.parentNode.insertBefore(wrap,sel); wrap.appendChild(sel);
+      var btn=document.createElement('button'); btn.type='button'; btn.className='bs-btn'; btn.setAttribute('aria-haspopup','listbox'); btn.setAttribute('aria-expanded','false');
+      var list=document.createElement('div'); list.className='bs-list'; list.hidden=true; list.setAttribute('role','listbox');
+      wrap.appendChild(btn); wrap.appendChild(list);
+      function label(){ var o=sel.options[sel.selectedIndex]; btn.textContent=o?o.textContent:''; }
+      function build(){ list.innerHTML=''; Array.prototype.forEach.call(sel.options,function(o,i){ if(o.disabled) return; var b=document.createElement('button'); b.type='button'; b.setAttribute('role','option'); b.textContent=o.textContent; if(i===sel.selectedIndex) b.className='sel'; b.addEventListener('click',function(){ sel.selectedIndex=i; sel.dispatchEvent(new Event('change')); label(); close(); btn.focus(); }); list.appendChild(b); }); }
+      function open(){ build(); list.hidden=false; wrap.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+      function close(){ list.hidden=true; wrap.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+      btn.addEventListener('click',function(){ list.hidden?open():close(); });
+      btn.addEventListener('keydown',function(e){ if(e.key==='ArrowDown'||e.key==='ArrowUp'){ e.preventDefault(); var n=sel.selectedIndex+(e.key==='ArrowDown'?1:-1); while(sel.options[n]&&sel.options[n].disabled) n+=(e.key==='ArrowDown'?1:-1); if(sel.options[n]){ sel.selectedIndex=n; sel.dispatchEvent(new Event('change')); label(); if(!list.hidden) build(); } } if(e.key==='Escape') close(); });
+      document.addEventListener('click',function(e){ if(!wrap.contains(e.target)) close(); });
+      sel.addEventListener('change',label);
+      label();
+    });
+  })();
+  render();
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "00529846a08f42db871a69a17e005ffd"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

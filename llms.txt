@@ -1,0 +1,34 @@
+# SJE Capital
+
+> SJE Capital Limited (company no. 15837169) is a UK accountancy and bookkeeping practice for limited companies and their directors: bookkeeping, year-end accounts, Corporation Tax, VAT, payroll, director pay planning and directors' Self Assessment, for a fixed monthly fee. Based in Hampshire and working remotely with growing limited companies across the UK. Founded and run by Spencer Elbert. Credentials: ICB Certified, Xero Certified Advisor, CIMA Dip MA, HMRC recognised agent. All figures on this site are for the 2026/27 UK tax year, verified against HMRC and GOV.UK, with the full calculation shown.
+
+## Services
+- [Switching accountants](https://www.sjecapital.co.uk/switching-accountants): how a limited company switches accountant, what is needed, how long it takes and what it costs.
+- [Xero bookkeeping](https://www.sjecapital.co.uk/xero-bookkeeping): monthly Xero bookkeeping, VAT under Making Tax Digital, payroll and moving to Xero.
+
+## Free calculators (2026/27)
+- [All free calculators and references](https://www.sjecapital.co.uk/resources): the hub page listing every calculator, the tax rates page and the key dates page.
+- [Director take-home calculator](https://www.sjecapital.co.uk/take-home-calculator): salary plus dividends compared with all salary for a limited company director, with pension, other income, student loans, Child Benefit and Scottish rates.
+- [Dividend tax calculator](https://www.sjecapital.co.uk/dividend-tax-calculator): dividend tax band by band at 10.75%, 35.75% and 39.35%, headroom before the higher rate, and the Self Assessment payment dates.
+- [Salary take-home calculator](https://www.sjecapital.co.uk/salary-calculator): an employee's take-home pay and the full cost to the employer.
+- [Sole trader vs limited company calculator](https://www.sjecapital.co.uk/sole-trader-vs-limited-company-calculator): tax and take-home both ways, with a break-even for how much profit to leave in a company.
+- [Pension vs dividends calculator](https://www.sjecapital.co.uk/pension-vs-dividends-calculator): company pension contributions compared with taking dividends and investing, after all taxes.
+- [First-year deadlines calculator](https://www.sjecapital.co.uk/first-year-deadlines-calculator): every first-year filing and payment date for a new UK company from its incorporation date.
+- [Where do my taxes go? calculator](https://www.sjecapital.co.uk/where-do-my-taxes-go): a person's 2026/27 Income Tax and National Insurance (and dividend tax for directors), split across 15 areas of public spending using HM Treasury's 2024/25 split, the latest published and the one HMRC uses in its Annual Tax Summary. The split is not a 2026/27 figure, which cannot be published until after that year ends.
+- [Compound interest calculator](https://www.sjecapital.co.uk/compound-interest-calculator): growth of savings or investments with optional monthly deposits.
+
+## Reference
+- [UK tax rates 2026/27](https://www.sjecapital.co.uk/tax-rates): Income Tax, National Insurance, dividends, Corporation Tax (19%, effective 26.5% marginal, 25%), VAT and Capital Gains Tax, sourced from GOV.UK.
+- [Key tax dates and deadlines](https://www.sjecapital.co.uk/key-dates): recurring UK deadlines for companies, directors and employers.
+
+## Guides
+- [Should your company pay into your pension? Employer contributions explained](https://www.sjecapital.co.uk/blog/company-pension-contributions-directors): How employer pension contributions work for UK company directors in 2026/27: the £60,000 allowance, carry forward, the wholly and exclusively test and timing.
+- [Director salary and dividends 2026/27: the £12,570 answer, and when it is wrong](https://www.sjecapital.co.uk/blog/director-salary-dividends-2026-27): The most tax-efficient way to pay yourself as a UK company director in 2026/27: why £12,570 plus dividends usually wins, the worked numbers, and when it is wrong.
+- [Do I need to register for VAT? The £90,000 question](https://www.sjecapital.co.uk/blog/do-i-need-to-register-for-vat): When UK businesses must register for VAT, how the £90,000 rolling threshold works, the 30-day deadline, overseas sales, and when registering voluntarily pays.
+- [Just incorporated? Your first 90 days as a company director](https://www.sjecapital.co.uk/blog/first-90-days-company-director): Just formed a UK limited company? The registrations, payroll, bank account, deadlines and dividends to sort in your first 90 days, and the mistakes to avoid.
+- [Limited company expenses: what you can and cannot put through in 2026/27](https://www.sjecapital.co.uk/blog/limited-company-expenses-2026-27): What a UK limited company can and cannot claim in 2026/27: the new 55p mileage rate, home working, phones, trivial benefits and entertaining.
+- [Sole trader or limited company in 2026/27? The honest numbers, and they have changed](https://www.sjecapital.co.uk/blog/sole-trader-vs-limited-company-2026-27): Does a limited company still save tax in 2026/27? We run the numbers at eight profit levels. If you draw everything out, a sole trader now often keeps more.
+
+## Contact
+- [LinkedIn](https://www.linkedin.com/company/sje-capital-limited): SJE Capital on LinkedIn.
+- [Free consultation](https://www.sjecapital.co.uk/#contact): spencer@sjecapital.co.uk, Monday to Friday, 9am to 6pm.

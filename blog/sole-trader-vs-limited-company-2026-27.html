@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<link rel="preload" href="/logo-header.svg" as="image" type="image/svg+xml" fetchpriority="high">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>Sole trader vs limited company 2026/27 | SJE Capital</title>
+<meta property="og:image" content="https://www.sjecapital.co.uk/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Does a limited company still save tax in 2026/27? We run the numbers at eight profit levels. If you draw everything out, a sole trader now often keeps more.">
+<link rel="canonical" href="https://www.sjecapital.co.uk/blog/sole-trader-vs-limited-company-2026-27">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta property="og:site_name" content="SJE Capital">
+<meta property="og:type" content="article">
+<link rel="icon" href="../favicon-512.png" type="image/png" sizes="512x512">
+<meta property="og:title" content="Sole trader or limited company in 2026/27? The honest numbers, and they have changed">
+<meta property="og:description" content="The old incorporate-and-save-thousands advice no longer holds. Real 2026/27 numbers at eight profit levels, with workings.">
+<meta property="og:url" content="https://www.sjecapital.co.uk/blog/sole-trader-vs-limited-company-2026-27">
+<link rel="preload" href="/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/eb-garamond.woff2" as="font" type="font/woff2" crossorigin>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Sole trader or limited company in 2026/27? The honest numbers, and they have changed",
+  "description": "Sole trader versus limited company take-home compared at eight profit levels for 2026/27, with full workings and the non-tax reasons that now decide it.",
+  "datePublished": "2026-09-09",
+  "dateModified": "2026-09-24T12:00:00+01:00",
+  "author": {"@type": "Person", "name": "Spencer Elbert", "jobTitle": "Founder", "url": "https://www.sjecapital.co.uk/#about", "sameAs": ["https://www.linkedin.com/in/spencerelbert/"], "worksFor": {"@type": "Organization", "name": "SJE Capital Limited", "url": "https://www.sjecapital.co.uk/"}, "hasCredential": [{"@type": "EducationalOccupationalCredential", "name": "ICB Certified Bookkeeper"}, {"@type": "EducationalOccupationalCredential", "name": "Xero Certified Advisor"}, {"@type": "EducationalOccupationalCredential", "name": "CIMA Diploma in Management Accounting"}]},
+  "publisher": { "@type": "Organization", "name": "SJE Capital Limited", "url": "https://www.sjecapital.co.uk" },
+  "mainEntityOfPage": "https://www.sjecapital.co.uk/blog/sole-trader-vs-limited-company-2026-27"
+}
+</script>
+<style>
+  @font-face{ font-family:"EB Garamond"; src:url(/fonts/eb-garamond.woff2) format("woff2"); font-weight:500 700; font-style:normal; font-display:swap; }
+  @font-face{ font-family:"Source Serif 4"; src:url(/fonts/source-serif-4.woff2) format("woff2"); font-weight:400 700; font-style:normal; font-display:swap; }
+
+  :root{ color-scheme:light;
+    --ink:#14382B; --ink-soft:#2A5340; --leaf:#1E6B4A; --leaf-deep:#155238;
+    --paper:#F2F5EF; --paper-hi:#FBFCF9; --rule:#C7D4C6; --rule-soft:#DCE5DA; --focus:#0E8A5F;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  body{ font-family:"Source Serif 4", Georgia, serif; background:var(--paper); color:var(--ink); font-size:1.0625rem; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3{ font-family:"EB Garamond", Georgia, serif; }
+  a{ color:var(--leaf); text-decoration-thickness:1px; text-underline-offset:3px; }
+  a:hover{ color:var(--leaf-deep); }
+  :focus-visible{ outline:3px solid var(--focus); outline-offset:3px; border-radius:2px; }
+  .wrap{ max-width:1060px; margin:0 auto; padding:0 24px; }
+  header{ background:var(--ink); border-bottom:1px solid #2A5340; }
+  .masthead{ display:flex; align-items:center; justify-content:space-between; gap:24px; padding:18px 24px; max-width:1060px; margin:0 auto; }
+  .wordmark{ display:flex; align-items:center; text-decoration:none; }
+  nav{ display:flex; gap:26px; align-items:center; }
+  nav a{ color:#DCE8DE; text-decoration:none; font-size:.9375rem; font-weight:500; border-bottom:2px solid transparent; padding-bottom:2px; }
+  nav a:hover{ border-bottom-color:#9FD8B7; color:#fff; }
+  .nav-cta{ background:var(--paper-hi); color:var(--ink) !important; padding:9px 18px 10px; border-radius:3px; border-bottom:none !important; }
+  .nav-cta:hover{ background:#fff; color:var(--leaf-deep) !important; }
+  @media (max-width:760px){
+    .masthead{ flex-direction:column; align-items:center; gap:16px; padding-top:18px; padding-bottom:18px; }
+    .wordmark{ justify-content:center; }
+    nav{ width:100%; justify-content:center; gap:10px 18px; flex-wrap:wrap; align-items:center; }
+    nav a{ padding:4px 0; font-size:.9rem; }
+    .nav-cta{ flex:1 0 100%; text-align:center; margin-top:6px; padding:12px 16px 13px; }
+  }
+  .page-head{ padding-top:64px; padding-bottom:10px; }
+  h1{ font-size:clamp(2rem, 4.5vw, 3rem); font-weight:600; letter-spacing:-.015em; }
+  .page-head p{ color:var(--ink-soft); margin-top:10px; max-width:60ch; }
+  .dates{ padding-top:34px; padding-bottom:60px; }
+  .dates{ display:grid; grid-template-columns:1fr 1fr; gap:0 64px; align-items:start; }
+  .dates > h2, .timeline-wrap, .timeline-note, .disclaimer{ grid-column:1 / -1; }
+  .date-block:last-child{ grid-column:1 / -1; }
+  @media (max-width:820px){ .dates{ grid-template-columns:1fr; } }
+
+  .date-block{ border-top:2px solid var(--ink); padding:24px 4px 26px; }
+  .date-block + .date-block{ border-top:1px solid var(--rule); }
+  .date-block h2{ font-size:1.4rem; font-weight:600; margin-bottom:12px; }
+  .date-block dl div{ display:grid; grid-template-columns:minmax(0,200px) 1fr; gap:18px; padding:9px 0; border-bottom:1px solid var(--rule-soft); }
+  .date-block dt{ font-weight:600; font-size:.9875rem; }
+  .date-block dd{ font-size:.9875rem; color:var(--ink-soft); max-width:64ch; }
+  @media (max-width:600px){ .date-block dl div{ grid-template-columns:1fr; gap:2px; } }
+  .timeline-wrap{ overflow-x:auto; margin:18px 0 40px; }
+  .timeline-wrap svg{ min-width:760px; width:100%; height:auto; display:block; }
+  .timeline-note{ font-size:.875rem; color:var(--ink-soft); margin:-18px 0 40px; }
+  .disclaimer{ max-width:78ch; font-size:.875rem; color:var(--ink-soft); border:1px solid var(--rule); border-left:3px solid var(--leaf); background:var(--paper-hi); padding:14px 18px; margin-bottom:34px; }
+  .cta-band{ background:var(--ink); color:var(--paper-hi); padding:48px 0 54px; }
+  .cta-band h2{ color:#fff; font-size:1.6rem; margin-bottom:8px; }
+  .cta-band p{ color:#CBDACD; margin-bottom:22px; max-width:56ch; }
+  .btn{ display:inline-block; background:var(--paper-hi); color:var(--ink); text-decoration:none; padding:13px 24px 14px; font-weight:600; border-radius:3px; }
+  .btn:hover{ background:#fff; color:var(--leaf-deep); }
+  footer{ background:var(--ink); color:#9FBFA8; font-size:.875rem; padding:26px 0; border-top:1px solid #2A5340; }
+  footer .wrap{ display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; max-width:1060px; }
+
+  .article-head{ padding-top:60px; padding-bottom:8px; }
+  .article-head .meta{ font-size:.85rem; color:var(--leaf); font-weight:600; letter-spacing:.08em; text-transform:uppercase; margin-bottom:14px; }
+  .article-head h1{ max-width:24ch; }
+  .article-head .standfirst{ font-size:1.2rem; color:var(--ink-soft); margin-top:16px; max-width:58ch; }
+  .article{ padding-top:0; padding-bottom:70px; }
+  .article-body{ max-width:68ch; }
+  .article-body h2{ font-size:1.45rem; font-weight:600; margin:38px 0 12px; }
+  .article-body p{ margin-bottom:16px; }
+  .article-body ul{ margin:0 0 18px 20px; }
+  .article-body li{ margin-bottom:6px; }
+  .article-body .callout{ border-left:3px solid var(--leaf); background:var(--paper-hi); padding:14px 18px; margin:22px 0; }
+  .article-body .callout strong{ display:block; margin-bottom:4px; }
+  .sources{ margin-top:40px; padding-top:18px; border-top:1px solid var(--rule); font-size:.875rem; color:var(--ink-soft); }
+  .back{ display:inline-block; margin-top:34px; font-size:.9375rem; }
+  /* sidebar isolation (stop header nav styles leaking in) */
+  .toc{ display:block; }
+  .toc a{ display:block; border-bottom:none; padding:0; }
+  .toc a:hover{ color:var(--leaf); text-decoration:none; border-bottom:none; }
+  /* clearer break between intro and body */
+  .article-body{ border-top:1px solid var(--rule); padding-top:32px; margin-top:34px; }
+  .article-head .standfirst{ margin-top:18px; }
+  /* quick read toggle */
+  .read-toggle{ display:inline-flex; border:1px solid var(--ink); border-radius:3px; overflow:hidden; margin-top:26px; }
+  .read-toggle button{ font-family:inherit; font-size:.9rem; font-weight:600; padding:8px 16px 9px; background:transparent; color:var(--ink); border:none; cursor:pointer; }
+  .read-toggle button[aria-pressed="true"]{ background:var(--ink); color:var(--paper-hi); }
+  .quick-read{ border:1px solid var(--rule); border-top:2px solid var(--ink); background:var(--paper-hi); padding:26px 28px 28px; margin-top:34px; max-width:68ch; }
+  .quick-read h2{ font-size:1.35rem; font-weight:600; margin-bottom:12px; }
+  .quick-read ul{ list-style:none; margin:0 0 18px; }
+  .quick-read li{ padding:7px 0 7px 18px; position:relative; border-bottom:1px solid var(--rule-soft); font-size:.9875rem; }
+  .quick-read li::before{ content:""; position:absolute; left:0; top:1.05em; width:8px; height:1.5px; background:var(--leaf); }
+  .quick-read .to-full{ font-weight:600; }
+  [hidden]{ display:none !important; }
+  .article-body table{ width:100%; border-collapse:collapse; margin:18px 0 22px; font-size:.9375rem; font-variant-numeric:tabular-nums; }
+  .article-body th, .article-body td{ text-align:right; padding:8px 6px; border-bottom:1px solid var(--rule); }
+  .article-body th:first-child, .article-body td:first-child{ text-align:left; }
+  .article-body thead th{ border-bottom:2px solid var(--ink); font-weight:600; }
+  .article-body td.neg{ color:var(--ink); } .article-body td.pos{ color:var(--leaf); }
+  /* read time with "how we calculate this" hover */
+  .readtime{ position:relative; cursor:help; border-bottom:1px dotted var(--ink-soft); text-transform:none; letter-spacing:0; outline:none; }
+  .readtime::after{
+    content:attr(data-tip); position:absolute; left:0; top:calc(100% + 10px); z-index:5; width:min(320px, 80vw);
+    background:var(--ink); color:var(--paper-hi); font-size:.85rem; line-height:1.5; letter-spacing:0; text-transform:none;
+    padding:12px 14px; border-radius:3px; box-shadow:0 6px 20px rgba(20,56,43,.18); white-space:normal;
+    opacity:0; transform:translateY(-4px); pointer-events:none; transition:opacity .18s ease, transform .18s ease;
+  }
+  .readtime:hover::after, .readtime:focus::after{ opacity:1; transform:none; }
+  .article{ display:grid; grid-template-columns:minmax(0,1fr) 300px; gap:72px; align-items:start; }
+  .article-head h1{ line-height:1.12; }
+  .article-aside{ position:sticky; top:28px; margin-top:64px; }
+  .toc-title{ font-size:.8rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:10px; }
+  .toc{ border-top:2px solid var(--ink); padding-top:14px; margin-bottom:30px; }
+  .toc ol{ list-style:none; }
+  .toc li{ padding:6px 0; border-bottom:1px solid var(--rule-soft); font-size:.9375rem; }
+  .toc a{ color:var(--ink); text-decoration:none; }
+  .toc a:hover{ color:var(--leaf-deep); text-decoration:underline; }
+  .aside-card{ background:var(--ink); color:var(--paper-hi); padding:22px 22px 24px; margin-bottom:30px; }
+  .aside-card strong{ font-family:"EB Garamond", Georgia, serif; font-size:1.25rem; display:block; margin-bottom:8px; }
+  .aside-card p{ font-size:.9375rem; color:#CBDACD; margin-bottom:16px; }
+  .aside-card .btn{ display:block; text-align:center; }
+  .aside-links{ border-top:2px solid var(--ink); padding-top:14px; }
+  .aside-links a{ display:block; padding:6px 0; border-bottom:1px solid var(--rule-soft); font-size:.9375rem; text-decoration:none; color:var(--ink); }
+  .aside-links a:hover{ color:var(--leaf-deep); text-decoration:underline; }
+  @media (max-width:900px){
+    .article{ grid-template-columns:1fr; gap:40px; }
+    .article-aside{ position:static; margin-top:0; }
+    .toc{ display:none; }
+  }
+
+  @media (max-width:760px){
+    .page-head{ padding-top:36px; padding-bottom:6px; }
+    .page-head h1{ font-size:2rem; }
+    .dates{ padding-top:22px; padding-bottom:44px; }
+    .date-block{ padding:20px 0 22px; }
+    .timeline-wrap{ margin:14px 0 22px; }
+    .timeline-note{ margin:0 0 28px; }
+    .disclaimer{ padding:12px 14px; margin-bottom:26px; }
+    .cta-band{ padding:40px 0 44px; }
+    .posts{ padding-top:20px; padding-bottom:56px; }
+    .res-grid{ padding-top:20px; padding-bottom:50px; }
+    .calc-layout{ padding-top:14px; padding-bottom:50px; }
+    .article-head{ padding-top:36px; padding-bottom:6px; }
+    .article-head h1{ font-size:2rem; }
+    .article-body{ padding-top:24px; margin-top:26px; }
+    .quick-read{ padding:20px 18px 22px; }
+    .article{ gap:32px; }
+    footer .wrap{ flex-direction:column; gap:6px; }
+  }
+
+  .article-head .meta .updated{ display:block; margin-top:6px; color:var(--ink-soft); }
+  .byline-author .readtime{ white-space:nowrap; }
+  .updated-line{ font-size:.85rem; color:var(--ink-soft); margin-top:4px; }
+
+  .byline-author{ font-size:.9rem; color:var(--ink-soft); margin-top:14px; }
+  .byline-author a{ color:var(--leaf); font-weight:600; text-decoration:none; }
+  .byline-author a:hover{ text-decoration:underline; }
+  .article-body .faq h3{ font-size:1.1rem; font-weight:600; margin:22px 0 6px; }
+  .article-body .faq p{ margin-top:0; }
+  .author-box{ margin-top:34px; border-top:2px solid var(--ink); background:var(--paper-hi); padding:18px 20px; }
+  .author-box .kicker{ font-size:.8rem; letter-spacing:.08em; text-transform:uppercase; color:var(--leaf); margin-bottom:6px; }
+  .author-box p{ margin:0; font-size:.95rem; line-height:1.6; }
+  .author-box a{ color:var(--leaf); font-weight:600; }
+  footer a{ color:#CBDACD; }
+  footer a:hover{ color:#fff; }
+</style>
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "SJE Capital",
+   "item": "https://www.sjecapital.co.uk/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Blog",
+   "item": "https://www.sjecapital.co.uk/blog"
+  },
+  {
+   "@type": "ListItem",
+   "position": 3,
+   "name": "Sole trader or limited company in 2026/27",
+   "item": "https://www.sjecapital.co.uk/blog/sole-trader-vs-limited-company-2026-27"
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "At what profit does a limited company start to save tax in 2026/27?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "If you take out all of your profit each year, there is no longer a clear profit level at which a company wins on tax alone. The advantage comes from leaving profit in the company, where it is taxed at 19% on the first £50,000, or from paying into a pension through the company. Our calculator finds your personal break-even."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How much more does it cost to run a limited company?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "You need statutory accounts, a Corporation Tax return, payroll and a confirmation statement (£50 a year online), on top of your own tax return. The extra accountancy usually costs several hundred to over a thousand pounds a year."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Do sole traders still pay Class 2 National Insurance?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. Class 2 is no longer compulsory. Sole traders pay Class 4 National Insurance of 6% on profits between £12,570 and £50,270 and 2% above that, and can pay Class 2 voluntarily to protect their State Pension record if their profits are low."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Is limited liability a good reason to incorporate?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "It can be. A company's debts are generally its own, which protects your personal assets, although lenders and landlords often ask directors for personal guarantees. Some clients will only work with limited companies, which can matter as much as tax."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can I start as a sole trader and incorporate later?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. Many businesses do. You set up the company, transfer the business into it and register it for Corporation Tax and PAYE. It is worth getting advice at that point, because how assets are transferred can affect your tax."
+   }
+  }
+ ]
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="masthead">
+    <a class="wordmark" href="/" aria-label="SJE Capital Limited home">
+      <img src="/logo-header.svg" width="272" height="90" alt="" fetchpriority="high">
+    </a>
+    <nav aria-label="Main">
+      <a href="/#about">About</a>
+      <a href="/#services">Services</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/blog">Blog</a>
+      <a href="/resources">Resources</a>
+      <a class="nav-cta" href="/#contact">Get a quote</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap article">
+    <div class="article-main">
+    <div class="article-head">
+    <p class="meta">Business structure</p>
+    <h1>Sole trader or limited company in 2026/27? The honest numbers, and they have changed</h1>
+    <p class="byline-author">By <a href="https://www.linkedin.com/in/spencerelbert/" target="_blank" rel="noopener noreferrer">Spencer Elbert</a> &middot; 9 September 2026 &middot; <span class="readtime" tabindex="0" data-tip="">6 minute read</span></p>
+    <p class="updated-line">Updated 24 September 2026 at 12:00 BST</p>
+    <p class="standfirst">For years the advice was simple: once profits pass £30,000 or so, go limited and save thousands. On this year's rates, that is no longer true if you take the money out. Here are the actual figures at eight profit levels, and the reasons a company still makes sense.</p>
+    <div class="read-toggle" role="group" aria-label="Reading length">
+      <button type="button" data-mode="quick" aria-pressed="false">1-minute read</button>
+      <button type="button" data-mode="full" aria-pressed="true">Full article</button>
+    </div>
+  </div>
+    <div class="quick-read" hidden>
+      <h2>The short version</h2>
+      <ul>
+        <li>If you draw all your profit out each year, a <strong>sole trader now keeps as much or more</strong> than a limited company at every profit level we modelled for 2026/27. At £60,000 it is a dead heat; at £100,000 the sole trader keeps about £4,100 more.</li>
+        <li>Four changes did it: the dividend rate rise to 10.75% and 35.75% this April, the £500 dividend allowance, 15% employer NI on director salaries above £5,000, and sole traders no longer paying Class 2 NI.</li>
+        <li>A limited company <strong>does</strong> win when you leave profit in the company. Retained profit is taxed at 19% on the first £50,000 and at most 26.5% on any extra pound, rather than the 42% or more a higher rate sole trader pays on each extra pound, and you choose when to draw it.</li>
+        <li>It also wins on limited liability, client requirements, employer pension contributions, and income splitting with a spouse.</li>
+        <li>Running a company costs more in accountancy and admin, typically several hundred to over a thousand pounds a year. Factor that in.</li>
+        <li>Honest rule of thumb: incorporate for a non-tax reason, or because you can afford to leave money in the business. Not for a tax saving you will no longer get.</li>
+      </ul>
+      <a class="to-full" href="#">Read the full article &rarr;</a>
+    </div>
+    <div class="article-body">
+      <p>Ask ten business owners why they went limited and eight will say "to save tax". That was often true. The trouble is that the tax system has moved several times since that advice hardened into folklore, and most of the articles you will find online have not moved with it. We ran the numbers on this year's rates. The result surprised even us.</p>
+
+      <h2>What we compared</h2>
+      <p>One person, one business, no other income, England and Wales rates for 2026/27. As a <strong>sole trader</strong> you pay Income Tax and Class 4 National Insurance on your profit, and the rest is yours. As a <strong>limited company director</strong> you pay yourself the standard efficient way: a £12,570 salary, Corporation Tax on what is left, then everything remaining as dividends. In both cases you take all the money out and spend it. We come back to what happens if you do not.</p>
+
+      <h2>The results</h2>
+      <table>
+        <thead><tr><th>Profit</th><th>Sole trader keeps</th><th>Company director keeps</th><th>Difference</th></tr></thead>
+        <tbody>
+          <tr><td>£25,000</td><td>£21,768</td><td>£20,789</td><td class="neg">Sole trader +£979</td></tr>
+          <tr><td>£35,000</td><td>£29,168</td><td>£28,018</td><td class="neg">Sole trader +£1,150</td></tr>
+          <tr><td>£50,000</td><td>£40,268</td><td>£38,862</td><td class="neg">Sole trader +£1,406</td></tr>
+          <tr><td>£60,000</td><td>£46,111</td><td>£46,091</td><td>Dead heat (£20)</td></tr>
+          <tr><td>£75,000</td><td>£54,811</td><td>£53,404</td><td class="neg">Sole trader +£1,408</td></tr>
+          <tr><td>£100,000</td><td>£69,311</td><td>£65,210</td><td class="neg">Sole trader +£4,102</td></tr>
+          <tr><td>£150,000</td><td>£92,040</td><td>£85,110</td><td class="neg">Sole trader +£6,931</td></tr>
+          <tr><td>£200,000</td><td>£118,540</td><td>£105,765</td><td class="neg">Sole trader +£12,775</td></tr>
+        </tbody>
+      </table>
+      <p>Read that again, because it is the opposite of the received wisdom. <strong>If you take all your profit out, the limited company never wins on tax in 2026/27.</strong> It draws level at around £60,000 and falls further behind the more you earn. And that is before the company's higher running costs.</p>
+
+      <h2>The workings at £60,000</h2>
+      <p><strong>Sole trader:</strong></p>
+      <ul>
+        <li>Income Tax: £37,700 &times; 20% = £7,540, plus (£60,000 &minus; £50,270) &times; 40% = £3,892. Total £11,432.</li>
+        <li>Class 4 NI: £37,700 &times; 6% = £2,262, plus £9,730 &times; 2% = £194.60. Total £2,456.60. Class 2 is no longer payable.</li>
+        <li>Total tax £13,888.60. <strong>Take-home £46,111.</strong></li>
+      </ul>
+      <p><strong>Limited company:</strong></p>
+      <ul>
+        <li>Salary £12,570. Employer NI: (£12,570 &minus; £5,000) &times; 15% = £1,135.50.</li>
+        <li>Profit left: £60,000 &minus; £12,570 &minus; £1,135.50 = £46,294.50. Corporation Tax at 19%: £8,795.96.</li>
+        <li>Dividends: £46,294.50 &minus; £8,795.96 = £37,498.54. Dividend tax: (£37,498.54 &minus; £500) &times; 10.75% = £3,977.34.</li>
+        <li>Total tax £13,908.80. <strong>Take-home £46,091.</strong></li>
+      </ul>
+      <p>Twenty pounds apart. Now subtract the extra cost of running a company, and the sole trader is ahead.</p>
+
+      <h2>Why the arithmetic flipped</h2>
+      <ul>
+        <li><strong>Dividend tax went up.</strong> The basic rate rose to 10.75% and the higher rate to 35.75% on 6 April 2026. A higher-rate director whose company pays the 25% main rate now pays 25% Corporation Tax and then 35.75% on what is left, an effective 51.8% on each extra pound. A higher-rate sole trader pays 40% plus 2% NI: 42%.</li>
+        <li><strong>The dividend allowance is £500.</strong> It was £5,000 as recently as 2017/18.</li>
+        <li><strong>Employer NI is 15% from £5,000.</strong> Even the "efficient" director salary costs the company £1,135.50 in NI, and a single-director company cannot claim the Employment Allowance to offset it.</li>
+        <li><strong>Sole traders got cheaper.</strong> Class 2 NI is no longer payable for most, and the Class 4 main rate is down to 6%.</li>
+      </ul>
+
+      <h2>Where a limited company still wins</h2>
+      <p>None of this means companies are a bad idea. It means the reason for having one has changed.</p>
+      <p><strong>1. You do not need all the money.</strong> This is the big one. Profit left inside a company is taxed at 19% on the first £50,000 of profit (and at most 26.5% on each extra pound) and then simply sits there. Take the same £60,000 business, but suppose you only need £40,000 to live on. As a sole trader you are taxed on the full £60,000 regardless: £13,889. As a company, you take the £12,570 salary and £27,430 of dividends, pay £2,895 in dividend tax on top of the £8,796 Corporation Tax and £1,136 employer NI, a total of £12,826, and <strong>£10,069 stays in the company</strong> having suffered only 19% tax, available for a lean year, for investment, or to draw in a year when your income is lower. The more you can retain, the wider the gap in the company's favour.</p>
+      <p><strong>2. Limited liability.</strong> If the business is sued or fails, a company's debts are the company's. A sole trader's are personal. For anyone with real exposure (construction, product sales, advice with consequences) this alone can justify the structure.</p>
+      <p><strong>3. Clients require it.</strong> Many larger businesses and public bodies will only contract with a company, and off-payroll working rules make sole-trader engagements awkward for them.</p>
+      <p><strong>4. Pension contributions.</strong> A company can pay into your pension as an employer contribution, deductible against Corporation Tax with no NI. It is one of the most efficient routes out of a company and has no sole-trader equivalent.</p>
+      <p><strong>5. Income splitting.</strong> If a spouse or partner is genuinely involved, shares in a company let you use two sets of allowances and basic-rate bands in a way that is much harder as a sole trader.</p>
+
+      <h2>The costs on the other side of the ledger</h2>
+      <p>A company means statutory accounts, a Corporation Tax return, a confirmation statement, payroll for your salary, dividend paperwork, and a separate personal tax return on top. Expect accountancy fees to be meaningfully higher than for a sole trader; the difference is typically several hundred to over a thousand pounds a year depending on complexity. Set against a tax saving that, on these figures, may be zero, that cost has to be justified by one of the five reasons above.</p>
+      <p>One nuance for sole traders: Making Tax Digital for Income Tax is now bringing quarterly digital updates to the self-employed above the income thresholds, so the admin gap between the two structures is narrowing from the other direction too.</p>
+
+      <h2>The honest summary</h2>
+      <p>In 2026/27, do not incorporate to save tax on money you are going to take out and spend. You will not. Incorporate because you can afford to leave profit in the business, because you need limited liability, because clients demand it, or because you want a company pension. Those are good reasons, and for many owners they are decisive. The tax saving simply is not one of them any more, whatever the internet still says.</p>
+      <p>If you are weighing this up, we will run your actual figures, including your real drawings and your real costs, and tell you plainly whether a company is right for you. If it is, we set it up and run it. That conversation is free, and it is one of the most valuable hours a growing business can spend with an accountant.</p>
+
+      <h2>Common questions</h2>
+      <div class="faq">
+        <h3>At what profit does a limited company start to save tax in 2026/27?</h3>
+        <p>If you take out all of your profit each year, there is no longer a clear profit level at which a company wins on tax alone. The advantage comes from leaving profit in the company, where it is taxed at 19% on the first £50,000, or from paying into a pension through the company. Our calculator finds your personal break-even.</p>
+        <h3>How much more does it cost to run a limited company?</h3>
+        <p>You need statutory accounts, a Corporation Tax return, payroll and a confirmation statement (£50 a year online), on top of your own tax return. The extra accountancy usually costs several hundred to over a thousand pounds a year.</p>
+        <h3>Do sole traders still pay Class 2 National Insurance?</h3>
+        <p>No. Class 2 is no longer compulsory. Sole traders pay Class 4 National Insurance of 6% on profits between £12,570 and £50,270 and 2% above that, and can pay Class 2 voluntarily to protect their State Pension record if their profits are low.</p>
+        <h3>Is limited liability a good reason to incorporate?</h3>
+        <p>It can be. A company's debts are generally its own, which protects your personal assets, although lenders and landlords often ask directors for personal guarantees. Some clients will only work with limited companies, which can matter as much as tax.</p>
+        <h3>Can I start as a sole trader and incorporate later?</h3>
+        <p>Yes. Many businesses do. You set up the company, transfer the business into it and register it for Corporation Tax and PAYE. It is worth getting advice at that point, because how assets are transferred can affect your tax.</p>
+      </div>
+
+      <p class="sources">Sources: HMRC guidance on GOV.UK for <a href="https://www.gov.uk/income-tax-rates" target="_blank" rel="noopener noreferrer">Income Tax rates</a>, <a href="https://www.gov.uk/self-employed-national-insurance-rates" target="_blank" rel="noopener noreferrer">self-employed National Insurance</a>, <a href="https://www.gov.uk/tax-on-dividends" target="_blank" rel="noopener noreferrer">tax on dividends</a> and <a href="https://www.gov.uk/corporation-tax-rates" target="_blank" rel="noopener noreferrer">Corporation Tax</a>. Our modelling assumes a single owner with no other income, all profit extracted, and the standard £12,570 salary route; try your own figures in our <a href="/sole-trader-vs-limited-company-calculator">sole trader vs limited company calculator</a>. Figures correct for 2026/27 and reviewed September 2026. General guidance, not advice on your circumstances.</p>
+
+      <div class="author-box"><p class="kicker">About the author</p><p><strong>Spencer Elbert</strong> is the founder of SJE Capital, a UK accountancy and bookkeeping practice for limited companies. He is an ICB Certified bookkeeper, a Xero Certified Advisor and holds the CIMA Diploma in Management Accounting, with more than eight years of experience helping directors keep their numbers right. <a href="https://www.linkedin.com/in/spencerelbert/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a></p></div>
+
+      <a class="back" href="/blog">&larr; Back to all articles</a>
+    </div>
+    </div>
+    <aside class="article-aside">
+      <nav class="toc" aria-label="In this article">
+        <p class="toc-title">In this article</p>
+        <ol id="toc"></ol>
+      </nav>
+      <div class="aside-card">
+        <strong>Rather have this handled?</strong>
+        <p>Fixed monthly fees, plain-English advice, and every deadline tracked for you.</p>
+        <a class="btn" href="/#contact">Get a free consultation</a>
+      </div>
+      <div class="aside-links">
+        <p class="toc-title">Useful references</p>
+        <a href="/sole-trader-vs-limited-company-calculator">Sole trader vs limited company calculator</a>
+        <a href="/take-home-calculator">Director take-home calculator</a>
+        <a href="/tax-rates">2026/27 tax rates</a>
+        <a href="/key-dates">Key dates and deadlines</a>
+        <a href="/blog">All articles</a>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<div class="cta-band">
+  <div class="wrap">
+    <h2>Ready to incorporate, or want to check the numbers first?</h2>
+    <p>SJE Capital works with limited companies. If a company is the right move, we will run your real figures, set it up and take care of everything from day one.</p>
+    <a class="btn" href="/#contact">Get a free consultation</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 SJE Capital Limited. Registered in England &amp; Wales, company no. 15837169. Based in Hampshire, serving companies across the UK.</span>
+    <span>ICB Certified · Xero Certified Advisor · CIMA Dip MA · <a href="https://www.linkedin.com/company/sje-capital-limited" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+  var toc = document.getElementById('toc'); if(!toc) return;
+  document.querySelectorAll('.article-body h2').forEach(function(h, i){
+    if(!h.id) h.id = 'section-' + (i+1);
+    var li = document.createElement('li'), a = document.createElement('a');
+    a.href = '#' + h.id; a.textContent = h.textContent; li.appendChild(a); toc.appendChild(li);
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var btns = document.querySelectorAll('.read-toggle button');
+  var quick = document.querySelector('.quick-read'), body = document.querySelector('.article-body'), toc = document.querySelector('.toc');
+  function setMode(m){
+    btns.forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.mode === m); });
+    var q = m === 'quick';
+    if (quick) quick.hidden = !q;
+    if (body) body.hidden = q;
+    if (toc) toc.hidden = q;
+  }
+  btns.forEach(function(b){ b.addEventListener('click', function(){ setMode(b.dataset.mode); }); });
+  document.querySelectorAll('.to-full').forEach(function(a){ a.addEventListener('click', function(e){ e.preventDefault(); setMode('full'); window.scrollTo({top: document.querySelector('.article-head').offsetTop - 20, behavior:'smooth'}); }); });
+})();
+</script>
+
+<script>
+(function(){
+  var body = document.querySelector('.article-body'), el = document.querySelector('.readtime');
+  if (!body || !el) return;
+  var words = body.textContent.trim().split(/\s+/).length;
+  var WPM = 220;
+  var mins = Math.max(1, Math.round(words / WPM));
+  el.textContent = mins + ' minute read';
+  el.setAttribute('data-tip', 'How we calculate this: the article is ' + words.toLocaleString('en-GB') + ' words, and most adults read around ' + WPM + ' words a minute, so we divide one by the other and round. The 1-minute read is a summary, not a speed test.');
+})();
+</script>
+
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "00529846a08f42db871a69a17e005ffd"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

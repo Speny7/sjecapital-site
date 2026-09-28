@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<link rel="preload" href="/logo-header.svg" as="image" type="image/svg+xml" fetchpriority="high">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>Free UK tax calculators, key dates and rates | SJE Capital</title>
+<meta property="og:title" content="Free UK tax calculators, key dates and rates | SJE Capital">
+<meta property="og:description" content="Free tools for UK business owners: director and salary take-home calculators, a sole trader vs limited company comparison, key tax deadlines and current rates.">
+<meta property="og:url" content="https://www.sjecapital.co.uk/resources">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.sjecapital.co.uk/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon-512.png" type="image/png" sizes="512x512">
+<meta property="og:site_name" content="SJE Capital">
+<link rel="canonical" href="https://www.sjecapital.co.uk/resources">
+<meta name="description" content="Free tools for UK business owners: director and salary take-home calculators, a sole trader vs limited company comparison, key tax deadlines and current rates.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/eb-garamond.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{ font-family:"EB Garamond"; src:url(/fonts/eb-garamond.woff2) format("woff2"); font-weight:500 700; font-style:normal; font-display:swap; }
+  @font-face{ font-family:"Source Serif 4"; src:url(/fonts/source-serif-4.woff2) format("woff2"); font-weight:400 700; font-style:normal; font-display:swap; }
+
+  :root{ color-scheme:light;
+    --ink:#14382B; --ink-soft:#2A5340; --leaf:#1E6B4A; --leaf-deep:#155238;
+    --paper:#F2F5EF; --paper-hi:#FBFCF9; --rule:#C7D4C6; --rule-soft:#DCE5DA; --focus:#0E8A5F;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  body{ font-family:"Source Serif 4", Georgia, serif; background:var(--paper); color:var(--ink); font-size:1.0625rem; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3{ font-family:"EB Garamond", Georgia, serif; }
+  a{ color:var(--leaf); text-decoration-thickness:1px; text-underline-offset:3px; }
+  a:hover{ color:var(--leaf-deep); }
+  :focus-visible{ outline:3px solid var(--focus); outline-offset:3px; border-radius:2px; }
+  .wrap{ max-width:1060px; margin:0 auto; padding:0 24px; }
+  header{ background:var(--ink); border-bottom:1px solid #2A5340; }
+  .masthead{ display:flex; align-items:center; justify-content:space-between; gap:24px; padding:18px 24px; max-width:1060px; margin:0 auto; }
+  .wordmark{ display:flex; align-items:center; text-decoration:none; }
+  nav{ display:flex; gap:26px; align-items:center; }
+  nav a{ color:#DCE8DE; text-decoration:none; font-size:.9375rem; font-weight:500; border-bottom:2px solid transparent; padding-bottom:2px; }
+  nav a:hover{ border-bottom-color:#9FD8B7; color:#fff; }
+  .nav-cta{ background:var(--paper-hi); color:var(--ink) !important; padding:9px 18px 10px; border-radius:3px; border-bottom:none !important; }
+  .nav-cta:hover{ background:#fff; color:var(--leaf-deep) !important; }
+  @media (max-width:760px){
+    .masthead{ flex-direction:column; align-items:center; gap:16px; padding-top:18px; padding-bottom:18px; }
+    .wordmark{ justify-content:center; }
+    nav{ width:100%; justify-content:center; gap:10px 18px; flex-wrap:wrap; align-items:center; }
+    nav a{ padding:4px 0; font-size:.9rem; }
+    .nav-cta{ flex:1 0 100%; text-align:center; margin-top:6px; padding:12px 16px 13px; }
+  }
+  .page-head{ padding-top:64px; padding-bottom:10px; }
+  h1{ font-size:clamp(2rem, 4.5vw, 3rem); font-weight:600; letter-spacing:-.015em; }
+  .page-head p{ color:var(--ink-soft); margin-top:10px; max-width:60ch; }
+  .dates{ padding-top:34px; padding-bottom:60px; }
+  .dates{ display:grid; grid-template-columns:1fr 1fr; gap:0 64px; align-items:start; }
+  .dates > h2, .timeline-wrap, .timeline-note, .disclaimer{ grid-column:1 / -1; }
+  .date-block:last-child{ grid-column:1 / -1; }
+  @media (max-width:820px){ .dates{ grid-template-columns:1fr; } }
+
+  .date-block{ border-top:2px solid var(--ink); padding:24px 4px 26px; }
+  .date-block + .date-block{ border-top:1px solid var(--rule); }
+  .date-block h2{ font-size:1.4rem; font-weight:600; margin-bottom:12px; }
+  .date-block dl div{ display:grid; grid-template-columns:minmax(0,200px) 1fr; gap:18px; padding:9px 0; border-bottom:1px solid var(--rule-soft); }
+  .date-block dt{ font-weight:600; font-size:.9875rem; }
+  .date-block dd{ font-size:.9875rem; color:var(--ink-soft); max-width:64ch; }
+  @media (max-width:600px){ .date-block dl div{ grid-template-columns:1fr; gap:2px; } }
+  .timeline-wrap{ overflow-x:auto; margin:18px 0 40px; }
+  .timeline-wrap svg{ min-width:760px; width:100%; height:auto; display:block; }
+  .timeline-note{ font-size:.875rem; color:var(--ink-soft); margin:-18px 0 40px; }
+  .disclaimer{ max-width:78ch; font-size:.875rem; color:var(--ink-soft); border:1px solid var(--rule); border-left:3px solid var(--leaf); background:var(--paper-hi); padding:14px 18px; margin-bottom:34px; }
+  .cta-band{ background:var(--ink); color:var(--paper-hi); padding:48px 0 54px; }
+  .cta-band h2{ color:#fff; font-size:1.6rem; margin-bottom:8px; }
+  .cta-band p{ color:#CBDACD; margin-bottom:22px; max-width:56ch; }
+  .btn{ display:inline-block; background:var(--paper-hi); color:var(--ink); text-decoration:none; padding:13px 24px 14px; font-weight:600; border-radius:3px; }
+  .btn:hover{ background:#fff; color:var(--leaf-deep); }
+  footer{ background:var(--ink); color:#9FBFA8; font-size:.875rem; padding:26px 0; border-top:1px solid #2A5340; }
+  footer .wrap{ display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; max-width:1060px; }
+
+  .res-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:28px; padding-top:24px; padding-bottom:70px; }
+  .res-card{ border:1px solid var(--rule); border-top:2px solid var(--ink); background:var(--paper-hi); padding:26px 26px 28px; display:flex; flex-direction:column; text-decoration:none; color:var(--ink); }
+  .res-card:hover{ border-top-color:var(--leaf); color:var(--ink); }
+  .res-card .kicker{ font-size:.8rem; letter-spacing:.08em; text-transform:uppercase; color:var(--leaf); margin-bottom:8px; }
+  .res-card h2{ font-size:1.4rem; font-weight:600; margin-bottom:10px; }
+  .res-card p{ color:var(--ink-soft); font-size:.9875rem; flex:1; }
+  .res-card span.go{ margin-top:18px; font-weight:600; color:var(--leaf); }
+  @media (max-width:820px){ .res-grid{ grid-template-columns:1fr; } }
+
+  @media (max-width:760px){
+    .page-head{ padding-top:36px; padding-bottom:6px; }
+    .page-head h1{ font-size:2rem; }
+    .dates{ padding-top:22px; padding-bottom:44px; }
+    .date-block{ padding:20px 0 22px; }
+    .timeline-wrap{ margin:14px 0 22px; }
+    .timeline-note{ margin:0 0 28px; }
+    .disclaimer{ padding:12px 14px; margin-bottom:26px; }
+    .cta-band{ padding:40px 0 44px; }
+    .posts{ padding-top:20px; padding-bottom:56px; }
+    .res-grid{ padding-top:20px; padding-bottom:50px; }
+    .calc-layout{ padding-top:14px; padding-bottom:50px; }
+    .article-head{ padding-top:36px; padding-bottom:6px; }
+    .article-head h1{ font-size:2rem; }
+    .article-body{ padding-top:24px; margin-top:26px; }
+    .quick-read{ padding:20px 18px 22px; }
+    .article{ gap:32px; }
+    footer .wrap{ flex-direction:column; gap:6px; }
+  }
+  footer a{ color:#CBDACD; }
+  footer a:hover{ color:#fff; }
+  .res-group{ padding-top:18px; }
+  .res-group:last-of-type{ padding-bottom:40px; }
+  .res-group-title{ font-size:1.6rem; font-weight:600; padding-top:18px; border-top:1px solid var(--rule); }
+  .res-group:first-of-type .res-group-title{ border-top:none; }
+  .res-group-intro{ color:var(--ink-soft); margin-top:6px; max-width:60ch; }
+  .res-group .res-grid{ padding-top:18px; padding-bottom:26px; }
+  .res-card h3{ font-size:1.35rem; font-weight:600; margin-bottom:10px; }
+</style>
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "SJE Capital",
+   "item": "https://www.sjecapital.co.uk/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Resources",
+   "item": "https://www.sjecapital.co.uk/resources"
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "CollectionPage",
+ "name": "Free UK tax calculators and references",
+ "url": "https://www.sjecapital.co.uk/resources",
+ "publisher": {
+  "@type": "Organization",
+  "name": "SJE Capital Limited",
+  "url": "https://www.sjecapital.co.uk/"
+ },
+ "mainEntity": {
+  "@type": "ItemList",
+  "itemListElement": [
+   {
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Director take-home calculator",
+    "url": "https://www.sjecapital.co.uk/take-home-calculator"
+   },
+   {
+    "@type": "ListItem",
+    "position": 2,
+    "name": "Dividend tax calculator",
+    "url": "https://www.sjecapital.co.uk/dividend-tax-calculator"
+   },
+   {
+    "@type": "ListItem",
+    "position": 3,
+    "name": "Pension vs dividends calculator",
+    "url": "https://www.sjecapital.co.uk/pension-vs-dividends-calculator"
+   },
+   {
+    "@type": "ListItem",
+    "position": 4,
+    "name": "Salary take-home calculator",
+    "url": "https://www.sjecapital.co.uk/salary-calculator"
+   },
+   {
+    "@type": "ListItem",
+    "position": 5,
+    "name": "Sole trader vs limited company calculator",
+    "url": "https://www.sjecapital.co.uk/sole-trader-vs-limited-company-calculator"
+   },
+   {
+    "@type": "ListItem",
+    "position": 6,
+    "name": "First-year deadlines calculator",
+    "url": "https://www.sjecapital.co.uk/first-year-deadlines-calculator"
+   },
+   {
+    "@type": "ListItem",
+    "position": 7,
+    "name": "UK tax rates 2026/27",
+    "url": "https://www.sjecapital.co.uk/tax-rates"
+   },
+   {
+    "@type": "ListItem",
+    "position": 8,
+    "name": "Key UK tax dates",
+    "url": "https://www.sjecapital.co.uk/key-dates"
+   },
+   {
+    "@type": "ListItem",
+    "position": 9,
+    "name": "Where do my taxes go? Calculator",
+    "url": "https://www.sjecapital.co.uk/where-do-my-taxes-go"
+   },
+   {
+    "@type": "ListItem",
+    "position": 10,
+    "name": "Compound interest calculator",
+    "url": "https://www.sjecapital.co.uk/compound-interest-calculator"
+   }
+  ]
+ }
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="masthead">
+    <a class="wordmark" href="/" aria-label="SJE Capital Limited home">
+      <img src="/logo-header.svg" width="272" height="90" alt="" fetchpriority="high">
+    </a>
+    <nav aria-label="Main">
+      <a href="/#about">About</a>
+      <a href="/#services">Services</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/blog">Blog</a>
+      <a href="/resources">Resources</a>
+      <a class="nav-cta" href="/#contact">Get a quote</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap page-head">
+    <h1>Resources</h1>
+    <p>Free tools and references for UK limited companies and their directors, grouped by what you need to do. Every figure is worked to the penny with the calculation shown.</p>
+  </div>
+  <section class="res-group">
+    <div class="wrap">
+      <h2 class="res-group-title">Paying yourself</h2>
+      <p class="res-group-intro">For company directors deciding how much to take out of the company, and how.</p>
+      <div class="res-grid">
+    <a class="res-card" href="/take-home-calculator">
+      <span class="kicker">Calculator</span>
+      <h3>Director take-home calculator</h3>
+      <p>Enter your company's expected profit and see the most tax-efficient way to pay yourself in 2026/27, with every step of the working shown.</p>
+      <span class="go">Open the calculator &rarr;</span>
+    </a>
+    <a class="res-card" href="/dividend-tax-calculator">
+      <span class="kicker">Calculator</span>
+      <h3>Dividend tax calculator</h3>
+      <p>Your 2026/27 dividend tax band by band at the new rates, how much more you can take before the higher rate, and exactly when the bill is due.</p>
+      <span class="go">Open the calculator &rarr;</span>
+    </a>
+    <a class="res-card" href="/pension-vs-dividends-calculator">
+      <span class="kicker">Calculator</span>
+      <h3>Pension vs dividends for directors</h3>
+      <p>Company profit into your pension, or dividends invested yourself? See what each grows to after every tax, year by year.</p>
+      <span class="go">Open the calculator &rarr;</span>
+    </a>
+    <a class="res-card" href="/salary-calculator">
+      <span class="kicker">Calculator</span>
+      <h3>Salary take-home calculator</h3>
+      <p>Gross to net for 2026/27 with pension, student loan and National Insurance, plus what a salary really costs an employer.</p>
+      <span class="go">Open the calculator &rarr;</span>
+    </a>
+      </div>
+    </div>
+  </section>
+  <section class="res-group">
+    <div class="wrap">
+      <h2 class="res-group-title">Starting a company</h2>
+      <p class="res-group-intro">For anyone setting up a limited company, or deciding whether to.</p>
+      <div class="res-grid">
+    <a class="res-card" href="/sole-trader-vs-limited-company-calculator">
+      <span class="kicker">Calculator</span>
+      <h3>Sole trader vs limited company</h3>
+      <p>Would you keep more as a sole trader or through a company in 2026/27? Enter your profit and what you need to live on, and see both side by side.</p>
+      <span class="go">Open the calculator &rarr;</span>
+    </a>
+    <a class="res-card" href="/first-year-deadlines-calculator">
+      <span class="kicker">Calculator</span>
+      <h3>First-year deadlines for new companies</h3>
+      <p>Enter your incorporation date and get every first-year deadline worked out, then download them all to your calendar.</p>
+      <span class="go">Open the calculator &rarr;</span>
+    </a>
+      </div>
+    </div>
+  </section>
+  <section class="res-group">
+    <div class="wrap">
+      <h2 class="res-group-title">Reference and planning</h2>
+      <p class="res-group-intro">Rates, dates and general tools, updated for 2026/27.</p>
+      <div class="res-grid">
+    <a class="res-card" href="/tax-rates">
+      <span class="kicker">Reference</span>
+      <h3>UK tax rates 2026/27</h3>
+      <p>Income Tax, National Insurance, dividends, Corporation Tax, VAT and capital gains, sourced from HMRC.</p>
+      <span class="go">See the rates &rarr;</span>
+    </a>
+    <a class="res-card" href="/key-dates">
+      <span class="kicker">Reference</span>
+      <h3>Key dates and deadlines</h3>
+      <p>Every HMRC and Companies House deadline in one place, with a year-at-a-glance timeline.</p>
+      <span class="go">See the dates &rarr;</span>
+    </a>
+    <a class="res-card" href="/where-do-my-taxes-go">
+      <span class="kicker">Calculator</span>
+      <h3>Where do my taxes go?</h3>
+      <p>See how your 2026/27 Income Tax and National Insurance is spent, in an interactive chart, using the latest published spending split (2024/25).</p>
+      <span class="go">Open the calculator &rarr;</span>
+    </a>
+    <a class="res-card" href="/compound-interest-calculator">
+      <span class="kicker">Calculator</span>
+      <h3>Compound interest calculator</h3>
+      <p>How your savings grow with interest on interest, including tax on interest, rising deposits and inflation.</p>
+      <span class="go">Open the calculator &rarr;</span>
+    </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 SJE Capital Limited. Registered in England &amp; Wales, company no. 15837169. Based in Hampshire, serving companies across the UK.</span>
+    <span>ICB Certified · Xero Certified Advisor · CIMA Dip MA · <a href="https://www.linkedin.com/company/sje-capital-limited" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+  </div>
+</footer>
+
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "00529846a08f42db871a69a17e005ffd"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

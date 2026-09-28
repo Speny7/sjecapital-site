@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<link rel="preload" href="/logo-header.svg" as="image" type="image/svg+xml" fetchpriority="high">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>First-year deadlines for new companies | SJE Capital</title>
+<meta property="og:title" content="First-year deadlines for new companies | SJE Capital">
+<meta property="og:description" content="Enter your incorporation date and get every first-year deadline for your new UK limited company, from Corporation Tax registration to first accounts.">
+<meta property="og:url" content="https://www.sjecapital.co.uk/first-year-deadlines-calculator">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.sjecapital.co.uk/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://www.sjecapital.co.uk/first-year-deadlines-calculator">
+<link rel="icon" href="favicon-512.png" type="image/png" sizes="512x512">
+<meta property="og:site_name" content="SJE Capital">
+<meta name="description" content="Enter your incorporation date and get every first-year deadline for your new UK limited company, from Corporation Tax registration to first accounts.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/eb-garamond.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{ font-family:"EB Garamond"; src:url(/fonts/eb-garamond.woff2) format("woff2"); font-weight:500 700; font-style:normal; font-display:swap; }
+  @font-face{ font-family:"Source Serif 4"; src:url(/fonts/source-serif-4.woff2) format("woff2"); font-weight:400 700; font-style:normal; font-display:swap; }
+
+  :root{ color-scheme:light;
+    --ink:#14382B; --ink-soft:#2A5340; --leaf:#1E6B4A; --leaf-deep:#155238;
+    --paper:#F2F5EF; --paper-hi:#FBFCF9; --rule:#C7D4C6; --rule-soft:#DCE5DA; --focus:#0E8A5F;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  body{ font-family:"Source Serif 4", Georgia, serif; background:var(--paper); color:var(--ink); font-size:1.0625rem; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3{ font-family:"EB Garamond", Georgia, serif; }
+  a{ color:var(--leaf); text-decoration-thickness:1px; text-underline-offset:3px; }
+  a:hover{ color:var(--leaf-deep); }
+  :focus-visible{ outline:3px solid var(--focus); outline-offset:3px; border-radius:2px; }
+  .wrap{ max-width:1060px; margin:0 auto; padding:0 24px; }
+  header{ background:var(--ink); border-bottom:1px solid #2A5340; }
+  .masthead{ display:flex; align-items:center; justify-content:space-between; gap:24px; padding:18px 24px; max-width:1060px; margin:0 auto; }
+  .wordmark{ display:flex; align-items:center; text-decoration:none; }
+  nav{ display:flex; gap:26px; align-items:center; }
+  nav a{ color:#DCE8DE; text-decoration:none; font-size:.9375rem; font-weight:500; border-bottom:2px solid transparent; padding-bottom:2px; }
+  nav a:hover{ border-bottom-color:#9FD8B7; color:#fff; }
+  .nav-cta{ background:var(--paper-hi); color:var(--ink) !important; padding:9px 18px 10px; border-radius:3px; border-bottom:none !important; }
+  .nav-cta:hover{ background:#fff; color:var(--leaf-deep) !important; }
+  @media (max-width:760px){
+    .masthead{ flex-direction:column; align-items:center; gap:16px; padding-top:18px; padding-bottom:18px; }
+    .wordmark{ justify-content:center; }
+    nav{ width:100%; justify-content:center; gap:10px 18px; flex-wrap:wrap; align-items:center; }
+    nav a{ padding:4px 0; font-size:.9rem; }
+    .nav-cta{ flex:1 0 100%; text-align:center; margin-top:6px; padding:12px 16px 13px; }
+  }
+  .page-head{ padding-top:64px; padding-bottom:10px; }
+  h1{ font-size:clamp(2rem, 4.5vw, 3rem); font-weight:600; letter-spacing:-.015em; }
+  .page-head p{ color:var(--ink-soft); margin-top:10px; max-width:60ch; }
+  .dates{ padding-top:34px; padding-bottom:60px; }
+  .dates{ display:grid; grid-template-columns:1fr 1fr; gap:0 64px; align-items:start; }
+  .dates > h2, .timeline-wrap, .timeline-note, .disclaimer{ grid-column:1 / -1; }
+  .date-block:last-child{ grid-column:1 / -1; }
+  @media (max-width:820px){ .dates{ grid-template-columns:1fr; } }
+
+  .date-block{ border-top:2px solid var(--ink); padding:24px 4px 26px; }
+  .date-block + .date-block{ border-top:1px solid var(--rule); }
+  .date-block h2{ font-size:1.4rem; font-weight:600; margin-bottom:12px; }
+  .date-block dl div{ display:grid; grid-template-columns:minmax(0,200px) 1fr; gap:18px; padding:9px 0; border-bottom:1px solid var(--rule-soft); }
+  .date-block dt{ font-weight:600; font-size:.9875rem; }
+  .date-block dd{ font-size:.9875rem; color:var(--ink-soft); max-width:64ch; }
+  @media (max-width:600px){ .date-block dl div{ grid-template-columns:1fr; gap:2px; } }
+  .timeline-wrap{ overflow-x:auto; margin:18px 0 40px; }
+  .timeline-wrap svg{ min-width:760px; width:100%; height:auto; display:block; }
+  .timeline-note{ font-size:.875rem; color:var(--ink-soft); margin:-18px 0 40px; }
+  .disclaimer{ max-width:78ch; font-size:.875rem; color:var(--ink-soft); border:1px solid var(--rule); border-left:3px solid var(--leaf); background:var(--paper-hi); padding:14px 18px; margin-bottom:34px; }
+  .cta-band{ background:var(--ink); color:var(--paper-hi); padding:48px 0 54px; }
+  .cta-band h2{ color:#fff; font-size:1.6rem; margin-bottom:8px; }
+  .cta-band p{ color:#CBDACD; margin-bottom:22px; max-width:56ch; }
+  .btn{ display:inline-block; background:var(--paper-hi); color:var(--ink); text-decoration:none; padding:13px 24px 14px; font-weight:600; border-radius:3px; }
+  .btn:hover{ background:#fff; color:var(--leaf-deep); }
+  footer{ background:var(--ink); color:#9FBFA8; font-size:.875rem; padding:26px 0; border-top:1px solid #2A5340; }
+  footer .wrap{ display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; max-width:1060px; }
+
+  @media (max-width:760px){
+    .page-head{ padding-top:36px; padding-bottom:6px; }
+    .page-head h1{ font-size:2rem; }
+    .dates{ padding-top:22px; padding-bottom:44px; }
+    .date-block{ padding:20px 0 22px; }
+    .timeline-wrap{ margin:14px 0 22px; }
+    .timeline-note{ margin:0 0 28px; }
+    .disclaimer{ padding:12px 14px; margin-bottom:26px; }
+    .cta-band{ padding:40px 0 44px; }
+    .posts{ padding-top:20px; padding-bottom:56px; }
+    .res-grid{ padding-top:20px; padding-bottom:50px; }
+    .calc-layout{ padding-top:14px; padding-bottom:50px; }
+    .article-head{ padding-top:36px; padding-bottom:6px; }
+    .article-head h1{ font-size:2rem; }
+    .article-body{ padding-top:24px; margin-top:26px; }
+    .quick-read{ padding:20px 18px 22px; }
+    .article{ gap:32px; }
+    footer .wrap{ flex-direction:column; gap:6px; }
+  }
+
+  .calc-layout{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.6fr); gap:56px; align-items:start; padding-top:20px; padding-bottom:70px; }
+  .calc-results{ position:sticky; top:24px; }
+  .calc-input label{ display:block; font-size:.9375rem; font-weight:600; color:var(--ink); margin:22px 0 6px; }
+  .calc-input > label:first-child{ margin-top:0; }
+  .calc-input .amount{ font-family:"EB Garamond", Georgia, serif; font-size:2.3rem; font-weight:600; letter-spacing:-.02em; font-variant-numeric:tabular-nums; margin-bottom:4px; }
+  .calc-input input[type=range]{ width:100%; accent-color:var(--leaf); cursor:pointer; margin:4px 0 6px; }
+  .calc-input input[type=number], .calc-input input[type=text], .calc-input select{ font-family:inherit; font-size:1rem; padding:10px 12px; border:1px solid var(--rule); border-radius:3px; width:100%; background:var(--paper-hi); color:var(--ink); transition:border-color .15s, box-shadow .15s; }
+  .calc-input input[type=number]:focus, .calc-input input[type=text]:focus, .calc-input select:focus, .calc-input input[type=number]:focus-visible, .calc-input input[type=text]:focus-visible, .calc-input select:focus-visible{ outline:none; border-color:var(--leaf); box-shadow:0 0 0 3px rgba(30,107,74,.14); }
+  input[type=number]{ -moz-appearance:textfield; appearance:textfield; }
+  input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button{ -webkit-appearance:none; margin:0; }
+  .calc-input .row{ display:grid; grid-template-columns:1fr 1fr; gap:14px; align-items:end; }
+  .calc-input .row label{ margin-top:0; }
+  .calc-input .check{ display:flex; gap:10px; align-items:flex-start; margin-top:14px; font-size:.9375rem; }
+  .calc-input .check input{ margin-top:5px; accent-color:var(--leaf); width:16px; height:16px; }
+  .calc-input .hint{ font-size:.85rem; line-height:1.5; color:var(--ink-soft); margin-top:6px; }
+  .calc-input .hint a{ color:var(--leaf); }
+  .calc-input .explain{ font-size:.875rem; line-height:1.55; color:var(--ink-soft); background:var(--paper-hi); border:1px solid var(--rule); border-left:3px solid var(--leaf); padding:12px 14px; margin-top:10px; }
+  .calc-input .explain strong{ color:var(--ink); }
+  .calc-input .sub{ margin-left:0; padding:14px 16px 4px; border-left:2px solid var(--rule); margin-top:8px; }
+  .seg{ display:inline-flex; border:1px solid var(--ink); border-radius:3px; overflow:hidden; margin-top:8px; }
+  .seg button{ font-family:inherit; font-size:.9rem; font-weight:600; padding:8px 14px 9px; background:transparent; color:var(--ink); border:none; cursor:pointer; }
+  .seg button[aria-pressed="true"]{ background:var(--ink); color:var(--paper-hi); }
+  .seg button:focus-visible{ outline:3px solid var(--focus); outline-offset:-3px; }
+  details.more{ margin-top:26px; }
+  details.more > summary{ cursor:pointer; list-style:none; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 16px; border:1px solid var(--ink); border-radius:3px; background:var(--paper-hi); font-weight:600; color:var(--ink); }
+  details.more > summary:hover{ background:var(--ink); color:var(--paper-hi); }
+  details.more > summary::-webkit-details-marker{ display:none; }
+  details.more > summary::after{ content:"\25BE"; font-size:1.1rem; transition:transform .2s; }
+  details[open].more > summary::after{ transform:rotate(180deg); }
+  details[open].more > summary{ border-bottom-left-radius:0; border-bottom-right-radius:0; }
+  details.more .more-body{ border:1px solid var(--rule); border-top:none; padding:6px 16px 18px; background:var(--paper-hi); }
+  .assume{ font-size:.875rem; color:var(--ink-soft); margin-top:24px; border-top:1px solid var(--rule); padding-top:14px; }
+  .assume li{ margin-left:18px; margin-bottom:4px; }
+  .view-switch{ display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap; margin-bottom:16px; }
+  .view-switch .lbl{ font-size:.9rem; color:var(--ink-soft); }
+  .routes{ display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  .routes.one{ grid-template-columns:1fr; }
+  .route{ border:1px solid var(--rule); border-top:2px solid var(--ink); background:var(--paper-hi); padding:24px 24px 26px; }
+  .route.best{ background:var(--ink); color:var(--paper-hi); border-color:var(--ink); }
+  .route .kicker{ font-size:.8rem; letter-spacing:.08em; text-transform:uppercase; color:var(--leaf); margin-bottom:6px; }
+  .route.best .kicker{ color:#9FD8B7; }
+  .route h2{ font-size:1.25rem; font-weight:600; margin-bottom:14px; }
+  .route .big{ font-family:"EB Garamond", Georgia, serif; font-size:2.3rem; font-weight:600; letter-spacing:-.02em; font-variant-numeric:tabular-nums; line-height:1; }
+  .route .biglabel{ font-size:.875rem; color:var(--ink-soft); margin:6px 0 18px; }
+  .route.best .biglabel{ color:#CBDACD; }
+  .route dl div{ display:flex; justify-content:space-between; gap:12px; padding:7px 0; border-bottom:1px solid var(--rule-soft); font-size:.9375rem; font-variant-numeric:tabular-nums; }
+  .route.best dl div{ border-bottom-color:#2A5340; }
+  .route dl div.total{ font-weight:600; border-bottom:2px solid currentColor; }
+  .route dl div[hidden], .route[hidden]{ display:none; }
+  .route .note{ font-size:.85rem; color:var(--ink-soft); margin-top:12px; line-height:1.5; }
+  .route.best .note{ color:#CBDACD; }
+  .marginal{ margin-top:24px; border:1px solid var(--rule); border-left:3px solid var(--leaf); background:var(--paper-hi); padding:16px 20px; display:grid; grid-template-columns:auto 1fr; gap:6px 20px; align-items:center; }
+  .marginal b{ font-family:"EB Garamond", Georgia, serif; font-size:2rem; font-weight:600; font-variant-numeric:tabular-nums; line-height:1; grid-row:span 2; }
+  .marginal .m-title{ font-weight:600; }
+  .marginal .m-sub{ font-size:.875rem; color:var(--ink-soft); line-height:1.5; }
+  details.workings{ margin-top:22px; border:1px solid var(--rule); background:var(--paper-hi); }
+  details.workings summary{ cursor:pointer; padding:14px 18px; font-weight:600; list-style:none; }
+  details.workings summary::-webkit-details-marker{ display:none; }
+  details.workings summary::before{ content:"+"; display:inline-block; width:18px; color:var(--leaf); font-weight:700; }
+  details[open].workings summary::before{ content:"\2212"; }
+  details.workings .inner{ padding:0 18px 18px; font-size:.9375rem; }
+  details.workings h3{ font-size:1.05rem; font-weight:600; margin:14px 0 8px; }
+  details.workings ol{ margin-left:20px; }
+  details.workings li{ margin-bottom:6px; font-variant-numeric:tabular-nums; }
+  .related{ margin-top:14px; font-size:.9375rem; color:var(--ink-soft); }
+  @media (max-width:900px){ .calc-layout{ grid-template-columns:1fr; gap:36px; } .calc-results{ position:static; } .routes{ grid-template-columns:1fr; } }
+  @media (max-width:760px){ .calc-layout{ padding-top:14px; padding-bottom:50px; } .page-head{ padding-top:36px; padding-bottom:6px; } .page-head h1{ font-size:2rem; } .cta-band{ padding:40px 0 44px; } footer .wrap{ flex-direction:column; gap:6px; } }
+
+  /* distinct tab-style buttons */
+  .tabs{ display:flex; gap:8px; flex-wrap:wrap; }
+  .tabs button{ font-family:inherit; font-size:.9rem; font-weight:600; padding:9px 16px 10px; background:var(--paper-hi); color:var(--ink); border:1px solid var(--ink); border-radius:3px; cursor:pointer; transition:background .15s, color .15s; }
+  .tabs button:hover{ background:var(--rule-soft); }
+  .tabs button[aria-pressed="true"]{ background:var(--ink); color:var(--paper-hi); }
+  .tabs button:focus-visible{ outline:3px solid var(--focus); outline-offset:2px; }
+  /* where to find it callout */
+  .findit{ margin-top:8px; font-size:.85rem; line-height:1.5; background:var(--paper-hi); border:1px solid var(--rule); border-left:3px solid var(--leaf); padding:10px 12px; color:var(--ink); }
+  .findit strong{ color:var(--leaf); display:block; margin-bottom:2px; letter-spacing:.02em; }
+  /* headline difference panel (director) */
+  .headline-diff{ margin-top:24px; background:var(--ink); color:var(--paper-hi); padding:22px 24px; display:grid; grid-template-columns:auto 1fr; gap:4px 22px; align-items:center; }
+  .headline-diff b{ font-family:"EB Garamond", Georgia, serif; font-size:2.6rem; font-weight:600; font-variant-numeric:tabular-nums; line-height:1; color:#fff; grid-row:span 2; }
+  .headline-diff .d-title{ font-weight:600; font-size:1.05rem; color:#fff; }
+  .headline-diff .d-sub{ font-size:.9rem; color:#CBDACD; line-height:1.5; }
+  .calc-input .taxcode{ text-transform:uppercase; letter-spacing:.06em; font-variant-numeric:tabular-nums; }
+  .calc-input .warn{ color:var(--ink); font-weight:600; font-size:.85rem; margin-top:6px; }
+  .workings-part[hidden]{ display:none; }
+
+  details.info{ margin-top:6px; }
+  details.info summary{ list-style:none; cursor:pointer; display:inline-flex; align-items:center; gap:6px; font-size:.85rem; font-weight:600; color:var(--leaf); padding:2px 0; }
+  details.info summary::-webkit-details-marker{ display:none; }
+  details.info summary::after{ content:"\25BE"; font-size:.9rem; transition:transform .2s; display:inline-block; text-decoration:none; }
+  details[open].info summary::after{ transform:rotate(180deg); }
+  details.info summary:hover span{ text-decoration:underline; text-underline-offset:3px; }
+  details.info .hint, details.info .findit, details.info .explain{ margin-top:8px; }
+
+  .money-wrap{ position:relative; display:block; }
+  .money-wrap::before{ content:"£"; position:absolute; left:12px; top:50%; transform:translateY(-50%); color:var(--ink-soft); font-size:1rem; pointer-events:none; }
+  .money-wrap input.money{ padding-left:26px; }
+
+  .wk{ border-top:1px solid var(--rule); margin:6px 0 14px; font-variant-numeric:tabular-nums; }
+  .wk div{ display:grid; grid-template-columns:1fr auto; gap:12px; padding:7px 0; border-bottom:1px solid var(--rule-soft); font-size:.9375rem; align-items:start; }
+  .wk .lbl small{ display:block; font-size:.8rem; color:var(--ink-soft); line-height:1.45; margin-top:2px; }
+  .wk .amt{ white-space:nowrap; text-align:right; }
+  .wk div.sub{ font-weight:600; border-top:1px solid var(--rule); }
+  .wk div.tot{ font-weight:700; border-bottom:3px double var(--ink); }
+  .wk div.info .amt{ color:var(--ink-soft); }
+  details.workings h3{ margin-top:18px; }
+  details.workings .aside{ font-size:.875rem; color:var(--ink-soft); margin-top:6px; line-height:1.5; }
+
+  .calc-input input[type=date]{ font-family:inherit; font-size:1rem; padding:10px 12px; border:1px solid var(--rule); border-radius:3px; width:100%; background:var(--paper-hi); color:var(--ink); }
+  .calc-input input[type=date]:focus{ outline:none; border-color:var(--leaf); box-shadow:0 0 0 3px rgba(30,107,74,.14); }
+  .timeline{ border-top:2px solid var(--ink); }
+  .timeline div.item{ display:grid; grid-template-columns:150px 1fr auto; gap:16px; padding:12px 4px; border-bottom:1px solid var(--rule); align-items:start; }
+  .timeline .date{ font-family:"EB Garamond", Georgia, serif; font-size:1.15rem; font-weight:600; line-height:1.2; }
+  .timeline .what strong{ display:block; }
+  .timeline .what small{ display:block; color:var(--ink-soft); font-size:.85rem; line-height:1.45; margin-top:2px; }
+  .timeline .in{ font-size:.85rem; color:var(--ink-soft); white-space:nowrap; text-align:right; }
+  .timeline div.item.past .date, .timeline div.item.past .in{ color:var(--ink-soft); }
+  .timeline div.item.past .what strong{ text-decoration:line-through; text-decoration-thickness:1px; }
+  .dl-row{ margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+  .dl-row .btn{ cursor:pointer; font-family:inherit; }
+  @media (max-width:700px){ .timeline div.item{ grid-template-columns:1fr; gap:4px; } .timeline .in{ text-align:left; } }
+
+
+  /* ---------- date field + picker ---------- */
+  .calc-input input.datefield{ font-family:inherit; font-size:1rem; padding:10px 12px; border:1px solid var(--rule); border-radius:3px; width:100%; background:var(--paper-hi); color:var(--ink); font-variant-numeric:tabular-nums; letter-spacing:.03em; }
+  .calc-input input.datefield:focus{ outline:none; border-color:var(--leaf); box-shadow:0 0 0 3px rgba(30,107,74,.14); }
+  .dp-wrap{ position:relative; }
+  .dp{ position:absolute; z-index:30; top:calc(100% + 6px); left:0; width:296px; background:var(--paper-hi); border:1px solid var(--rule); border-top:2px solid var(--ink); box-shadow:0 10px 30px rgba(20,56,43,.14); padding:12px; }
+  .dp[hidden]{ display:none; }
+  .dp-head{ display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+  .dp-head b{ font-family:"EB Garamond", Georgia, serif; font-size:1.1rem; font-weight:600; }
+  .dp-head button{ font-family:inherit; background:none; border:1px solid var(--rule); border-radius:3px; width:30px; height:30px; cursor:pointer; color:var(--ink); font-size:1rem; }
+  .dp-head button:hover{ border-color:var(--leaf); color:var(--leaf); }
+  .dp-grid{ display:grid; grid-template-columns:repeat(7,1fr); gap:2px; }
+  .dp-grid span{ text-align:center; font-size:.7rem; letter-spacing:.06em; color:var(--ink-soft); text-transform:uppercase; padding:4px 0; }
+  .dp-grid button{ font-family:inherit; font-size:.9rem; background:none; border:1px solid transparent; border-radius:3px; padding:7px 0; cursor:pointer; color:var(--ink); font-variant-numeric:tabular-nums; }
+  .dp-grid button:hover{ background:var(--rule-soft); }
+  .dp-grid button.other{ color:var(--rule); }
+  .dp-grid button.today{ border-color:var(--leaf); }
+  .dp-grid button.sel{ background:var(--ink); color:var(--paper-hi); }
+  .dp-foot{ display:flex; justify-content:space-between; margin-top:8px; font-size:.85rem; }
+  .dp-foot button{ font-family:inherit; background:none; border:none; color:var(--leaf); font-weight:600; cursor:pointer; padding:4px 0; }
+  .dp-foot button:hover{ text-decoration:underline; }
+  /* ---------- action buttons: primary + secondary ---------- */
+  .dl-row button.btn{ background:var(--leaf); color:#fff; border:1px solid var(--leaf-deep); }
+  .dl-row button.btn:hover{ background:var(--leaf-deep); }
+  .dl-row button.btn.ghost{ background:var(--paper-hi); color:var(--ink); border:1px solid var(--ink); }
+  .dl-row button.btn.ghost:hover{ background:var(--ink); color:var(--paper-hi); }
+  @media print{
+    header nav, .cta-band, footer, .dl-row, .calc-input, .related, details.info, .calc-results details.workings summary, .dp{ display:none !important; }
+    body{ background:#fff; color:#000; font-size:11pt; }
+    .page-head, .calc-layout{ padding-top:10px; padding-bottom:10px; }
+    .calc-layout{ display:block; }
+    .calc-results{ position:static; }
+    .headline-diff{ background:#fff; color:#000; border:1px solid #000; }
+    .headline-diff b, .headline-diff .d-title, .headline-diff .d-sub{ color:#000; }
+    details.workings{ border:none; }
+    details.workings .inner{ display:block !important; padding:0; }
+    details.workings:not([open]) .inner{ display:block !important; }
+    .timeline div.item{ break-inside:avoid; }
+    .print-only{ display:block !important; }
+  }
+  .print-only{ display:none; font-size:.85rem; color:var(--ink-soft); margin-top:16px; }
+
+  /* ---------- brand select (replaces native dropdown) ---------- */
+  .bs{ position:relative; }
+  .bs select{ position:absolute; opacity:0; pointer-events:none; width:1px; height:1px; }
+  .bs-btn{ width:100%; text-align:left; font-family:inherit; font-size:1rem; padding:10px 40px 10px 12px; border:1px solid var(--rule); border-radius:3px; background:var(--paper-hi); color:var(--ink); cursor:pointer; position:relative; }
+  .bs-btn::after{ content:"\25BE"; position:absolute; right:12px; top:50%; transform:translateY(-50%); color:var(--ink-soft); }
+  .bs-btn:focus-visible, .bs.open .bs-btn{ outline:none; border-color:var(--leaf); box-shadow:0 0 0 3px rgba(30,107,74,.14); }
+  .bs-list{ position:absolute; z-index:30; top:calc(100% + 6px); left:0; right:0; background:var(--paper-hi); border:1px solid var(--rule); border-top:2px solid var(--ink); box-shadow:0 10px 30px rgba(20,56,43,.14); padding:6px; max-height:280px; overflow:auto; }
+  .bs-list[hidden]{ display:none; }
+  .bs-list button{ display:block; width:100%; text-align:left; font-family:inherit; font-size:.95rem; padding:9px 10px; border:none; border-radius:3px; background:none; color:var(--ink); cursor:pointer; }
+  .bs-list button:hover{ background:var(--rule-soft); }
+  .bs-list button.sel{ background:var(--ink); color:var(--paper-hi); }
+  .bs-list button.sel:hover{ background:var(--ink); }
+  @media print{ .bs-list{ display:none !important; } }
+
+  @media (max-width:700px){ .headline-diff{ grid-template-columns:1fr; gap:8px; } .headline-diff b{ grid-row:auto; } }
+  footer a{ color:#CBDACD; }
+  footer a:hover{ color:#fff; }
+  .next-step{ margin-top:24px; background:var(--paper-hi); border-top:2px solid var(--leaf); padding:18px 20px 20px; }
+  .next-step .ns-kicker{ font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; color:var(--leaf); font-weight:600; margin:0 0 4px; }
+  .next-step .ns-title{ font-family:"EB Garamond", Georgia, serif; font-size:1.35rem; font-weight:600; line-height:1.25; color:var(--ink); margin:0; }
+  .next-step .ns-text{ color:var(--ink-soft); margin:6px 0 14px; font-size:.95rem; line-height:1.55; }
+  .next-step .ns-actions{ display:flex; flex-wrap:wrap; align-items:center; gap:10px 18px; }
+  .next-step .ns-btn{ display:inline-block; background:var(--leaf); color:#fff; border:1px solid var(--leaf-deep); padding:11px 18px; border-radius:3px; text-decoration:none; font-weight:600; }
+  .next-step .ns-btn:hover{ background:var(--leaf-deep); }
+  .next-step .ns-link{ color:var(--leaf); font-weight:600; text-decoration:none; }
+  .next-step .ns-link:hover{ text-decoration:underline; }
+  @media print{ .next-step{ display:none !important; } }
+  .feedback{ font-size:.85rem; color:var(--ink-soft); margin-top:10px; }
+  .feedback a{ color:var(--leaf); font-weight:600; }
+  @media print{ .feedback{ display:none; } }
+</style>
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "SJE Capital",
+   "item": "https://www.sjecapital.co.uk/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Resources",
+   "item": "https://www.sjecapital.co.uk/resources"
+  },
+  {
+   "@type": "ListItem",
+   "position": 3,
+   "name": "First-year deadlines calculator",
+   "item": "https://www.sjecapital.co.uk/first-year-deadlines-calculator"
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "WebApplication",
+ "name": "First-year deadlines calculator",
+ "url": "https://www.sjecapital.co.uk/first-year-deadlines-calculator",
+ "description": "Enter your incorporation date and get every first-year deadline for your new UK limited company, from Corporation Tax registration to first accounts.",
+ "applicationCategory": "FinanceApplication",
+ "operatingSystem": "Any (runs in the browser)",
+ "isAccessibleForFree": true,
+ "offers": {
+  "@type": "Offer",
+  "price": "0",
+  "priceCurrency": "GBP"
+ },
+ "inLanguage": "en-GB",
+ "provider": {
+  "@type": "Organization",
+  "name": "SJE Capital Limited",
+  "url": "https://www.sjecapital.co.uk/"
+ }
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="masthead">
+    <a class="wordmark" href="/" aria-label="SJE Capital Limited home">
+      <img src="/logo-header.svg" width="272" height="90" alt="" fetchpriority="high">
+    </a>
+    <nav aria-label="Main">
+      <a href="/#about">About</a>
+      <a href="/#services">Services</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/blog">Blog</a>
+      <a href="/resources">Resources</a>
+      <a class="nav-cta" href="/#contact">Get a quote</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap page-head">
+    <h1>First-year deadlines calculator for new companies</h1>
+    <p>Enter the date your company was incorporated and see every deadline for its first year, worked out for you: registrations, the confirmation statement, your first accounts, both Corporation Tax periods and their payment dates. Then send them all to your calendar in one click.</p>
+  </div>
+
+  <div class="wrap calc-layout">
+    <div class="calc-input">
+      <label for="inc">Date of incorporation</label>
+      <input type="text" class="datefield" id="inc" value="15/09/2026" inputmode="numeric" placeholder="DD/MM/YYYY" autocomplete="off">
+      <p class="warn" id="inc-warn" hidden></p>
+      <details class="info"><summary><span>Where to find it</span></summary>
+        <div class="findit"><strong>Where to find it</strong>On your certificate of incorporation from Companies House, or search your company name on the <a href="https://find-and-update.company-information.service.gov.uk/" target="_blank" rel="noopener noreferrer">Companies House register</a>: it is shown as "Incorporated on".</div>
+      </details>
+
+      <label for="trade">Date you started (or will start) trading</label>
+      <input type="text" class="datefield" id="trade" value="15/09/2026" inputmode="numeric" placeholder="DD/MM/YYYY" autocomplete="off">
+      <p class="warn" id="trade-warn" hidden></p>
+      <details class="info"><summary><span>More info</span></summary>
+        <p class="hint">Usually the same day, but not always. HMRC counts your first sale, advertising, renting premises, hiring someone or buying stock as the start. The Corporation Tax clock runs from this date, not from incorporation. If you have not started yet, put your best estimate.</p>
+      </details>
+
+      <label for="payday">Planned first payday <span class="opt" style="font-weight:400;color:var(--ink-soft);">(optional)</span></label>
+      <input type="text" class="datefield" id="payday" value="" inputmode="numeric" placeholder="DD/MM/YYYY" autocomplete="off">
+      <p class="warn" id="payday-warn" hidden></p>
+      <details class="info"><summary><span>More info</span></summary>
+        <p class="hint">The first date the company will pay you or anyone else a salary. Enter it and we work out the exact window in which you can register for PAYE. You can only register as an employer inside a window: no earlier than two months before your first payday, because HMRC will not accept it before then, and no later than about three weeks before, because HMRC takes up to 15 working days to send the employer PAYE reference you need to run the first payroll. Miss the window and you cannot pay yourself on the planned date. You will need the company's UTR, registered office, your details as director, the planned first payday and the number of employees.</p>
+      </details>
+
+      <label>Year end</label>
+      <div class="tabs" role="group" aria-label="Year end">
+        <button type="button" id="ye-default" aria-pressed="true">Keep the default</button>
+        <button type="button" id="ye-march" aria-pressed="false">Move it to 31 March</button>
+      </div>
+      <details class="info"><summary><span>More info</span></summary>
+        <p class="hint">Companies House sets your year end (the "accounting reference date") as the last day of the month you incorporated in. Many directors move it to 31 March so the company year lines up with the tax year, which makes dividend planning simpler and tidies away the awkward split first period. You can shorten your year as often as you like, but only extend it once every five years and never beyond 18 months. Toggle to see how your dates change.</p>
+      </details>
+
+      <div class="assume">
+        <strong>Assumptions</strong>
+        <ul>
+          <li>Private limited company, first accounts filed under standard deadlines.</li>
+          <li>HMRC deadlines that land on a weekend or bank holiday are shown as the statutory date; payments should reach HMRC by the last working day before.</li>
+          <li>Your personal Self Assessment is described in the workings rather than dated, because it runs on tax years (5 October to register, 31 January to file) rather than on your incorporation date.</li>
+          <li>Illustrative, not advice. Always check the dates HMRC and Companies House send you.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="calc-results">
+      <div class="headline-diff">
+        <b id="next-in">79 days</b>
+        <div class="d-title" id="next-title">until your next deadline: register the company for Corporation Tax</div>
+        <div class="d-sub" id="next-sub">15 December 2026. 3 months after you started doing business (15 September 2026). Companies House told HMRC you exist, but this step is yours to do.</div>
+      </div>
+      <aside class="next-step" aria-label="Next step">
+        <p class="ns-kicker">Next step</p>
+        <p class="ns-title">Rather someone tracked all of these for you?</p>
+        <p class="ns-text">Every registration, filing and payment date handled for you, from your first Corporation Tax registration to your first accounts.</p>
+        <div class="ns-actions"><a class="ns-btn" href="https://calendar.app.google/MgqokbUqk9WwncKk8" target="_blank" rel="noopener noreferrer" data-booking="">Book a free 15-minute call</a><a class="ns-link" href="/#contact">or get a free quote</a></div>
+      </aside>
+      <div class="dl-row">
+        <button type="button" class="btn" id="gcal-all">Add all dates to Google Calendar</button>
+        <button type="button" class="btn" id="ics">Add all dates to Apple Calendar or Outlook</button>
+        <button type="button" class="btn ghost" id="print">Print or save as PDF</button>
+      </div>
+      <h2 style="font-size:1.3rem; font-weight:600; margin:28px 0 10px;">Your first-year timeline</h2>
+      <div class="timeline" id="timeline"><div class="item"><div class="date">15 December 2026</div><div class="what"><strong>Register the company for Corporation Tax</strong><small>3 months after you started doing business (15 September 2026). Companies House told HMRC you exist, but this step is yours to do.</small></div><div class="in">in 79 days</div></div><div class="item"><div class="date">29 September 2027</div><div class="what"><strong>File your first confirmation statement</strong><small>Review period is 12 months from incorporation; you then have 14 days. £50 online. Due every year after.</small></div><div class="in">in 367 days</div></div><div class="item"><div class="date">15 June 2028</div><div class="what"><strong>File your first annual accounts at Companies House</strong><small>21 months after incorporation, because your first period (15 September 2026 to 30 September 2027) is longer than 12 months. Later years: 9 months after each year end.</small></div><div class="in">in 627 days</div></div><div class="item"><div class="date">15 June 2028</div><div class="what"><strong>Pay Corporation Tax for the first tax period</strong><small>Period 15 September 2026 to 14 September 2027. Due 9 months and 1 day after it ends. Note this is before the return is due.</small></div><div class="in">in 627 days</div></div><div class="item"><div class="date">1 July 2028</div><div class="what"><strong>Pay Corporation Tax for the second tax period</strong><small>Period 15 September 2027 to 30 September 2027. Due 9 months and 1 day after it ends. Note this is before the return is due.</small></div><div class="in">in 643 days</div></div><div class="item"><div class="date">14 September 2028</div><div class="what"><strong>File the Company Tax Return (CT600) for the first tax period</strong><small>12 months after the period ends. Filed with your accounts and computations.</small></div><div class="in">in 718 days</div></div><div class="item"><div class="date">30 September 2028</div><div class="what"><strong>File the Company Tax Return (CT600) for the second tax period</strong><small>12 months after the period ends. Filed with your accounts and computations.</small></div><div class="in">in 734 days</div></div></div>
+      <details class="workings">
+        <summary>Show the workings</summary>
+        <div class="inner" id="workings"><div class="wk"><div><span class="lbl">Incorporated</span><span class="amt">15 September 2026</span></div><div><span class="lbl">Started trading</span><span class="amt">15 September 2026</span></div><div><span class="lbl">Default year end (accounting reference date)<small>last day of the month you incorporated in, one year on</small></span><span class="amt">30 September 2027</span></div><div class="sub"><span class="lbl">Length of first accounts period<small>15 September 2026 to 30 September 2027</small></span><span class="amt">more than 12 months</span></div><div><span class="lbl">Register for Corporation Tax by<small>15 September 2026 + 3 months</small></span><span class="amt">15 December 2026</span></div><div><span class="lbl">Confirmation statement by<small>15 September 2026 + 12 months + 14 days</small></span><span class="amt">29 September 2027</span></div><div><span class="lbl">First accounts by<small>15 September 2026 + 21 months (first period over 12 months)</small></span><span class="amt">15 June 2028</span></div><div><span class="lbl">Tax period 1<small>HMRC splits any period over 12 months, so two returns</small></span><span class="amt">15 September 2026 to 14 September 2027</span></div><div><span class="lbl">Pay Corporation Tax, period 1<small>14 September 2027 + 9 months + 1 day</small></span><span class="amt">15 June 2028</span></div><div><span class="lbl">File CT600, period 1<small>14 September 2027 + 12 months</small></span><span class="amt">14 September 2028</span></div><div><span class="lbl">Tax period 2<small>HMRC splits any period over 12 months, so two returns</small></span><span class="amt">15 September 2027 to 30 September 2027</span></div><div><span class="lbl">Pay Corporation Tax, period 2<small>30 September 2027 + 9 months + 1 day</small></span><span class="amt">1 July 2028</span></div><div><span class="lbl">File CT600, period 2<small>30 September 2027 + 12 months</small></span><span class="amt">30 September 2028</span></div></div><p class="aside">PAYE: You can only register as an employer inside a window: no earlier than two months before your first payday, because HMRC will not accept it before then, and no later than about three weeks before, because HMRC takes up to 15 working days to send the employer PAYE reference you need to run the first payroll. Miss the window and you cannot pay yourself on the planned date. You will need the company's UTR, registered office, your details as director, the planned first payday and the number of employees. Enter your planned first payday above and the exact window appears in your timeline. VAT only when taxable turnover heads for £90,000, or by choice. Your own Self Assessment: Plan to file a Self Assessment return every year as a director. Strictly, HMRC requires one if you have untaxed income (dividends above £500, benefits, other income) or if HMRC sends you a notice to file, which covers nearly every director who takes dividends, so most accountants register directors from day one. Register by 5 October after the end of the tax year, then file and pay by the following 31 January.</p></div>
+      </details>
+      <p class="print-only">Calculated at sjecapital.co.uk/first-year-deadlines-calculator. Illustrative, not advice: always check the dates HMRC and Companies House send you. SJE Capital Limited, company no. 15837169.</p>
+      <p class="related">New to running a company? Read <a href="/blog/first-90-days-company-director">your first 90 days as a company director</a>, and see all recurring deadlines on the <a href="/key-dates">key dates page</a>.</p>
+      <p class="feedback">Spotted something that looks wrong? <a href="mailto:spencer@sjecapital.co.uk?subject=Calculator%20feedback%3A%20First-year%20deadlines">Tell us</a> and we will check it straight away.</p>
+    </div>
+  </div>
+</main>
+
+<div class="cta-band">
+  <div class="wrap">
+    <h2>Rather never think about these dates again?</h2>
+    <p>Every SJE Capital plan includes deadline management: we track every one of these, file on time, and tell you what is due and when. Free initial conversation.</p>
+    <a class="btn" href="/#contact">Get a free consultation</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 SJE Capital Limited. Registered in England &amp; Wales, company no. 15837169. Based in Hampshire, serving companies across the UK.</span>
+    <span>ICB Certified · Xero Certified Advisor · CIMA Dip MA · <a href="https://www.linkedin.com/company/sje-capital-limited" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+  </div>
+</footer>
+<script>
+(function(){
+  var MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  function d(y,m,day){ return new Date(Date.UTC(y,m,day)); }
+  function parse(v){ var t=String(v).trim(), y, mo, dy, m=t.match(/^(\d{1,2})[\/.\-](\d{1,2})[\/.\-](\d{2}|\d{4})$/);
+    if(m){ dy=+m[1]; mo=+m[2]; y=m[3].length===2?2000+(+m[3]):+m[3]; }
+    else { m=t.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/); if(!m) return null; y=+m[1]; mo=+m[2]; dy=+m[3]; }
+    var r=d(y,mo-1,dy); return (r.getUTCFullYear()===y&&r.getUTCMonth()===mo-1&&r.getUTCDate()===dy&&y>=1900&&y<=2100)?r:null; }
+  function warnEl(id,msg){ var e=document.getElementById(id); if(!e) return; e.hidden=!msg; if(msg) e.textContent=msg; }
+  function endOfMonth(y,m){ return d(y,m+1,0); }
+  function addMonths(dt,n){ var y=dt.getUTCFullYear(), m=dt.getUTCMonth()+n, day=dt.getUTCDate(); var last=endOfMonth(y+Math.floor(m/12),((m%12)+12)%12).getUTCDate(); return d(y,m,Math.min(day,last)); }
+  function addDays(dt,n){ return new Date(dt.getTime()+n*86400000); }
+  function fmt(dt){ return dt.getUTCDate()+' '+MONTHS[dt.getUTCMonth()]+' '+dt.getUTCFullYear(); }
+  function ymd(dt){ return dt.toISOString().slice(0,10).replace(/-/g,''); }
+  function monthsBetween(a,b){ var m=(b.getUTCFullYear()-a.getUTCFullYear())*12+(b.getUTCMonth()-a.getUTCMonth()); if(b.getUTCDate()<a.getUTCDate()) m-=1; return m; }
+  var yeMarch=false, current=[];
+
+  function compute(){
+    var incRaw=document.getElementById('inc').value.trim(), tradeRaw=document.getElementById('trade').value.trim();
+    var inc=parse(incRaw), trade=tradeRaw===''?inc:parse(tradeRaw);
+    warnEl('inc-warn', inc?'':(incRaw===''?'Enter the date your company was incorporated, for example 15/09/2026.':'Enter the date as DD/MM/YYYY, for example 15/09/2026. '+incRaw+' is not a date we can read.'));
+    warnEl('trade-warn', tradeRaw===''?(inc?'No trading date entered, so the incorporation date has been used.':''):(trade?'':'Enter the date as DD/MM/YYYY, for example 15/09/2026. '+tradeRaw+' is not a date we can read.'));
+    if(!inc||!trade){ current={stop:true}; return current; }
+    if(trade<inc) trade=inc;
+    var defaultARD=endOfMonth(inc.getUTCFullYear()+1, inc.getUTCMonth());  // last day of incorporation month, a year on
+    var ard=defaultARD, yeNote='';
+    if(yeMarch){
+      var m1=d(inc.getUTCFullYear()+(inc.getUTCMonth()>=2?1:0),2,31);           // first 31 March after incorporation
+      var days=(m1-inc)/86400000;
+      if(days>=90){ ard=m1; yeNote='shortened from '+fmt(defaultARD)+' to '+fmt(ard)+' (you can shorten as often as you like)'; }
+      else { var m2=d(m1.getUTCFullYear()+1,2,31); if(monthsBetween(inc,m2)<=18){ ard=m2; yeNote='extended from '+fmt(defaultARD)+' to '+fmt(ard)+' (allowed once every five years, up to 18 months)'; } else { ard=m1; yeNote='shortened to '+fmt(ard)+', a very short first period'; } }
+    }
+    var firstPeriodMonths=monthsBetween(inc,ard);
+    var longFirst = ard >= addMonths(inc,12);   // inc..ard inclusive exceeds 12 months when ard is on/after the anniversary
+    // Companies House first accounts
+    var accounts = longFirst ? addMonths(inc,21) : addMonths(ard,9);
+    var alt=addMonths(ard,3); if(longFirst && alt>accounts) accounts=alt;
+    // Corporation Tax periods run from trading start to ARD, split at 12 months
+    var periods=[];
+    if(ard >= addMonths(trade,12)){ var p1end=addDays(addMonths(trade,12),-1); periods.push({start:trade,end:p1end}); periods.push({start:addDays(p1end,1),end:ard}); }
+    else periods.push({start:trade,end:ard});
+    var items=[];
+    var todayU=new Date(); todayU=d(todayU.getFullYear(),todayU.getMonth(),todayU.getDate()); var startedWord = trade<=todayU ? 'started' : 'start';
+    items.push({date:addMonths(trade,3), title:'Register the company for Corporation Tax', note:'3 months after you '+startedWord+' doing business ('+fmt(trade)+'). Companies House told HMRC you exist, but this step is yours to do.', key:'ctreg'});
+    items.push({date:addDays(addMonths(inc,12),14), title:'File your first confirmation statement', note:'Review period is 12 months from incorporation; you then have 14 days. £50 online. Due every year after.', key:'cs'});
+    items.push({date:accounts, title:'File your first annual accounts at Companies House', note:(longFirst?'21 months after incorporation, because your first period ('+fmt(inc)+' to '+fmt(ard)+') is longer than 12 months.':'9 months after your year end of '+fmt(ard)+'.')+' Later years: 9 months after each year end.', key:'acc'});
+    periods.forEach(function(p,i){
+      var lbl=periods.length>1?(i===0?'first':'second')+' tax period':'tax period';
+      items.push({date:addDays(addMonths(p.end,9),1), title:'Pay Corporation Tax for the '+lbl, note:'Period '+fmt(p.start)+' to '+fmt(p.end)+'. Due 9 months and 1 day after it ends. Note this is before the return is due.', key:'ctpay'+i});
+      items.push({date:addMonths(p.end,12), title:'File the Company Tax Return (CT600) for the '+lbl, note:'12 months after the period ends. Filed with your accounts and computations.', key:'ct600'+i});
+    });
+    var pd=document.getElementById('payday').value.trim();
+    var payday=pd?parse(pd):null; warnEl('payday-warn', pd&&!payday?'Enter the payday as DD/MM/YYYY, for example 28/11/2026. It has been left out of the timeline until then.':'');
+    if(payday){
+      items.push({date:addMonths(payday,-2), title:'Earliest you can register for PAYE', note:'HMRC will not accept an employer registration more than two months before the first payday ('+fmt(payday)+').', key:'payeopen'});
+      items.push({date:addDays(payday,-21), title:'Register for PAYE by this date', note:'HMRC takes up to 15 working days to send your employer PAYE reference, which you need to run the first payroll on '+fmt(payday)+'.', key:'payeclose'});
+      items.push({date:payday, title:'First payday: run payroll and file the RTI report', note:'The Full Payment Submission must reach HMRC on or before the day you pay. PAYE and NI for the month are due by the 22nd of the following month.', key:'payday'});
+    }
+    items.sort(function(a,b){ return a.date-b.date; });
+    current={inc:inc,trade:trade,ard:ard,defaultARD:defaultARD,yeNote:yeNote,firstPeriodMonths:firstPeriodMonths,longFirst:longFirst,periods:periods,items:items,accounts:accounts};
+    return current;
+  }
+  function render(){
+    var c=compute(), today=new Date(); today=d(today.getFullYear(),today.getMonth(),today.getDate());
+    if(c.stop){ document.getElementById('timeline').innerHTML=''; document.getElementById('next-in').textContent='\u2014'; document.getElementById('next-title').textContent='Enter your dates to see your deadlines'; document.getElementById('next-sub').textContent='Check the date boxes: each date needs to be written as DD/MM/YYYY.'; var wk=document.getElementById('workings'); if(wk) wk.innerHTML=''; return; }
+    var html='';
+    c.items.forEach(function(it){
+      var days=Math.round((it.date-today)/86400000), past=days<0;
+      var when = past ? Math.abs(days)+' days ago' : (days===0?'today':'in '+days+' days');
+      html+='<div class="item'+(past?' past':'')+'"><div class="date">'+fmt(it.date)+'</div><div class="what"><strong>'+it.title+'</strong><small>'+it.note+'</small>'+'</div><div class="in">'+when+'</div></div>';
+    });
+    document.getElementById('timeline').innerHTML=html;
+    var next=c.items.filter(function(i){ return i.date>=today; })[0];
+    if(next){ var n=Math.round((next.date-today)/86400000); document.getElementById('next-in').textContent=n+' day'+(n===1?'':'s'); document.getElementById('next-title').textContent='until your next deadline: '+next.title.charAt(0).toLowerCase()+next.title.slice(1); document.getElementById('next-sub').textContent=fmt(next.date)+'. '+next.note; }
+    else { document.getElementById('next-in').textContent='Done'; document.getElementById('next-title').textContent='All first-year deadlines have passed'; document.getElementById('next-sub').textContent='From here the dates repeat every year: confirmation statement, accounts 9 months after year end, Corporation Tax 9 months and 1 day after, return 12 months after.'; }
+    var w='<div class="wk">'
+      +row('Incorporated',fmt(c.inc))
+      +row('Started trading',fmt(c.trade),'',c.trade>c.inc?'the Corporation Tax clock runs from here':'')
+      +row('Default year end (accounting reference date)',fmt(c.defaultARD),'','last day of the month you incorporated in, one year on')
+      +(yeMarch?row('Year end after moving it',fmt(c.ard),'',c.yeNote):'')
+      +row('Length of first accounts period',(c.longFirst?'more than 12 months':c.firstPeriodMonths+' months'),'sub',fmt(c.inc)+' to '+fmt(c.ard))
+      +row('Register for Corporation Tax by',fmt(addMonths(c.trade,3)),'',fmt(c.trade)+' + 3 months')
+      +row('Confirmation statement by',fmt(addDays(addMonths(c.inc,12),14)),'',fmt(c.inc)+' + 12 months + 14 days')
+      +row('First accounts by',fmt(c.accounts),'',c.longFirst?fmt(c.inc)+' + 21 months (first period over 12 months)':fmt(c.ard)+' + 9 months')
+      +c.periods.map(function(p,i){ return row('Tax period '+(i+1),fmt(p.start)+' to '+fmt(p.end),'',c.periods.length>1?'HMRC splits any period over 12 months, so two returns':'a single period of 12 months or less')
+        +row('Pay Corporation Tax, period '+(i+1),fmt(addDays(addMonths(p.end,9),1)),'',fmt(p.end)+' + 9 months + 1 day')
+        +row('File CT600, period '+(i+1),fmt(addMonths(p.end,12)),'',fmt(p.end)+' + 12 months'); }).join('')
+      +'</div><p class="aside">PAYE: You can only register as an employer inside a window: no earlier than two months before your first payday, because HMRC will not accept it before then, and no later than about three weeks before, because HMRC takes up to 15 working days to send the employer PAYE reference you need to run the first payroll. Miss the window and you cannot pay yourself on the planned date. You will need the company\'s UTR, registered office, your details as director, the planned first payday and the number of employees. Enter your planned first payday above and the exact window appears in your timeline. VAT only when taxable turnover heads for £90,000, or by choice. Your own Self Assessment: Plan to file a Self Assessment return every year as a director. Strictly, HMRC requires one if you have untaxed income (dividends above £500, benefits, other income) or if HMRC sends you a notice to file, which covers nearly every director who takes dividends, so most accountants register directors from day one. Register by 5 October after the end of the tax year, then file and pay by the following 31 January.</p>';
+    document.getElementById('workings').innerHTML=w;
+  }
+  function row(label,val,cls,small){ return '<div'+(cls?' class="'+cls+'"':'')+'><span class="lbl">'+label+(small?'<small>'+small+'</small>':'')+'</span><span class="amt">'+val+'</span></div>'; }
+  function ics(){
+    var c=current; if(!c||c.stop) return; var lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//SJE Capital//First-year deadlines//EN','CALSCALE:GREGORIAN'];
+    c.items.forEach(function(it,i){ var s=ymd(it.date), e=ymd(addDays(it.date,1));
+      lines.push('BEGIN:VEVENT','UID:sje-'+s+'-'+i+'@sjecapital.co.uk','DTSTAMP:'+ymd(new Date())+'T090000Z','DTSTART;VALUE=DATE:'+s,'DTEND;VALUE=DATE:'+e,'SUMMARY:'+it.title.replace(/,/g,'\\,'),'DESCRIPTION:'+(it.note+' Calculated by SJE Capital, sjecapital.co.uk').replace(/,/g,'\\,'),'BEGIN:VALARM','TRIGGER:-P14D','ACTION:DISPLAY','DESCRIPTION:'+it.title.replace(/,/g,'\\,')+' in two weeks','END:VALARM','END:VEVENT'); });
+    lines.push('END:VCALENDAR');
+    var blob=new Blob([lines.join('\r\n')],{type:'text/calendar'}), a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='sje-capital-first-year-deadlines.ics'; document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  }
+
+  // ---- brand date picker (reusable): attach to any input.datefield ----
+  (function(){
+    var DAYS=['Mo','Tu','We','Th','Fr','Sa','Su'];
+    function pad(n){ return (n<10?'0':'')+n; }
+    function toStr(dt){ return pad(dt.getUTCDate())+'/'+pad(dt.getUTCMonth()+1)+'/'+dt.getUTCFullYear(); }
+    function valid(v){ var m=String(v).match(/^(\d{1,2})[\/.\-](\d{1,2})[\/.\-](\d{4})$/); if(!m) return null; var dt=d(+m[3],+m[2]-1,+m[1]); return (dt.getUTCDate()===+m[1]&&dt.getUTCMonth()===+m[2]-1)?dt:null; }
+    document.querySelectorAll('input.datefield').forEach(function(inp){
+      var wrap=document.createElement('div'); wrap.className='dp-wrap'; inp.parentNode.insertBefore(wrap,inp); wrap.appendChild(inp);
+      var pop=document.createElement('div'); pop.className='dp'; pop.hidden=true; wrap.appendChild(pop);
+      var view=new Date();
+      function build(){
+        var sel=valid(inp.value), today=new Date(), y=view.getFullYear(), m=view.getMonth();
+        var first=new Date(Date.UTC(y,m,1)), startDow=(first.getUTCDay()+6)%7, dim=new Date(Date.UTC(y,m+1,0)).getUTCDate(), prevDim=new Date(Date.UTC(y,m,0)).getUTCDate();
+        var h='<div class="dp-head"><button type="button" data-nav="-1" aria-label="Previous month">&lsaquo;</button><b>'+MONTHS[m]+' '+y+'</b><button type="button" data-nav="1" aria-label="Next month">&rsaquo;</button></div><div class="dp-grid">';
+        DAYS.forEach(function(x){ h+='<span>'+x+'</span>'; });
+        for(var i=0;i<startDow;i++){ h+='<button type="button" class="other" data-d="'+(prevDim-startDow+1+i)+'/'+(m===0?12:m)+'/'+(m===0?y-1:y)+'">'+(prevDim-startDow+1+i)+'</button>'; }
+        for(var day=1;day<=dim;day++){ var cls=[]; if(sel&&sel.getUTCFullYear()===y&&sel.getUTCMonth()===m&&sel.getUTCDate()===day) cls.push('sel'); if(today.getFullYear()===y&&today.getMonth()===m&&today.getDate()===day) cls.push('today');
+          h+='<button type="button" class="'+cls.join(' ')+'" data-d="'+day+'/'+(m+1)+'/'+y+'">'+day+'</button>'; }
+        var cells=startDow+dim, tail=(7-cells%7)%7; for(var t=1;t<=tail;t++){ h+='<button type="button" class="other" data-d="'+t+'/'+(m===11?1:m+2)+'/'+(m===11?y+1:y)+'">'+t+'</button>'; }
+        h+='</div><div class="dp-foot"><button type="button" data-today="1">Today</button><button type="button" data-clear="1">Clear</button></div>';
+        pop.innerHTML=h;
+      }
+      function open(){ var sel=valid(inp.value); view=sel?new Date(sel.getUTCFullYear(),sel.getUTCMonth(),1):new Date(); build(); pop.hidden=false; }
+      function close(){ pop.hidden=true; }
+      function setVal(dt){ inp.value=toStr(dt); inp.dispatchEvent(new Event('change')); }
+      inp.addEventListener('focus',open); inp.addEventListener('click',open);
+      inp.addEventListener('blur',function(){ setTimeout(function(){ if(!pop.contains(document.activeElement)) close(); },150); var v=valid(inp.value); if(v) inp.value=toStr(v); else if(inp.value.trim()!=='') inp.value=inp.defaultValue; });
+      pop.addEventListener('mousedown',function(e){ e.preventDefault(); });
+      pop.addEventListener('click',function(e){ var b=e.target.closest('button'); if(!b) return;
+        if(b.dataset.nav){ view.setMonth(view.getMonth()+ +b.dataset.nav); build(); return; }
+        if(b.dataset.today){ var t=new Date(); setVal(d(t.getFullYear(),t.getMonth(),t.getDate())); close(); return; }
+        if(b.dataset.clear){ inp.value=''; inp.dispatchEvent(new Event('change')); close(); return; }
+        if(b.dataset.d){ var p=b.dataset.d.split('/'); setVal(d(+p[2],+p[1]-1,+p[0])); close(); } });
+      document.addEventListener('click',function(e){ if(!wrap.contains(e.target)) close(); });
+    });
+  })();
+
+  document.getElementById('ye-default').addEventListener('click',function(){ yeMarch=false; this.setAttribute('aria-pressed',true); document.getElementById('ye-march').setAttribute('aria-pressed',false); render(); });
+  document.getElementById('ye-march').addEventListener('click',function(){ yeMarch=true; this.setAttribute('aria-pressed',true); document.getElementById('ye-default').setAttribute('aria-pressed',false); render(); });
+  document.getElementById('inc').addEventListener('change',function(){ var t=document.getElementById('trade'); if(!t.value.trim() || parse(t.value)<parse(this.value)) t.value=this.value; render(); });
+  document.getElementById('trade').addEventListener('change',render);
+  document.getElementById('payday').addEventListener('change',render);
+  document.getElementById('ics').addEventListener('click',ics);
+  document.getElementById('print').addEventListener('click',function(){ document.querySelector('details.workings').open=true; window.print(); });
+  document.getElementById('gcal-all').addEventListener('click',function(){ window.open('https://calendar.google.com/calendar/u/0/r/settings/export','_blank','noopener'); ics(); });
+
+  // ---- brand select: enhances every <select> in the inputs ----
+  (function(){
+    document.querySelectorAll('.calc-input select').forEach(function(sel){
+      var wrap=document.createElement('div'); wrap.className='bs'; sel.parentNode.insertBefore(wrap,sel); wrap.appendChild(sel);
+      var btn=document.createElement('button'); btn.type='button'; btn.className='bs-btn'; btn.setAttribute('aria-haspopup','listbox'); btn.setAttribute('aria-expanded','false');
+      var list=document.createElement('div'); list.className='bs-list'; list.hidden=true; list.setAttribute('role','listbox');
+      wrap.appendChild(btn); wrap.appendChild(list);
+      function label(){ var o=sel.options[sel.selectedIndex]; btn.textContent=o?o.textContent:''; }
+      function build(){ list.innerHTML=''; Array.prototype.forEach.call(sel.options,function(o,i){ if(o.disabled) return; var b=document.createElement('button'); b.type='button'; b.setAttribute('role','option'); b.textContent=o.textContent; if(i===sel.selectedIndex) b.className='sel'; b.addEventListener('click',function(){ sel.selectedIndex=i; sel.dispatchEvent(new Event('change')); label(); close(); btn.focus(); }); list.appendChild(b); }); }
+      function open(){ build(); list.hidden=false; wrap.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+      function close(){ list.hidden=true; wrap.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+      btn.addEventListener('click',function(){ list.hidden?open():close(); });
+      btn.addEventListener('keydown',function(e){ if(e.key==='ArrowDown'||e.key==='ArrowUp'){ e.preventDefault(); var n=sel.selectedIndex+(e.key==='ArrowDown'?1:-1); while(sel.options[n]&&sel.options[n].disabled) n+=(e.key==='ArrowDown'?1:-1); if(sel.options[n]){ sel.selectedIndex=n; sel.dispatchEvent(new Event('change')); label(); if(!list.hidden) build(); } } if(e.key==='Escape') close(); });
+      document.addEventListener('click',function(e){ if(!wrap.contains(e.target)) close(); });
+      sel.addEventListener('change',label);
+      label();
+    });
+  })();
+  render();
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "00529846a08f42db871a69a17e005ffd"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

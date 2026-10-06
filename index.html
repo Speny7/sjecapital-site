@@ -85,7 +85,7 @@
   a{ color:var(--leaf); text-decoration-thickness:1px; text-underline-offset:3px; }
   a:hover{ color:var(--leaf-deep); }
   :focus-visible{ outline:3px solid var(--focus); outline-offset:3px; border-radius:2px; }
-  .wrap{ max-width:1060px; margin:0 auto; padding:0 24px; }
+  .wrap{ max-width:1200px; margin:0 auto; padding:0 24px; }
 
   /* ---------- header ---------- */
   header{ background:var(--ink); border-bottom:1px solid #2A5340; }
@@ -323,6 +323,81 @@
   .enquiry .bs-list button{ display:block; width:100%; text-align:left; font-family:inherit; font-size:.95rem; padding:9px 10px; border:none; border-radius:3px; background:none; color:var(--ink); cursor:pointer; }
   .enquiry .bs-list button:hover{ background:var(--rule-soft); }
   .enquiry .bs-list button.sel{ background:var(--ink); color:var(--paper-hi); }
+/* sje-motion */
+  .res-card, .thanks-card, .plan, .posts article, .next-step, .tools li a{ transition:transform .2s cubic-bezier(.2,.7,.2,1), box-shadow .2s cubic-bezier(.2,.7,.2,1), border-color .2s ease, color .2s ease; }
+  .res-card:hover, .thanks-card:hover, .plan:hover, .posts article:hover{ transform:translateY(-3px); box-shadow:0 10px 24px rgba(20,56,43,.10); border-top-color:var(--leaf); }
+  .plan.popular:hover{ border-top-color:var(--mint, #9FD8B7); }
+  .arr{ display:inline-block; transition:transform .2s cubic-bezier(.2,.7,.2,1); }
+  a:hover .arr, button:hover .arr, a:focus-visible .arr{ transform:translateX(4px); }
+  .btn, .ns-btn, .thanks-book-btn, .tabs button, .bs-btn, .row-link, .more{ transition:background-color .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease; }
+  .wk > div{ transition:background-color .15s ease; }
+  .wk > div:hover{ background-color:rgba(30,107,74,.06); }
+  details[open] > *:not(summary){ animation:sje-reveal .25s cubic-bezier(.2,.7,.2,1); }
+  .bs-list:not([hidden]){ animation:sje-drop .16s cubic-bezier(.2,.7,.2,1); }
+  .sje-flash{ animation:sje-flash .8s ease; border-radius:3px; }
+  .sje-reveal{ opacity:0; transform:translateY(14px); transition:opacity .5s cubic-bezier(.2,.7,.2,1), transform .5s cubic-bezier(.2,.7,.2,1); }
+  .sje-reveal.in{ opacity:1; transform:none; }
+  @keyframes sje-reveal{ from{ opacity:0; transform:translateY(-4px); } to{ opacity:1; transform:none; } }
+  @keyframes sje-drop{ from{ opacity:0; transform:translateY(-4px); } to{ opacity:1; transform:none; } }
+  @keyframes sje-flash{ 0%{ background-color:rgba(159,216,183,.45); } 100%{ background-color:transparent; } }
+  @media (prefers-reduced-motion: reduce){
+    *, *::before, *::after{ animation:none !important; transition:none !important; }
+    .sje-reveal{ opacity:1 !important; transform:none !important; }
+    .res-card:hover, .thanks-card:hover, .plan:hover, .posts article:hover, a:hover .arr, button:hover .arr{ transform:none !important; }
+  }
+  @media print{ .sje-reveal{ opacity:1 !important; transform:none !important; } }
+
+  /* ---------- preview additions ---------- */
+  .x-chooser{ margin-top:26px; }
+  .chooser-q{ font-size:.85rem; letter-spacing:.08em; text-transform:uppercase; color:var(--leaf); font-weight:600; margin-bottom:10px; }
+  .chooser-opts{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; }
+  .chooser-opts a{ display:block; background:var(--paper-hi); border:1px solid var(--rule); border-top:2px solid var(--ink); padding:10px 12px; text-decoration:none; color:var(--ink); transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+  .chooser-opts a:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(20,56,43,.10); border-top-color:var(--leaf); }
+  .chooser-opts b{ display:block; font-family:"EB Garamond", Georgia, serif; font-size:1.15rem; font-weight:600; }
+  .chooser-opts span{ font-size:.85rem; color:var(--ink-soft); }
+  .flow{ padding:72px 0 24px; }
+  .steps{ list-style:none; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px; margin-top:22px; counter-reset:none; }
+  .steps li{ background:var(--paper-hi); border-top:2px solid var(--ink); padding:18px 18px 20px; transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+  .steps li:hover{ transform:translateY(-3px); box-shadow:0 10px 24px rgba(20,56,43,.10); border-top-color:var(--leaf); }
+  .steps .num{ font-family:"EB Garamond", Georgia, serif; font-size:1.9rem; font-weight:600; color:var(--leaf); line-height:1; }
+  .steps h3{ font-size:1.25rem; margin:10px 0 6px; }
+  .steps p{ font-size:.95rem; color:var(--ink-soft); margin:0; }
+  .faq-home{ padding:56px 0 64px; }
+  .faq-home details{ max-width:820px; border-bottom:1px solid var(--rule); padding:12px 0; }
+  .faq-home summary span{ font-weight:600; }
+  @media (max-width:860px){ .steps{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  @media (max-width:560px){ .chooser-opts, .steps{ grid-template-columns:1fr; } .quote blockquote{ font-size:1.35rem; } }
+  .mobile-cta{ display:none; }
+  @media (max-width:760px){
+    .mobile-cta{ display:flex; position:fixed; left:0; right:0; bottom:0; z-index:50; align-items:center; justify-content:space-between; gap:12px; background:var(--ink); padding:10px 16px calc(10px + env(safe-area-inset-bottom, 0px)); box-shadow:0 -6px 18px rgba(20,56,43,.18); }
+    .mobile-cta .mc-btn{ flex:1; text-align:center; background:var(--leaf); color:#fff; border:1px solid #9FD8B7; padding:11px 12px; border-radius:3px; text-decoration:none; font-weight:600; font-size:.95rem; }
+    .mobile-cta .mc-link{ color:#CBDACD; font-size:.9rem; text-decoration:underline; white-space:nowrap; }
+    body{ padding-bottom:72px; }
+  }
+  @media print{ .mobile-cta{ display:none !important; } }
+  .proof{ padding:8px 0 56px; }
+  .proof-grid{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.25fr); gap:22px; align-items:stretch; }
+  .meet{ display:flex; gap:18px; align-items:flex-start; background:var(--paper-hi); border-top:2px solid var(--ink); padding:22px 22px; }
+  .meet img{ width:76px; height:76px; border-radius:50%; object-fit:cover; flex:none; }
+  .meet-title{ font-family:"EB Garamond", Georgia, serif; font-size:1.35rem; font-weight:600; color:var(--ink); margin:0 0 6px; }
+  .meet-text{ color:var(--ink-soft); font-size:.95rem; line-height:1.55; margin:0; }
+  .meet-text b{ color:var(--ink); }
+  .quote{ margin:0; background:var(--paper-hi); border-top:2px solid var(--leaf); padding:22px 26px 20px; position:relative; }
+  .proof-kicker{ font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; color:var(--leaf); font-weight:600; margin:0 0 8px; }
+  .quote blockquote{ font-family:"EB Garamond", Georgia, serif; font-size:1.22rem; line-height:1.45; color:var(--ink); margin:0; }
+  .quote blockquote::before{ content:"\201C"; color:var(--leaf); }
+  .quote blockquote::after{ content:"\201D"; color:var(--leaf); }
+  .quote figcaption{ margin-top:12px; color:var(--ink-soft); font-size:.9rem; display:flex; align-items:center; gap:10px; }
+  .quote figcaption b{ color:var(--ink); }
+  .q-rule{ display:inline-block; width:24px; height:2px; background:var(--leaf); }
+  @media (max-width:860px){ .proof-grid{ grid-template-columns:1fr; } }
+  /* alternating section backgrounds: page colour, then lighter */
+  .flow, #services, .faq-home{ background:var(--paper-hi); border-top:1px solid var(--rule-soft); border-bottom:1px solid var(--rule-soft); }
+  #about{ background:var(--paper); }
+  .flow .steps li{ background:var(--paper); }
+  #services .ledger, #services .ledger-row{ background:var(--paper); }
+  .faq-home details{ border-bottom-color:var(--rule); }
+  #services .ledger-row:hover{ background:var(--paper-hi); }
 </style>
 </head>
 <body>
@@ -353,12 +428,12 @@
         <h1>Your numbers, handled. Your evenings, back.</h1>
         <p class="lede">SJE Capital is a UK accountancy and bookkeeping practice for limited companies, from newly formed to well established. We handle your books, your filings and your director pay so you can focus on growing the business, for a fixed monthly fee. Working with growing companies across the UK.</p>
         <div class="actions">
-          <a class="btn" href="#contact">Get a free consultation</a>
-          <a class="btn ghost" href="#services">View services</a>
+          <a class="btn" href="https://calendar.app.google/MgqokbUqk9WwncKk8" target="_blank" rel="noopener noreferrer" data-booking>Book a free 15-minute call</a>
+          <a class="btn ghost" href="#contact">Get a quote</a>
         </div>
         <div class="assurances" role="list">
           <span role="listitem">HMRC recognised agent</span>
-          <span role="listitem">Fixed monthly fees</span>
+          <span role="listitem">Fixed monthly fees from £500</span>
           <span role="listitem">Fully insured</span>
         </div>
       </div>
@@ -397,24 +472,99 @@
     </div>
   </div>
 
-  <section id="about">
-    <div class="wrap about-grid">
-      <div>
-        <h2>Your trusted financial partner</h2>
-        <p class="section-intro">At SJE Capital, we understand that managing finances can be overwhelming for business owners. That's why we're here to take the burden off your shoulders with comprehensive accountancy and bookkeeping services.</p>
-        <p>We don't just manage your numbers. We provide insights that help you make informed business decisions, with books that are always accurate, compliant and ready for HMRC submissions. We are also a modern practice: AI and cloud automation handle the repetitive heavy lifting, and a qualified human checks every number before anything is filed.</p>
-        <p>And you deal directly with the person doing the work: one point of contact who knows your business, your numbers and your deadlines, not a rotating cast at a large firm.</p>
-        <div style="margin-top:30px;"><a class="btn" href="#contact">Book a free consultation</a></div>
-      </div>
-      <div>
-        <figure class="portrait">
-          <img src="/img/spencer-elbert.webp" width="520" height="520" alt="Spencer Elbert, founder of SJE Capital" loading="lazy">
-          <figcaption>Spencer, founder of SJE Capital</figcaption>
+  <section class="proof">
+    <div class="wrap">
+      <div class="proof-grid">
+        <div class="meet">
+          <img src="/img/spencer-elbert.webp" width="76" height="76" alt="Spencer Elbert">
+          <div>
+            <p class="meet-title">You work directly with me</p>
+            <p class="meet-text"><b>Spencer Elbert</b>, founder. ICB Certified, Xero Certified Advisor, CIMA Dip MA. No juniors and no call centre: the qualified accountant you speak to is the one looking after your company.</p>
+          </div>
+        </div>
+        <figure class="quote">
+          <p class="proof-kicker">What clients say</p>
+          <blockquote>SJE Capital has been amazing with helping me start my limited company. They explained everything thoroughly and answered all my questions regarding tax, invoicing, PAYE and accounting. Many thanks!</blockquote>
+          <figcaption><span class="q-rule"></span><span><b>Michael</b>, Director, Greenhill Foot Care Ltd</span></figcaption>
         </figure>
-        <div class="figures" aria-label="Practice figures">
-          <div><b>200+</b><span>clients served across the UK</span></div>
-          <div><b>8+ years</b><span>professional experience</span></div>
-          <div><b>24hr</b><span>typical response time</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="flow">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <p class="section-intro">From the day you switch to us, here is what happens, and what you no longer have to think about.</p>
+      <ol class="steps">
+        <li><span class="num">01</span><h3>Switch</h3><p>We handle the handover with your previous accountant and HMRC. Most switches take two to four weeks, and no deadline is missed.</p></li>
+        <li><span class="num">02</span><h3>Monthly books</h3><p>Your bank feeds come into Xero and we reconcile every transaction each month, chasing anything missing.</p></li>
+        <li><span class="num">03</span><h3>Reports and returns</h3><p>A short monthly summary for you, and every VAT return, payroll submission and set of accounts filed on time.</p></li>
+        <li><span class="num">04</span><h3>Planning</h3><p>Salary, dividends and pension contributions planned around your numbers, so you keep more of what you earn.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="wrap">
+      <h2>Simple, transparent pricing</h2>
+      <p class="section-intro">Choose the plan that fits your business. Every plan includes HMRC compliance and fixed fees. No hourly billing, no surprises.</p>
+      <div class="billing-toggle">
+        <div class="switch" role="group" aria-label="Billing period">
+          <button type="button" id="bill-monthly" aria-pressed="true" onclick="setBilling('monthly')">Monthly</button>
+          <button type="button" id="bill-annual" aria-pressed="false" onclick="setBilling('annual')">Annual</button>
+        </div>
+        <span class="note">Save 15% with annual billing (12-month agreement)</span>
+      </div>
+      <div class="plans">
+        <div class="plan">
+          <h3>Startup</h3>
+          <p class="for">Perfect for early-stage businesses</p>
+          <p class="price"><small>from </small>£<span data-monthly="500" data-annual="425">500</span><small>/month</small></p>
+          <p class="annual-note" data-note></p>
+          <ul>
+            <li>Monthly bookkeeping</li>
+            <li>VAT returns</li>
+            <li>Basic payroll (up to 3 employees)</li>
+            <li>Annual accounts preparation</li>
+            <li>Director's Self Assessment return</li>
+            <li>Yearly confirmation statement filing</li>
+            <li>Cloud accounting software setup</li>
+            <li>Email support</li>
+          </ul>
+          <a class="btn ghost" href="#contact">Get started</a>
+        </div>
+        <div class="plan popular">
+          <p class="flag">Most popular</p>
+          <h3>Scale</h3>
+          <p class="for">For growing businesses</p>
+          <p class="price"><small>from </small>£<span data-monthly="900" data-annual="765">900</span><small>/month</small></p>
+          <p class="annual-note" data-note></p>
+          <ul>
+            <li>Everything in Startup, plus:</li>
+            <li>Payroll for up to 10 employees</li>
+            <li>Management accounts</li>
+            <li>Quarterly business reviews</li>
+            <li>Tax planning advice</li>
+            <li>Priority email &amp; phone support</li>
+            <li>Dedicated account manager</li>
+          </ul>
+          <a class="btn" href="#contact">Get started</a>
+        </div>
+        <div class="plan">
+          <h3>Thrive</h3>
+          <p class="for">For established companies</p>
+          <p class="price"><small>from </small>£<span data-monthly="1,500" data-annual="1,275">1,500</span><small>/month</small></p>
+          <p class="annual-note" data-note></p>
+          <ul>
+            <li>Everything in Scale, plus:</li>
+            <li>Payroll for up to 25 employees</li>
+            <li>CFO advisory services</li>
+            <li>Monthly strategic reviews</li>
+            <li>Advanced tax optimisation</li>
+            <li>Custom financial reporting</li>
+            <li>Business growth consulting</li>
+          </ul>
+          <a class="btn ghost" href="#contact">Get started</a>
         </div>
       </div>
     </div>
@@ -434,7 +584,7 @@
             <li>Monthly financial reports</li>
             <li>VAT preparation</li>
           </ul>
-          <a class="row-link" href="/xero-bookkeeping">How our Xero bookkeeping works &rarr;</a>
+          <a class="row-link" href="/xero-bookkeeping">How our Xero bookkeeping works <span class="arr">&rarr;</span></a>
         </div>
         <div class="ledger-row">
           <h3>Tax preparation and filing</h3>
@@ -490,121 +640,40 @@
     </div>
   </section>
 
-  <section id="calculator">
-    <div class="wrap">
-      <h2>What could you get back?</h2>
-      <p class="section-intro">Most owners spend hours every week doing their own books. Enter yours to see what handing them over could be worth.</p>
-      <div class="calc">
-        <div class="calc-inputs">
-          <label for="in-h">Hours you spend on the books each week</label>
-          <input type="text" inputmode="numeric" id="in-h" value="4" class="home-in">
-          <label for="in-r">What an hour of your time is worth</label>
-          <span class="home-money"><input type="text" inputmode="numeric" id="in-r" value="50" class="home-in"></span>
-          <p class="calc-note" id="home-work"></p>
-          <p class="calc-note">Illustrative only, compared against our Startup plan billed annually (£4,080 a year). Every business is different, which is why we quote.</p>
-        </div>
-        <div class="figures" aria-label="Estimated savings">
-          <div><b id="res-hours">208 hours</b><span>freed up every year</span></div>
-          <div><b id="res-value">£10,400</b><span>what that time is worth</span></div>
-          <div><b id="res-net">£6,320</b><span>net gain after plan cost</span></div>
+  <section id="about">
+    <div class="wrap about-grid">
+      <div>
+        <h2>Your trusted financial partner</h2>
+        <p class="section-intro">At SJE Capital, we understand that managing finances can be overwhelming for business owners. That's why we're here to take the burden off your shoulders with comprehensive accountancy and bookkeeping services.</p>
+        <p>We don't just manage your numbers. We provide insights that help you make informed business decisions, with books that are always accurate, compliant and ready for HMRC submissions. We are also a modern practice: AI and cloud automation handle the repetitive heavy lifting, and a qualified human checks every number before anything is filed.</p>
+        <p>And you deal directly with the person doing the work: one point of contact who knows your business, your numbers and your deadlines, not a rotating cast at a large firm.</p>
+        <div style="margin-top:30px;"><a class="btn" href="#contact">Book a free consultation</a></div>
+      </div>
+      <div>
+        <figure class="portrait">
+          <img src="/img/spencer-elbert.webp" width="520" height="520" alt="Spencer Elbert, founder of SJE Capital" loading="lazy">
+          <figcaption>Spencer, founder of SJE Capital</figcaption>
+        </figure>
+        <div class="figures" aria-label="Practice figures">
+          <div><b>200+</b><span>businesses supported across the UK</span></div>
+          <div><b>8+ years</b><span>professional experience</span></div>
+          <div><b>24hr</b><span>typical response time</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="tools" class="tools">
+  <section class="faq-home">
     <div class="wrap">
-      <h2>Free tools and guides</h2>
-      <p class="section-intro">Every calculator is worked to the penny with the full calculation shown, and every guide is checked against HMRC.</p>
-      <div class="tools-grid">
-        <div>
-          <h3>Free calculators</h3>
-          <ul>
-            <li><a href="/take-home-calculator">Director take-home calculator <span>salary vs dividends</span></a></li>
-            <li><a href="/dividend-tax-calculator">Dividend tax calculator <span>2026/27 rates</span></a></li>
-            <li><a href="/first-year-deadlines-calculator">First-year deadlines <span>for new companies</span></a></li>
-          </ul>
-          <a class="more" href="/resources">All seven calculators &rarr;</a>
-        </div>
-        <div>
-          <h3>Latest guides</h3>
-          <ul>
-            <li><a href="/blog/company-pension-contributions-directors">Should your company pay into your pension? <span>Pensions</span></a></li>
-            <li><a href="/blog/first-90-days-company-director">Your first 90 days as a company director <span>New companies</span></a></li>
-            <li><a href="/blog/limited-company-expenses-2026-27">Limited company expenses 2026/27 <span>Expenses</span></a></li>
-          </ul>
-          <a class="more" href="/blog">All guides &rarr;</a>
-        </div>
-      </div>
+      <h2>Before you get started</h2>
+      <p class="section-intro">The practical things directors ask before they move to us.</p>
+      <details class="info"><summary><span>Can I switch accountant part-way through the year?</span></summary><p class="hint">Yes. You do not need to wait for your year end. We contact your previous accountant and HMRC for you, and make sure no deadline is missed during the handover. <a href="/switching-accountants">How switching works</a>.</p></details>
+      <details class="info"><summary><span>What is included in the fixed fee?</span></summary><p class="hint">Every plan includes monthly bookkeeping, VAT returns, payroll, your annual accounts and your own Self Assessment return. Larger plans add management accounts and tax planning. <a href="#pricing">See the plans</a>.</p></details>
+      <details class="info"><summary><span>Do I need to use Xero?</span></summary><p class="hint">We run our clients' books in Xero. If you use spreadsheets or other software, we move you across as part of taking you on. <a href="/xero-bookkeeping">Xero bookkeeping explained</a>.</p></details>
+      <details class="info"><summary><span>How quickly can you start?</span></summary><p class="hint">Straight away. Most switches are complete within two to four weeks, mostly spent waiting for HMRC's authorisation codes to arrive in the post.</p></details>
+      <details class="info"><summary><span>Do you work with sole traders?</span></summary><p class="hint">We work only with limited companies and their directors. If you are a sole trader thinking about setting up a company, we can help you check whether it is right for you.</p></details>
     </div>
   </section>
-
-  <section id="pricing">
-    <div class="wrap">
-      <h2>Simple, transparent pricing</h2>
-      <p class="section-intro">Choose the plan that fits your business. Every plan includes HMRC compliance and fixed fees. No hourly billing, no surprises.</p>
-      <div class="billing-toggle">
-        <div class="switch" role="group" aria-label="Billing period">
-          <button type="button" id="bill-monthly" aria-pressed="true" onclick="setBilling('monthly')">Monthly</button>
-          <button type="button" id="bill-annual" aria-pressed="false" onclick="setBilling('annual')">Annual</button>
-        </div>
-        <span class="note">Save 15% with annual billing (12-month agreement)</span>
-      </div>
-      <div class="plans">
-        <div class="plan">
-          <h3>Startup</h3>
-          <p class="for">Perfect for early-stage businesses</p>
-          <p class="price"><small>from </small>£<span data-monthly="400" data-annual="340">400</span><small>/month</small></p>
-          <p class="annual-note" data-note></p>
-          <ul>
-            <li>Monthly bookkeeping</li>
-            <li>VAT returns</li>
-            <li>Basic payroll (up to 3 employees)</li>
-            <li>Annual accounts preparation</li>
-            <li>Yearly confirmation statement filing</li>
-            <li>Cloud accounting software setup</li>
-            <li>Email support</li>
-          </ul>
-          <a class="btn ghost" href="#contact">Get started</a>
-        </div>
-        <div class="plan popular">
-          <p class="flag">Most popular</p>
-          <h3>Scale</h3>
-          <p class="for">For growing businesses</p>
-          <p class="price"><small>from </small>£<span data-monthly="800" data-annual="680">800</span><small>/month</small></p>
-          <p class="annual-note" data-note></p>
-          <ul>
-            <li>Everything in Startup, plus:</li>
-            <li>Payroll for up to 10 employees</li>
-            <li>Management accounts</li>
-            <li>Director's Self Assessment return</li>
-            <li>Quarterly business reviews</li>
-            <li>Tax planning advice</li>
-            <li>Priority email &amp; phone support</li>
-            <li>Dedicated account manager</li>
-          </ul>
-          <a class="btn" href="#contact">Get started</a>
-        </div>
-        <div class="plan">
-          <h3>Thrive</h3>
-          <p class="for">For established companies</p>
-          <p class="price"><small>from </small>£<span data-monthly="1,500" data-annual="1,275">1,500</span><small>/month</small></p>
-          <p class="annual-note" data-note></p>
-          <ul>
-            <li>Everything in Scale, plus:</li>
-            <li>Payroll for up to 25 employees</li>
-            <li>CFO advisory services</li>
-            <li>Monthly strategic reviews</li>
-            <li>Advanced tax optimisation</li>
-            <li>Custom financial reporting</li>
-            <li>Business growth consulting</li>
-          </ul>
-          <a class="btn ghost" href="#contact">Get started</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
 
   <section id="contact" class="contact">
     <div class="wrap">
@@ -677,6 +746,33 @@
     </div>
   </section>
 
+  <section id="tools" class="tools">
+    <div class="wrap">
+      <h2>Not ready to talk yet? Try our free tools</h2>
+      <p class="section-intro">Every calculator is worked to the penny with the full calculation shown, and every guide is checked against HMRC.</p>
+      <div class="tools-grid">
+        <div>
+          <h3>Free calculators</h3>
+          <ul>
+            <li><a href="/take-home-calculator">Director take-home calculator <span>salary vs dividends</span></a></li>
+            <li><a href="/dividend-tax-calculator">Dividend tax calculator <span>2026/27 rates</span></a></li>
+            <li><a href="/first-year-deadlines-calculator">First-year deadlines <span>for new companies</span></a></li>
+          </ul>
+          <a class="more" href="/resources">All eight calculators <span class="arr">&rarr;</span></a>
+        </div>
+        <div>
+          <h3>Latest guides</h3>
+          <ul>
+            <li><a href="/blog/payments-on-account-directors">Payments on account for company directors <span>Self Assessment</span></a></li>
+            <li><a href="/blog/company-pension-contributions-directors">Should your company pay into your pension? <span>Pensions</span></a></li>
+            <li><a href="/blog/first-90-days-company-director">Your first 90 days as a company director <span>New companies</span></a></li>
+          </ul>
+          <a class="more" href="/blog">All guides <span class="arr">&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer>
@@ -699,8 +795,8 @@
       if (monthly){
         note.textContent = '';
       } else {
-        var yearly = parseFloat(span.dataset.annual.replace(/,/g, '')) * 12;
-        note.textContent = '(£' + yearly.toLocaleString('en-GB') + ' billed annually, 12-month agreement, 15% saving)';
+        var monthly = parseFloat(span.dataset.monthly.replace(/,/g, '')), annual = parseFloat(span.dataset.annual.replace(/,/g, '')), yearly = annual * 12;
+        note.textContent = '(£' + monthly.toLocaleString('en-GB') + ' × 85% = £' + annual.toLocaleString('en-GB') + ' a month; £' + annual.toLocaleString('en-GB') + ' × 12 = £' + yearly.toLocaleString('en-GB') + ' billed annually, on a 12-month agreement)';
       }
     });
   }
@@ -708,7 +804,7 @@
   (function(){
     var h = document.getElementById('in-h'), r = document.getElementById('in-r');
     if (!h) return;
-    var PLAN_YEAR = 4080;
+    var PLAN_YEAR = 5100;
     function n(e){ return Math.max(0, +String(e.value).replace(/[^\d.]/g,'') || 0); }
     function fmtP(x){ return (x<0?'\u2212':'')+'£'+Math.round(Math.abs(x)).toLocaleString('en-GB'); }
     function upd(){
@@ -789,6 +885,31 @@
   });
 })();
 </script>
+
+<script>/* sje-motion */
+(function(){
+  var reduce=false; try{ reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(e){}
+  // Typing: wait for a short pause before recalculating (real keystrokes only; programmatic input is untouched)
+  var timer=null;
+  document.addEventListener('input',function(e){ var el=e.target;
+    if(!e.isTrusted||!el||el.tagName!=='INPUT'||!el.closest||!el.closest('.calc-input')) return;
+    e.stopImmediatePropagation(); clearTimeout(timer);
+    timer=setTimeout(function(){ el.dispatchEvent(new Event('input',{bubbles:true})); },120); },true);
+  if(reduce) return;
+  // Results: brief highlight when a headline figure changes
+  if('MutationObserver' in window){ document.querySelectorAll('.headline-diff b, .big, #next-in').forEach(function(el){ var last=el.textContent;
+    new MutationObserver(function(){ if(el.textContent===last) return; last=el.textContent; el.classList.remove('sje-flash'); void el.offsetWidth; el.classList.add('sje-flash'); }).observe(el,{childList:true,characterData:true,subtree:true}); }); }
+  // Scroll: sections below the fold fade up once as they come into view
+  if(!('IntersectionObserver' in window)) return;
+  var io=new IntersectionObserver(function(entries){ entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } }); },{rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('main > section, .res-group, .tools, .article-body > h2, .article-body > table, .article-body > figure, .faq, .author-box, .thanks-more').forEach(function(el){
+    if(el.getBoundingClientRect().top>window.innerHeight){ el.classList.add('sje-reveal'); io.observe(el); } });
+})();
+</script>
+<div class="mobile-cta" role="complementary" aria-label="Book a call">
+  <a class="mc-btn" href="https://calendar.app.google/MgqokbUqk9WwncKk8" target="_blank" rel="noopener noreferrer" data-booking>Book a free 15-minute call</a>
+  <a class="mc-link" href="#contact">Get a quote</a>
+</div>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "00529846a08f42db871a69a17e005ffd"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

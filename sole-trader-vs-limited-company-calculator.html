@@ -5,8 +5,8 @@
 <link rel="preload" href="/logo-header.svg" as="image" type="image/svg+xml" fetchpriority="high">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
-<title>Sole trader vs limited company calculator | SJE Capital</title>
-<meta property="og:title" content="Sole trader vs limited company calculator | SJE Capital">
+<title>Sole trader or limited company calculator | SJE Capital</title>
+<meta property="og:title" content="Sole trader or limited company calculator | SJE Capital">
 <meta property="og:description" content="Would you keep more as a sole trader or a limited company in 2026/27? Enter your profit and see tax, take-home, retained profit and payments on account, worked.">
 <meta property="og:url" content="https://www.sjecapital.co.uk/sole-trader-vs-limited-company-calculator">
 <meta property="og:type" content="website">
@@ -37,7 +37,7 @@
   a{ color:var(--leaf); text-decoration-thickness:1px; text-underline-offset:3px; }
   a:hover{ color:var(--leaf-deep); }
   :focus-visible{ outline:3px solid var(--focus); outline-offset:3px; border-radius:2px; }
-  .wrap{ max-width:1060px; margin:0 auto; padding:0 24px; }
+  .wrap{ max-width:1200px; margin:0 auto; padding:0 24px; }
   header{ background:var(--ink); border-bottom:1px solid #2A5340; }
   .masthead{ display:flex; align-items:center; justify-content:space-between; gap:24px; padding:18px 24px; max-width:1060px; margin:0 auto; }
   .wordmark{ display:flex; align-items:center; text-decoration:none; }
@@ -79,7 +79,7 @@
   .btn{ display:inline-block; background:var(--paper-hi); color:var(--ink); text-decoration:none; padding:13px 24px 14px; font-weight:600; border-radius:3px; }
   .btn:hover{ background:#fff; color:var(--leaf-deep); }
   footer{ background:var(--ink); color:#9FBFA8; font-size:.875rem; padding:26px 0; border-top:1px solid #2A5340; }
-  footer .wrap{ display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; max-width:1060px; }
+  footer .wrap{ display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; max-width:1200px; }
 
   @media (max-width:760px){
     .page-head{ padding-top:36px; padding-bottom:6px; }
@@ -261,6 +261,29 @@
   .feedback{ font-size:.85rem; color:var(--ink-soft); margin-top:10px; }
   .feedback a{ color:var(--leaf); font-weight:600; }
   @media print{ .feedback{ display:none; } }
+/* sje-motion */
+  .res-card, .thanks-card, .plan, .posts article, .next-step, .tools li a{ transition:transform .2s cubic-bezier(.2,.7,.2,1), box-shadow .2s cubic-bezier(.2,.7,.2,1), border-color .2s ease, color .2s ease; }
+  .res-card:hover, .thanks-card:hover, .plan:hover, .posts article:hover{ transform:translateY(-3px); box-shadow:0 10px 24px rgba(20,56,43,.10); border-top-color:var(--leaf); }
+  .plan.popular:hover{ border-top-color:var(--mint, #9FD8B7); }
+  .arr{ display:inline-block; transition:transform .2s cubic-bezier(.2,.7,.2,1); }
+  a:hover .arr, button:hover .arr, a:focus-visible .arr{ transform:translateX(4px); }
+  .btn, .ns-btn, .thanks-book-btn, .tabs button, .bs-btn, .row-link, .more{ transition:background-color .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease; }
+  .wk > div{ transition:background-color .15s ease; }
+  .wk > div:hover{ background-color:rgba(30,107,74,.06); }
+  details[open] > *:not(summary){ animation:sje-reveal .25s cubic-bezier(.2,.7,.2,1); }
+  .bs-list:not([hidden]){ animation:sje-drop .16s cubic-bezier(.2,.7,.2,1); }
+  .sje-flash{ animation:sje-flash .8s ease; border-radius:3px; }
+  .sje-reveal{ opacity:0; transform:translateY(14px); transition:opacity .5s cubic-bezier(.2,.7,.2,1), transform .5s cubic-bezier(.2,.7,.2,1); }
+  .sje-reveal.in{ opacity:1; transform:none; }
+  @keyframes sje-reveal{ from{ opacity:0; transform:translateY(-4px); } to{ opacity:1; transform:none; } }
+  @keyframes sje-drop{ from{ opacity:0; transform:translateY(-4px); } to{ opacity:1; transform:none; } }
+  @keyframes sje-flash{ 0%{ background-color:rgba(159,216,183,.45); } 100%{ background-color:transparent; } }
+  @media (prefers-reduced-motion: reduce){
+    *, *::before, *::after{ animation:none !important; transition:none !important; }
+    .sje-reveal{ opacity:1 !important; transform:none !important; }
+    .res-card:hover, .thanks-card:hover, .plan:hover, .posts article:hover, a:hover .arr, button:hover .arr{ transform:none !important; }
+  }
+  @media print{ .sje-reveal{ opacity:1 !important; transform:none !important; } }
 </style>
 
 <script type="application/ld+json">
@@ -682,5 +705,25 @@
 })();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "00529846a08f42db871a69a17e005ffd"}'></script><!-- End Cloudflare Web Analytics -->
+<script>/* sje-motion */
+(function(){
+  var reduce=false; try{ reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(e){}
+  // Typing: wait for a short pause before recalculating (real keystrokes only; programmatic input is untouched)
+  var timer=null;
+  document.addEventListener('input',function(e){ var el=e.target;
+    if(!e.isTrusted||!el||el.tagName!=='INPUT'||!el.closest||!el.closest('.calc-input')) return;
+    e.stopImmediatePropagation(); clearTimeout(timer);
+    timer=setTimeout(function(){ el.dispatchEvent(new Event('input',{bubbles:true})); },120); },true);
+  if(reduce) return;
+  // Results: brief highlight when a headline figure changes
+  if('MutationObserver' in window){ document.querySelectorAll('.headline-diff b, .big, #next-in').forEach(function(el){ var last=el.textContent;
+    new MutationObserver(function(){ if(el.textContent===last) return; last=el.textContent; el.classList.remove('sje-flash'); void el.offsetWidth; el.classList.add('sje-flash'); }).observe(el,{childList:true,characterData:true,subtree:true}); }); }
+  // Scroll: sections below the fold fade up once as they come into view
+  if(!('IntersectionObserver' in window)) return;
+  var io=new IntersectionObserver(function(entries){ entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } }); },{rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('main > section, .res-group, .tools, .article-body > h2, .article-body > table, .article-body > figure, .faq, .author-box, .thanks-more').forEach(function(el){
+    if(el.getBoundingClientRect().top>window.innerHeight){ el.classList.add('sje-reveal'); io.observe(el); } });
+})();
+</script>
 </body>
 </html>

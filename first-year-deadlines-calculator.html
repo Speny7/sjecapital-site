@@ -37,7 +37,7 @@
   a{ color:var(--leaf); text-decoration-thickness:1px; text-underline-offset:3px; }
   a:hover{ color:var(--leaf-deep); }
   :focus-visible{ outline:3px solid var(--focus); outline-offset:3px; border-radius:2px; }
-  .wrap{ max-width:1060px; margin:0 auto; padding:0 24px; }
+  .wrap{ max-width:1200px; margin:0 auto; padding:0 24px; }
   header{ background:var(--ink); border-bottom:1px solid #2A5340; }
   .masthead{ display:flex; align-items:center; justify-content:space-between; gap:24px; padding:18px 24px; max-width:1060px; margin:0 auto; }
   .wordmark{ display:flex; align-items:center; text-decoration:none; }
@@ -79,7 +79,7 @@
   .btn{ display:inline-block; background:var(--paper-hi); color:var(--ink); text-decoration:none; padding:13px 24px 14px; font-weight:600; border-radius:3px; }
   .btn:hover{ background:#fff; color:var(--leaf-deep); }
   footer{ background:var(--ink); color:#9FBFA8; font-size:.875rem; padding:26px 0; border-top:1px solid #2A5340; }
-  footer .wrap{ display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; max-width:1060px; }
+  footer .wrap{ display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; max-width:1200px; }
 
   @media (max-width:760px){
     .page-head{ padding-top:36px; padding-bottom:6px; }
@@ -295,6 +295,29 @@
   .feedback{ font-size:.85rem; color:var(--ink-soft); margin-top:10px; }
   .feedback a{ color:var(--leaf); font-weight:600; }
   @media print{ .feedback{ display:none; } }
+/* sje-motion */
+  .res-card, .thanks-card, .plan, .posts article, .next-step, .tools li a{ transition:transform .2s cubic-bezier(.2,.7,.2,1), box-shadow .2s cubic-bezier(.2,.7,.2,1), border-color .2s ease, color .2s ease; }
+  .res-card:hover, .thanks-card:hover, .plan:hover, .posts article:hover{ transform:translateY(-3px); box-shadow:0 10px 24px rgba(20,56,43,.10); border-top-color:var(--leaf); }
+  .plan.popular:hover{ border-top-color:var(--mint, #9FD8B7); }
+  .arr{ display:inline-block; transition:transform .2s cubic-bezier(.2,.7,.2,1); }
+  a:hover .arr, button:hover .arr, a:focus-visible .arr{ transform:translateX(4px); }
+  .btn, .ns-btn, .thanks-book-btn, .tabs button, .bs-btn, .row-link, .more{ transition:background-color .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease; }
+  .wk > div{ transition:background-color .15s ease; }
+  .wk > div:hover{ background-color:rgba(30,107,74,.06); }
+  details[open] > *:not(summary){ animation:sje-reveal .25s cubic-bezier(.2,.7,.2,1); }
+  .bs-list:not([hidden]){ animation:sje-drop .16s cubic-bezier(.2,.7,.2,1); }
+  .sje-flash{ animation:sje-flash .8s ease; border-radius:3px; }
+  .sje-reveal{ opacity:0; transform:translateY(14px); transition:opacity .5s cubic-bezier(.2,.7,.2,1), transform .5s cubic-bezier(.2,.7,.2,1); }
+  .sje-reveal.in{ opacity:1; transform:none; }
+  @keyframes sje-reveal{ from{ opacity:0; transform:translateY(-4px); } to{ opacity:1; transform:none; } }
+  @keyframes sje-drop{ from{ opacity:0; transform:translateY(-4px); } to{ opacity:1; transform:none; } }
+  @keyframes sje-flash{ 0%{ background-color:rgba(159,216,183,.45); } 100%{ background-color:transparent; } }
+  @media (prefers-reduced-motion: reduce){
+    *, *::before, *::after{ animation:none !important; transition:none !important; }
+    .sje-reveal{ opacity:1 !important; transform:none !important; }
+    .res-card:hover, .thanks-card:hover, .plan:hover, .posts article:hover, a:hover .arr, button:hover .arr{ transform:none !important; }
+  }
+  @media print{ .sje-reveal{ opacity:1 !important; transform:none !important; } }
 </style>
 
 <script type="application/ld+json">
@@ -416,7 +439,7 @@
 
     <div class="calc-results">
       <div class="headline-diff">
-        <b id="next-in">79 days</b>
+        <b id="next-in">70 days</b>
         <div class="d-title" id="next-title">until your next deadline: register the company for Corporation Tax</div>
         <div class="d-sub" id="next-sub">15 December 2026. 3 months after you started doing business (15 September 2026). Companies House told HMRC you exist, but this step is yours to do.</div>
       </div>
@@ -432,7 +455,7 @@
         <button type="button" class="btn ghost" id="print">Print or save as PDF</button>
       </div>
       <h2 style="font-size:1.3rem; font-weight:600; margin:28px 0 10px;">Your first-year timeline</h2>
-      <div class="timeline" id="timeline"><div class="item"><div class="date">15 December 2026</div><div class="what"><strong>Register the company for Corporation Tax</strong><small>3 months after you started doing business (15 September 2026). Companies House told HMRC you exist, but this step is yours to do.</small></div><div class="in">in 79 days</div></div><div class="item"><div class="date">29 September 2027</div><div class="what"><strong>File your first confirmation statement</strong><small>Review period is 12 months from incorporation; you then have 14 days. £50 online. Due every year after.</small></div><div class="in">in 367 days</div></div><div class="item"><div class="date">15 June 2028</div><div class="what"><strong>File your first annual accounts at Companies House</strong><small>21 months after incorporation, because your first period (15 September 2026 to 30 September 2027) is longer than 12 months. Later years: 9 months after each year end.</small></div><div class="in">in 627 days</div></div><div class="item"><div class="date">15 June 2028</div><div class="what"><strong>Pay Corporation Tax for the first tax period</strong><small>Period 15 September 2026 to 14 September 2027. Due 9 months and 1 day after it ends. Note this is before the return is due.</small></div><div class="in">in 627 days</div></div><div class="item"><div class="date">1 July 2028</div><div class="what"><strong>Pay Corporation Tax for the second tax period</strong><small>Period 15 September 2027 to 30 September 2027. Due 9 months and 1 day after it ends. Note this is before the return is due.</small></div><div class="in">in 643 days</div></div><div class="item"><div class="date">14 September 2028</div><div class="what"><strong>File the Company Tax Return (CT600) for the first tax period</strong><small>12 months after the period ends. Filed with your accounts and computations.</small></div><div class="in">in 718 days</div></div><div class="item"><div class="date">30 September 2028</div><div class="what"><strong>File the Company Tax Return (CT600) for the second tax period</strong><small>12 months after the period ends. Filed with your accounts and computations.</small></div><div class="in">in 734 days</div></div></div>
+      <div class="timeline" id="timeline"><div class="item"><div class="date">15 December 2026</div><div class="what"><strong>Register the company for Corporation Tax</strong><small>3 months after you started doing business (15 September 2026). Companies House told HMRC you exist, but this step is yours to do.</small></div><div class="in">in 70 days</div></div><div class="item"><div class="date">29 September 2027</div><div class="what"><strong>File your first confirmation statement</strong><small>Review period is 12 months from incorporation; you then have 14 days. £50 online. Due every year after.</small></div><div class="in">in 358 days</div></div><div class="item"><div class="date">15 June 2028</div><div class="what"><strong>File your first annual accounts at Companies House</strong><small>21 months after incorporation, because your first period (15 September 2026 to 30 September 2027) is longer than 12 months. Later years: 9 months after each year end.</small></div><div class="in">in 618 days</div></div><div class="item"><div class="date">15 June 2028</div><div class="what"><strong>Pay Corporation Tax for the first tax period</strong><small>Period 15 September 2026 to 14 September 2027. Due 9 months and 1 day after it ends. Note this is before the return is due.</small></div><div class="in">in 618 days</div></div><div class="item"><div class="date">1 July 2028</div><div class="what"><strong>Pay Corporation Tax for the second tax period</strong><small>Period 15 September 2027 to 30 September 2027. Due 9 months and 1 day after it ends. Note this is before the return is due.</small></div><div class="in">in 634 days</div></div><div class="item"><div class="date">14 September 2028</div><div class="what"><strong>File the Company Tax Return (CT600) for the first tax period</strong><small>12 months after the period ends. Filed with your accounts and computations.</small></div><div class="in">in 709 days</div></div><div class="item"><div class="date">30 September 2028</div><div class="what"><strong>File the Company Tax Return (CT600) for the second tax period</strong><small>12 months after the period ends. Filed with your accounts and computations.</small></div><div class="in">in 725 days</div></div></div>
       <details class="workings">
         <summary>Show the workings</summary>
         <div class="inner" id="workings"><div class="wk"><div><span class="lbl">Incorporated</span><span class="amt">15 September 2026</span></div><div><span class="lbl">Started trading</span><span class="amt">15 September 2026</span></div><div><span class="lbl">Default year end (accounting reference date)<small>last day of the month you incorporated in, one year on</small></span><span class="amt">30 September 2027</span></div><div class="sub"><span class="lbl">Length of first accounts period<small>15 September 2026 to 30 September 2027</small></span><span class="amt">more than 12 months</span></div><div><span class="lbl">Register for Corporation Tax by<small>15 September 2026 + 3 months</small></span><span class="amt">15 December 2026</span></div><div><span class="lbl">Confirmation statement by<small>15 September 2026 + 12 months + 14 days</small></span><span class="amt">29 September 2027</span></div><div><span class="lbl">First accounts by<small>15 September 2026 + 21 months (first period over 12 months)</small></span><span class="amt">15 June 2028</span></div><div><span class="lbl">Tax period 1<small>HMRC splits any period over 12 months, so two returns</small></span><span class="amt">15 September 2026 to 14 September 2027</span></div><div><span class="lbl">Pay Corporation Tax, period 1<small>14 September 2027 + 9 months + 1 day</small></span><span class="amt">15 June 2028</span></div><div><span class="lbl">File CT600, period 1<small>14 September 2027 + 12 months</small></span><span class="amt">14 September 2028</span></div><div><span class="lbl">Tax period 2<small>HMRC splits any period over 12 months, so two returns</small></span><span class="amt">15 September 2027 to 30 September 2027</span></div><div><span class="lbl">Pay Corporation Tax, period 2<small>30 September 2027 + 9 months + 1 day</small></span><span class="amt">1 July 2028</span></div><div><span class="lbl">File CT600, period 2<small>30 September 2027 + 12 months</small></span><span class="amt">30 September 2028</span></div></div><p class="aside">PAYE: You can only register as an employer inside a window: no earlier than two months before your first payday, because HMRC will not accept it before then, and no later than about three weeks before, because HMRC takes up to 15 working days to send the employer PAYE reference you need to run the first payroll. Miss the window and you cannot pay yourself on the planned date. You will need the company's UTR, registered office, your details as director, the planned first payday and the number of employees. Enter your planned first payday above and the exact window appears in your timeline. VAT only when taxable turnover heads for £90,000, or by choice. Your own Self Assessment: Plan to file a Self Assessment return every year as a director. Strictly, HMRC requires one if you have untaxed income (dividends above £500, benefits, other income) or if HMRC sends you a notice to file, which covers nearly every director who takes dividends, so most accountants register directors from day one. Register by 5 October after the end of the tax year, then file and pay by the following 31 January.</p></div>
@@ -625,5 +648,25 @@
 })();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "00529846a08f42db871a69a17e005ffd"}'></script><!-- End Cloudflare Web Analytics -->
+<script>/* sje-motion */
+(function(){
+  var reduce=false; try{ reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(e){}
+  // Typing: wait for a short pause before recalculating (real keystrokes only; programmatic input is untouched)
+  var timer=null;
+  document.addEventListener('input',function(e){ var el=e.target;
+    if(!e.isTrusted||!el||el.tagName!=='INPUT'||!el.closest||!el.closest('.calc-input')) return;
+    e.stopImmediatePropagation(); clearTimeout(timer);
+    timer=setTimeout(function(){ el.dispatchEvent(new Event('input',{bubbles:true})); },120); },true);
+  if(reduce) return;
+  // Results: brief highlight when a headline figure changes
+  if('MutationObserver' in window){ document.querySelectorAll('.headline-diff b, .big, #next-in').forEach(function(el){ var last=el.textContent;
+    new MutationObserver(function(){ if(el.textContent===last) return; last=el.textContent; el.classList.remove('sje-flash'); void el.offsetWidth; el.classList.add('sje-flash'); }).observe(el,{childList:true,characterData:true,subtree:true}); }); }
+  // Scroll: sections below the fold fade up once as they come into view
+  if(!('IntersectionObserver' in window)) return;
+  var io=new IntersectionObserver(function(entries){ entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } }); },{rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('main > section, .res-group, .tools, .article-body > h2, .article-body > table, .article-body > figure, .faq, .author-box, .thanks-more').forEach(function(el){
+    if(el.getBoundingClientRect().top>window.innerHeight){ el.classList.add('sje-reveal'); io.observe(el); } });
+})();
+</script>
 </body>
 </html>

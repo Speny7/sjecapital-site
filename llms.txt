@@ -18,10 +18,11 @@
 - [Compound interest calculator](https://www.sjecapital.co.uk/compound-interest-calculator): growth of savings or investments with optional monthly deposits.
 
 ## Reference
-- [UK tax rates 2026/27](https://www.sjecapital.co.uk/tax-rates): Income Tax, National Insurance, dividends, Corporation Tax (19%, effective 26.5% marginal, 25%), VAT and Capital Gains Tax, sourced from GOV.UK.
+- [UK tax rates 2026/27](https://www.sjecapital.co.uk/tax-rates): Income Tax, National Insurance, dividends, Corporation Tax (19%, 26.5% marginal rate between £50,000 and £250,000, 25%), VAT and Capital Gains Tax, sourced from GOV.UK.
 - [Key tax dates and deadlines](https://www.sjecapital.co.uk/key-dates): recurring UK deadlines for companies, directors and employers.
 
 ## Guides
+- [Before the Budget: what company directors can do now](https://www.sjecapital.co.uk/blog/before-the-budget-2026-directors): Six steps UK company directors can take before the Autumn Budget on 28 October 2026 under the rules in force now: dividends and the basic rate band, pension carry forward, the £100,000 Personal Allowance taper, Business Asset Disposal Relief at 18%, and what not to do.
 - [How much does an accountant cost for a growing limited company?](https://www.sjecapital.co.uk/blog/accountant-cost-growing-limited-company): What drives accountancy fees for a UK limited company turning over £100,000 or more, what a complete service covers, SJE Capital's fixed monthly plans from £500 (prices exclude VAT), the cost after Corporation Tax relief, and how to compare quotes.
 - [Payments on account for company directors: why your first January tax bill is so high](https://www.sjecapital.co.uk/blog/payments-on-account-directors): Why a director's first Self Assessment bill is so high, when payments on account apply, a worked example to the penny, and how to plan for January and July.
 - [Should your company pay into your pension? Employer contributions explained](https://www.sjecapital.co.uk/blog/company-pension-contributions-directors): How employer pension contributions work for UK company directors in 2026/27: the £60,000 allowance, carry forward, the wholly and exclusively test and timing.

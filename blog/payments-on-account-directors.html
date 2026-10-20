@@ -126,7 +126,11 @@
     padding:12px 14px; border-radius:3px; box-shadow:0 6px 20px rgba(20,56,43,.18); white-space:normal;
     opacity:0; transform:translateY(-4px); pointer-events:none; transition:opacity .18s ease, transform .18s ease;
   }
-  .readtime:hover::after, .readtime:focus::after{ opacity:1; transform:none; }
+  /* tap or click opens the explanation; tapping it again, anywhere else or pressing Escape closes it (hover only with a mouse) */
+  @media (hover:hover){ .readtime:not(.shut):hover::after{ opacity:1; transform:none; } }
+  .readtime.open::after, .readtime:focus-visible::after{ opacity:1; transform:none; }
+  /* phones: anchor the explanation to the whole byline so it can never run off the screen */
+  @media (max-width:640px){ .byline-author{ position:relative; } .byline-author .readtime{ position:static; } .readtime::after{ left:0; right:0; width:auto; } }
   .article{ display:grid; grid-template-columns:minmax(0,1fr) 300px; gap:72px; align-items:start; }
   .article-head h1{ line-height:1.12; }
   .article-aside{ position:sticky; top:28px; margin-top:64px; }
@@ -543,6 +547,20 @@
   var io=new IntersectionObserver(function(entries){ entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } }); },{rootMargin:'0px 0px -8% 0px'});
   document.querySelectorAll('main > section, .res-group, .tools, .article-body > h2, .article-body > table, .article-body > figure, .faq, .author-box, .thanks-more').forEach(function(el){
     if(el.getBoundingClientRect().top>window.innerHeight){ el.classList.add('sje-reveal'); io.observe(el); } });
+})();
+</script>
+<script>
+(function(){
+  var el = document.querySelector('.readtime'); if (!el) return;
+  el.setAttribute('role', 'button'); el.setAttribute('aria-expanded', 'false');
+  function set(open, self){ el.classList.toggle('open', open); el.classList.toggle('shut', !open && !!self); el.setAttribute('aria-expanded', open ? 'true' : 'false'); if (!open) el.blur(); }
+  el.addEventListener('mouseleave', function(){ el.classList.remove('shut'); });
+  el.addEventListener('click', function(e){ e.preventDefault(); set(!el.classList.contains('open'), true); });
+  document.addEventListener('pointerdown', function(e){ if (el.classList.contains('open') && !el.contains(e.target)) set(false); });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') set(false);
+    else if ((e.key === 'Enter' || e.key === ' ') && document.activeElement === el){ e.preventDefault(); set(!el.classList.contains('open')); }
+  });
 })();
 </script>
 </body>

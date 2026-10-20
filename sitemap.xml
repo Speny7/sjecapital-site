@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.sjecapital.co.uk/</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.sjecapital.co.uk/blog</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -20,13 +20,13 @@
   </url>
   <url>
     <loc>https://www.sjecapital.co.uk/salary-calculator</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.sjecapital.co.uk/take-home-calculator</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -38,25 +38,25 @@
   </url>
   <url>
     <loc>https://www.sjecapital.co.uk/tax-rates</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.sjecapital.co.uk/blog/do-i-need-to-register-for-vat</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.sjecapital.co.uk/blog/director-salary-dividends-2026-27</loc>
-    <lastmod>2026-09-24</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.sjecapital.co.uk/blog/sole-trader-vs-limited-company-2026-27</loc>
-    <lastmod>2026-09-24</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -68,13 +68,13 @@
   </url>
   <url>
     <loc>https://www.sjecapital.co.uk/blog/limited-company-expenses-2026-27</loc>
-    <lastmod>2026-09-24</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.sjecapital.co.uk/blog/first-90-days-company-director</loc>
-    <lastmod>2026-09-24</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -98,7 +98,7 @@
   </url>
   <url>
     <loc>https://www.sjecapital.co.uk/compound-interest-calculator</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -116,25 +116,31 @@
   </url>
   <url>
     <loc>https://www.sjecapital.co.uk/where-do-my-taxes-go</loc>
-    <lastmod>2026-09-24</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.sjecapital.co.uk/blog/company-pension-contributions-directors</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.sjecapital.co.uk/blog/payments-on-account-directors</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.sjecapital.co.uk/blog/accountant-cost-growing-limited-company</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sjecapital.co.uk/blog/before-the-budget-2026-directors</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>

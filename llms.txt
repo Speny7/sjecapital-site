@@ -18,7 +18,7 @@
 - [Compound interest calculator](https://www.sjecapital.co.uk/compound-interest-calculator): growth of savings or investments with optional monthly deposits.
 
 ## Reference
-- [UK tax rates 2026/27](https://www.sjecapital.co.uk/tax-rates): Income Tax, National Insurance, dividends, Corporation Tax (19%, 26.5% marginal rate between £50,000 and £250,000, 25%), VAT and Capital Gains Tax, sourced from GOV.UK.
+- [UK tax rates 2026/27](https://www.sjecapital.co.uk/tax-rates): Income Tax, National Insurance, dividends, Corporation Tax (19%, 26.5% marginal rate between £50,000 and £250,000, 25%), VAT, Capital Gains Tax and Business Asset Disposal Relief, savings interest, mileage and the trading allowance, with the Autumn Budget 2026 changes from April 2027
 - [Key tax dates and deadlines](https://www.sjecapital.co.uk/key-dates): recurring UK deadlines for companies, directors and employers.
 
 ## Guides

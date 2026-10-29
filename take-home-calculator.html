@@ -223,6 +223,41 @@
   .bs-list button.sel:hover{ background:var(--ink); }
   @media print{ .bs-list{ display:none !important; } }
 
+
+  /* profit slider */
+  .slide{ position:relative; margin:12px 0 4px; }
+  .slide input[type=range]{ -webkit-appearance:none; appearance:none; width:100%; height:22px; background:transparent; margin:0; position:relative; z-index:1; }
+  .slide input[type=range]::-webkit-slider-runnable-track{ height:6px; border-radius:3px; background:var(--track, var(--rule)); }
+  .slide input[type=range]::-moz-range-track{ height:6px; border-radius:3px; background:var(--track, var(--rule)); }
+  .slide input[type=range]::-webkit-slider-thumb{ -webkit-appearance:none; width:20px; height:20px; border-radius:50%; background:var(--leaf); border:3px solid var(--paper-hi); box-shadow:0 0 0 1px var(--leaf); margin-top:-7px; cursor:pointer; }
+  .slide input[type=range]::-moz-range-thumb{ width:16px; height:16px; border-radius:50%; background:var(--leaf); border:3px solid var(--paper-hi); box-shadow:0 0 0 1px var(--leaf); cursor:pointer; }
+  .slide input[type=range]:focus-visible{ outline:2px solid var(--focus); outline-offset:4px; }
+  .slide-mark{ position:absolute; top:22px; width:0; height:0; margin-left:-5px; border-left:5px solid transparent; border-right:5px solid transparent; border-bottom:6px solid var(--ink); pointer-events:none; z-index:0; }
+  .slide-labels{ position:relative; height:18px; margin-top:9px; }
+  .sl-lab{ position:absolute; top:0; transform:translateX(-50%); font-size:.75rem; font-weight:600; color:var(--ink); white-space:nowrap; }
+  .sl-lab.sl-trap{ color:#7A5F10; }
+  .slide-ends{ display:flex; justify-content:space-between; font-size:.8rem; color:var(--ink-soft); margin-top:2px; }
+  .slide-note{ font-size:.85rem; color:var(--ink-soft); line-height:1.5; margin-top:6px; }
+  /* next £1,000 */
+  .mg{ margin-top:24px; border-top:3px solid var(--ink); background:var(--paper-hi); padding:20px 24px; }
+  .mg h2{ font-family:"EB Garamond", Georgia, serif; font-size:1.5rem; font-weight:600; margin-bottom:6px; }
+  .mg-lead{ font-size:1rem; line-height:1.55; }
+  .mg-lead b{ font-family:"EB Garamond", Georgia, serif; font-size:1.35rem; color:var(--leaf-deep); font-variant-numeric:tabular-nums; }
+  .mg-lines{ list-style:none; margin:12px 0 0; padding:0; font-variant-numeric:tabular-nums; }
+  .mg-lines li{ display:flex; justify-content:space-between; gap:12px; padding:6px 0; border-bottom:1px solid var(--rule-soft); font-size:.95rem; }
+  .mg-lines li.mg-tot{ font-weight:600; border-bottom:none; border-top:2px solid var(--ink); }
+  .mg-chart{ margin:18px 0 0; }
+  .mg-chart svg{ width:100%; height:auto; display:block; }
+  .mg-chart figcaption{ font-size:.85rem; color:var(--ink-soft); line-height:1.5; margin-top:8px; }
+  .mg-grid{ stroke:var(--rule-soft); stroke-width:1; }
+  .mg-ylab{ font-size:12px; fill:var(--ink-soft); text-anchor:end; font-variant-numeric:tabular-nums; }
+  .mg-xlab{ font-size:12px; fill:var(--ink-soft); text-anchor:middle; }
+  .mg-line{ fill:none; stroke:var(--leaf); stroke-width:2.5; stroke-linejoin:round; }
+  .mg-trap{ fill:#E0C36B; opacity:.22; }
+  .mg-you{ stroke:var(--ink); stroke-width:1; stroke-dasharray:4 4; }
+  .mg-dot{ fill:var(--leaf); stroke:var(--paper-hi); stroke-width:2; }
+  .mg-youlab{ font-size:13px; font-weight:600; fill:var(--ink); }
+  @media (max-width:700px){ .mg{ padding:18px 16px; } }
   @media (max-width:700px){ .headline-diff{ grid-template-columns:1fr; gap:8px; } .headline-diff b{ grid-row:auto; } }
   footer a{ color:#CBDACD; }
   footer a:hover{ color:#fff; }
@@ -342,6 +377,13 @@
     <div class="calc-input">
       <label for="profit">Company profit before paying yourself</label>
       <input type="text" inputmode="numeric" class="money" id="profit-num" value="60000" aria-label="Company profit before director pay">
+      <div class="slide">
+        <input type="range" id="profit-range" min="0" max="300000" step="500" value="60000" aria-label="Company profit, from £0 to £300,000">
+        <span class="slide-mark" id="mark-hr" hidden aria-hidden="true"></span>
+        <div class="slide-labels" aria-hidden="true"><span class="sl-lab" id="lab-hr" hidden>Higher rate</span><span class="sl-lab sl-trap" id="lab-trap" hidden>Allowance trap</span></div>
+        <div class="slide-ends" aria-hidden="true"><span>£0</span><span>£300,000</span></div>
+        <p class="slide-note" id="slide-note"></p>
+      </div>
       <details class="info"><summary><span>More info</span></summary>
         <p class="hint">Your company's profit for the year before you take any salary, dividends or pension out of it. If you are not sure, use last year's profit from your accounts, or your best estimate.</p>
       </details>
@@ -458,6 +500,15 @@
         <div class="d-title" id="saving-title">more in your pocket each year with Route A (£12,570.00 salary + dividends)</div>
         <div class="d-sub" id="saving-label">£46,091.20 versus £41,196.53 on the same £60,000.00 of profit.</div>
       </div>
+      <section class="mg" aria-labelledby="mg-title">
+        <h2 id="mg-title">Your next £1,000 of profit</h2>
+        <p class="mg-lead">Taken as extra dividends (Route A), you keep <b id="mg-keep">£570.79</b>. <span id="mg-rate">£429.21 of every extra £1,000 goes in tax, or 42.92%.</span></p>
+        <ul class="mg-lines" id="mg-lines"><li><span>Corporation Tax</span><span>£190.00</span></li><li><span>Dividend tax</span><span>£239.21</span></li><li class="mg-tot"><span>You keep</span><span>£1,000.00 − £429.21 = £570.79</span></li></ul>
+        <figure class="mg-chart">
+          <svg id="mg-svg" viewBox="0 0 640 270" role="img" aria-labelledby="mg-cap"><rect x="292.6" y="16" width="66.1" height="220" class="mg-trap"></rect><line x1="46" x2="626" y1="236.0" y2="236.0" class="mg-grid"></line><text x="38" y="240.0" class="mg-ylab">0%</text><line x1="46" x2="626" y1="181.0" y2="181.0" class="mg-grid"></line><text x="38" y="185.0" class="mg-ylab">20%</text><line x1="46" x2="626" y1="126.0" y2="126.0" class="mg-grid"></line><text x="38" y="130.0" class="mg-ylab">40%</text><line x1="46" x2="626" y1="71.0" y2="71.0" class="mg-grid"></line><text x="38" y="75.0" class="mg-ylab">60%</text><line x1="46" x2="626" y1="16.0" y2="16.0" class="mg-grid"></line><text x="38" y="20.0" class="mg-ylab">80%</text><text x="46.0" y="258" class="mg-xlab">£0</text><text x="142.7" y="258" class="mg-xlab">£50k</text><text x="239.3" y="258" class="mg-xlab">£100k</text><text x="336.0" y="258" class="mg-xlab">£150k</text><text x="432.7" y="258" class="mg-xlab">£200k</text><text x="529.3" y="258" class="mg-xlab">£250k</text><text x="626.0" y="258" class="mg-xlab">£300k</text><path d="M46.0 236.0 H50.8 V236.0 H55.7 V200.1 H60.5 V200.1 H65.3 V200.1 H70.2 V200.1 H75.0 V159.8 H79.8 V159.8 H84.7 V159.8 H89.5 V159.8 H94.3 V159.8 H99.2 V159.8 H104.0 V159.8 H108.8 V159.8 H113.7 V159.8 H118.5 V159.8 H123.3 V159.8 H128.2 V159.8 H133.0 V159.8 H137.8 V159.8 H142.7 V159.8 H147.5 V159.8 H152.3 V159.8 H157.2 V159.8 H162.0 V118.0 H166.8 V104.1 H171.7 V90.9 H176.5 V90.9 H181.3 V90.9 H186.2 V90.9 H191.0 V90.9 H195.8 V90.9 H200.7 V90.9 H205.5 V90.9 H210.3 V90.9 H215.2 V90.9 H220.0 V90.9 H224.8 V90.9 H229.7 V90.9 H234.5 V90.9 H239.3 V90.9 H244.2 V90.9 H249.0 V90.9 H253.8 V90.9 H258.7 V90.9 H263.5 V90.9 H268.3 V90.9 H273.2 V90.9 H278.0 V90.9 H282.8 V90.9 H287.7 V90.9 H292.5 V47.9 H297.3 V45.4 H302.2 V45.4 H307.0 V45.4 H311.8 V45.4 H316.7 V45.4 H321.5 V45.4 H326.3 V45.4 H331.2 V45.4 H336.0 V45.4 H340.8 V45.4 H345.7 V45.4 H350.5 V45.4 H355.3 V45.4 H360.2 V83.6 H365.0 V83.6 H369.8 V83.6 H374.7 V83.6 H379.5 V83.6 H384.3 V83.6 H389.2 V83.6 H394.0 V83.6 H398.8 V83.6 H403.7 V83.6 H408.5 V83.6 H413.3 V83.6 H418.2 V83.6 H423.0 V83.6 H427.8 V83.6 H432.7 V83.6 H437.5 V83.6 H442.3 V83.6 H447.2 V83.6 H452.0 V83.6 H456.8 V83.6 H461.7 V83.6 H466.5 V83.6 H471.3 V83.6 H476.2 V83.6 H481.0 V83.6 H485.8 V83.6 H490.7 V83.6 H495.5 V83.6 H500.3 V83.6 H505.2 V83.6 H510.0 V83.6 H514.8 V83.6 H519.7 V83.6 H524.5 V83.6 H529.3 V83.6 H534.2 V83.6 H539.0 V83.6 H543.8 V83.6 H548.7 V83.6 H553.5 V83.6 H558.3 V86.1 H563.2 V86.1 H568.0 V86.1 H572.8 V86.1 H577.7 V86.1 H582.5 V86.1 H587.3 V86.1 H592.2 V86.1 H597.0 V86.1 H601.8 V86.1 H606.7 V86.1 H611.5 V86.1 H616.3 V86.1 H621.2 V86.1 H626.0 V86.1" class="mg-line"></path><line x1="162.0" x2="162.0" y1="16" y2="236" class="mg-you"></line><circle cx="162.0" cy="118.0" r="5" class="mg-dot"></circle><text x="172.0" y="108.0" class="mg-youlab" text-anchor="start">You: 42.9%</text></svg>
+          <figcaption id="mg-cap">Tax on each extra £1,000 of profit taken as dividends (Route A), at every profit level from £0 to £300,000, with your current settings. Each rate is worked out as £1,000 minus what you keep, divided by £1,000. The shaded area is the Personal Allowance trap, where your tax-free allowance is withdrawn.</figcaption>
+        </figure>
+      </section>
       <aside class="next-step" aria-label="Next step">
         <p class="ns-kicker">Next step</p>
         <p class="ns-title">Want your salary and dividends set up like this?</p>
@@ -493,9 +544,10 @@
   var PA_FULL=12570, UK={tops:[37700,125140,Infinity],rates:[0.2,0.4,0.45]}, SCOT={tops:[3967,16956,31092,62430,112570,Infinity],rates:[0.19,0.20,0.21,0.42,0.45,0.48]},
       DIV={tops:[37700,125140,Infinity],rates:[0.1075,0.3575,0.3935]}, DIV_ALLOW=500, ST=5000, PT=12570, UEL=50270, EA=10500, CB1=27.05, CBN=17.90;
   function r2(x){ return Math.round((x+(x>=0?1e-9:-1e-9))*100)/100; }
-  var fmt=function(n){ var v=Math.abs(n)<0.005?0:n; return (v<0?'\u2212':'')+'£'+Math.abs(v).toLocaleString('en-GB',{minimumFractionDigits:2,maximumFractionDigits:2}); };
+  var QUIET=false;
+  var fmt=function(n){ if(QUIET) return ''; var v=Math.abs(n)<0.005?0:n; return (v<0?'\u2212':'')+'£'+Math.abs(v).toLocaleString('en-GB',{minimumFractionDigits:2,maximumFractionDigits:2}); };
   var fmtR=function(n){ return '£'+Math.round(n).toLocaleString('en-GB'); };
-  var fmtX=function(n){ var s=(Math.round(n*10000)/10000).toLocaleString('en-GB',{minimumFractionDigits:2,maximumFractionDigits:4}); return '£'+s; };
+  var fmtX=function(n){ if(QUIET) return ''; var s=(Math.round(n*10000)/10000).toLocaleString('en-GB',{minimumFractionDigits:2,maximumFractionDigits:4}); return '£'+s; };
   var pct=function(r){ return (r*100).toFixed(2).replace(/\.?0+$/,'')+'%'; };
   function personalAllowance(ani){ return ani<=100000 ? PA_FULL : Math.max(0, r2(PA_FULL-(ani-100000)/2)); }
   function bandTax(amount, pos, b, label){ var t=0, lines=[], rem=amount, p=pos;
@@ -517,7 +569,7 @@
     if(p>=250000){ var t2=r2(p*0.25); return {tax:t2,note:'main rate 25%',calc:fmt(p)+' \u00d7 25% = '+fmt(t2)}; }
     var exact=p*0.25-(250000-p)*0.015, t=r2(exact), above=r2(p-50000), gross=p*0.25, relief=(250000-p)*0.015;
     var roundNote=Math.abs(exact*100-Math.round(exact*100))>1e-6?', which is '+fmtX(exact)+' before rounding to the penny':'';
-    return {tax:t,note:'19% on the first £50,000 and an effective 26.5% above it',calc:'£50,000.00 \u00d7 19% = £9,500.00, plus '+fmt(above)+' \u00d7 26.5% = '+fmt(r2(t-9500))+', total '+fmt(t)+'. HMRC\'s formula gives the same: '+fmt(p)+' \u00d7 25% = '+fmtX(gross)+', less marginal relief of (£250,000.00 \u2212 '+fmt(p)+') \u00d7 3/200 = '+fmtX(relief)+roundNote}; }
+    return {tax:t,note:'19% on the first £50,000 and 26.5% on each pound between £50,000 and £250,000',calc:'£50,000.00 \u00d7 19% = £9,500.00, plus '+fmt(above)+' \u00d7 26.5% = '+fmt(r2(t-9500))+', total '+fmt(t)+'. HMRC\'s formula gives the same: '+fmt(p)+' \u00d7 25% = '+fmtX(gross)+', less marginal relief of (£250,000.00 \u2212 '+fmt(p)+') \u00d7 3/200 = '+fmtX(relief)+roundNote}; }
   function employerNI(s, ea){ var n=r2(Math.max(0,(s-ST)*0.15)); return ea ? Math.max(0,r2(n-EA)) : n; }
   function personal(other, salary, dividends, region, kids){
     var B = region==='scot' ? SCOT : UK;
@@ -550,15 +602,89 @@
     return {sal:sal,leftover:leftover,erni:erni,pt:pt,eeni:eeni,sl:slB,take:sal-pt.itCompany-eeni-pt.cb-slB.total,tax:erni+pt.itCompany+eeni+pt.cb};
   }
   function read(){
-    var profit=Math.min(100000000,num('profit-num')), ea=document.getElementById('ea').checked, salIn=num('salary'), penIn=num('pension'), salary=salIn;
+    var raw={salIn:num('salary'), penIn:num('pension'), other:num('other'), retain:num('retain'),
+            kids:+document.getElementById('kids').value, region:document.getElementById('region').value, ea:document.getElementById('ea').checked, planT:+document.getElementById('plan').value, pg:document.getElementById('pg').checked};
+    return atProfit(raw, Math.min(100000000,num('profit-num')));
+  }
+  function atProfit(raw, profit){
+    var ea=raw.ea, salIn=raw.salIn, penIn=raw.penIn, salary=salIn;
     if(salary+employerNI(salary,ea)>profit+1e-9){ salary=r2(profit<=ST?profit:(ea?(profit<=75000?profit:(profit+750+EA)/1.15):(profit+ST*0.15)/1.15)); while(salary>0&&salary+employerNI(salary,ea)>profit+1e-9) salary=r2(salary-0.01); }
     var pension=Math.min(penIn, Math.max(0,r2(profit-salary-employerNI(salary,ea))));
-    var rv=num('retain');
-    return {profit:profit, salary:salary, salIn:salIn, penIn:penIn, pension:pension, other:num('other'), retain:rv,
-            kids:+document.getElementById('kids').value, region:document.getElementById('region').value, ea:document.getElementById('ea').checked, planT:+document.getElementById('plan').value, pg:document.getElementById('pg').checked};
+    return {profit:profit, salary:salary, salIn:salIn, penIn:penIn, pension:pension, other:raw.other, retain:raw.retain,
+            kids:raw.kids, region:raw.region, ea:ea, planT:raw.planT, pg:raw.pg, raw:raw};
+  }
+  // ---- next £1,000, chart and slider ----
+  var SL_MAX=300000;
+  function nextK(i, a){
+    var i2=atProfit(i.raw, i.profit+1000), a2=quiet(function(){ return routeA(i2); });
+    var parts=[
+      ['Corporation Tax', r2(a2.ct.tax-a.ct.tax)],
+      ['Employer NI', r2(a2.erni-a.erni)],
+      ['Income Tax', r2(a2.pt.itCompany-a.pt.itCompany)],
+      ['Employee NI', r2(a2.eeni-a.eeni)],
+      ['Dividend tax', r2(a2.pt.dt.tax-a.pt.dt.tax)],
+      ['Child Benefit charge', r2(a2.pt.cb-a.pt.cb)],
+      ['Student loan repayments', r2(a2.sl.total-a.sl.total)],
+      ['Kept in the company', r2(a2.retained-a.retained)],
+      ['Into your pension', r2(i2.pension-i.pension)]
+    ].filter(function(x){ return Math.abs(x[1])>=0.005; });
+    var keep=r2(a2.take-a.take), out=0; parts.forEach(function(x){ out=r2(out+x[1]); });
+    return {keep:keep, parts:parts, out:out, check:r2(1000-out)};
+  }
+  function quiet(fn){ QUIET=true; try{ return fn(); } finally { QUIET=false; } }
+  function marginalAt(raw, p){ return quiet(function(){ var i=atProfit(raw,p), i2=atProfit(raw,p+1000); return (1000-(routeA(i2).take-routeA(i).take))/1000; }); }
+  function incomeAt(raw, p){ return quiet(function(){ var i=atProfit(raw,p), a=routeA(i); return i.other+i.salary+a.div; }); }
+  function profitForIncome(raw, target){ if(incomeAt(raw,0)>=target) return 0; var lo=0, hi=5000000; if(incomeAt(raw,hi)<target) return null;
+    for(var k=0;k<42;k++){ var mid=(lo+hi)/2; if(incomeAt(raw,mid)>=target) hi=mid; else lo=mid; } return Math.ceil(hi); }
+  var CHART={key:null}, THR={key:null};
+  function thresholds(raw){ var key=JSON.stringify(raw); if(THR.key===key) return THR.v; var v={hr:profitForIncome(raw,50270), t1:profitForIncome(raw,100000), t2:profitForIncome(raw,125140)}; THR={key:key,v:v}; return v; }
+  function drawChart(i, th){
+    var svg=document.getElementById('mg-svg'); if(!svg) return;
+    var W=640,H=270,L=46,R=14,T=16,B=34, pw=W-L-R, ph=H-T-B, step=2500, key=JSON.stringify(i.raw), pts, ymax;
+    if(CHART.key===key){ pts=CHART.pts; ymax=CHART.ymax; }
+    else { pts=[]; ymax=0.6; for(var p=0;p<=SL_MAX;p+=step){ var m=marginalAt(i.raw,p); pts.push([p,m]); if(m>ymax) ymax=m; }
+      ymax=Math.ceil(ymax*5)/5; if(ymax>1) ymax=1; CHART={key:key,pts:pts,ymax:ymax}; }
+    var X=function(p){ return L+pw*p/SL_MAX; }, Y=function(m){ return T+ph*(1-Math.max(0,m)/ymax); };
+    var g='';
+    var t1=th.t1, t2=th.t2;
+    if(t1!==null && t1<SL_MAX){ var x2=X(Math.min(SL_MAX,t2===null?SL_MAX:t2)); g+='<rect x="'+X(t1).toFixed(1)+'" y="'+T+'" width="'+(x2-X(t1)).toFixed(1)+'" height="'+ph+'" class="mg-trap"/>'; }
+    for(var y=0;y<=ymax+1e-9;y+=0.2){ g+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+Y(y).toFixed(1)+'" y2="'+Y(y).toFixed(1)+'" class="mg-grid"/><text x="'+(L-8)+'" y="'+(Y(y)+4).toFixed(1)+'" class="mg-ylab">'+Math.round(y*100)+'%</text>'; }
+    for(var xk=0;xk<=SL_MAX;xk+=50000){ g+='<text x="'+X(xk).toFixed(1)+'" y="'+(H-12)+'" class="mg-xlab">'+(xk?'£'+(xk/1000)+'k':'£0')+'</text>'; }
+    var d='M'+X(pts[0][0]).toFixed(1)+' '+Y(pts[0][1]).toFixed(1);
+    for(var k=1;k<pts.length;k++){ d+=' H'+X(pts[k][0]).toFixed(1)+' V'+Y(pts[k][1]).toFixed(1); }
+    g+='<path d="'+d+'" class="mg-line"/>';
+    var cp=Math.min(i.profit,SL_MAX), cm=marginalAt(i.raw,i.profit), cx=X(cp), cy=Y(cm);
+    g+='<line x1="'+cx.toFixed(1)+'" x2="'+cx.toFixed(1)+'" y1="'+T+'" y2="'+(T+ph)+'" class="mg-you"/><circle cx="'+cx.toFixed(1)+'" cy="'+cy.toFixed(1)+'" r="5" class="mg-dot"/>';
+    var lx=cx>W-130?cx-10:cx+10, anchor=cx>W-130?'end':'start';
+    g+='<text x="'+lx.toFixed(1)+'" y="'+Math.max(T+12,cy-10).toFixed(1)+'" class="mg-youlab" text-anchor="'+anchor+'">You: '+(cm*100).toFixed(1)+'%</text>';
+    svg.innerHTML=g;
+  }
+  function drawSlider(i, th){
+    var r=document.getElementById('profit-range'); if(!r) return;
+    if(document.activeElement!==r) r.value=Math.min(SL_MAX,Math.round(i.profit/500)*500);
+    var hr=th.hr, t1=th.t1, t2=th.t2, pc=function(p){ return (100*Math.min(SL_MAX,p)/SL_MAX).toFixed(2)+'%'; };
+    var bg='linear-gradient(to right, var(--rule) 0%, var(--rule) 100%)';
+    if(t1!==null && t1<SL_MAX){ var e2=t2===null?SL_MAX:t2; bg='linear-gradient(to right, var(--rule) 0%, var(--rule) '+pc(t1)+', #E0C36B '+pc(t1)+', #E0C36B '+pc(e2)+', var(--rule) '+pc(e2)+', var(--rule) 100%)'; }
+    r.style.setProperty('--track',bg);
+    var hm=document.getElementById('mark-hr'), hl=document.getElementById('lab-hr'), tl=document.getElementById('lab-trap'), showHr=(hr!==null&&hr>0&&hr<SL_MAX), showT=(t1!==null&&t1<SL_MAX);
+    if(hm){ hm.hidden=!showHr; if(showHr) hm.style.left=pc(hr); }
+    if(hl){ hl.hidden=!showHr; if(showHr) hl.style.left='clamp(36px, '+pc(hr)+', calc(100% - 36px))'; }
+    if(tl){ tl.hidden=!showT; if(showT){ var mid=(Math.min(SL_MAX,t1)+Math.min(SL_MAX,t2===null?SL_MAX:t2))/2; tl.style.left='clamp(48px, '+pc(mid)+', calc(100% - 48px))'; }
+      if(showHr&&showT&&Math.abs(Math.min(SL_MAX,hr)-(t1+(t2===null?SL_MAX:Math.min(SL_MAX,t2)))/2)<SL_MAX*0.22){ tl.style.top='16px'; } else { tl.style.top='0'; } }
+    var lw=document.querySelector('.slide-labels'); if(lw) lw.style.height=(tl&&tl.style.top==='16px'&&!tl.hidden)?'34px':'18px';
+    var txt=[]; if(hr!==null) txt.push('Higher rate tax on dividends starts at about '+fmtR(hr)+' of profit');
+    if(t1!==null) txt.push('the Personal Allowance trap (shaded) runs from about '+fmtR(t1)+(t2!==null?' to '+fmtR(t2):'')+' of profit');
+    set('slide-note', txt.length? txt.join('; ')+', with your other settings.' : '');
+  }
+  function renderNext(i, a){
+    var n=nextK(i, a);
+    set('mg-keep', fmt(n.keep)); set('mg-rate', fmt(n.out)+' of every extra £1,000 goes in tax'+(n.parts.some(function(x){return x[0]==='Kept in the company'||x[0]==='Into your pension';})?' or stays in the company or pension':'')+', or '+(n.out/10).toFixed(2).replace(/\.?0+$/,'')+'%.');
+    document.getElementById('mg-lines').innerHTML=n.parts.map(function(x){ return '<li><span>'+x[0]+'</span><span>'+fmt(x[1])+'</span></li>'; }).join('')+'<li class="mg-tot"><span>You keep</span><span>£1,000.00 '+M+' '+fmt(n.out)+' = '+fmt(n.check)+'</span></li>';
+    var th=thresholds(i.raw); drawChart(i, th); drawSlider(i, th);
   }
   function render(){
     var i=read(), a=routeA(i), b=routeB(i);
+    renderNext(i, a);
     
     set('a-title',fmt(i.salary)+' salary + dividends');
     set('a-take',fmt(a.take)); set('a-sal',fmt(i.salary)); set('a-div',fmt(a.div)); set('a-retain',fmt(a.retained)); set('a-pen',fmt(i.pension)); set('a-erni',fmt(a.erni)); set('a-ct',fmt(a.ct.tax)); set('a-it',fmt(a.pt.itCompany)); set('a-eeni',fmt(a.eeni)); set('a-divtax',fmt(a.pt.dt.tax)); set('a-cb',fmt(a.pt.cb)); set('a-tax',fmt(a.tax));
@@ -609,6 +735,8 @@
     document.getElementById('workings').innerHTML=w;
   }
   ['profit-num','salary','pension','other','retain'].forEach(function(id){ document.getElementById(id).addEventListener('input',render); });
+  (function(){ var r=document.getElementById('profit-range'), n=document.getElementById('profit-num'); if(!r) return;
+    r.addEventListener('input',function(){ n.value=(+r.value).toLocaleString('en-GB'); render(); }); })();
   ['ea','kids','region','plan','pg'].forEach(function(id){ document.getElementById(id).addEventListener('change',render); });
 
   // ---- brand select: enhances every <select> in the inputs ----

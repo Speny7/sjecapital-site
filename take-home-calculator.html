@@ -236,13 +236,14 @@
   .slide-labels{ position:relative; height:18px; margin-top:9px; }
   .sl-lab{ position:absolute; top:0; transform:translateX(-50%); font-size:.75rem; font-weight:600; color:var(--ink); white-space:nowrap; }
   .sl-lab.sl-trap{ color:#7A5F10; }
-  .slide-ends{ display:flex; justify-content:space-between; font-size:.8rem; color:var(--ink-soft); margin-top:2px; }
-  .slide-note{ font-size:.85rem; color:var(--ink-soft); line-height:1.5; margin-top:6px; }
+  .slide-ends{ display:flex; justify-content:space-between; font-size:.8rem; color:var(--ink-soft); margin-top:8px; padding-top:6px; border-top:1px dashed var(--rule-soft); }
+  .slide-note{ font-size:.85rem; color:var(--ink-soft); line-height:1.5; margin-top:14px; }
   /* next £1,000 */
   .mg{ margin-top:24px; border-top:3px solid var(--ink); background:var(--paper-hi); padding:20px 24px; }
   .mg h2{ font-family:"EB Garamond", Georgia, serif; font-size:1.5rem; font-weight:600; margin-bottom:6px; }
-  .mg-lead{ font-size:1rem; line-height:1.55; }
-  .mg-lead b{ font-family:"EB Garamond", Georgia, serif; font-size:1.35rem; color:var(--leaf-deep); font-variant-numeric:tabular-nums; }
+  .mg-lead{ display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; font-size:1rem; line-height:1.4; }
+  .mg-lead b{ font-family:"EB Garamond", Georgia, serif; font-size:2.2rem; font-weight:600; line-height:1; color:var(--leaf-deep); font-variant-numeric:tabular-nums; }
+  .mg-sub{ margin-top:6px; font-size:.95rem; color:var(--ink-soft); }
   .mg-lines{ list-style:none; margin:12px 0 0; padding:0; font-variant-numeric:tabular-nums; }
   .mg-lines li{ display:flex; justify-content:space-between; gap:12px; padding:6px 0; border-bottom:1px solid var(--rule-soft); font-size:.95rem; }
   .mg-lines li.mg-tot{ font-weight:600; border-bottom:none; border-top:2px solid var(--ink); }
@@ -502,7 +503,8 @@
       </div>
       <section class="mg" aria-labelledby="mg-title">
         <h2 id="mg-title">Your next £1,000 of profit</h2>
-        <p class="mg-lead">Taken as extra dividends (Route A), you keep <b id="mg-keep">£570.79</b>. <span id="mg-rate">£429.21 of every extra £1,000 goes in tax, or 42.92%.</span></p>
+        <p class="mg-lead"><b id="mg-keep">£570.79</b><span> is what you keep of the next £1,000, taken as extra dividends (Route A).</span></p>
+        <p class="mg-sub" id="mg-rate">The other £429.21 goes in tax: £429.21 ÷ £1,000 = 42.92%.</p>
         <ul class="mg-lines" id="mg-lines"><li><span>Corporation Tax</span><span>£190.00</span></li><li><span>Dividend tax</span><span>£239.21</span></li><li class="mg-tot"><span>You keep</span><span>£1,000.00 − £429.21 = £570.79</span></li></ul>
         <figure class="mg-chart">
           <svg id="mg-svg" viewBox="0 0 640 270" role="img" aria-labelledby="mg-cap"><rect x="292.6" y="16" width="66.1" height="220" class="mg-trap"></rect><line x1="46" x2="626" y1="236.0" y2="236.0" class="mg-grid"></line><text x="38" y="240.0" class="mg-ylab">0%</text><line x1="46" x2="626" y1="181.0" y2="181.0" class="mg-grid"></line><text x="38" y="185.0" class="mg-ylab">20%</text><line x1="46" x2="626" y1="126.0" y2="126.0" class="mg-grid"></line><text x="38" y="130.0" class="mg-ylab">40%</text><line x1="46" x2="626" y1="71.0" y2="71.0" class="mg-grid"></line><text x="38" y="75.0" class="mg-ylab">60%</text><line x1="46" x2="626" y1="16.0" y2="16.0" class="mg-grid"></line><text x="38" y="20.0" class="mg-ylab">80%</text><text x="46.0" y="258" class="mg-xlab">£0</text><text x="142.7" y="258" class="mg-xlab">£50k</text><text x="239.3" y="258" class="mg-xlab">£100k</text><text x="336.0" y="258" class="mg-xlab">£150k</text><text x="432.7" y="258" class="mg-xlab">£200k</text><text x="529.3" y="258" class="mg-xlab">£250k</text><text x="626.0" y="258" class="mg-xlab">£300k</text><path d="M46.0 236.0 H50.8 V236.0 H55.7 V200.1 H60.5 V200.1 H65.3 V200.1 H70.2 V200.1 H75.0 V159.8 H79.8 V159.8 H84.7 V159.8 H89.5 V159.8 H94.3 V159.8 H99.2 V159.8 H104.0 V159.8 H108.8 V159.8 H113.7 V159.8 H118.5 V159.8 H123.3 V159.8 H128.2 V159.8 H133.0 V159.8 H137.8 V159.8 H142.7 V159.8 H147.5 V159.8 H152.3 V159.8 H157.2 V159.8 H162.0 V118.0 H166.8 V104.1 H171.7 V90.9 H176.5 V90.9 H181.3 V90.9 H186.2 V90.9 H191.0 V90.9 H195.8 V90.9 H200.7 V90.9 H205.5 V90.9 H210.3 V90.9 H215.2 V90.9 H220.0 V90.9 H224.8 V90.9 H229.7 V90.9 H234.5 V90.9 H239.3 V90.9 H244.2 V90.9 H249.0 V90.9 H253.8 V90.9 H258.7 V90.9 H263.5 V90.9 H268.3 V90.9 H273.2 V90.9 H278.0 V90.9 H282.8 V90.9 H287.7 V90.9 H292.5 V47.9 H297.3 V45.4 H302.2 V45.4 H307.0 V45.4 H311.8 V45.4 H316.7 V45.4 H321.5 V45.4 H326.3 V45.4 H331.2 V45.4 H336.0 V45.4 H340.8 V45.4 H345.7 V45.4 H350.5 V45.4 H355.3 V45.4 H360.2 V83.6 H365.0 V83.6 H369.8 V83.6 H374.7 V83.6 H379.5 V83.6 H384.3 V83.6 H389.2 V83.6 H394.0 V83.6 H398.8 V83.6 H403.7 V83.6 H408.5 V83.6 H413.3 V83.6 H418.2 V83.6 H423.0 V83.6 H427.8 V83.6 H432.7 V83.6 H437.5 V83.6 H442.3 V83.6 H447.2 V83.6 H452.0 V83.6 H456.8 V83.6 H461.7 V83.6 H466.5 V83.6 H471.3 V83.6 H476.2 V83.6 H481.0 V83.6 H485.8 V83.6 H490.7 V83.6 H495.5 V83.6 H500.3 V83.6 H505.2 V83.6 H510.0 V83.6 H514.8 V83.6 H519.7 V83.6 H524.5 V83.6 H529.3 V83.6 H534.2 V83.6 H539.0 V83.6 H543.8 V83.6 H548.7 V83.6 H553.5 V83.6 H558.3 V86.1 H563.2 V86.1 H568.0 V86.1 H572.8 V86.1 H577.7 V86.1 H582.5 V86.1 H587.3 V86.1 H592.2 V86.1 H597.0 V86.1 H601.8 V86.1 H606.7 V86.1 H611.5 V86.1 H616.3 V86.1 H621.2 V86.1 H626.0 V86.1" class="mg-line"></path><line x1="162.0" x2="162.0" y1="16" y2="236" class="mg-you"></line><circle cx="162.0" cy="118.0" r="5" class="mg-dot"></circle><text x="172.0" y="108.0" class="mg-youlab" text-anchor="start">You: 42.9%</text></svg>
@@ -678,7 +680,7 @@
   }
   function renderNext(i, a){
     var n=nextK(i, a);
-    set('mg-keep', fmt(n.keep)); set('mg-rate', fmt(n.out)+' of every extra £1,000 goes in tax'+(n.parts.some(function(x){return x[0]==='Kept in the company'||x[0]==='Into your pension';})?' or stays in the company or pension':'')+', or '+(n.out/10).toFixed(2).replace(/\.?0+$/,'')+'%.');
+    set('mg-keep', fmt(n.keep)); set('mg-rate', 'The other '+fmt(n.out)+' goes in tax'+(n.parts.some(function(x){return x[0]==='Kept in the company'||x[0]==='Into your pension';})?' or stays in the company or pension':'')+': '+fmt(n.out)+' \u00f7 £1,000 = '+(n.out/10).toFixed(2).replace(/\.?0+$/,'')+'%.');
     document.getElementById('mg-lines').innerHTML=n.parts.map(function(x){ return '<li><span>'+x[0]+'</span><span>'+fmt(x[1])+'</span></li>'; }).join('')+'<li class="mg-tot"><span>You keep</span><span>£1,000.00 '+M+' '+fmt(n.out)+' = '+fmt(n.check)+'</span></li>';
     var th=thresholds(i.raw); drawChart(i, th); drawSlider(i, th);
   }

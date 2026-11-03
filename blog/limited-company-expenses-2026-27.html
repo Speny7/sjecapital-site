@@ -39,14 +39,16 @@
 <style>
   @font-face{ font-family:"EB Garamond"; src:url(/fonts/eb-garamond.woff2) format("woff2"); font-weight:500 700; font-style:normal; font-display:swap; }
   @font-face{ font-family:"Source Serif 4"; src:url(/fonts/source-serif-4.woff2) format("woff2"); font-weight:400 700; font-style:normal; font-display:swap; }
+  @font-face{ font-family:"Source Serif 4 Fallback"; src:local("Times New Roman"), local("TimesNewRomanPSMT"), local("Liberation Serif"), local("Tinos"); size-adjust:109.3%; ascent-override:94.79%; descent-override:30.65%; line-gap-override:0%; }
+  @font-face{ font-family:"EB Garamond Fallback"; src:local("Times New Roman Bold"), local("TimesNewRomanPS-BoldMT"), local("Times New Roman"), local("Liberation Serif Bold"); font-weight:500 700; size-adjust:95.92%; ascent-override:104.98%; descent-override:31.07%; line-gap-override:0%; }
 
   :root{ color-scheme:light;
     --ink:#14382B; --ink-soft:#2A5340; --leaf:#1E6B4A; --leaf-deep:#155238;
     --paper:#F2F5EF; --paper-hi:#FBFCF9; --rule:#C7D4C6; --rule-soft:#DCE5DA; --focus:#0E8A5F;
   }
   *{ margin:0; padding:0; box-sizing:border-box; }
-  body{ font-family:"Source Serif 4", Georgia, serif; background:var(--paper); color:var(--ink); font-size:1.0625rem; line-height:1.65; -webkit-font-smoothing:antialiased; }
-  h1,h2,h3{ font-family:"EB Garamond", Georgia, serif; }
+  body{ font-family:"Source Serif 4", "Source Serif 4 Fallback", Georgia, serif; background:var(--paper); color:var(--ink); font-size:1.0625rem; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3{ font-family:"EB Garamond", "EB Garamond Fallback", Georgia, serif; }
   a{ color:var(--leaf); text-decoration-thickness:1px; text-underline-offset:3px; }
   a:hover{ color:var(--leaf-deep); }
   :focus-visible{ outline:3px solid var(--focus); outline-offset:3px; border-radius:2px; }
@@ -155,7 +157,7 @@
   .toc a{ color:var(--ink); text-decoration:none; }
   .toc a:hover{ color:var(--leaf-deep); text-decoration:underline; }
   .aside-card{ background:var(--ink); color:var(--paper-hi); padding:22px 22px 24px; margin-bottom:30px; }
-  .aside-card strong{ font-family:"EB Garamond", Georgia, serif; font-size:1.25rem; display:block; margin-bottom:8px; }
+  .aside-card strong{ font-family:"EB Garamond", "EB Garamond Fallback", Georgia, serif; font-size:1.25rem; display:block; margin-bottom:8px; }
   .aside-card p{ font-size:.9375rem; color:#CBDACD; margin-bottom:16px; }
   .aside-card .btn{ display:block; text-align:center; }
   .aside-links{ border-top:2px solid var(--ink); padding-top:14px; }

@@ -303,6 +303,10 @@
     .res-card:hover, .thanks-card:hover, .plan:hover, .posts article:hover, a:hover .arr, button:hover .arr{ transform:none !important; }
   }
   @media print{ .sje-reveal{ opacity:1 !important; transform:none !important; } }
+  .check-hmrc{ margin-top:18px; border-top:1px solid var(--rule); padding-top:14px; font-size:.95rem; }
+  .check-hmrc h3{ font-family:"EB Garamond", Georgia, serif; font-size:1.2rem; margin-bottom:6px; }
+  .check-hmrc ul{ margin:8px 0 10px 20px; }
+  .check-hmrc li{ margin-bottom:4px; }
 </style>
 
 <script type="application/ld+json">
@@ -537,6 +541,16 @@
         <summary>Show the workings</summary>
         <div class="inner" id="workings"><h3>Route A: company pays into your pension</h3><div class="wk"><div><span class="lbl">Profit paid in each year<small>an employer contribution is deductible, so no Corporation Tax; no National Insurance or personal tax going in</small></span><span class="amt">£10,000.00</span></div><div class="sub"><span class="lbl">Pension pot after 20 years<small>£10,000.00 a year, paid at the start of each period, growing 5% a year</small></span><span class="amt">£347,192.51</span></div><div><span class="lbl">Tax-free lump sum<small>25% of £347,192.51</small></span><span class="amt">£86,798.13</span></div><div><span class="lbl">Taxable pension income</span><span class="amt">£260,394.38</span></div><div><span class="lbl">Less Income Tax on it<small>£260,394.38 × 20%</small></span><span class="amt">−£52,078.88</span></div><div class="tot"><span class="lbl">Yours after tax</span><span class="amt">£295,113.63</span></div></div><h3>Route B: take dividends and invest</h3><div class="wk"><div><span class="lbl">Profit set aside each year</span><span class="amt">£10,000.00</span></div><div><span class="lbl">Less Corporation Tax<small>£10,000.00 × 19%</small></span><span class="amt">−£1,900.00</span></div><div class="sub"><span class="lbl">Dividend paid to you</span><span class="amt">£8,100.00</span></div><div><span class="lbl">Less dividend tax<small>£8,100.00 × 10.75%; assumes your £500 dividend allowance is already used</small></span><span class="amt">−£870.75</span></div><div class="sub"><span class="lbl">Invested each year<small>£7,229.25 ÷ £10,000.00 = 0.7229, so 72p of every £1 of profit</small></span><span class="amt">£7,229.25</span></div><div class="sub"><span class="lbl">Investments after 20 years<small>£7,229.25 a year, paid at the start of each period, growing 5% a year</small></span><span class="amt">£250,994.17</span></div><div><span class="lbl">Tax on the way out<small>inside an ISA, growth and withdrawals are tax-free</small></span><span class="amt">£0.00</span></div><div class="tot"><span class="lbl">Yours after tax</span><span class="amt">£250,994.17</span></div></div><div class="wk"><div class="sub"><span class="lbl">Exact break-even retirement tax rate<small>not a real tax band, just the point where both routes leave you the same; real rates below it favour the pension. 1 − (£250,994.17 − £86,798.13 tax-free) ÷ (£347,192.51 − £86,798.13). Below it the pension wins; above it dividends win</small></span><span class="amt">36.9%</span></div></div><p class="aside">Difference: £295,113.63 − £250,994.17 = <strong>£44,119.46</strong> in favour of the pension.</p></div>
       </details>
+      <div class="check-hmrc">
+        <h3>Check it with HMRC</h3>
+        <p>These figures follow HMRC's published rules and rates. To read them in full, or to check a figure:</p>
+        <ul>
+          <li>Pensions: <a href="https://www.gov.uk/tax-on-your-private-pension/annual-allowance" target="_blank" rel="noopener noreferrer">the pension annual allowance</a></li>
+          <li>Dividends: <a href="https://www.gov.uk/tax-on-dividends" target="_blank" rel="noopener noreferrer">Tax on dividends</a></li>
+          <li>Corporation Tax: <a href="https://www.gov.uk/corporation-tax-rates" target="_blank" rel="noopener noreferrer">Corporation Tax rates and reliefs</a> and <a href="https://www.gov.uk/guidance/corporation-tax-marginal-relief" target="_blank" rel="noopener noreferrer">Marginal Relief</a></li>
+          <li>Income Tax rates and bands: <a href="https://www.gov.uk/income-tax-rates" target="_blank" rel="noopener noreferrer">Income Tax rates and Personal Allowances</a></li>
+        </ul>
+      </div>
       <p class="print-only">Calculated at sjecapital.co.uk/pension-vs-dividends-calculator. Illustrative, not financial advice. SJE Capital Limited, company no. 15837169.</p>
       <p class="related">How employer contributions work, and the limits: read <a href="/blog/company-pension-contributions-directors">should your company pay into your pension?</a> Want to model ordinary savings instead? Try the <a href="/compound-interest-calculator">compound interest calculator</a>. To see how a pension contribution fits with your salary and dividends this year, use the <a href="/take-home-calculator">director take-home calculator</a>.</p>
       <p class="feedback">Spotted something that looks wrong? <a href="mailto:spencer@sjecapital.co.uk?subject=Calculator%20feedback%3A%20Pension%20vs%20dividends">Tell us</a> and we will check it straight away.</p>

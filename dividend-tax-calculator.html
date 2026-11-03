@@ -286,6 +286,10 @@
     .res-card:hover, .thanks-card:hover, .plan:hover, .posts article:hover, a:hover .arr, button:hover .arr{ transform:none !important; }
   }
   @media print{ .sje-reveal{ opacity:1 !important; transform:none !important; } }
+  .check-hmrc{ margin-top:18px; border-top:1px solid var(--rule); padding-top:14px; font-size:.95rem; }
+  .check-hmrc h3{ font-family:"EB Garamond", Georgia, serif; font-size:1.2rem; margin-bottom:6px; }
+  .check-hmrc ul{ margin:8px 0 10px 20px; }
+  .check-hmrc li{ margin-bottom:4px; }
 </style>
 
 <script type="application/ld+json">
@@ -485,6 +489,16 @@
         <summary>Show the workings</summary>
         <div class="inner" id="workings"><div class="wk"><div><span class="lbl">Total income<small>£12,570.00 salary + £37,700.00 dividends</small></span><span class="amt">£50,270.00</span></div><div><span class="lbl">Personal Allowance<small>used first by salary</small></span><span class="amt">£12,570.00</span></div><div class="sub"><span class="lbl">Salary that is taxable<small>£12,570.00 − £12,570.00 allowance (UK rates, paid via payroll or elsewhere, not shown here)</small></span><span class="amt">£0.00</span></div><div><span class="lbl">Dividend allowance<small>first £500.00 of the remaining dividends at 0%</small></span><span class="amt">£500.00</span></div><div><span class="lbl">Basic rate dividends<small>the basic rate band ends at £37,700 of taxable income</small></span><span class="amt">£37,200.00 × 10.75% = £3,999.00</span></div><div class="tot"><span class="lbl">Tax to pay through Self Assessment</span><span class="amt">£3,999.00</span></div><div class="sub"><span class="lbl">Dividends after tax</span><span class="amt">£33,701.00</span></div></div><p class="aside">Remember the company has already paid Corporation Tax on the profit these dividends come from: 19% on profits up to £50,000, 25% on profits over £250,000, and an effective 26.5% on each pound in between because of marginal relief.</p></div>
       </details>
+      <div class="check-hmrc">
+        <h3>Check it with HMRC</h3>
+        <p>These figures follow HMRC's published rules and rates. To read them in full, or to check a figure:</p>
+        <ul>
+          <li>Dividends: <a href="https://www.gov.uk/tax-on-dividends" target="_blank" rel="noopener noreferrer">Tax on dividends</a></li>
+          <li>Income Tax rates and bands: <a href="https://www.gov.uk/income-tax-rates" target="_blank" rel="noopener noreferrer">Income Tax rates and Personal Allowances</a></li>
+          <li>Income over £100,000: <a href="https://www.gov.uk/income-tax-rates/income-over-100000" target="_blank" rel="noopener noreferrer">how the Personal Allowance is reduced</a></li>
+          <li>Scotland: <a href="https://www.gov.uk/scottish-income-tax" target="_blank" rel="noopener noreferrer">Scottish Income Tax</a></li>
+        </ul>
+      </div>
       <p class="print-only">Calculated at sjecapital.co.uk/dividend-tax-calculator. Illustrative, not advice. SJE Capital Limited, company no. 15837169.</p>
       <p class="related">Deciding how much salary to take alongside dividends? Use the <a href="/take-home-calculator">director take-home calculator</a>, or read <a href="/blog/director-salary-dividends-2026-27">why £12,570 is usually the right salary, and when it is not</a>.</p>
       <p class="feedback">Spotted something that looks wrong? <a href="mailto:spencer@sjecapital.co.uk?subject=Calculator%20feedback%3A%20Dividend%20tax">Tell us</a> and we will check it straight away.</p>

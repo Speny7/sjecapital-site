@@ -842,8 +842,8 @@
       if (monthly){
         note.textContent = '';
       } else {
-        var monthly = parseFloat(span.dataset.monthly.replace(/,/g, '')), annual = parseFloat(span.dataset.annual.replace(/,/g, '')), yearly = annual * 12;
-        note.textContent = '(£' + monthly.toLocaleString('en-GB') + ' × 85% = £' + annual.toLocaleString('en-GB') + ' a month; £' + annual.toLocaleString('en-GB') + ' × 12 = £' + yearly.toLocaleString('en-GB') + ' billed annually, on a 12-month agreement)';
+        var full = parseFloat(span.dataset.monthly.replace(/,/g, '')), annual = parseFloat(span.dataset.annual.replace(/,/g, '')), yearly = annual * 12;
+        note.textContent = '(£' + full.toLocaleString('en-GB') + ' × 85% = £' + annual.toLocaleString('en-GB') + ' a month; £' + annual.toLocaleString('en-GB') + ' × 12 = £' + yearly.toLocaleString('en-GB') + ' billed annually, on a 12-month agreement)';
       }
     });
   }

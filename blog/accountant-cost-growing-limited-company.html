@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en-GB" class="no-js">
 <head>
 <meta charset="UTF-8">
 <link rel="preload" href="/logo-header.svg" as="image" type="image/svg+xml" fetchpriority="high">
@@ -213,6 +213,16 @@
     .res-card:hover, .thanks-card:hover, .plan:hover, .posts article:hover, a:hover .arr, button:hover .arr{ transform:none !important; }
   }
   @media print{ .sje-reveal{ opacity:1 !important; transform:none !important; } }
+
+  /* fold-away workings */
+  .wk-ans{ font:inherit; color:inherit; background:none; border:0; padding:0; margin:0; cursor:pointer; border-bottom:1px dotted var(--ink-soft); text-align:inherit; }
+  .wk-ans:focus-visible{ outline:2px solid var(--focus, #1E6B4A); outline-offset:2px; }
+  .js .wk:not(.open) .wk-calc{ display:none; }
+  .wk-calc{ color:var(--ink-soft); }
+  .js table.wk-table:not(.open) .wk-col{ display:none; }
+  .wk-tbl-toggle, .wk-all{ font:inherit; font-size:.9rem; background:none; border:0; padding:0; color:var(--leaf-deep); cursor:pointer; text-decoration:underline; text-underline-offset:3px; }
+  .wk-tbl-toggle{ display:block; margin:-12px 0 20px; }
+  .no-js .wk-ui{ display:none; }
 </style>
 
 <script type="application/ld+json">
@@ -359,7 +369,7 @@
     <div class="article-head">
     <p class="meta">Running a company</p>
     <h1>How much does an accountant cost for a growing limited company?</h1>
-    <p class="byline-author">By <a href="https://www.linkedin.com/in/spencerelbert/" target="_blank" rel="noopener noreferrer">Spencer Elbert</a> &middot; 13 October 2026 &middot; <span class="readtime" tabindex="0" data-tip="">5 minute read</span></p>
+    <p class="byline-author">By <a href="https://www.linkedin.com/in/spencerelbert/" target="_blank" rel="noopener noreferrer">Spencer Elbert</a> &middot; 13 October 2026 &middot; <span class="readtime" tabindex="0" data-tip="">5 minute read</span> &middot; <button type="button" class="wk-all wk-ui" aria-pressed="false">Show all workings</button></p>
     <p class="standfirst">What drives the price, what a company turning over £100,000 or more actually needs, and exactly what our plans cost and include, with every sum shown.</p>
     <div class="read-toggle" role="group" aria-label="Reading length">
       <button type="button" data-mode="quick" aria-pressed="false">1-minute read</button>
@@ -399,9 +409,9 @@
       <table>
         <thead><tr><th>Plan</th><th>Monthly</th><th>On a 12-month agreement</th><th>Saving over a year</th></tr></thead>
         <tbody>
-          <tr><td><strong>Startup</strong></td><td>from £500 a month: £500 &times; 12 = £6,000 a year</td><td>£500 &times; 85% = £425 a month: £425 &times; 12 = £5,100 a year</td><td>£6,000 &minus; £5,100 = <strong>£900</strong></td></tr>
-          <tr><td><strong>Scale</strong></td><td>from £900 a month: £900 &times; 12 = £10,800 a year</td><td>£900 &times; 85% = £765 a month: £765 &times; 12 = £9,180 a year</td><td>£10,800 &minus; £9,180 = <strong>£1,620</strong></td></tr>
-          <tr><td><strong>Thrive</strong></td><td>from £1,500 a month: £1,500 &times; 12 = £18,000 a year</td><td>£1,500 &times; 85% = £1,275 a month: £1,275 &times; 12 = £15,300 a year</td><td>£18,000 &minus; £15,300 = <strong>£2,700</strong></td></tr>
+          <tr><td><strong>Startup</strong></td><td>from £500 a month: <span class="wk"><span class="wk-calc">£500 &times; 12 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£6,000</button></span> a year</td><td><span class="wk"><span class="wk-calc">£500 &times; 85% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£425</button></span> a month: <span class="wk"><span class="wk-calc">£425 &times; 12 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£5,100</button></span> a year</td><td><span class="wk"><span class="wk-calc">£6,000 &minus; £5,100 = </span><strong><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£900</button></strong></span></td></tr>
+          <tr><td><strong>Scale</strong></td><td>from £900 a month: <span class="wk"><span class="wk-calc">£900 &times; 12 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£10,800</button></span> a year</td><td><span class="wk"><span class="wk-calc">£900 &times; 85% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£765</button></span> a month: <span class="wk"><span class="wk-calc">£765 &times; 12 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£9,180</button></span> a year</td><td><span class="wk"><span class="wk-calc">£10,800 &minus; £9,180 = </span><strong><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£1,620</button></strong></span></td></tr>
+          <tr><td><strong>Thrive</strong></td><td>from £1,500 a month: <span class="wk"><span class="wk-calc">£1,500 &times; 12 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£18,000</button></span> a year</td><td><span class="wk"><span class="wk-calc">£1,500 &times; 85% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£1,275</button></span> a month: <span class="wk"><span class="wk-calc">£1,275 &times; 12 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£15,300</button></span> a year</td><td><span class="wk"><span class="wk-calc">£18,000 &minus; £15,300 = </span><strong><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£2,700</button></strong></span></td></tr>
         </tbody>
       </table>
       <p>All prices are exclusive of VAT.</p>
@@ -416,15 +426,15 @@
       <h2>The real cost after tax</h2>
       <p>Accountancy fees are a business expense, so they reduce the company's Corporation Tax. On the Scale plan with a 12-month agreement:</p>
       <ul>
-        <li>At the 19% small profits rate: £9,180 &times; 19% = £1,744.20 of Corporation Tax saved, so the cost after tax is £9,180 &minus; £1,744.20 = <strong>£7,435.80</strong> a year, or £7,435.80 &divide; 12 = <strong>£619.65</strong> a month.</li>
-        <li>With profits between £50,000 and £250,000, where marginal relief means each extra £1 of profit is taxed at 26.5%: £9,180 &times; 26.5% = £2,432.70 saved, so the cost after tax is £9,180 &minus; £2,432.70 = <strong>£6,747.30</strong> a year, or £6,747.30 &divide; 12 = £562.275, which is <strong>£562.28</strong> a month to the nearest penny.</li>
+        <li>At the 19% small profits rate: <span class="wk"><span class="wk-calc">£9,180 &times; 19% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£1,744.20</button></span> of Corporation Tax saved, so the cost after tax is <span class="wk"><span class="wk-calc">£9,180 &minus; £1,744.20 = </span><strong><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£7,435.80</button></strong></span> a year, or <span class="wk"><span class="wk-calc">£7,435.80 &divide; 12 = </span><strong><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£619.65</button></strong></span> a month.</li>
+        <li>With profits between £50,000 and £250,000, where marginal relief means each extra £1 of profit is taxed at 26.5%: <span class="wk"><span class="wk-calc">£9,180 &times; 26.5% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£2,432.70</button></span> saved, so the cost after tax is <span class="wk"><span class="wk-calc">£9,180 &minus; £2,432.70 = </span><strong><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£6,747.30</button></strong></span> a year, or <span class="wk"><span class="wk-calc">£6,747.30 &divide; 12 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£562.275</button></span>, which is <strong>£562.28</strong> a month to the nearest penny.</li>
       </ul>
 
       <h2>What a good accountant should save you</h2>
       <p>The fee is only half of the picture. Good advice should pay for itself, for example:</p>
       <ul>
-        <li><strong>Pension planning.</strong> £10,000 of profit paid into your pension by the company puts the full £10,000 to work, while the same profit taken as a higher rate dividend leaves £5,204.25: £10,000 &minus; £5,204.25 = <strong>£4,795.75</strong> more working for you. Our <a href="/blog/company-pension-contributions-directors">pension guide</a> shows the full working.</li>
-        <li><strong>Avoiding penalties.</strong> For Corporation Tax returns due from 1 April 2026, filing late costs £200 straight away and another £200 at three months: £200 + £200 = £400, before any penalties based on the tax owed.</li>
+        <li><strong>Pension planning.</strong> £10,000 of profit paid into your pension by the company puts the full £10,000 to work, while the same profit taken as a higher rate dividend leaves £5,204.25: <span class="wk"><span class="wk-calc">£10,000 &minus; £5,204.25 = </span><strong><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£4,795.75</button></strong></span> more working for you. Our <a href="/blog/company-pension-contributions-directors">pension guide</a> shows the full working.</li>
+        <li><strong>Avoiding penalties.</strong> For Corporation Tax returns due from 1 April 2026, filing late costs £200 straight away and another £200 at three months: <span class="wk"><span class="wk-calc">£200 + £200 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£400,</button></span> before any penalties based on the tax owed.</li>
         <li><strong>Your time.</strong> Every hour you spend on bookkeeping and HMRC is an hour not spent on customers.</li>
       </ul>
 
@@ -445,7 +455,7 @@
         <h3>How much does an accountant cost for a limited company?</h3>
         <p>It depends on what you need. For a growing company that is VAT-registered and employs staff, a complete service costs more than year-end accounts alone. Our plans start from £500 a month, with 15% off on a 12-month agreement.</p>
         <h3>Are accountancy fees tax-deductible for a limited company?</h3>
-        <p>Yes. They are a business expense, so they reduce Corporation Tax. At 19%, a £9,180 annual fee saves £9,180 &times; 19% = £1,744.20 of tax.</p>
+        <p>Yes. They are a business expense, so they reduce Corporation Tax. At 19%, a £9,180 annual fee saves <span class="wk"><span class="wk-calc">£9,180 &times; 19% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£1,744.20</button></span> of tax.</p>
         <h3>Is a fixed monthly fee better than hourly billing?</h3>
         <p>For most companies, yes. You know the cost in advance, and you can ask questions without worrying about the clock. Check what the fixed fee includes before you compare prices.</p>
         <h3>What is included in your plans?</h3>
@@ -569,6 +579,27 @@
     if (e.key === 'Escape') set(false);
     else if ((e.key === 'Enter' || e.key === ' ') && document.activeElement === el){ e.preventDefault(); set(!el.classList.contains('open')); }
   });
+})();
+</script>
+<script>
+(function(){
+  var d=document.documentElement; d.classList.add('js'); d.classList.remove('no-js');
+  var all=document.querySelector('.wk-all'), KEY='sje-workings';
+  function setAll(open){
+    document.querySelectorAll('.wk').forEach(function(w){ w.classList.toggle('open',open); var b=w.querySelector('.wk-ans'); if(b) b.setAttribute('aria-expanded',open?'true':'false'); });
+    document.querySelectorAll('table.wk-table').forEach(function(t){ t.classList.toggle('open',open); });
+    document.querySelectorAll('.wk-tbl-toggle').forEach(function(b){ b.textContent=open?'Hide the workings':'Show the workings'; b.setAttribute('aria-expanded',open?'true':'false'); });
+    if(all){ all.textContent=open?'Hide all workings':'Show all workings'; all.setAttribute('aria-pressed',open?'true':'false'); }
+  }
+  document.addEventListener('click',function(e){
+    var b=e.target.closest('.wk-ans');
+    if(b){ var w=b.closest('.wk'), open=!w.classList.contains('open'); w.classList.toggle('open',open); b.setAttribute('aria-expanded',open?'true':'false'); return; }
+    var t=e.target.closest('.wk-tbl-toggle');
+    if(t){ var tb=t.previousElementSibling, o=!tb.classList.contains('open'); tb.classList.toggle('open',o); t.textContent=o?'Hide the workings':'Show the workings'; t.setAttribute('aria-expanded',o?'true':'false'); return; }
+    if(e.target.closest('.wk-all')){ var on=all.getAttribute('aria-pressed')!=='true'; setAll(on); try{ localStorage.setItem(KEY,on?'1':'0'); }catch(err){} }
+  });
+  var saved=null; try{ saved=localStorage.getItem(KEY); }catch(err){}
+  setAll(saved==='1');
 })();
 </script>
 </body>

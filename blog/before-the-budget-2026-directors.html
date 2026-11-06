@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en-GB" class="no-js">
 <head>
 <meta charset="UTF-8">
 <link rel="preload" href="/logo-header.svg" as="image" type="image/svg+xml" fetchpriority="high">
@@ -214,6 +214,16 @@
     .res-card:hover, .thanks-card:hover, .plan:hover, .posts article:hover, a:hover .arr, button:hover .arr{ transform:none !important; }
   }
   @media print{ .sje-reveal{ opacity:1 !important; transform:none !important; } }
+
+  /* fold-away workings */
+  .wk-ans{ font:inherit; color:inherit; background:none; border:0; padding:0; margin:0; cursor:pointer; border-bottom:1px dotted var(--ink-soft); text-align:inherit; }
+  .wk-ans:focus-visible{ outline:2px solid var(--focus, #1E6B4A); outline-offset:2px; }
+  .js .wk:not(.open) .wk-calc{ display:none; }
+  .wk-calc{ color:var(--ink-soft); }
+  .js table.wk-table:not(.open) .wk-col{ display:none; }
+  .wk-tbl-toggle, .wk-all{ font:inherit; font-size:.9rem; background:none; border:0; padding:0; color:var(--leaf-deep); cursor:pointer; text-decoration:underline; text-underline-offset:3px; }
+  .wk-tbl-toggle{ display:block; margin:-12px 0 20px; }
+  .no-js .wk-ui{ display:none; }
 </style>
 
 <script type="application/ld+json">
@@ -360,7 +370,7 @@
     <div class="article-head">
     <p class="meta">Budget</p>
     <h1>Before the Budget: what company directors can do now</h1>
-    <p class="byline-author">By <a href="https://www.linkedin.com/in/spencerelbert/" target="_blank" rel="noopener noreferrer">Spencer Elbert</a> &middot; 20 October 2026 &middot; <span class="readtime" tabindex="0" data-tip="">5 minute read</span></p>
+    <p class="byline-author">By <a href="https://www.linkedin.com/in/spencerelbert/" target="_blank" rel="noopener noreferrer">Spencer Elbert</a> &middot; 20 October 2026 &middot; <span class="readtime" tabindex="0" data-tip="">5 minute read</span> &middot; <button type="button" class="wk-all wk-ui" aria-pressed="false">Show all workings</button></p>
     <p class="standfirst">The Autumn Budget is on Wednesday 28 October. Nothing has been announced yet, so here are six sensible steps to take now under today's rules, and the mistakes to avoid.</p>
     <p class="update-note"><strong>Update, 28 October 2026:</strong> the Budget has now been delivered. Read <a href="/blog/autumn-budget-2026-company-directors">what the Autumn Budget 2026 means for company directors</a>. One change affects this article: the Business Asset Disposal Relief lifetime limit falls from £1 million to £500,000 for sales from 6 April 2027.</p>
     <div class="read-toggle" role="group" aria-label="Reading length">
@@ -388,11 +398,11 @@
       <p>Most tax changes announced in a Budget take effect from the start of the next tax year, on 6 April. But some apply straight away. At the Budget on 30 October 2024, the main rates of Capital Gains Tax rose from 10% and 20% to 18% and 24% from that same day. A decision rushed through on a rumour can backfire, and so can one delayed on a rumour that turns out to be wrong.</p>
 
       <h2>1. Know where you stand on dividends</h2>
-      <p>With the usual £12,570 salary, dividends of up to £37,700 are taxed at 10.75% (after the £500 dividend allowance); above that, the rate is 35.75%. Check how much you have taken so far this tax year. For example, a director who has taken £30,000 has £37,700 &minus; £30,000 = £7,700 left in the basic rate band. Here is the tax on that same £7,700 of dividends, inside the band and above it:</p>
+      <p>With the usual £12,570 salary, dividends of up to £37,700 are taxed at 10.75% (after the £500 dividend allowance); above that, the rate is 35.75%. Check how much you have taken so far this tax year. For example, a director who has taken £30,000 has <span class="wk"><span class="wk-calc">£37,700 &minus; £30,000 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£7,700</button></span> left in the basic rate band. Here is the tax on that same £7,700 of dividends, inside the band and above it:</p>
       <ul>
-        <li>Inside the band: £7,700 &times; 10.75% = <strong>£827.75</strong> of tax.</li>
-        <li>Above the band: £7,700 &times; 35.75% = <strong>£2,752.75</strong> of tax.</li>
-        <li>The difference: £2,752.75 &minus; £827.75 = <strong>£1,925.00</strong>, which is 35.75p &minus; 10.75p = 25p on every £1.</li>
+        <li>Inside the band: <span class="wk"><span class="wk-calc">£7,700 &times; 10.75% = </span><strong><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£827.75</button></strong></span> of tax.</li>
+        <li>Above the band: <span class="wk"><span class="wk-calc">£7,700 &times; 35.75% = </span><strong><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£2,752.75</button></strong></span> of tax.</li>
+        <li>The difference: <span class="wk"><span class="wk-calc">£2,752.75 &minus; £827.75 = </span><strong><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£1,925.00</button></strong></span>, which is <span class="wk"><span class="wk-calc">35.75p &minus; 10.75p = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">25p</button></span> on every £1.</li>
       </ul>
       <p>So if you still have room in the band, taking dividends up to the top of it, and stopping there, keeps them at the lower rate.</p>
       <p>The tax year runs until 5 April 2027, so there is time. The point is to plan the rest of the year's dividends deliberately rather than by habit.</p>
@@ -401,7 +411,7 @@
       <p>Unused pension annual allowance can be carried forward for three tax years. That means any allowance you did not use in 2023/24, up to £60,000, can only be used until <strong>5 April 2027</strong>; after that, it is gone. Carry forward only applies once this year's £60,000 allowance has been used, and you must have been a member of a registered pension scheme in the year you are carrying forward from. Pensions have been a regular Budget topic, so it is worth knowing your position now. Our <a href="/blog/company-pension-contributions-directors">pension guide</a> explains how company contributions work.</p>
 
       <h2>3. Check the £100,000 trap</h2>
-      <p>Once your income passes £100,000, you lose £1 of your Personal Allowance for every £2 above it, until it has gone completely at £125,140: (£125,140 &minus; £100,000) &divide; 2 = £12,570, the whole allowance. Income in that band is taxed at a very high effective rate. If your salary and dividends are heading into it, having the company pay into your pension instead of paying you more can keep your income below £100,000.</p>
+      <p>Once your income passes £100,000, you lose £1 of your Personal Allowance for every £2 above it, until it has gone completely at £125,140: <span class="wk"><span class="wk-calc">(£125,140 &minus; £100,000) &divide; 2 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£12,570,</button></span> the whole allowance. Income in that band is taxed at a very high effective rate. If your salary and dividends are heading into it, having the company pay into your pension instead of paying you more can keep your income below £100,000.</p>
 
       <h2>4. Tidy your director's loan account</h2>
       <p>If you owe your company money through your director's loan account, and it is not repaid within nine months of the company's year end, the company pays a temporary tax charge on it. A loan of more than £10,000 at any point can also be taxed on you as a benefit. Check the balance before your year end, whatever the Budget says.</p>
@@ -409,10 +419,10 @@
       <h2>5. Planning to sell? Get advice before you commit</h2>
       <p>Business Asset Disposal Relief cuts Capital Gains Tax on selling a qualifying business to 18%, instead of the 24% higher rate, on up to £1 million of gains over your lifetime. Any gain above that £1 million is taxed at the normal rate. For example, a higher rate taxpayer who sells their company for a gain of £1.2 million would pay:</p>
       <ul>
-        <li>On the first £1,000,000, with the relief: £1,000,000 &times; 18% = £180,000.</li>
-        <li>On the rest, £1,200,000 &minus; £1,000,000 = £200,000, at the normal rate: £200,000 &times; 24% = £48,000.</li>
-        <li>Total: £180,000 + £48,000 = <strong>£228,000</strong>, compared with £1,200,000 &times; 24% = £288,000 without the relief.</li>
-        <li>The saving: £288,000 &minus; £228,000 = <strong>£60,000</strong>. That is the most the relief can save at today's rates: £1,000,000 &times; (24% &minus; 18%) = £60,000.</li>
+        <li>On the first £1,000,000, with the relief: <span class="wk"><span class="wk-calc">£1,000,000 &times; 18% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£180,000</button></span>.</li>
+        <li>On the rest, <span class="wk"><span class="wk-calc">£1,200,000 &minus; £1,000,000 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£200,000,</button></span> at the normal rate: <span class="wk"><span class="wk-calc">£200,000 &times; 24% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£48,000</button></span>.</li>
+        <li>Total: <span class="wk"><span class="wk-calc">£180,000 + £48,000 = </span><strong><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£228,000</button></strong></span>, compared with <span class="wk"><span class="wk-calc">£1,200,000 &times; 24% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£288,000</button></span> without the relief.</li>
+        <li>The saving: <span class="wk"><span class="wk-calc">£288,000 &minus; £228,000 = </span><strong><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£60,000</button></strong></span>. That is the most the relief can save at today's rates: <span class="wk"><span class="wk-calc">£1,000,000 &times; (24% &minus; 18%) = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£60,000</button></span>.</li>
       </ul>
       <p>These figures leave out the £3,000 tax-free allowance for capital gains, which would reduce the bill slightly. Capital Gains Tax changed on Budget day in 2024, so if a sale is close, speak to us before you exchange contracts.</p>
 
@@ -558,6 +568,27 @@
     if (e.key === 'Escape') set(false);
     else if ((e.key === 'Enter' || e.key === ' ') && document.activeElement === el){ e.preventDefault(); set(!el.classList.contains('open')); }
   });
+})();
+</script>
+<script>
+(function(){
+  var d=document.documentElement; d.classList.add('js'); d.classList.remove('no-js');
+  var all=document.querySelector('.wk-all'), KEY='sje-workings';
+  function setAll(open){
+    document.querySelectorAll('.wk').forEach(function(w){ w.classList.toggle('open',open); var b=w.querySelector('.wk-ans'); if(b) b.setAttribute('aria-expanded',open?'true':'false'); });
+    document.querySelectorAll('table.wk-table').forEach(function(t){ t.classList.toggle('open',open); });
+    document.querySelectorAll('.wk-tbl-toggle').forEach(function(b){ b.textContent=open?'Hide the workings':'Show the workings'; b.setAttribute('aria-expanded',open?'true':'false'); });
+    if(all){ all.textContent=open?'Hide all workings':'Show all workings'; all.setAttribute('aria-pressed',open?'true':'false'); }
+  }
+  document.addEventListener('click',function(e){
+    var b=e.target.closest('.wk-ans');
+    if(b){ var w=b.closest('.wk'), open=!w.classList.contains('open'); w.classList.toggle('open',open); b.setAttribute('aria-expanded',open?'true':'false'); return; }
+    var t=e.target.closest('.wk-tbl-toggle');
+    if(t){ var tb=t.previousElementSibling, o=!tb.classList.contains('open'); tb.classList.toggle('open',o); t.textContent=o?'Hide the workings':'Show the workings'; t.setAttribute('aria-expanded',o?'true':'false'); return; }
+    if(e.target.closest('.wk-all')){ var on=all.getAttribute('aria-pressed')!=='true'; setAll(on); try{ localStorage.setItem(KEY,on?'1':'0'); }catch(err){} }
+  });
+  var saved=null; try{ saved=localStorage.getItem(KEY); }catch(err){}
+  setAll(saved==='1');
 })();
 </script>
 </body>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en-GB" class="no-js">
 <head>
 <meta charset="UTF-8">
 <link rel="preload" href="/logo-header.svg" as="image" type="image/svg+xml" fetchpriority="high">
@@ -216,6 +216,16 @@
     .res-card:hover, .thanks-card:hover, .plan:hover, .posts article:hover, a:hover .arr, button:hover .arr{ transform:none !important; }
   }
   @media print{ .sje-reveal{ opacity:1 !important; transform:none !important; } }
+
+  /* fold-away workings */
+  .wk-ans{ font:inherit; color:inherit; background:none; border:0; padding:0; margin:0; cursor:pointer; border-bottom:1px dotted var(--ink-soft); text-align:inherit; }
+  .wk-ans:focus-visible{ outline:2px solid var(--focus, #1E6B4A); outline-offset:2px; }
+  .js .wk:not(.open) .wk-calc{ display:none; }
+  .wk-calc{ color:var(--ink-soft); }
+  .js table.wk-table:not(.open) .wk-col{ display:none; }
+  .wk-tbl-toggle, .wk-all{ font:inherit; font-size:.9rem; background:none; border:0; padding:0; color:var(--leaf-deep); cursor:pointer; text-decoration:underline; text-underline-offset:3px; }
+  .wk-tbl-toggle{ display:block; margin:-12px 0 20px; }
+  .no-js .wk-ui{ display:none; }
 </style>
 
 <script type="application/ld+json">
@@ -362,7 +372,7 @@
     <div class="article-head">
     <p class="meta">Corporation Tax</p>
     <h1>Corporation Tax marginal relief explained: why 26.5% is not what you pay</h1>
-    <p class="byline-author">By <a href="https://www.linkedin.com/in/spencerelbert/" target="_blank" rel="noopener noreferrer">Spencer Elbert</a> &middot; 3 November 2026 &middot; <span class="readtime" tabindex="0" data-tip="">5 minute read</span></p>
+    <p class="byline-author">By <a href="https://www.linkedin.com/in/spencerelbert/" target="_blank" rel="noopener noreferrer">Spencer Elbert</a> &middot; 3 November 2026 &middot; <span class="readtime" tabindex="0" data-tip="">5 minute read</span> &middot; <button type="button" class="wk-all wk-ui" aria-pressed="false">Show all workings</button></p>
     <p class="standfirst">Corporation Tax is 19% on small profits and 25% on large ones, yet each extra pound in between costs 26.5p. Here is why, what you actually pay, and how to use it.</p>
     <div class="read-toggle" role="group" aria-label="Reading length">
       <button type="button" data-mode="quick" aria-pressed="false">1-minute read</button>
@@ -393,33 +403,34 @@
       </ul>
 
       <h2>Why a 26.5% rate appears</h2>
-      <p>Think of the 19% rate as a <strong>discount for small companies</strong>. At £50,000 of profit, the discount is worth the whole difference between the two rates: £50,000 &times; (25% &minus; 19%) = £3,000. Marginal relief then takes that discount away gradually as profits grow, until it has gone completely at £250,000.</p>
+      <p>Think of the 19% rate as a <strong>discount for small companies</strong>. At £50,000 of profit, the discount is worth the whole difference between the two rates: <span class="wk"><span class="wk-calc">£50,000 &times; (25% &minus; 19%) = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£3,000</button></span>. Marginal relief then takes that discount away gradually as profits grow, until it has gone completely at £250,000.</p>
       <p>The £3,000 discount is withdrawn evenly across the £200,000 between the limits:</p>
       <ul>
-        <li>Discount withdrawn for each extra pound of profit: £3,000 &divide; £200,000 = 1.5p.</li>
-        <li>Tax on each extra pound in the middle band: the 25% main rate plus the 1.5% being withdrawn, 25% + 1.5% = <strong>26.5%</strong>.</li>
+        <li>Discount withdrawn for each extra pound of profit: <span class="wk"><span class="wk-calc">£3,000 &divide; £200,000 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">1.5p</button></span>.</li>
+        <li>Tax on each extra pound in the middle band: the 25% main rate plus the 1.5% being withdrawn, <span class="wk"><span class="wk-calc">25% + 1.5% = </span><strong><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">26.5%</button></strong></span>.</li>
       </ul>
 
       <h2>What you actually pay</h2>
       <p>The 26.5% only applies to each extra pound. The rate on your <strong>whole</strong> profit, the overall rate, never goes above 25%:</p>
-      <table>
-        <thead><tr><th>Profit</th><th>Corporation Tax</th><th>Working</th><th>Overall rate</th></tr></thead>
+      <table class="wk-table">
+        <thead><tr><th>Profit</th><th>Corporation Tax</th><th class="wk-col">Working</th><th>Overall rate</th></tr></thead>
         <tbody>
-          <tr><td>£40,000</td><td>£7,600.00</td><td>£40,000 &times; 19%</td><td>19%</td></tr>
-          <tr><td>£50,000</td><td>£9,500.00</td><td>£50,000 &times; 19%</td><td>19%</td></tr>
-          <tr><td>£75,000</td><td>£16,125.00</td><td>£18,750 &minus; 3/200 &times; £175,000 (£2,625)</td><td>£16,125 &divide; £75,000 = 21.5%</td></tr>
-          <tr><td>£100,000</td><td>£22,750.00</td><td>£25,000 &minus; 3/200 &times; £150,000 (£2,250)</td><td>£22,750 &divide; £100,000 = 22.75%</td></tr>
-          <tr><td>£150,000</td><td>£36,000.00</td><td>£37,500 &minus; 3/200 &times; £100,000 (£1,500)</td><td>£36,000 &divide; £150,000 = 24%</td></tr>
-          <tr><td>£200,000</td><td>£49,250.00</td><td>£50,000 &minus; 3/200 &times; £50,000 (£750)</td><td>£49,250 &divide; £200,000 = 24.625%</td></tr>
-          <tr><td>£250,000</td><td>£62,500.00</td><td>£250,000 &times; 25%</td><td>25%</td></tr>
-          <tr><td>£300,000</td><td>£75,000.00</td><td>£300,000 &times; 25%</td><td>25%</td></tr>
+          <tr><td>£40,000</td><td>£7,600.00</td><td class="wk-col">£40,000 &times; 19%</td><td>19%</td></tr>
+          <tr><td>£50,000</td><td>£9,500.00</td><td class="wk-col">£50,000 &times; 19%</td><td>19%</td></tr>
+          <tr><td>£75,000</td><td>£16,125.00</td><td class="wk-col">£18,750 &minus; 3/200 &times; £175,000 (£2,625)</td><td><span class="wk"><span class="wk-calc">£16,125 &divide; £75,000 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">21.5%</button></span></td></tr>
+          <tr><td>£100,000</td><td>£22,750.00</td><td class="wk-col">£25,000 &minus; 3/200 &times; £150,000 (£2,250)</td><td><span class="wk"><span class="wk-calc">£22,750 &divide; £100,000 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">22.75%</button></span></td></tr>
+          <tr><td>£150,000</td><td>£36,000.00</td><td class="wk-col">£37,500 &minus; 3/200 &times; £100,000 (£1,500)</td><td><span class="wk"><span class="wk-calc">£36,000 &divide; £150,000 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">24%</button></span></td></tr>
+          <tr><td>£200,000</td><td>£49,250.00</td><td class="wk-col">£50,000 &minus; 3/200 &times; £50,000 (£750)</td><td><span class="wk"><span class="wk-calc">£49,250 &divide; £200,000 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">24.625%</button></span></td></tr>
+          <tr><td>£250,000</td><td>£62,500.00</td><td class="wk-col">£250,000 &times; 25%</td><td>25%</td></tr>
+          <tr><td>£300,000</td><td>£75,000.00</td><td class="wk-col">£300,000 &times; 25%</td><td>25%</td></tr>
         </tbody>
       </table>
+      <button type="button" class="wk-tbl-toggle wk-ui" aria-expanded="false">Show the workings</button>
       <p>From £50,000 to £100,000 of profit:</p>
       <ul>
-        <li>The tax rises from £9,500.00 to £22,750.00: £22,750 &minus; £9,500 = £13,250 more tax.</li>
-        <li>On £100,000 &minus; £50,000 = £50,000 more profit, that is £13,250 &divide; £50,000 = <strong>26.5%</strong> on the extra.</li>
-        <li>But the overall rate at £100,000 is only £22,750 &divide; £100,000 = 22.75%.</li>
+        <li>The tax rises from £9,500.00 to £22,750.00: <span class="wk"><span class="wk-calc">£22,750 &minus; £9,500 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£13,250</button></span> more tax.</li>
+        <li>On <span class="wk"><span class="wk-calc">£100,000 &minus; £50,000 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£50,000</button></span> more profit, that is <span class="wk"><span class="wk-calc">£13,250 &divide; £50,000 = </span><strong><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">26.5%</button></strong></span> on the extra.</li>
+        <li>But the overall rate at £100,000 is only <span class="wk"><span class="wk-calc">£22,750 &divide; £100,000 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">22.75%</button></span>.</li>
       </ul>
       <figure class="mr-chart"><svg viewBox="0 0 640 300" role="img" aria-label="Chart: the overall Corporation Tax rate rises smoothly from 19% at £50,000 of profit to 25% at £250,000, while each extra pound between those points is taxed at 26.5%">
         <line x1="56" x2="620" y1="230.6" y2="230.6" stroke="#DCE5DA"/><text x="48" y="234.6" text-anchor="end" font-size="12" fill="#2A5340">19%</text><line x1="56" x2="620" y1="183.8" y2="183.8" stroke="#DCE5DA"/><text x="48" y="187.8" text-anchor="end" font-size="12" fill="#2A5340">21%</text><line x1="56" x2="620" y1="137.0" y2="137.0" stroke="#DCE5DA"/><text x="48" y="141.0" text-anchor="end" font-size="12" fill="#2A5340">23%</text><line x1="56" x2="620" y1="90.2" y2="90.2" stroke="#DCE5DA"/><text x="48" y="94.2" text-anchor="end" font-size="12" fill="#2A5340">25%</text><line x1="56" x2="620" y1="43.4" y2="43.4" stroke="#DCE5DA"/><text x="48" y="47.4" text-anchor="end" font-size="12" fill="#2A5340">27%</text><text x="56.0" y="272" text-anchor="middle" font-size="12" fill="#2A5340">£0k</text><text x="150.0" y="272" text-anchor="middle" font-size="12" fill="#2A5340">£50k</text><text x="244.0" y="272" text-anchor="middle" font-size="12" fill="#2A5340">£100k</text><text x="338.0" y="272" text-anchor="middle" font-size="12" fill="#2A5340">£150k</text><text x="432.0" y="272" text-anchor="middle" font-size="12" fill="#2A5340">£200k</text><text x="526.0" y="272" text-anchor="middle" font-size="12" fill="#2A5340">£250k</text><text x="620.0" y="272" text-anchor="middle" font-size="12" fill="#2A5340">£300k</text>
@@ -434,26 +445,26 @@
       <h2>A quicker way to work it out</h2>
       <p>For a single company with a 12-month period, there is an easier method that gives the same answer: 19% on the first £50,000, plus 26.5% on everything above it. For £100,000 of profit:</p>
       <ul>
-        <li>The first £50,000: £50,000 &times; 19% = £9,500.</li>
-        <li>The rest: (£100,000 &minus; £50,000) &times; 26.5% = £50,000 &times; 26.5% = £13,250.</li>
-        <li>Total: £9,500 + £13,250 = <strong>£22,750</strong>, exactly what HMRC's formula gives.</li>
+        <li>The first £50,000: <span class="wk"><span class="wk-calc">£50,000 &times; 19% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£9,500</button></span>.</li>
+        <li>The rest: <span class="wk"><span class="wk-calc">(£100,000 &minus; £50,000) &times; 26.5% = £50,000 &times; 26.5% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£13,250</button></span>.</li>
+        <li>Total: <span class="wk"><span class="wk-calc">£9,500 + £13,250 = </span><strong><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£22,750</button></strong></span>, exactly what HMRC's formula gives.</li>
       </ul>
 
       <h2>Why it matters: the 26.5% band is where planning pays most</h2>
       <p>Because each extra pound of profit in the middle band costs 26.5p in tax, anything that reduces profit in that band saves 26.5p in every pound, more than at any other level of profit. A £10,000 company pension contribution, for example, saves:</p>
       <ul>
-        <li>£10,000 &times; 19% = £1,900 for a company with profits under £50,000,</li>
-        <li>£10,000 &times; 26.5% = <strong>£2,650</strong> for a company with profits between £50,000 and £250,000,</li>
-        <li>£10,000 &times; 25% = £2,500 for a company with profits over £250,000.</li>
+        <li><span class="wk"><span class="wk-calc">£10,000 &times; 19% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£1,900</button></span> for a company with profits under £50,000,</li>
+        <li><span class="wk"><span class="wk-calc">£10,000 &times; 26.5% = </span><strong><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£2,650</button></strong></span> for a company with profits between £50,000 and £250,000,</li>
+        <li><span class="wk"><span class="wk-calc">£10,000 &times; 25% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£2,500</button></span> for a company with profits over £250,000.</li>
       </ul>
       <p>The same applies to equipment purchases, salaries and other allowable costs. Timing them into a year where profits sit in the middle band gets the most relief. Our <a href="/blog/company-pension-contributions-directors">pension guide</a> explains how company pension contributions work.</p>
 
       <h2>More than one company, or a short year</h2>
-      <p>The £50,000 and £250,000 limits are shared between <strong>associated companies</strong>: companies under common control, such as two companies owned by the same director. With one associated company, each company's limits are halved to £50,000 &divide; 2 = £25,000 and £250,000 &divide; 2 = £125,000, so marginal relief starts much sooner. For £100,000 of profit, using the halved upper limit of £125,000:</p>
+      <p>The £50,000 and £250,000 limits are shared between <strong>associated companies</strong>: companies under common control, such as two companies owned by the same director. With one associated company, each company's limits are halved to <span class="wk"><span class="wk-calc">£50,000 &divide; 2 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£25,000</button></span> and <span class="wk"><span class="wk-calc">£250,000 &divide; 2 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£125,000,</button></span> so marginal relief starts much sooner. For £100,000 of profit, using the halved upper limit of £125,000:</p>
       <ul>
-        <li>Tax at the main rate: £100,000 &times; 25% = £25,000.</li>
-        <li>Marginal relief: (£125,000 &minus; £100,000) &times; 3/200 = £25,000 &times; 3/200 = £375. The 3/200 is HMRC's marginal relief fraction, the same as 1.5%.</li>
-        <li>Tax to pay: £25,000 &minus; £375 = <strong>£24,625</strong>, compared with £22,750 for a company on its own.</li>
+        <li>Tax at the main rate: <span class="wk"><span class="wk-calc">£100,000 &times; 25% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£25,000</button></span>.</li>
+        <li>Marginal relief: <span class="wk"><span class="wk-calc">(£125,000 &minus; £100,000) &times; 3/200 = £25,000 &times; 3/200 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£375</button></span>. The 3/200 is HMRC's marginal relief fraction, the same as 1.5%.</li>
+        <li>Tax to pay: <span class="wk"><span class="wk-calc">£25,000 &minus; £375 = </span><strong><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£24,625</button></strong></span>, compared with £22,750 for a company on its own.</li>
       </ul>
       <p>The limits are also reduced in proportion for an accounting period shorter than 12 months, such as a company's first period or after changing its year end.</p>
 
@@ -463,13 +474,13 @@
       <h2>Common questions</h2>
       <div class="faq">
         <h3>Is Corporation Tax 26.5%?</h3>
-        <p>Not on your whole profit. 26.5% is the rate on each extra pound of profit between £50,000 and £250,000. The overall rate on all your profit rises gradually from 19% to 25%: on £100,000 of profit it is £22,750 &divide; £100,000 = 22.75%.</p>
+        <p>Not on your whole profit. 26.5% is the rate on each extra pound of profit between £50,000 and £250,000. The overall rate on all your profit rises gradually from 19% to 25%: on £100,000 of profit it is <span class="wk"><span class="wk-calc">£22,750 &divide; £100,000 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">22.75%</button></span>.</p>
         <h3>What is marginal relief?</h3>
         <p>A reduction in Corporation Tax for companies with profits between £50,000 and £250,000. Tax is worked out at 25%, then reduced by 3/200 &times; (£250,000 &minus; profits), so the overall rate rises smoothly from 19% to 25%.</p>
         <h3>How much Corporation Tax is due on £100,000 of profit?</h3>
-        <p>£22,750.00 for a single company with a 12-month period: £100,000 &times; 25% = £25,000, less marginal relief of (£250,000 &minus; £100,000) &times; 3/200 = £150,000 &times; 3/200 = £2,250, so £25,000 &minus; £2,250 = £22,750.00.</p>
+        <p>£22,750.00 for a single company with a 12-month period: <span class="wk"><span class="wk-calc">£100,000 &times; 25% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£25,000,</button></span> less marginal relief of <span class="wk"><span class="wk-calc">(£250,000 &minus; £100,000) &times; 3/200 = £150,000 &times; 3/200 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£2,250,</button></span> so <span class="wk"><span class="wk-calc">£25,000 &minus; £2,250 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£22,750.00</button></span>.</p>
         <h3>Why does marginal relief make planning more valuable?</h3>
-        <p>Because each extra pound of profit between £50,000 and £250,000 costs 26.5p in tax, reducing profit in that band saves 26.5p in every pound. A £10,000 pension contribution saves £10,000 &times; 26.5% = £2,650 there, compared with £1,900 at 19%.</p>
+        <p>Because each extra pound of profit between £50,000 and £250,000 costs 26.5p in tax, reducing profit in that band saves 26.5p in every pound. A £10,000 pension contribution saves <span class="wk"><span class="wk-calc">£10,000 &times; 26.5% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£2,650</button></span> there, compared with £1,900 at 19%.</p>
         <h3>Do associated companies affect marginal relief?</h3>
         <p>Yes. The £50,000 and £250,000 limits are shared between associated companies. With one associated company, each company's limits are halved to £25,000 and £125,000, so higher rates start sooner.</p>
       </div>
@@ -589,6 +600,27 @@
     if (e.key === 'Escape') set(false);
     else if ((e.key === 'Enter' || e.key === ' ') && document.activeElement === el){ e.preventDefault(); set(!el.classList.contains('open')); }
   });
+})();
+</script>
+<script>
+(function(){
+  var d=document.documentElement; d.classList.add('js'); d.classList.remove('no-js');
+  var all=document.querySelector('.wk-all'), KEY='sje-workings';
+  function setAll(open){
+    document.querySelectorAll('.wk').forEach(function(w){ w.classList.toggle('open',open); var b=w.querySelector('.wk-ans'); if(b) b.setAttribute('aria-expanded',open?'true':'false'); });
+    document.querySelectorAll('table.wk-table').forEach(function(t){ t.classList.toggle('open',open); });
+    document.querySelectorAll('.wk-tbl-toggle').forEach(function(b){ b.textContent=open?'Hide the workings':'Show the workings'; b.setAttribute('aria-expanded',open?'true':'false'); });
+    if(all){ all.textContent=open?'Hide all workings':'Show all workings'; all.setAttribute('aria-pressed',open?'true':'false'); }
+  }
+  document.addEventListener('click',function(e){
+    var b=e.target.closest('.wk-ans');
+    if(b){ var w=b.closest('.wk'), open=!w.classList.contains('open'); w.classList.toggle('open',open); b.setAttribute('aria-expanded',open?'true':'false'); return; }
+    var t=e.target.closest('.wk-tbl-toggle');
+    if(t){ var tb=t.previousElementSibling, o=!tb.classList.contains('open'); tb.classList.toggle('open',o); t.textContent=o?'Hide the workings':'Show the workings'; t.setAttribute('aria-expanded',o?'true':'false'); return; }
+    if(e.target.closest('.wk-all')){ var on=all.getAttribute('aria-pressed')!=='true'; setAll(on); try{ localStorage.setItem(KEY,on?'1':'0'); }catch(err){} }
+  });
+  var saved=null; try{ saved=localStorage.getItem(KEY); }catch(err){}
+  setAll(saved==='1');
 })();
 </script>
 </body>

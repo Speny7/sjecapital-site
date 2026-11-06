@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en-GB" class="no-js">
 <head>
 <meta charset="UTF-8">
 <link rel="preload" href="/logo-header.svg" as="image" type="image/svg+xml" fetchpriority="high">
@@ -226,6 +226,16 @@
     .res-card:hover, .thanks-card:hover, .plan:hover, .posts article:hover, a:hover .arr, button:hover .arr{ transform:none !important; }
   }
   @media print{ .sje-reveal{ opacity:1 !important; transform:none !important; } }
+
+  /* fold-away workings */
+  .wk-ans{ font:inherit; color:inherit; background:none; border:0; padding:0; margin:0; cursor:pointer; border-bottom:1px dotted var(--ink-soft); text-align:inherit; }
+  .wk-ans:focus-visible{ outline:2px solid var(--focus, #1E6B4A); outline-offset:2px; }
+  .js .wk:not(.open) .wk-calc{ display:none; }
+  .wk-calc{ color:var(--ink-soft); }
+  .js table.wk-table:not(.open) .wk-col{ display:none; }
+  .wk-tbl-toggle, .wk-all{ font:inherit; font-size:.9rem; background:none; border:0; padding:0; color:var(--leaf-deep); cursor:pointer; text-decoration:underline; text-underline-offset:3px; }
+  .wk-tbl-toggle{ display:block; margin:-12px 0 20px; }
+  .no-js .wk-ui{ display:none; }
 </style>
 
 <script type="application/ld+json">
@@ -327,7 +337,7 @@
     <div class="article-head">
     <p class="meta">New companies</p>
     <h1>Just incorporated? Your first 90 days as a company director</h1>
-    <p class="byline-author">By <a href="https://www.linkedin.com/in/spencerelbert/" target="_blank" rel="noopener noreferrer">Spencer Elbert</a> &middot; 22 September 2026 &middot; <span class="readtime" tabindex="0" data-tip="">7 minute read</span></p>
+    <p class="byline-author">By <a href="https://www.linkedin.com/in/spencerelbert/" target="_blank" rel="noopener noreferrer">Spencer Elbert</a> &middot; 22 September 2026 &middot; <span class="readtime" tabindex="0" data-tip="">7 minute read</span> &middot; <button type="button" class="wk-all wk-ui" aria-pressed="false">Show all workings</button></p>
     <p class="updated-line">Updated 24 September 2026 at 12:00 BST</p>
     <p class="standfirst">Companies House has emailed your certificate and you are officially a director. Nobody tells you what happens next. Here is the plan for the first three months: what to register, what to set up, how to pay yourself, and the five mistakes that cause most first-year problems.</p>
     <div class="read-toggle" role="group" aria-label="Reading length">
@@ -365,7 +375,7 @@
 
       <h2>Before your first payday: register for PAYE</h2>
       <p>If the company is going to pay you a salary, it is an employer, and it must run <strong>PAYE</strong> even with a single employee who is also the director. Registering has a window, and it is stricter than people expect. You can only register as an employer inside a window: no earlier than two months before your first payday, because HMRC will not accept it before then, and no later than about three weeks before, because HMRC takes up to 15 working days to send the employer PAYE reference you need to run the first payroll. Miss the window and you cannot pay yourself on the planned date. You will need the company's UTR, registered office, your details as director, the planned first payday and the number of employees. So decide your first payday early and count back. Once registered, every payday the company submits a Real Time Information report to HMRC on or before the day you are paid.</p>
-      <p>Why bother with a salary at all? Because for most single-director companies in 2026/27 the efficient structure is a <strong>salary of £12,570 a year</strong>, exactly your Personal Allowance, with the rest taken as dividends. The salary carries no Income Tax and no employee National Insurance, counts towards your State Pension, and reduces the company's Corporation Tax. The only cost is employer National Insurance of (£12,570 &minus; £5,000) &times; 15% = £1,135.50, which the Corporation Tax relief comfortably outweighs. The full reasoning, with the situations where it changes, is in our <a href="/blog/director-salary-dividends-2026-27">director salary and dividends guide</a>, and you can run your own numbers in the <a href="/take-home-calculator">director take-home calculator</a>.</p>
+      <p>Why bother with a salary at all? Because for most single-director companies in 2026/27 the efficient structure is a <strong>salary of £12,570 a year</strong>, exactly your Personal Allowance, with the rest taken as dividends. The salary carries no Income Tax and no employee National Insurance, counts towards your State Pension, and reduces the company's Corporation Tax. The only cost is employer National Insurance of <span class="wk"><span class="wk-calc">(£12,570 &minus; £5,000) &times; 15% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£1,135.50</button></span>, which the Corporation Tax relief comfortably outweighs. The full reasoning, with the situations where it changes, is in our <a href="/blog/director-salary-dividends-2026-27">director salary and dividends guide</a>, and you can run your own numbers in the <a href="/take-home-calculator">director take-home calculator</a>.</p>
 
       <h2>Decide about VAT</h2>
       <p>You must register once taxable turnover passes <strong>£90,000</strong> in any rolling 12 months, or if you expect to pass it in the next 30 days. Below that it is your choice. Registering voluntarily makes sense if your customers are mainly VAT-registered businesses (they reclaim what you charge, and you reclaim VAT on your costs) or if you have heavy start-up costs with VAT on them. It rarely makes sense if you sell to the public. Our <a href="/blog/do-i-need-to-register-for-vat">VAT registration guide</a> goes through the threshold in detail.</p>
@@ -390,7 +400,7 @@
       <p><strong>You can change your year end.</strong> Many directors move the accounting reference date to 31 March so the company year lines up with the tax year, which makes dividend planning simpler and can tidy away the split first period. You tell Companies House online, and HMRC follows. You can <strong>shorten</strong> the period as often as you like, but you can only <strong>extend</strong> it once every five years, to a maximum of 18 months, and you cannot change it while accounts are overdue. Do it early, before the first year end, and it costs nothing.</p>
 
       <h2>Start saving for tax from the first invoice</h2>
-      <p>The company's first Corporation Tax bill will not arrive for well over a year, which is exactly why it catches people. Move a percentage of every month's profit into a separate savings account as you go. At the 19% small profits rate, a company making <strong>£4,000 of profit a month</strong> should set aside £4,000 &times; 19% = <strong>£760 a month</strong>; by the time the bill arrives there is £9,120 waiting for it, plus interest. Your own dividend tax lands through Self Assessment the following January (see below), so a second, personal pot for that is wise.</p>
+      <p>The company's first Corporation Tax bill will not arrive for well over a year, which is exactly why it catches people. Move a percentage of every month's profit into a separate savings account as you go. At the 19% small profits rate, a company making <strong>£4,000 of profit a month</strong> should set aside <span class="wk"><span class="wk-calc">£4,000 &times; 19% = </span><strong><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£760</button></strong></span> a month</strong>; by the time the bill arrives there is £9,120 waiting for it, plus interest. Your own dividend tax lands through Self Assessment the following January (see below), so a second, personal pot for that is wise.</p>
 
       <h2>The five mistakes new directors make in month one</h2>
       <ul>
@@ -536,6 +546,27 @@
     if (e.key === 'Escape') set(false);
     else if ((e.key === 'Enter' || e.key === ' ') && document.activeElement === el){ e.preventDefault(); set(!el.classList.contains('open')); }
   });
+})();
+</script>
+<script>
+(function(){
+  var d=document.documentElement; d.classList.add('js'); d.classList.remove('no-js');
+  var all=document.querySelector('.wk-all'), KEY='sje-workings';
+  function setAll(open){
+    document.querySelectorAll('.wk').forEach(function(w){ w.classList.toggle('open',open); var b=w.querySelector('.wk-ans'); if(b) b.setAttribute('aria-expanded',open?'true':'false'); });
+    document.querySelectorAll('table.wk-table').forEach(function(t){ t.classList.toggle('open',open); });
+    document.querySelectorAll('.wk-tbl-toggle').forEach(function(b){ b.textContent=open?'Hide the workings':'Show the workings'; b.setAttribute('aria-expanded',open?'true':'false'); });
+    if(all){ all.textContent=open?'Hide all workings':'Show all workings'; all.setAttribute('aria-pressed',open?'true':'false'); }
+  }
+  document.addEventListener('click',function(e){
+    var b=e.target.closest('.wk-ans');
+    if(b){ var w=b.closest('.wk'), open=!w.classList.contains('open'); w.classList.toggle('open',open); b.setAttribute('aria-expanded',open?'true':'false'); return; }
+    var t=e.target.closest('.wk-tbl-toggle');
+    if(t){ var tb=t.previousElementSibling, o=!tb.classList.contains('open'); tb.classList.toggle('open',o); t.textContent=o?'Hide the workings':'Show the workings'; t.setAttribute('aria-expanded',o?'true':'false'); return; }
+    if(e.target.closest('.wk-all')){ var on=all.getAttribute('aria-pressed')!=='true'; setAll(on); try{ localStorage.setItem(KEY,on?'1':'0'); }catch(err){} }
+  });
+  var saved=null; try{ saved=localStorage.getItem(KEY); }catch(err){}
+  setAll(saved==='1');
 })();
 </script>
 </body>

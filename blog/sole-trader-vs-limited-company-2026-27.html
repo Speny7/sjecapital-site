@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en-GB" class="no-js">
 <head>
 <meta charset="UTF-8">
 <link rel="preload" href="/logo-header.svg" as="image" type="image/svg+xml" fetchpriority="high">
@@ -226,6 +226,16 @@
     .res-card:hover, .thanks-card:hover, .plan:hover, .posts article:hover, a:hover .arr, button:hover .arr{ transform:none !important; }
   }
   @media print{ .sje-reveal{ opacity:1 !important; transform:none !important; } }
+
+  /* fold-away workings */
+  .wk-ans{ font:inherit; color:inherit; background:none; border:0; padding:0; margin:0; cursor:pointer; border-bottom:1px dotted var(--ink-soft); text-align:inherit; }
+  .wk-ans:focus-visible{ outline:2px solid var(--focus, #1E6B4A); outline-offset:2px; }
+  .js .wk:not(.open) .wk-calc{ display:none; }
+  .wk-calc{ color:var(--ink-soft); }
+  .js table.wk-table:not(.open) .wk-col{ display:none; }
+  .wk-tbl-toggle, .wk-all{ font:inherit; font-size:.9rem; background:none; border:0; padding:0; color:var(--leaf-deep); cursor:pointer; text-decoration:underline; text-underline-offset:3px; }
+  .wk-tbl-toggle{ display:block; margin:-12px 0 20px; }
+  .no-js .wk-ui{ display:none; }
 </style>
 
 <script type="application/ld+json">
@@ -327,7 +337,7 @@
     <div class="article-head">
     <p class="meta">Business structure</p>
     <h1>Sole trader or limited company in 2026/27? The honest numbers, and they have changed</h1>
-    <p class="byline-author">By <a href="https://www.linkedin.com/in/spencerelbert/" target="_blank" rel="noopener noreferrer">Spencer Elbert</a> &middot; 9 September 2026 &middot; <span class="readtime" tabindex="0" data-tip="">6 minute read</span></p>
+    <p class="byline-author">By <a href="https://www.linkedin.com/in/spencerelbert/" target="_blank" rel="noopener noreferrer">Spencer Elbert</a> &middot; 9 September 2026 &middot; <span class="readtime" tabindex="0" data-tip="">6 minute read</span> &middot; <button type="button" class="wk-all wk-ui" aria-pressed="false">Show all workings</button></p>
     <p class="updated-line">Updated 24 September 2026 at 12:00 BST</p>
     <p class="standfirst">For years the advice was simple: once profits pass £30,000 or so, go limited and save thousands. On this year's rates, that is no longer true if you take the money out. Here are the actual figures at eight profit levels, and the reasons a company still makes sense.</p>
     <div class="read-toggle" role="group" aria-label="Reading length">
@@ -372,15 +382,15 @@
       <h2>The workings at £60,000</h2>
       <p><strong>Sole trader:</strong></p>
       <ul>
-        <li>Income Tax: £37,700 &times; 20% = £7,540, plus (£60,000 &minus; £50,270) &times; 40% = £3,892. Total £11,432.</li>
-        <li>Class 4 NI: £37,700 &times; 6% = £2,262, plus £9,730 &times; 2% = £194.60. Total £2,456.60. Class 2 is no longer payable.</li>
+        <li>Income Tax: <span class="wk"><span class="wk-calc">£37,700 &times; 20% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£7,540,</button></span> plus <span class="wk"><span class="wk-calc">(£60,000 &minus; £50,270) &times; 40% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£3,892</button></span>. Total £11,432.</li>
+        <li>Class 4 NI: <span class="wk"><span class="wk-calc">£37,700 &times; 6% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£2,262,</button></span> plus <span class="wk"><span class="wk-calc">£9,730 &times; 2% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£194.60</button></span>. Total £2,456.60. Class 2 is no longer payable.</li>
         <li>Total tax £13,888.60. <strong>Take-home £46,111.</strong></li>
       </ul>
       <p><strong>Limited company:</strong></p>
       <ul>
-        <li>Salary £12,570. Employer NI: (£12,570 &minus; £5,000) &times; 15% = £1,135.50.</li>
-        <li>Profit left: £60,000 &minus; £12,570 &minus; £1,135.50 = £46,294.50. Corporation Tax at 19%: £8,795.96.</li>
-        <li>Dividends: £46,294.50 &minus; £8,795.96 = £37,498.54. Dividend tax: (£37,498.54 &minus; £500) &times; 10.75% = £3,977.34.</li>
+        <li>Salary £12,570. Employer NI: <span class="wk"><span class="wk-calc">(£12,570 &minus; £5,000) &times; 15% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£1,135.50</button></span>.</li>
+        <li>Profit left: <span class="wk"><span class="wk-calc">£60,000 &minus; £12,570 &minus; £1,135.50 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£46,294.50</button></span>. Corporation Tax at 19%: £8,795.96.</li>
+        <li>Dividends: <span class="wk"><span class="wk-calc">£46,294.50 &minus; £8,795.96 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£37,498.54</button></span>. Dividend tax: <span class="wk"><span class="wk-calc">(£37,498.54 &minus; £500) &times; 10.75% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£3,977.34</button></span>.</li>
         <li>Total tax £13,908.80. <strong>Take-home £46,091.</strong></li>
       </ul>
       <p>Twenty pounds apart. Now subtract the extra cost of running a company, and the sole trader is ahead.</p>
@@ -540,6 +550,27 @@
     if (e.key === 'Escape') set(false);
     else if ((e.key === 'Enter' || e.key === ' ') && document.activeElement === el){ e.preventDefault(); set(!el.classList.contains('open')); }
   });
+})();
+</script>
+<script>
+(function(){
+  var d=document.documentElement; d.classList.add('js'); d.classList.remove('no-js');
+  var all=document.querySelector('.wk-all'), KEY='sje-workings';
+  function setAll(open){
+    document.querySelectorAll('.wk').forEach(function(w){ w.classList.toggle('open',open); var b=w.querySelector('.wk-ans'); if(b) b.setAttribute('aria-expanded',open?'true':'false'); });
+    document.querySelectorAll('table.wk-table').forEach(function(t){ t.classList.toggle('open',open); });
+    document.querySelectorAll('.wk-tbl-toggle').forEach(function(b){ b.textContent=open?'Hide the workings':'Show the workings'; b.setAttribute('aria-expanded',open?'true':'false'); });
+    if(all){ all.textContent=open?'Hide all workings':'Show all workings'; all.setAttribute('aria-pressed',open?'true':'false'); }
+  }
+  document.addEventListener('click',function(e){
+    var b=e.target.closest('.wk-ans');
+    if(b){ var w=b.closest('.wk'), open=!w.classList.contains('open'); w.classList.toggle('open',open); b.setAttribute('aria-expanded',open?'true':'false'); return; }
+    var t=e.target.closest('.wk-tbl-toggle');
+    if(t){ var tb=t.previousElementSibling, o=!tb.classList.contains('open'); tb.classList.toggle('open',o); t.textContent=o?'Hide the workings':'Show the workings'; t.setAttribute('aria-expanded',o?'true':'false'); return; }
+    if(e.target.closest('.wk-all')){ var on=all.getAttribute('aria-pressed')!=='true'; setAll(on); try{ localStorage.setItem(KEY,on?'1':'0'); }catch(err){} }
+  });
+  var saved=null; try{ saved=localStorage.getItem(KEY); }catch(err){}
+  setAll(saved==='1');
 })();
 </script>
 </body>

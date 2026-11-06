@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en-GB" class="no-js">
 <head>
 <meta charset="UTF-8">
 <link rel="preload" href="/logo-header.svg" as="image" type="image/svg+xml" fetchpriority="high">
@@ -215,6 +215,16 @@
     .res-card:hover, .thanks-card:hover, .plan:hover, .posts article:hover, a:hover .arr, button:hover .arr{ transform:none !important; }
   }
   @media print{ .sje-reveal{ opacity:1 !important; transform:none !important; } }
+
+  /* fold-away workings */
+  .wk-ans{ font:inherit; color:inherit; background:none; border:0; padding:0; margin:0; cursor:pointer; border-bottom:1px dotted var(--ink-soft); text-align:inherit; }
+  .wk-ans:focus-visible{ outline:2px solid var(--focus, #1E6B4A); outline-offset:2px; }
+  .js .wk:not(.open) .wk-calc{ display:none; }
+  .wk-calc{ color:var(--ink-soft); }
+  .js table.wk-table:not(.open) .wk-col{ display:none; }
+  .wk-tbl-toggle, .wk-all{ font:inherit; font-size:.9rem; background:none; border:0; padding:0; color:var(--leaf-deep); cursor:pointer; text-decoration:underline; text-underline-offset:3px; }
+  .wk-tbl-toggle{ display:block; margin:-12px 0 20px; }
+  .no-js .wk-ui{ display:none; }
 </style>
 
 <script type="application/ld+json">
@@ -369,7 +379,7 @@
     <div class="article-head">
     <p class="meta">Budget</p>
     <h1>Autumn Budget 2026: what it means for company directors</h1>
-    <p class="byline-author">By <a href="https://www.linkedin.com/in/spencerelbert/" target="_blank" rel="noopener noreferrer">Spencer Elbert</a> &middot; 28 October 2026 &middot; <span class="readtime" tabindex="0" data-tip="">5 minute read</span></p>
+    <p class="byline-author">By <a href="https://www.linkedin.com/in/spencerelbert/" target="_blank" rel="noopener noreferrer">Spencer Elbert</a> &middot; 28 October 2026 &middot; <span class="readtime" tabindex="0" data-tip="">5 minute read</span> &middot; <button type="button" class="wk-all wk-ui" aria-pressed="false">Show all workings</button></p>
     <p class="standfirst">The Chancellor delivered the Autumn Budget on 28 October 2026. Here is what changed for limited companies and their directors, what stayed the same, and what to do before 5 April 2027.</p>
     <div class="read-toggle" role="group" aria-label="Reading length">
       <button type="button" data-mode="quick" aria-pressed="false">1-minute read</button>
@@ -425,38 +435,38 @@
         <thead><tr><th>Step</th><th>Sold before 6 April 2027 (£1 million limit)</th><th>Sold from 6 April 2027 (£500,000 limit)</th></tr></thead>
         <tbody>
           <tr><td>Gain taxed at 18%</td><td>All of it: £800,000</td><td>Up to the limit: £500,000</td></tr>
-          <tr><td>Tax at 18%</td><td>£800,000 &times; 18% = £144,000</td><td>£500,000 &times; 18% = £90,000</td></tr>
-          <tr><td>Gain above the limit</td><td>None</td><td>£800,000 &minus; £500,000 = £300,000</td></tr>
-          <tr><td>Tax at 24%</td><td>£0</td><td>£300,000 &times; 24% = £72,000</td></tr>
-          <tr><td><strong>Total tax</strong></td><td><strong>£144,000</strong></td><td>£90,000 + £72,000 = <strong>£162,000</strong></td></tr>
+          <tr><td>Tax at 18%</td><td><span class="wk"><span class="wk-calc">£800,000 &times; 18% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£144,000</button></span></td><td><span class="wk"><span class="wk-calc">£500,000 &times; 18% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£90,000</button></span></td></tr>
+          <tr><td>Gain above the limit</td><td>None</td><td><span class="wk"><span class="wk-calc">£800,000 &minus; £500,000 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£300,000</button></span></td></tr>
+          <tr><td>Tax at 24%</td><td>£0</td><td><span class="wk"><span class="wk-calc">£300,000 &times; 24% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£72,000</button></span></td></tr>
+          <tr><td><strong>Total tax</strong></td><td><strong>£144,000</strong></td><td><span class="wk"><span class="wk-calc">£90,000 + £72,000 = </span><strong><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£162,000</button></strong></span></td></tr>
         </tbody>
       </table>
-      <p>Selling from 6 April 2027 costs £162,000 &minus; £144,000 = <strong>£18,000</strong> more. Another way to see it: the £300,000 above the new limit is now taxed at 24% instead of 18%, and £300,000 &times; (24% &minus; 18%) = £300,000 &times; 6% = £18,000. For a higher rate taxpayer, the most the change can cost is on the £500,000 between the old and new limits: £500,000 &times; 6% = £30,000.</p>
+      <p>Selling from 6 April 2027 costs <span class="wk"><span class="wk-calc">£162,000 &minus; £144,000 = </span><strong><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£18,000</button></strong></span> more. Another way to see it: the £300,000 above the new limit is now taxed at 24% instead of 18%, and <span class="wk"><span class="wk-calc">£300,000 &times; (24% &minus; 18%) = £300,000 &times; 6% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£18,000</button></span>. For a higher rate taxpayer, the most the change can cost is on the £500,000 between the old and new limits: <span class="wk"><span class="wk-calc">£500,000 &times; 6% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£30,000</button></span>.</p>
       <p>These figures leave out the £3,000 tax-free allowance for capital gains. The government says three-quarters of people who claim the relief will still get it on their whole gain. If a sale above £500,000 is already in progress, the timing of completion now matters, so take advice before you agree dates.</p>
       <p>The Budget also announced a new Founders' Relief from 6 April 2027: a 10% Capital Gains Tax rate on up to £10 million of lifetime gains for qualifying founders of high-growth, innovative companies. The detail is still being consulted on, and it is aimed at a narrow group of companies, so most owner-managed businesses should plan on Business Asset Disposal Relief.</p>
 
       <h2>4. Your savings, mileage and share schemes</h2>
       <p><strong>Savings interest.</strong> If you hold cash savings personally, outside an ISA, the tax on the interest rises from 6 April 2027. Budget 2025 had already added 2 percentage points from that date, and this Budget adds 2 more, so 20%, 40% and 45% become 24%, 44% and 49%. For example, a higher rate taxpayer earning £10,000 of interest, with the £500 Personal Savings Allowance (the interest a higher rate taxpayer can earn tax-free):</p>
       <ul>
-        <li>Interest taxed: £10,000 &minus; £500 = £9,500.</li>
-        <li>In 2026/27: £9,500 &times; 40% = £3,800.</li>
-        <li>From 2027/28: £9,500 &times; 44% = £4,180, which is £4,180 &minus; £3,800 = <strong>£380</strong> more.</li>
+        <li>Interest taxed: <span class="wk"><span class="wk-calc">£10,000 &minus; £500 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£9,500</button></span>.</li>
+        <li>In 2026/27: <span class="wk"><span class="wk-calc">£9,500 &times; 40% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£3,800</button></span>.</li>
+        <li>From 2027/28: <span class="wk"><span class="wk-calc">£9,500 &times; 44% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£4,180,</button></span> which is <span class="wk"><span class="wk-calc">£4,180 &minus; £3,800 = </span><strong><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£380</button></strong></span> more.</li>
       </ul>
       <p>The cash ISA limit stays at £20,000, so using your ISA allowance each year is worth more than before. Income Tax rates on property income in England, Wales and Northern Ireland rise to the same 24%, 44% and 49% from 6 April 2027.</p>
       <p><strong>Mileage.</strong> If you use your own car for business, the tax-free amount your company can pay you rises from 45p to <strong>55p</strong> a mile for the first 10,000 miles, backdated to 6 April 2026, and from 25p to <strong>35p</strong> a mile above 10,000 miles from 6 April 2027. For a director driving 12,000 business miles:</p>
       <ul>
-        <li>Old rates: 10,000 &times; 45p = £4,500, plus 2,000 &times; 25p = £500, a total of £4,500 + £500 = £5,000.</li>
-        <li>2026/27: 10,000 &times; 55p = £5,500, plus 2,000 &times; 25p = £500, a total of £5,500 + £500 = <strong>£6,000</strong>.</li>
-        <li>2027/28: 10,000 &times; 55p = £5,500, plus 2,000 &times; 35p = £700, a total of £5,500 + £700 = <strong>£6,200</strong>.</li>
+        <li>Old rates: <span class="wk"><span class="wk-calc">10,000 &times; 45p = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£4,500,</button></span> plus <span class="wk"><span class="wk-calc">2,000 &times; 25p = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£500,</button></span> a total of <span class="wk"><span class="wk-calc">£4,500 + £500 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£5,000</button></span>.</li>
+        <li>2026/27: <span class="wk"><span class="wk-calc">10,000 &times; 55p = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£5,500,</button></span> plus <span class="wk"><span class="wk-calc">2,000 &times; 25p = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£500,</button></span> a total of <span class="wk"><span class="wk-calc">£5,500 + £500 = </span><strong><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£6,000</button></strong></span>.</li>
+        <li>2027/28: <span class="wk"><span class="wk-calc">10,000 &times; 55p = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£5,500,</button></span> plus <span class="wk"><span class="wk-calc">2,000 &times; 35p = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£700,</button></span> a total of <span class="wk"><span class="wk-calc">£5,500 + £700 = </span><strong><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£6,200</button></strong></span>.</li>
       </ul>
-      <p>That is up to £6,200 &minus; £5,000 = £1,200 more a year paid tax-free, and the company can deduct it from its profits. Because the 55p rate is backdated, check whether this year's mileage claims so far used the old 45p rate.</p>
+      <p>That is up to <span class="wk"><span class="wk-calc">£6,200 &minus; £5,000 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£1,200</button></span> more a year paid tax-free, and the company can deduct it from its profits. Because the 55p rate is backdated, check whether this year's mileage claims so far used the old 45p rate.</p>
       <p><strong>Share options for staff.</strong> The Company Share Option Plan, renamed EMI2, doubles its limit from £60,000 to £120,000 of options per employee from 6 April 2027, and can now be used alongside EMI in full.</p>
 
       <h2>5. Side income: the £3,000 trading allowance</h2>
       <p>The trading allowance lets you earn a small amount of self-employed or casual income each year without paying tax on it, such as selling things you make, freelance work or hiring out equipment. From <strong>6 April 2027</strong> it triples from <strong>£1,000 to £3,000</strong> a year. If your side income is £3,000 or less before any costs, it is tax-free. If it is more, you can deduct the £3,000 instead of your actual costs, whichever gives the lower bill.</p>
       <p>For example, a higher rate taxpayer earns £2,800 a year from a side business with no costs to deduct:</p>
       <ul>
-        <li>Now, with the £1,000 allowance: £2,800 &minus; £1,000 = £1,800 taxed at 40%, so £1,800 &times; 40% = £720 of tax.</li>
+        <li>Now, with the £1,000 allowance: <span class="wk"><span class="wk-calc">£2,800 &minus; £1,000 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£1,800</button></span> taxed at 40%, so <span class="wk"><span class="wk-calc">£1,800 &times; 40% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£720</button></span> of tax.</li>
         <li>From 2027/28, with the £3,000 allowance: £2,800 is below £3,000, so <strong>£0</strong> of tax.</li>
       </ul>
       <p>One important limit: you cannot use the allowance in a tax year if you have any trading income from a company you, or someone connected to you, owns or controls. So it does not cover money paid to you by your own limited company. It is for genuine side income from other customers.</p>
@@ -698,6 +708,27 @@
     if (e.key === 'Escape') set(false);
     else if ((e.key === 'Enter' || e.key === ' ') && document.activeElement === el){ e.preventDefault(); set(!el.classList.contains('open')); }
   });
+})();
+</script>
+<script>
+(function(){
+  var d=document.documentElement; d.classList.add('js'); d.classList.remove('no-js');
+  var all=document.querySelector('.wk-all'), KEY='sje-workings';
+  function setAll(open){
+    document.querySelectorAll('.wk').forEach(function(w){ w.classList.toggle('open',open); var b=w.querySelector('.wk-ans'); if(b) b.setAttribute('aria-expanded',open?'true':'false'); });
+    document.querySelectorAll('table.wk-table').forEach(function(t){ t.classList.toggle('open',open); });
+    document.querySelectorAll('.wk-tbl-toggle').forEach(function(b){ b.textContent=open?'Hide the workings':'Show the workings'; b.setAttribute('aria-expanded',open?'true':'false'); });
+    if(all){ all.textContent=open?'Hide all workings':'Show all workings'; all.setAttribute('aria-pressed',open?'true':'false'); }
+  }
+  document.addEventListener('click',function(e){
+    var b=e.target.closest('.wk-ans');
+    if(b){ var w=b.closest('.wk'), open=!w.classList.contains('open'); w.classList.toggle('open',open); b.setAttribute('aria-expanded',open?'true':'false'); return; }
+    var t=e.target.closest('.wk-tbl-toggle');
+    if(t){ var tb=t.previousElementSibling, o=!tb.classList.contains('open'); tb.classList.toggle('open',o); t.textContent=o?'Hide the workings':'Show the workings'; t.setAttribute('aria-expanded',o?'true':'false'); return; }
+    if(e.target.closest('.wk-all')){ var on=all.getAttribute('aria-pressed')!=='true'; setAll(on); try{ localStorage.setItem(KEY,on?'1':'0'); }catch(err){} }
+  });
+  var saved=null; try{ saved=localStorage.getItem(KEY); }catch(err){}
+  setAll(saved==='1');
 })();
 </script>
 </body>

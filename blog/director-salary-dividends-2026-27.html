@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en-GB" class="no-js">
 <head>
 <meta charset="UTF-8">
 <link rel="preload" href="/logo-header.svg" as="image" type="image/svg+xml" fetchpriority="high">
@@ -221,6 +221,16 @@
     .res-card:hover, .thanks-card:hover, .plan:hover, .posts article:hover, a:hover .arr, button:hover .arr{ transform:none !important; }
   }
   @media print{ .sje-reveal{ opacity:1 !important; transform:none !important; } }
+
+  /* fold-away workings */
+  .wk-ans{ font:inherit; color:inherit; background:none; border:0; padding:0; margin:0; cursor:pointer; border-bottom:1px dotted var(--ink-soft); text-align:inherit; }
+  .wk-ans:focus-visible{ outline:2px solid var(--focus, #1E6B4A); outline-offset:2px; }
+  .js .wk:not(.open) .wk-calc{ display:none; }
+  .wk-calc{ color:var(--ink-soft); }
+  .js table.wk-table:not(.open) .wk-col{ display:none; }
+  .wk-tbl-toggle, .wk-all{ font:inherit; font-size:.9rem; background:none; border:0; padding:0; color:var(--leaf-deep); cursor:pointer; text-decoration:underline; text-underline-offset:3px; }
+  .wk-tbl-toggle{ display:block; margin:-12px 0 20px; }
+  .no-js .wk-ui{ display:none; }
 </style>
 
 <script type="application/ld+json">
@@ -322,7 +332,7 @@
     <div class="article-head">
     <p class="meta">Limited companies</p>
     <h1>Director salary and dividends 2026/27: the £12,570 answer, and when it is wrong</h1>
-    <p class="byline-author">By <a href="https://www.linkedin.com/in/spencerelbert/" target="_blank" rel="noopener noreferrer">Spencer Elbert</a> &middot; 3 September 2026 &middot; <span class="readtime" tabindex="0" data-tip="">7 minute read</span></p>
+    <p class="byline-author">By <a href="https://www.linkedin.com/in/spencerelbert/" target="_blank" rel="noopener noreferrer">Spencer Elbert</a> &middot; 3 September 2026 &middot; <span class="readtime" tabindex="0" data-tip="">7 minute read</span> &middot; <button type="button" class="wk-all wk-ui" aria-pressed="false">Show all workings</button></p>
     <p class="updated-line">Updated 24 September 2026 at 12:00 BST</p>
     <p class="standfirst">If you own a limited company, how you pay yourself is the biggest tax decision you make each year. This tax year the dividend rate went up, so the sums are worth re-running. Here they are.</p>
     <div class="read-toggle" role="group" aria-label="Reading length">
@@ -366,8 +376,8 @@
       <p>The one cost is <strong>employer's National Insurance</strong>, charged at 15% on salary above £5,000. On £12,570 that is £1,135.50 for the year. That is also deductible, and the Corporation Tax saved on the salary plus the NI comfortably outweighs it. The working, at the lowest 19% rate:</p>
       <ul>
         <li>Deductible cost to the company: £12,570 salary + £1,135.50 employer NI = £13,705.50</li>
-        <li>Corporation Tax saved: £13,705.50 &times; 19% = £2,604.05</li>
-        <li>Less the employer NI actually paid: £2,604.05 &minus; £1,135.50 = <strong>£1,468.55 net saving</strong></li>
+        <li>Corporation Tax saved: <span class="wk"><span class="wk-calc">£13,705.50 &times; 19% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£2,604.05</button></span></li>
+        <li>Less the employer NI actually paid: <span class="wk"><span class="wk-calc">£2,604.05 &minus; £1,135.50 = </span><strong><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£1,468.55</button></strong></span> net saving</strong></li>
       </ul>
       <p>At the 25% main rate the relief rises to £3,426.38, so the case for the salary gets stronger, not weaker, as the company grows. And that is before we have even looked at dividends.</p>
 
@@ -376,9 +386,9 @@
       <p>Here is the part that changed. From 6 April 2026 the basic dividend rate rose from 8.75 to <strong>10.75%</strong>, and the higher rate from 33.75 to <strong>35.75%</strong>. On the full £37,700 of basic-rate dividends:</p>
       <ul>
         <li>Taxable dividends: £37,700 &minus; £500 allowance = £37,200</li>
-        <li>This year: £37,200 &times; 10.75% = <strong>£3,999</strong></li>
-        <li>Last year: £37,200 &times; 8.75% = £3,255</li>
-        <li>Extra cost of the rate rise: £3,999 &minus; £3,255 = <strong>£744</strong></li>
+        <li>This year: <span class="wk"><span class="wk-calc">£37,200 &times; 10.75% = </span><strong><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£3,999</button></strong></span></li>
+        <li>Last year: <span class="wk"><span class="wk-calc">£37,200 &times; 8.75% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£3,255</button></span></li>
+        <li>Extra cost of the rate rise: <span class="wk"><span class="wk-calc">£3,999 &minus; £3,255 = </span><strong><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£744</button></strong></span></li>
       </ul>
       <p>Unavoidable, but it makes it more important than ever that the salary figure underneath is right.</p>
       <p>Worked example, single director, no other income, drawing £50,270 in total:</p>
@@ -389,10 +399,10 @@
       </ul>
       <p>Compare that with taking the whole £50,270 as salary:</p>
       <ul>
-        <li>Income Tax: (£50,270 &minus; £12,570) &times; 20% = £7,540</li>
-        <li>Employee NI: (£50,270 &minus; £12,570) &times; 8% = £3,016</li>
-        <li>Employer NI, paid by the company: (£50,270 &minus; £5,000) &times; 15% = £6,790.50</li>
-        <li>Cash in your pocket: £50,270 &minus; £7,540 &minus; £3,016 = <strong>£39,714</strong>, against £46,270 under the salary-and-dividends route</li>
+        <li>Income Tax: <span class="wk"><span class="wk-calc">(£50,270 &minus; £12,570) &times; 20% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£7,540</button></span></li>
+        <li>Employee NI: <span class="wk"><span class="wk-calc">(£50,270 &minus; £12,570) &times; 8% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£3,016</button></span></li>
+        <li>Employer NI, paid by the company: <span class="wk"><span class="wk-calc">(£50,270 &minus; £5,000) &times; 15% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£6,790.50</button></span></li>
+        <li>Cash in your pocket: <span class="wk"><span class="wk-calc">£50,270 &minus; £7,540 &minus; £3,016 = </span><strong><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£39,714</button></strong></span>, against £46,270 under the salary-and-dividends route</li>
         <li>National Insurance alone: £9,806.50 versus £1,135.50, so <strong>£8,671 more NI</strong> for the same gross pay</li>
       </ul>
       <p>The all-salary route does save Corporation Tax, because the whole amount is deductible, so the fairest comparison is on the same company profit rather than the same gross pay. On £60,000 of profit, salary-and-dividends puts about £46,091 in your pocket against £41,197 for all-salary: a difference of roughly <strong>£4,895</strong> a year. You can run your own figure, with every line of the working, in our <a href="/take-home-calculator">director take-home calculator</a>.</p>
@@ -401,8 +411,8 @@
       <p><strong>Salary of £5,000.</strong> Sits under the employer NI threshold so the company pays no NI at all. But you lose the Corporation Tax relief on the other £7,570, and £5,000 is below the lower earnings limit, so <strong>the year does not count towards your State Pension</strong>. Rarely worth it.</p>
       <p><strong>Salary of £6,708.</strong> The lower earnings limit exactly, so the year still counts towards your State Pension. Compared with £12,570:</p>
       <ul>
-        <li>Employer NI still due: (£6,708 &minus; £5,000) &times; 15% = £256.20.</li>
-        <li>Corporation Tax relief lost on the difference, £12,570 &minus; £6,708 = £5,862: at least £5,862 &times; 19% = £1,113.78.</li>
+        <li>Employer NI still due: <span class="wk"><span class="wk-calc">(£6,708 &minus; £5,000) &times; 15% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£256.20</button></span>.</li>
+        <li>Corporation Tax relief lost on the difference, <span class="wk"><span class="wk-calc">£12,570 &minus; £6,708 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£5,862</button></span>: at least <span class="wk"><span class="wk-calc">£5,862 &times; 19% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£1,113.78</button></span>.</li>
       </ul>
       <p>The maths almost always favours the full £12,570.</p>
       <p><strong>Dividends only, no salary.</strong> No NI, no payroll admin, but no pension year, no Corporation Tax relief, and you are wasting a £12,570 Personal Allowance. The worst of the common options.</p>
@@ -428,11 +438,11 @@
       <h2>Common questions</h2>
       <div class="faq">
         <h3>What is the most tax-efficient director salary for 2026/27?</h3>
-        <p>For most single-director companies, £12,570 a year: exactly the Personal Allowance. It carries no Income Tax and no employee National Insurance, counts towards your State Pension, and reduces the company's Corporation Tax. The company pays employer National Insurance of (£12,570 − £5,000) × 15% = £1,135.50.</p>
+        <p>For most single-director companies, £12,570 a year: exactly the Personal Allowance. It carries no Income Tax and no employee National Insurance, counts towards your State Pension, and reduces the company's Corporation Tax. The company pays employer National Insurance of <span class="wk"><span class="wk-calc">(£12,570 − £5,000) × 15% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£1,135.50</button></span>.</p>
         <h3>Does the answer change if the company has employees?</h3>
         <p>Often, yes. A company with two or more directors, or other staff, can usually claim the Employment Allowance of up to £10,500 a year, which wipes out the employer National Insurance on a director's salary and can make a higher salary worth it. Our director take-home calculator models both.</p>
         <h3>How much can I take in dividends before paying the higher rate?</h3>
-        <p>With a £12,570 salary, dividends of up to £37,700 keep your total income at the £50,270 higher rate threshold. The first £500 is tax-free, and the remaining £37,200 × 10.75% = £3,999.00 of dividend tax.</p>
+        <p>With a £12,570 salary, dividends of up to £37,700 keep your total income at the £50,270 higher rate threshold. The first £500 is tax-free, and the remaining <span class="wk"><span class="wk-calc">£37,200 × 10.75% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£3,999.00</button></span> of dividend tax.</p>
         <h3>How do I pay tax on dividends?</h3>
         <p>Through Self Assessment, not payroll. The tax for 2026/27 is due by 31 January 2028, and if your bill is over £1,000 HMRC also asks for payments on account towards the next year.</p>
         <h3>Can my company pay a dividend if it made a loss?</h3>
@@ -556,6 +566,27 @@
     if (e.key === 'Escape') set(false);
     else if ((e.key === 'Enter' || e.key === ' ') && document.activeElement === el){ e.preventDefault(); set(!el.classList.contains('open')); }
   });
+})();
+</script>
+<script>
+(function(){
+  var d=document.documentElement; d.classList.add('js'); d.classList.remove('no-js');
+  var all=document.querySelector('.wk-all'), KEY='sje-workings';
+  function setAll(open){
+    document.querySelectorAll('.wk').forEach(function(w){ w.classList.toggle('open',open); var b=w.querySelector('.wk-ans'); if(b) b.setAttribute('aria-expanded',open?'true':'false'); });
+    document.querySelectorAll('table.wk-table').forEach(function(t){ t.classList.toggle('open',open); });
+    document.querySelectorAll('.wk-tbl-toggle').forEach(function(b){ b.textContent=open?'Hide the workings':'Show the workings'; b.setAttribute('aria-expanded',open?'true':'false'); });
+    if(all){ all.textContent=open?'Hide all workings':'Show all workings'; all.setAttribute('aria-pressed',open?'true':'false'); }
+  }
+  document.addEventListener('click',function(e){
+    var b=e.target.closest('.wk-ans');
+    if(b){ var w=b.closest('.wk'), open=!w.classList.contains('open'); w.classList.toggle('open',open); b.setAttribute('aria-expanded',open?'true':'false'); return; }
+    var t=e.target.closest('.wk-tbl-toggle');
+    if(t){ var tb=t.previousElementSibling, o=!tb.classList.contains('open'); tb.classList.toggle('open',o); t.textContent=o?'Hide the workings':'Show the workings'; t.setAttribute('aria-expanded',o?'true':'false'); return; }
+    if(e.target.closest('.wk-all')){ var on=all.getAttribute('aria-pressed')!=='true'; setAll(on); try{ localStorage.setItem(KEY,on?'1':'0'); }catch(err){} }
+  });
+  var saved=null; try{ saved=localStorage.getItem(KEY); }catch(err){}
+  setAll(saved==='1');
 })();
 </script>
 </body>

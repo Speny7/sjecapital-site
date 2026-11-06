@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en-GB" class="no-js">
 <head>
 <meta charset="UTF-8">
 <link rel="preload" href="/logo-header.svg" as="image" type="image/svg+xml" fetchpriority="high">
@@ -226,6 +226,16 @@
     .res-card:hover, .thanks-card:hover, .plan:hover, .posts article:hover, a:hover .arr, button:hover .arr{ transform:none !important; }
   }
   @media print{ .sje-reveal{ opacity:1 !important; transform:none !important; } }
+
+  /* fold-away workings */
+  .wk-ans{ font:inherit; color:inherit; background:none; border:0; padding:0; margin:0; cursor:pointer; border-bottom:1px dotted var(--ink-soft); text-align:inherit; }
+  .wk-ans:focus-visible{ outline:2px solid var(--focus, #1E6B4A); outline-offset:2px; }
+  .js .wk:not(.open) .wk-calc{ display:none; }
+  .wk-calc{ color:var(--ink-soft); }
+  .js table.wk-table:not(.open) .wk-col{ display:none; }
+  .wk-tbl-toggle, .wk-all{ font:inherit; font-size:.9rem; background:none; border:0; padding:0; color:var(--leaf-deep); cursor:pointer; text-decoration:underline; text-underline-offset:3px; }
+  .wk-tbl-toggle{ display:block; margin:-12px 0 20px; }
+  .no-js .wk-ui{ display:none; }
 </style>
 
 <script type="application/ld+json">
@@ -327,7 +337,7 @@
     <div class="article-head">
     <p class="meta">Pensions</p>
     <h1>Should your company pay into your pension? Employer contributions explained</h1>
-    <p class="byline-author">By <a href="https://www.linkedin.com/in/spencerelbert/" target="_blank" rel="noopener noreferrer">Spencer Elbert</a> &middot; 29 September 2026 &middot; <span class="readtime" tabindex="0" data-tip="">7 minute read</span></p>
+    <p class="byline-author">By <a href="https://www.linkedin.com/in/spencerelbert/" target="_blank" rel="noopener noreferrer">Spencer Elbert</a> &middot; 29 September 2026 &middot; <span class="readtime" tabindex="0" data-tip="">7 minute read</span> &middot; <button type="button" class="wk-all wk-ui" aria-pressed="false">Show all workings</button></p>
     <p class="standfirst">For most directors, having the company pay straight into your pension is the most tax-efficient way to take money out of a business. Here is how it works, how much you can pay in, and the rules that decide whether the company gets its tax relief.</p>
     <div class="read-toggle" role="group" aria-label="Reading length">
       <button type="button" data-mode="quick" aria-pressed="false">1-minute read</button>
@@ -361,26 +371,26 @@
         <thead><tr><th>Route</th><th>What happens to the £10,000</th><th>Reaches you or your pension</th></tr></thead>
         <tbody>
           <tr><td>Employer pension contribution</td><td>Deductible, so no Corporation Tax. No National Insurance or personal tax going in.</td><td><strong>£10,000</strong> in your pension</td></tr>
-          <tr><td>Dividend</td><td>Corporation Tax: £10,000 &times; 19% = £1,900. Dividend: £10,000 &minus; £1,900 = £8,100. Dividend tax: £8,100 &times; 35.75% = £2,895.75. Left: £8,100 &minus; £2,895.75 = £5,204.25.</td><td><strong>£5,204.25</strong> in your pocket</td></tr>
-          <tr><td>Extra salary</td><td>The company can afford £10,000 &divide; 1.15 = £8,695.65 of salary, plus employer NI of £8,695.65 &times; 15% = £1,304.35. Income Tax: £8,695.65 &times; 20% = £1,739.13. Employee NI: £8,695.65 &times; 8% = £695.65. And because salary is taxed before dividends, £8,695.65 of your existing dividends move from 10.75% to 35.75%: £8,695.65 &times; 25% = £2,173.91 more dividend tax. Left: £8,695.65 &minus; £1,739.13 &minus; £695.65 &minus; £2,173.91 = £4,086.96.</td><td><strong>£4,086.96</strong> in your pocket</td></tr>
+          <tr><td>Dividend</td><td>Corporation Tax: <span class="wk"><span class="wk-calc">£10,000 &times; 19% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£1,900</button></span>. Dividend: <span class="wk"><span class="wk-calc">£10,000 &minus; £1,900 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£8,100</button></span>. Dividend tax: <span class="wk"><span class="wk-calc">£8,100 &times; 35.75% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£2,895.75</button></span>. Left: <span class="wk"><span class="wk-calc">£8,100 &minus; £2,895.75 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£5,204.25</button></span>.</td><td><strong>£5,204.25</strong> in your pocket</td></tr>
+          <tr><td>Extra salary</td><td>The company can afford <span class="wk"><span class="wk-calc">£10,000 &divide; 1.15 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£8,695.65</button></span> of salary, plus employer NI of <span class="wk"><span class="wk-calc">£8,695.65 &times; 15% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£1,304.35</button></span>. Income Tax: <span class="wk"><span class="wk-calc">£8,695.65 &times; 20% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£1,739.13</button></span>. Employee NI: <span class="wk"><span class="wk-calc">£8,695.65 &times; 8% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£695.65</button></span>. And because salary is taxed before dividends, £8,695.65 of your existing dividends move from 10.75% to 35.75%: <span class="wk"><span class="wk-calc">£8,695.65 &times; 25% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£2,173.91</button></span> more dividend tax. Left: <span class="wk"><span class="wk-calc">£8,695.65 &minus; £1,739.13 &minus; £695.65 &minus; £2,173.91 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£4,086.96</button></span>.</td><td><strong>£4,086.96</strong> in your pocket</td></tr>
         </tbody>
       </table>
       <p>The pension money is not tax-free for ever: when you draw it, a quarter can normally be taken tax-free and the rest is taxed as income. But even then, if you are a basic rate taxpayer in retirement, the £10,000 becomes:</p>
       <ul>
-        <li>Tax-free quarter: £10,000 &times; 25% = £2,500.</li>
-        <li>The other £10,000 &minus; £2,500 = £7,500, taxed at 20%: £7,500 &times; 80% = £6,000 left.</li>
-        <li>Total: £2,500 + £6,000 = <strong>£8,500</strong>, against £5,204.25 through dividends and £4,086.96 through salary.</li>
+        <li>Tax-free quarter: <span class="wk"><span class="wk-calc">£10,000 &times; 25% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£2,500</button></span>.</li>
+        <li>The other <span class="wk"><span class="wk-calc">£10,000 &minus; £2,500 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£7,500,</button></span> taxed at 20%: <span class="wk"><span class="wk-calc">£7,500 &times; 80% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£6,000</button></span> left.</li>
+        <li>Total: <span class="wk"><span class="wk-calc">£2,500 + £6,000 = </span><strong><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£8,500</button></strong></span>, against £5,204.25 through dividends and £4,086.96 through salary.</li>
       </ul>
       <p>That gap, before any investment growth, is why pensions are so powerful for directors. You can run your own numbers, with growth over time, in our <a href="/pension-vs-dividends-calculator">pension vs dividends calculator</a>.</p>
 
       <h2>How much the company can pay in</h2>
       <p><strong>The annual allowance is £60,000</strong> for 2026/27. That is the total that can go into all your pensions in a tax year from every source: company contributions, your own contributions and the tax relief added to them. Go over it and you face an annual allowance charge that claws back the relief.</p>
       <p><strong>It is not capped by your salary.</strong> Personal contributions only get tax relief up to 100% of your earnings, which is a real limit for a director on a £12,570 salary. Employer contributions have no such cap, so the company can pay in up to the full allowance however little salary you take.</p>
-      <p><strong>Carry forward</strong> lets you use allowance you did not use in the previous three tax years, once you have used the current year's in full. With the allowance at £60,000 in each of those years, someone who paid nothing in could in principle contribute up to <strong>£60,000 &times; 4 = £240,000</strong> in 2026/27. The condition is that you were a member of a registered pension scheme in each year you are carrying forward from, even if nothing was paid in.</p>
+      <p><strong>Carry forward</strong> lets you use allowance you did not use in the previous three tax years, once you have used the current year's in full. With the allowance at £60,000 in each of those years, someone who paid nothing in could in principle contribute up to <strong><span class="wk"><span class="wk-calc">£60,000 &times; 4 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£240,000</button></span> in 2026/27. The condition is that you were a member of a registered pension scheme in each year you are carrying forward from, even if nothing was paid in.</p>
       <p><strong>High earners have a lower limit.</strong> If your threshold income is over £200,000 and your adjusted income (which includes employer contributions) is over £260,000, the allowance falls by £1 for every £2 above £260,000, down to a minimum of £10,000 at £360,000:</p>
       <ul>
-        <li>Reduction: (£360,000 &minus; £260,000) &divide; 2 = £50,000.</li>
-        <li>Allowance left: £60,000 &minus; £50,000 = £10,000.</li>
+        <li>Reduction: <span class="wk"><span class="wk-calc">(£360,000 &minus; £260,000) &divide; 2 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£50,000</button></span>.</li>
+        <li>Allowance left: <span class="wk"><span class="wk-calc">£60,000 &minus; £50,000 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£10,000</button></span>.</li>
       </ul>
       <p>And if you have already started drawing a pension flexibly, the <strong>money purchase annual allowance</strong> limits future contributions to £10,000 a year.</p>
 
@@ -390,12 +400,12 @@
 
       <h2>Timing: pay it before the year end</h2>
       <p>Corporation Tax relief is given in the accounting period in which the contribution is <strong>actually paid</strong>, not when it is agreed or accrued in the accounts. If you want a contribution to reduce this year's Corporation Tax, the money must leave the company bank account before the year end. A decision recorded in the board minutes to pay next month does not count.</p>
-      <p>This makes the weeks before your year end a natural time to decide, once you know roughly what profit the year has made. It also means you can choose the rate you get relief at: a company with profits between £50,000 and £250,000 is in the marginal relief band, where each extra pound of profit is effectively taxed at 26.5% (the 25% main rate plus 1.5% as marginal relief is withdrawn: 25% + 1.5% = 26.5%), so a contribution that brings profit down saves 26.5p in every pound.</p>
+      <p>This makes the weeks before your year end a natural time to decide, once you know roughly what profit the year has made. It also means you can choose the rate you get relief at: a company with profits between £50,000 and £250,000 is in the marginal relief band, where each extra pound of profit is effectively taxed at 26.5% (the 25% main rate plus 1.5% as marginal relief is withdrawn: <span class="wk"><span class="wk-calc">25% + 1.5% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">26.5%</button></span>), so a contribution that brings profit down saves 26.5p in every pound.</p>
       <p><strong>Very large jumps in contributions.</strong> If the company suddenly pays far more than it did the year before, HMRC can make it wait for part of the tax relief. This only happens when both of these apply: this year's contributions are more than 210% of last year's, and the "excess" (this year's contributions minus 110% of last year's) is £500,000 or more. For example, a company that paid £100,000 last year and pays £700,000 this year:</p>
       <ul>
-        <li>110% of last year: £100,000 &times; 110% = £110,000.</li>
-        <li>The excess: £700,000 &minus; £110,000 = £590,000. That is over £500,000, so the relief on it is spread over two years.</li>
-        <li>This year the company deducts £110,000 + (£590,000 &divide; 2) = £110,000 + £295,000 = £405,000.</li>
+        <li>110% of last year: <span class="wk"><span class="wk-calc">£100,000 &times; 110% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£110,000</button></span>.</li>
+        <li>The excess: <span class="wk"><span class="wk-calc">£700,000 &minus; £110,000 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£590,000</button></span>. That is over £500,000, so the relief on it is spread over two years.</li>
+        <li>This year the company deducts <span class="wk"><span class="wk-calc">£110,000 + (£590,000 &divide; 2) = £110,000 + £295,000 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£405,000</button></span>.</li>
         <li>Next year it deducts the other £295,000.</li>
       </ul>
       <p>Excesses of £1 million or more are spread over three years, and £2 million or more over four. Relief is never spread if the company paid nothing the year before, so this rule is rarely relevant to a small company.</p>
@@ -546,6 +556,27 @@
     if (e.key === 'Escape') set(false);
     else if ((e.key === 'Enter' || e.key === ' ') && document.activeElement === el){ e.preventDefault(); set(!el.classList.contains('open')); }
   });
+})();
+</script>
+<script>
+(function(){
+  var d=document.documentElement; d.classList.add('js'); d.classList.remove('no-js');
+  var all=document.querySelector('.wk-all'), KEY='sje-workings';
+  function setAll(open){
+    document.querySelectorAll('.wk').forEach(function(w){ w.classList.toggle('open',open); var b=w.querySelector('.wk-ans'); if(b) b.setAttribute('aria-expanded',open?'true':'false'); });
+    document.querySelectorAll('table.wk-table').forEach(function(t){ t.classList.toggle('open',open); });
+    document.querySelectorAll('.wk-tbl-toggle').forEach(function(b){ b.textContent=open?'Hide the workings':'Show the workings'; b.setAttribute('aria-expanded',open?'true':'false'); });
+    if(all){ all.textContent=open?'Hide all workings':'Show all workings'; all.setAttribute('aria-pressed',open?'true':'false'); }
+  }
+  document.addEventListener('click',function(e){
+    var b=e.target.closest('.wk-ans');
+    if(b){ var w=b.closest('.wk'), open=!w.classList.contains('open'); w.classList.toggle('open',open); b.setAttribute('aria-expanded',open?'true':'false'); return; }
+    var t=e.target.closest('.wk-tbl-toggle');
+    if(t){ var tb=t.previousElementSibling, o=!tb.classList.contains('open'); tb.classList.toggle('open',o); t.textContent=o?'Hide the workings':'Show the workings'; t.setAttribute('aria-expanded',o?'true':'false'); return; }
+    if(e.target.closest('.wk-all')){ var on=all.getAttribute('aria-pressed')!=='true'; setAll(on); try{ localStorage.setItem(KEY,on?'1':'0'); }catch(err){} }
+  });
+  var saved=null; try{ saved=localStorage.getItem(KEY); }catch(err){}
+  setAll(saved==='1');
 })();
 </script>
 </body>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en-GB" class="no-js">
 <head>
 <meta charset="UTF-8">
 <link rel="preload" href="/logo-header.svg" as="image" type="image/svg+xml" fetchpriority="high">
@@ -309,6 +309,27 @@
   .check-hmrc h3{ font-family:"EB Garamond", "EB Garamond Fallback", Georgia, serif; font-size:1.2rem; margin-bottom:6px; }
   .check-hmrc ul{ margin:8px 0 10px 20px; }
   .check-hmrc li{ margin-bottom:4px; }
+
+  /* fold-away workings in results */
+  .js .wk-row:not(.open) .wk-small{ display:none !important; }
+  .wk-row .wk-hit{ cursor:pointer; border-bottom:1px dotted var(--ink-soft); }
+  .wk-row .wk-hit:focus-visible{ outline:2px solid var(--leaf); outline-offset:2px; }
+  .wk-all-calc{ font:inherit; font-size:.85rem; background:none; border:0; padding:0; margin:0 0 10px; color:var(--leaf-deep); cursor:pointer; text-decoration:underline; text-underline-offset:3px; }
+  .no-js .wk-all-calc{ display:none; }
+  @media print{ .wk-row .wk-small{ display:block !important; } .wk-all-calc{ display:none; } }
+  .js .wks:not(.open) .wks-calc{ display:none; }
+  .calc-results .wks-ans{ cursor:pointer; border-bottom:1px dotted currentColor; }
+  .calc-results .wks-ans:focus-visible{ outline:2px solid var(--leaf); outline-offset:2px; }
+  @media print{ .wks .wks-calc{ display:inline !important; } }
+  .calc-input label{ -webkit-user-select:none; user-select:none; cursor:default; }
+  .calc-input label{ -webkit-tap-highlight-color:transparent; }
+  .calc-input label.static-label{ pointer-events:none; }
+  details.assume > summary{ list-style:none; cursor:pointer; display:inline-flex; align-items:center; gap:8px; }
+  details.assume > summary::-webkit-details-marker{ display:none; }
+  details.assume > summary::after{ content:"Show"; font-size:.8rem; color:var(--leaf-deep); text-decoration:underline; text-underline-offset:3px; }
+  details.assume[open] > summary::after{ content:"Hide"; }
+  details.assume[open] > ul{ margin-top:10px; }
+  @media print{ details.assume > ul{ display:block !important; } }
 </style>
 
 <script type="application/ld+json">
@@ -449,18 +470,17 @@
         </div>
       </details>
 
-      <div class="assume">
-        <strong>Assumptions</strong>
+      <details class="assume"><summary><strong>Assumptions</strong> <span class="assume-count">(4)</span></summary>
         <ul>
           <li>Deposits go in at the start of each month. Interest is added at the frequency you choose: daily, monthly, or once a year. With once a year, interest builds up on the balance through the year and is paid in at the year end.</li>
           <li>The rate stays the same for the whole period. Real savings rates and investment returns change from year to year.</li>
           <li>No tax is deducted. In reality, savings interest above your Personal Savings Allowance is taxed; investment gains and dividends above their allowances are taxed unless held in an ISA or pension; and money taken out of a pension is taxed as income, apart from the 25% tax-free part.</li>
           <li>Figures are worked to the penny: each amount is rounded to the nearest penny as it is calculated, and every later figure is built from those amounts, so every line adds up exactly. HMRC's own systems may round some figures down to whole pounds, which can differ by a few pence. Illustrative, not financial advice.</li>
         </ul>
-      </div>
+      </details>
     </div>
 
-    <div class="calc-results">
+    <div class="calc-results"><button type="button" class="wk-all-calc" aria-pressed="false">Show all workings</button><button type="button" class="wk-all-calc" aria-pressed="false">Show all workings</button><button type="button" class="wk-all-calc" aria-pressed="false">Show all workings</button><button type="button" class="wk-all-calc" aria-pressed="false">Show all workings</button><button type="button" class="wk-all-calc" aria-pressed="false">Show all workings</button><button type="button" class="wk-all-calc" aria-pressed="false">Show all workings</button><button type="button" class="wk-all-calc" aria-pressed="false">Show all workings</button><button type="button" class="wk-all-calc" aria-pressed="false">Show all workings</button>
       <div class="route best">
         <p class="kicker">After <span id="k-years">10</span> years</p>
         <h2>Your final balance</h2>
@@ -478,7 +498,7 @@
       <div class="headline-diff">
         <b id="share">36%</b>
         <div class="d-title" id="share-title">of your final balance is interest</div>
-        <div class="d-sub" id="share-sub">You pay in £10,000.00 and interest adds £5,669.87. Most of that arrives in the later years: the last 3 years alone add £1,975.37 of interest, which is compounding at work. Allowing for 2% inflation a year, the final balance is worth £15,669.87 ÷ (1 + 2%)^10 = £12,854.75 in today's money.</div>
+        <div class="d-sub" id="share-sub">You pay in £10,000.00 and interest adds £5,669.87. Most of that arrives in the later years: the last 3 years alone add £1,975.37 of interest, which is compounding at work. Allowing for 2% inflation a year, the final balance is worth <span class="wks"><span class="wks-calc">£15,669.87 ÷ (1 + 2%)^10 = </span><span class="wks-ans" role="button" tabindex="0">£12,854.75</span></span> in today's money.</div>
       </div>
 
       <div class="chart">
@@ -607,7 +627,7 @@
   document.getElementById('inc-mode-pct').addEventListener('click',function(){ setInc('pct'); });
   document.getElementById('inc-mode-gbp').addEventListener('click',function(){ setInc('gbp'); });
   ['freq'].forEach(function(id){ document.getElementById(id).addEventListener('change',render); });
-  document.getElementById('print').addEventListener('click',function(){ document.querySelector('details.workings').open=true; window.print(); });
+  document.getElementById('print').addEventListener('click',function(){ document.querySelector('details.workings').open=true; document.querySelectorAll('details.assume').forEach(function(x){ x.open=true; }); window.print(); });
   // ---- brand select: enhances every <select> in the inputs ----
   (function(){
     document.querySelectorAll('.calc-input select').forEach(function(sel){
@@ -615,6 +635,7 @@
       var btn=document.createElement('button'); btn.type='button'; btn.className='bs-btn'; btn.setAttribute('aria-haspopup','listbox'); btn.setAttribute('aria-expanded','false');
       var list=document.createElement('div'); list.className='bs-list'; list.hidden=true; list.setAttribute('role','listbox');
       wrap.appendChild(btn); wrap.appendChild(list);
+      if(sel.id){ btn.id=sel.id+'-pick'; var lb=document.querySelector('label[for="'+sel.id+'"]'); if(lb) lb.htmlFor=btn.id; sel.tabIndex=-1; sel.setAttribute('aria-hidden','true'); }
       function label(){ var o=sel.options[sel.selectedIndex]; btn.textContent=o?o.textContent:''; }
       function build(){ list.innerHTML=''; Array.prototype.forEach.call(sel.options,function(o,i){ if(o.disabled) return; var b=document.createElement('button'); b.type='button'; b.setAttribute('role','option'); b.textContent=o.textContent; if(i===sel.selectedIndex) b.className='sel'; b.addEventListener('click',function(){ sel.selectedIndex=i; sel.dispatchEvent(new Event('change')); label(); close(); btn.focus(); }); list.appendChild(b); }); }
       function open(){ build(); list.hidden=false; wrap.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
@@ -649,6 +670,73 @@
   document.querySelectorAll('main > section, .res-group, .tools, .article-body > h2, .article-body > table, .article-body > figure, .faq, .author-box, .thanks-more').forEach(function(el){
     if(el.getBoundingClientRect().top>window.innerHeight){ el.classList.add('sje-reveal'); io.observe(el); } });
 })();
+</script>
+<script>
+(function(){
+  var d=document.documentElement; d.classList.add('js'); d.classList.remove('no-js');
+  var res=document.querySelector('.calc-results'); if(!res) return;
+  var KEY='sje-workings', allOpen=false; try{ allOpen=localStorage.getItem(KEY)==='1'; }catch(e){}
+  var sw=document.createElement('button'); sw.type='button'; sw.className='wk-all-calc';
+  res.insertBefore(sw,res.firstChild);
+  function label(){ sw.textContent=allOpen?'Hide all workings':'Show all workings'; sw.setAttribute('aria-pressed',allOpen?'true':'false'); }
+  function mark(){
+    foldSentences();
+    res.querySelectorAll('small').forEach(function(s){
+      if(s.closest('details.workings')||s.classList.contains('wk-small')) return;
+      if(!/[=\u00d7\u00f7\u2212]/.test(s.textContent)) return;
+      var row=s.parentElement; while(row.parentElement && row.parentElement!==res && row.parentElement.querySelectorAll('small').length===1) row=row.parentElement; if(!row) return;
+      s.classList.add('wk-small'); row.classList.add('wk-row'); if(allOpen) row.classList.add('open');
+      var hit=row.querySelector('.amt')||s.parentElement;
+      hit.classList.add('wk-hit'); hit.setAttribute('role','button'); hit.setAttribute('tabindex','0'); hit.setAttribute('aria-expanded',allOpen?'true':'false'); hit.title='Show the working';
+    });
+  }
+
+  // fold sums written into sentences: "sum = answer" and "answer (sum)"
+  var NUM='(?:£\\s?[\\d,]+(?:\\.\\d+)?(?:bn|m)?|\\d[\\d,]*(?:\\.\\d+)?(?:%|p)?|\\d+/\\d+)', TERM='(?:\\(\\s*)*'+NUM+'(?:\\s*\\))*(?:\\^\\d+)?', OP='\\s*[\u00d7\u00f7\u2212+]\\s*', EXPR=TERM+'(?:'+OP+TERM+')+';
+  var RE_EQ=new RegExp('('+EXPR+'(?:\\s*=\\s*'+EXPR+')*\\s*=\\s*)('+NUM+')','g'), RE_PAR=new RegExp('('+NUM+')([^()£=×÷−+]{0,40}?)(\\s*\\((?:'+EXPR+')(?:,\\s*rounded)?\\))','g');
+  function esc(t){ return t.replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+  function foldSentences(){
+    var w=document.createTreeWalker(res,4), nodes=[], n;
+    while(n=w.nextNode()){ var p=n.parentElement; if(!p||p.closest('details.workings')||p.closest('.wks')||p.closest('.wk-small')||p.closest('script')) continue; if(/[\u00d7\u00f7\u2212+]/.test(n.textContent)) nodes.push(n); }
+    nodes.forEach(function(node){
+      var h=esc(node.textContent), changed=false;
+      h=h.replace(RE_EQ,function(m,c,a){ changed=true; return '<span class="wks"><span class="wks-calc">'+c+'</span><span class="wks-ans" role="button" tabindex="0">'+a+'</span></span>'; });
+      h=h.replace(RE_PAR,function(m,a,words,c){ changed=true; return '<span class="wks"><span class="wks-ans" role="button" tabindex="0">'+a+'</span>'+words+'<span class="wks-calc">'+c+'</span></span>'; });
+      if(!changed) return;
+      var tmp=document.createElement('span'); tmp.innerHTML=h; var frag=document.createDocumentFragment();
+      while(tmp.firstChild) frag.appendChild(tmp.firstChild);
+      if(allOpen) frag.querySelectorAll && Array.prototype.forEach.call(frag.childNodes,function(c){ if(c.classList&&c.classList.contains('wks')) c.classList.add('open'); });
+      node.parentNode.replaceChild(frag,node);
+    });
+  }
+  function toggle(row,open){ row.classList.toggle('open',open); var h=row.querySelector('.wk-hit'); if(h) h.setAttribute('aria-expanded',open?'true':'false'); }
+  res.addEventListener('click',function(e){
+    if(e.target===sw){ allOpen=!allOpen; try{ localStorage.setItem(KEY,allOpen?'1':'0'); }catch(err){} res.querySelectorAll('.wk-row').forEach(function(r){ toggle(r,allOpen); }); res.querySelectorAll('.wks').forEach(function(w){ w.classList.toggle('open',allOpen); }); document.querySelectorAll('details.workings').forEach(function(x){ x.open=allOpen; }); label(); return; }
+    var sa=e.target.closest('.wks-ans'); if(sa){ var wk=sa.closest('.wks'); wk.classList.toggle('open'); return; }
+    var h=e.target.closest('.wk-hit'); if(h){ var r=h.closest('.wk-row'); toggle(r,!r.classList.contains('open')); }
+  });
+  res.addEventListener('keydown',function(e){ var sa=e.target.closest&&e.target.closest('.wks-ans'); if(sa&&(e.key==='Enter'||e.key===' ')){ e.preventDefault(); sa.closest('.wks').classList.toggle('open'); return; } var h=e.target.closest&&e.target.closest('.wk-hit'); if(h&&(e.key==='Enter'||e.key===' ')){ e.preventDefault(); var r=h.closest('.wk-row'); toggle(r,!r.classList.contains('open')); } });
+  ['input','change','click'].forEach(function(ev){ document.addEventListener(ev,function(){ mark(); setTimeout(mark,250); }); });
+  label(); mark(); if(allOpen) document.querySelectorAll('details.workings').forEach(function(x){ x.open=true; });
+})();
+</script>
+<script>
+/* titles above the boxes are labels only: tapping them does not open the box or the picker (tick boxes still toggle) */
+document.addEventListener('click',function(e){
+  var l=e.target.closest&&e.target.closest('.calc-input label'); if(!l) return;
+  if(e.target.closest('input,select,textarea,button,a')) return;
+  if(l.querySelector('input')) return;
+  var c=l.htmlFor&&document.getElementById(l.htmlFor); if(c&&(c.type==='checkbox'||c.type==='radio')) return;
+  e.preventDefault();
+},true);
+</script>
+<script>
+/* field titles are plain text: not tappable at all (tick-box wording still is) */
+document.querySelectorAll('.calc-input label').forEach(function(l){
+  if(l.querySelector('input')) return;
+  var c=l.htmlFor&&document.getElementById(l.htmlFor); if(c&&(c.type==='checkbox'||c.type==='radio')) return;
+  l.classList.add('static-label');
+});
 </script>
 </body>
 </html>

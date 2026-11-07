@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en-GB" class="no-js">
 <head>
 <meta charset="UTF-8">
 <link rel="preload" href="/logo-header.svg" as="image" type="image/svg+xml" fetchpriority="high">
@@ -324,6 +324,27 @@
   .check-hmrc h3{ font-family:"EB Garamond", "EB Garamond Fallback", Georgia, serif; font-size:1.2rem; margin-bottom:6px; }
   .check-hmrc ul{ margin:8px 0 10px 20px; }
   .check-hmrc li{ margin-bottom:4px; }
+
+  /* fold-away workings in results */
+  .js .wk-row:not(.open) .wk-small{ display:none !important; }
+  .wk-row .wk-hit{ cursor:pointer; border-bottom:1px dotted var(--ink-soft); }
+  .wk-row .wk-hit:focus-visible{ outline:2px solid var(--leaf); outline-offset:2px; }
+  .wk-all-calc{ font:inherit; font-size:.85rem; background:none; border:0; padding:0; margin:0 0 10px; color:var(--leaf-deep); cursor:pointer; text-decoration:underline; text-underline-offset:3px; }
+  .no-js .wk-all-calc{ display:none; }
+  @media print{ .wk-row .wk-small{ display:block !important; } .wk-all-calc{ display:none; } }
+  .js .wks:not(.open) .wks-calc{ display:none; }
+  .calc-results .wks-ans{ cursor:pointer; border-bottom:1px dotted currentColor; }
+  .calc-results .wks-ans:focus-visible{ outline:2px solid var(--leaf); outline-offset:2px; }
+  @media print{ .wks .wks-calc{ display:inline !important; } }
+  .calc-input label{ -webkit-user-select:none; user-select:none; cursor:default; }
+  .calc-input label{ -webkit-tap-highlight-color:transparent; }
+  .calc-input label.static-label{ pointer-events:none; }
+  details.assume > summary{ list-style:none; cursor:pointer; display:inline-flex; align-items:center; gap:8px; }
+  details.assume > summary::-webkit-details-marker{ display:none; }
+  details.assume > summary::after{ content:"Show"; font-size:.8rem; color:var(--leaf-deep); text-decoration:underline; text-underline-offset:3px; }
+  details.assume[open] > summary::after{ content:"Hide"; }
+  details.assume[open] > ul{ margin-top:10px; }
+  @media print{ details.assume > ul{ display:block !important; } }
 </style>
 
 <script type="application/ld+json">
@@ -432,20 +453,19 @@
         <p class="hint">Companies House sets your year end (the "accounting reference date") as the last day of the month you incorporated in. Many directors move it to 31 March so the company year lines up with the tax year, which makes dividend planning simpler and tidies away the awkward split first period. You can shorten your year as often as you like, but only extend it once every five years and never beyond 18 months. Toggle to see how your dates change.</p>
       </details>
 
-      <div class="assume">
-        <strong>Assumptions</strong>
+      <details class="assume"><summary><strong>Assumptions</strong> <span class="assume-count">(4)</span></summary>
         <ul>
           <li>Private limited company, first accounts filed under standard deadlines.</li>
           <li>HMRC deadlines that land on a weekend or bank holiday are shown as the statutory date; payments should reach HMRC by the last working day before.</li>
           <li>Your personal Self Assessment is described in the workings rather than dated, because it runs on tax years (5 October to register, 31 January to file) rather than on your incorporation date.</li>
           <li>Illustrative, not advice. Always check the dates HMRC and Companies House send you.</li>
         </ul>
-      </div>
+      </details>
     </div>
 
-    <div class="calc-results">
+    <div class="calc-results"><button type="button" class="wk-all-calc" aria-pressed="false">Show all workings</button><button type="button" class="wk-all-calc" aria-pressed="false">Show all workings</button><button type="button" class="wk-all-calc" aria-pressed="false">Show all workings</button><button type="button" class="wk-all-calc" aria-pressed="false">Show all workings</button><button type="button" class="wk-all-calc" aria-pressed="false">Show all workings</button><button type="button" class="wk-all-calc" aria-pressed="false">Show all workings</button><button type="button" class="wk-all-calc" aria-pressed="false">Show all workings</button><button type="button" class="wk-all-calc" aria-pressed="false">Show all workings</button>
       <div class="headline-diff">
-        <b id="next-in">39 days</b>
+        <b id="next-in">38 days</b>
         <div class="d-title" id="next-title">until your next deadline: register the company for Corporation Tax</div>
         <div class="d-sub" id="next-sub">15 December 2026. 3 months after you started doing business (15 September 2026). Companies House told HMRC you exist, but this step is yours to do.</div>
       </div>
@@ -461,7 +481,7 @@
         <button type="button" class="btn ghost" id="print">Print or save as PDF</button>
       </div>
       <h2 style="font-size:1.3rem; font-weight:600; margin:28px 0 10px;">Your first-year timeline</h2>
-      <div class="timeline" id="timeline"><div class="item"><div class="date">15 December 2026</div><div class="what"><strong>Register the company for Corporation Tax</strong><small>3 months after you started doing business (15 September 2026). Companies House told HMRC you exist, but this step is yours to do.</small></div><div class="in">in 39 days</div></div><div class="item"><div class="date">29 September 2027</div><div class="what"><strong>File your first confirmation statement</strong><small>Review period is 12 months from incorporation; you then have 14 days. £50 online. Due every year after.</small></div><div class="in">in 327 days</div></div><div class="item"><div class="date">15 June 2028</div><div class="what"><strong>File your first annual accounts at Companies House</strong><small>21 months after incorporation, because your first period (15 September 2026 to 30 September 2027) is longer than 12 months. Later years: 9 months after each year end.</small></div><div class="in">in 587 days</div></div><div class="item"><div class="date">15 June 2028</div><div class="what"><strong>Pay Corporation Tax for the first tax period</strong><small>Period 15 September 2026 to 14 September 2027. Due 9 months and 1 day after it ends. Note this is before the return is due.</small></div><div class="in">in 587 days</div></div><div class="item"><div class="date">1 July 2028</div><div class="what"><strong>Pay Corporation Tax for the second tax period</strong><small>Period 15 September 2027 to 30 September 2027. Due 9 months and 1 day after it ends. Note this is before the return is due.</small></div><div class="in">in 603 days</div></div><div class="item"><div class="date">14 September 2028</div><div class="what"><strong>File the Company Tax Return (CT600) for the first tax period</strong><small>12 months after the period ends. Filed with your accounts and computations.</small></div><div class="in">in 678 days</div></div><div class="item"><div class="date">30 September 2028</div><div class="what"><strong>File the Company Tax Return (CT600) for the second tax period</strong><small>12 months after the period ends. Filed with your accounts and computations.</small></div><div class="in">in 694 days</div></div></div>
+      <div class="timeline" id="timeline"><div class="item"><div class="date">15 December 2026</div><div class="what"><strong>Register the company for Corporation Tax</strong><small>3 months after you started doing business (15 September 2026). Companies House told HMRC you exist, but this step is yours to do.</small></div><div class="in">in 38 days</div></div><div class="item"><div class="date">29 September 2027</div><div class="what"><strong>File your first confirmation statement</strong><small>Review period is 12 months from incorporation; you then have 14 days. £50 online. Due every year after.</small></div><div class="in">in 326 days</div></div><div class="item"><div class="date">15 June 2028</div><div class="what"><strong>File your first annual accounts at Companies House</strong><small>21 months after incorporation, because your first period (15 September 2026 to 30 September 2027) is longer than 12 months. Later years: 9 months after each year end.</small></div><div class="in">in 586 days</div></div><div class="item"><div class="date">15 June 2028</div><div class="what"><strong>Pay Corporation Tax for the first tax period</strong><small>Period 15 September 2026 to 14 September 2027. Due 9 months and 1 day after it ends. Note this is before the return is due.</small></div><div class="in">in 586 days</div></div><div class="item"><div class="date">1 July 2028</div><div class="what"><strong>Pay Corporation Tax for the second tax period</strong><small>Period 15 September 2027 to 30 September 2027. Due 9 months and 1 day after it ends. Note this is before the return is due.</small></div><div class="in">in 602 days</div></div><div class="item"><div class="date">14 September 2028</div><div class="what"><strong>File the Company Tax Return (CT600) for the first tax period</strong><small>12 months after the period ends. Filed with your accounts and computations.</small></div><div class="in">in 677 days</div></div><div class="item"><div class="date">30 September 2028</div><div class="what"><strong>File the Company Tax Return (CT600) for the second tax period</strong><small>12 months after the period ends. Filed with your accounts and computations.</small></div><div class="in">in 693 days</div></div></div>
       <details class="workings">
         <summary>Show the workings</summary>
         <div class="inner" id="workings"><div class="wk"><div><span class="lbl">Incorporated</span><span class="amt">15 September 2026</span></div><div><span class="lbl">Started trading</span><span class="amt">15 September 2026</span></div><div><span class="lbl">Default year end (accounting reference date)<small>last day of the month you incorporated in, one year on</small></span><span class="amt">30 September 2027</span></div><div class="sub"><span class="lbl">Length of first accounts period<small>15 September 2026 to 30 September 2027</small></span><span class="amt">more than 12 months</span></div><div><span class="lbl">Register for Corporation Tax by<small>15 September 2026 + 3 months</small></span><span class="amt">15 December 2026</span></div><div><span class="lbl">Confirmation statement by<small>15 September 2026 + 12 months + 14 days</small></span><span class="amt">29 September 2027</span></div><div><span class="lbl">First accounts by<small>15 September 2026 + 21 months (first period over 12 months)</small></span><span class="amt">15 June 2028</span></div><div><span class="lbl">Tax period 1<small>HMRC splits any period over 12 months, so two returns</small></span><span class="amt">15 September 2026 to 14 September 2027</span></div><div><span class="lbl">Pay Corporation Tax, period 1<small>14 September 2027 + 9 months + 1 day</small></span><span class="amt">15 June 2028</span></div><div><span class="lbl">File CT600, period 1<small>14 September 2027 + 12 months</small></span><span class="amt">14 September 2028</span></div><div><span class="lbl">Tax period 2<small>HMRC splits any period over 12 months, so two returns</small></span><span class="amt">15 September 2027 to 30 September 2027</span></div><div><span class="lbl">Pay Corporation Tax, period 2<small>30 September 2027 + 9 months + 1 day</small></span><span class="amt">1 July 2028</span></div><div><span class="lbl">File CT600, period 2<small>30 September 2027 + 12 months</small></span><span class="amt">30 September 2028</span></div></div><p class="aside">PAYE: You can only register as an employer inside a window: no earlier than two months before your first payday, because HMRC will not accept it before then, and no later than about three weeks before, because HMRC takes up to 15 working days to send the employer PAYE reference you need to run the first payroll. Miss the window and you cannot pay yourself on the planned date. You will need the company's UTR, registered office, your details as director, the planned first payday and the number of employees. Enter your planned first payday above and the exact window appears in your timeline. VAT only when taxable turnover heads for £90,000, or by choice. Your own Self Assessment: Plan to file a Self Assessment return every year as a director. Strictly, HMRC requires one if you have untaxed income (dividends above £500, benefits, other income) or if HMRC sends you a notice to file, which covers nearly every director who takes dividends, so most accountants register directors from day one. Register by 5 October after the end of the tax year, then file and pay by the following 31 January.</p></div>
@@ -638,7 +658,7 @@
   document.getElementById('trade').addEventListener('change',render);
   document.getElementById('payday').addEventListener('change',render);
   document.getElementById('ics').addEventListener('click',ics);
-  document.getElementById('print').addEventListener('click',function(){ document.querySelector('details.workings').open=true; window.print(); });
+  document.getElementById('print').addEventListener('click',function(){ document.querySelector('details.workings').open=true; document.querySelectorAll('details.assume').forEach(function(x){ x.open=true; }); window.print(); });
   document.getElementById('gcal-all').addEventListener('click',function(){ window.open('https://calendar.google.com/calendar/u/0/r/settings/export','_blank','noopener'); ics(); });
 
   // ---- brand select: enhances every <select> in the inputs ----
@@ -648,6 +668,7 @@
       var btn=document.createElement('button'); btn.type='button'; btn.className='bs-btn'; btn.setAttribute('aria-haspopup','listbox'); btn.setAttribute('aria-expanded','false');
       var list=document.createElement('div'); list.className='bs-list'; list.hidden=true; list.setAttribute('role','listbox');
       wrap.appendChild(btn); wrap.appendChild(list);
+      if(sel.id){ btn.id=sel.id+'-pick'; var lb=document.querySelector('label[for="'+sel.id+'"]'); if(lb) lb.htmlFor=btn.id; sel.tabIndex=-1; sel.setAttribute('aria-hidden','true'); }
       function label(){ var o=sel.options[sel.selectedIndex]; btn.textContent=o?o.textContent:''; }
       function build(){ list.innerHTML=''; Array.prototype.forEach.call(sel.options,function(o,i){ if(o.disabled) return; var b=document.createElement('button'); b.type='button'; b.setAttribute('role','option'); b.textContent=o.textContent; if(i===sel.selectedIndex) b.className='sel'; b.addEventListener('click',function(){ sel.selectedIndex=i; sel.dispatchEvent(new Event('change')); label(); close(); btn.focus(); }); list.appendChild(b); }); }
       function open(){ build(); list.hidden=false; wrap.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
@@ -682,6 +703,73 @@
   document.querySelectorAll('main > section, .res-group, .tools, .article-body > h2, .article-body > table, .article-body > figure, .faq, .author-box, .thanks-more').forEach(function(el){
     if(el.getBoundingClientRect().top>window.innerHeight){ el.classList.add('sje-reveal'); io.observe(el); } });
 })();
+</script>
+<script>
+(function(){
+  var d=document.documentElement; d.classList.add('js'); d.classList.remove('no-js');
+  var res=document.querySelector('.calc-results'); if(!res) return;
+  var KEY='sje-workings', allOpen=false; try{ allOpen=localStorage.getItem(KEY)==='1'; }catch(e){}
+  var sw=document.createElement('button'); sw.type='button'; sw.className='wk-all-calc';
+  res.insertBefore(sw,res.firstChild);
+  function label(){ sw.textContent=allOpen?'Hide all workings':'Show all workings'; sw.setAttribute('aria-pressed',allOpen?'true':'false'); }
+  function mark(){
+    foldSentences();
+    res.querySelectorAll('small').forEach(function(s){
+      if(s.closest('details.workings')||s.classList.contains('wk-small')) return;
+      if(!/[=\u00d7\u00f7\u2212]/.test(s.textContent)) return;
+      var row=s.parentElement; while(row.parentElement && row.parentElement!==res && row.parentElement.querySelectorAll('small').length===1) row=row.parentElement; if(!row) return;
+      s.classList.add('wk-small'); row.classList.add('wk-row'); if(allOpen) row.classList.add('open');
+      var hit=row.querySelector('.amt')||s.parentElement;
+      hit.classList.add('wk-hit'); hit.setAttribute('role','button'); hit.setAttribute('tabindex','0'); hit.setAttribute('aria-expanded',allOpen?'true':'false'); hit.title='Show the working';
+    });
+  }
+
+  // fold sums written into sentences: "sum = answer" and "answer (sum)"
+  var NUM='(?:£\\s?[\\d,]+(?:\\.\\d+)?(?:bn|m)?|\\d[\\d,]*(?:\\.\\d+)?(?:%|p)?|\\d+/\\d+)', TERM='(?:\\(\\s*)*'+NUM+'(?:\\s*\\))*(?:\\^\\d+)?', OP='\\s*[\u00d7\u00f7\u2212+]\\s*', EXPR=TERM+'(?:'+OP+TERM+')+';
+  var RE_EQ=new RegExp('('+EXPR+'(?:\\s*=\\s*'+EXPR+')*\\s*=\\s*)('+NUM+')','g'), RE_PAR=new RegExp('('+NUM+')([^()£=×÷−+]{0,40}?)(\\s*\\((?:'+EXPR+')(?:,\\s*rounded)?\\))','g');
+  function esc(t){ return t.replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+  function foldSentences(){
+    var w=document.createTreeWalker(res,4), nodes=[], n;
+    while(n=w.nextNode()){ var p=n.parentElement; if(!p||p.closest('details.workings')||p.closest('.wks')||p.closest('.wk-small')||p.closest('script')) continue; if(/[\u00d7\u00f7\u2212+]/.test(n.textContent)) nodes.push(n); }
+    nodes.forEach(function(node){
+      var h=esc(node.textContent), changed=false;
+      h=h.replace(RE_EQ,function(m,c,a){ changed=true; return '<span class="wks"><span class="wks-calc">'+c+'</span><span class="wks-ans" role="button" tabindex="0">'+a+'</span></span>'; });
+      h=h.replace(RE_PAR,function(m,a,words,c){ changed=true; return '<span class="wks"><span class="wks-ans" role="button" tabindex="0">'+a+'</span>'+words+'<span class="wks-calc">'+c+'</span></span>'; });
+      if(!changed) return;
+      var tmp=document.createElement('span'); tmp.innerHTML=h; var frag=document.createDocumentFragment();
+      while(tmp.firstChild) frag.appendChild(tmp.firstChild);
+      if(allOpen) frag.querySelectorAll && Array.prototype.forEach.call(frag.childNodes,function(c){ if(c.classList&&c.classList.contains('wks')) c.classList.add('open'); });
+      node.parentNode.replaceChild(frag,node);
+    });
+  }
+  function toggle(row,open){ row.classList.toggle('open',open); var h=row.querySelector('.wk-hit'); if(h) h.setAttribute('aria-expanded',open?'true':'false'); }
+  res.addEventListener('click',function(e){
+    if(e.target===sw){ allOpen=!allOpen; try{ localStorage.setItem(KEY,allOpen?'1':'0'); }catch(err){} res.querySelectorAll('.wk-row').forEach(function(r){ toggle(r,allOpen); }); res.querySelectorAll('.wks').forEach(function(w){ w.classList.toggle('open',allOpen); }); document.querySelectorAll('details.workings').forEach(function(x){ x.open=allOpen; }); label(); return; }
+    var sa=e.target.closest('.wks-ans'); if(sa){ var wk=sa.closest('.wks'); wk.classList.toggle('open'); return; }
+    var h=e.target.closest('.wk-hit'); if(h){ var r=h.closest('.wk-row'); toggle(r,!r.classList.contains('open')); }
+  });
+  res.addEventListener('keydown',function(e){ var sa=e.target.closest&&e.target.closest('.wks-ans'); if(sa&&(e.key==='Enter'||e.key===' ')){ e.preventDefault(); sa.closest('.wks').classList.toggle('open'); return; } var h=e.target.closest&&e.target.closest('.wk-hit'); if(h&&(e.key==='Enter'||e.key===' ')){ e.preventDefault(); var r=h.closest('.wk-row'); toggle(r,!r.classList.contains('open')); } });
+  ['input','change','click'].forEach(function(ev){ document.addEventListener(ev,function(){ mark(); setTimeout(mark,250); }); });
+  label(); mark(); if(allOpen) document.querySelectorAll('details.workings').forEach(function(x){ x.open=true; });
+})();
+</script>
+<script>
+/* titles above the boxes are labels only: tapping them does not open the box or the picker (tick boxes still toggle) */
+document.addEventListener('click',function(e){
+  var l=e.target.closest&&e.target.closest('.calc-input label'); if(!l) return;
+  if(e.target.closest('input,select,textarea,button,a')) return;
+  if(l.querySelector('input')) return;
+  var c=l.htmlFor&&document.getElementById(l.htmlFor); if(c&&(c.type==='checkbox'||c.type==='radio')) return;
+  e.preventDefault();
+},true);
+</script>
+<script>
+/* field titles are plain text: not tappable at all (tick-box wording still is) */
+document.querySelectorAll('.calc-input label').forEach(function(l){
+  if(l.querySelector('input')) return;
+  var c=l.htmlFor&&document.getElementById(l.htmlFor); if(c&&(c.type==='checkbox'||c.type==='radio')) return;
+  l.classList.add('static-label');
+});
 </script>
 </body>
 </html>

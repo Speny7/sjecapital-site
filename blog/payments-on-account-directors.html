@@ -416,15 +416,16 @@
       </table>
       <button type="button" class="wk-tbl-toggle wk-ui" aria-expanded="false">Show the workings</button>
       <p>Here is what HMRC asks for, and when:</p>
-      <table>
+      <table class="wk-table">
         <thead><tr><th>Due date</th><th>What it is for</th><th>Amount</th></tr></thead>
         <tbody>
-          <tr><td>31 January 2027</td><td>2025/26 tax of £3,255.00, plus the first payment on account for 2026/27: <span class="wk"><span class="wk-calc">£3,255.00 &times; 50% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£1,627.50</button></span>. Total: £3,255.00 + £1,627.50</td><td><strong>£4,882.50</strong></td></tr>
-          <tr><td>31 July 2027</td><td>Second payment on account for 2026/27: £3,255.00 &times; 50%</td><td><strong>£1,627.50</strong></td></tr>
-          <tr><td>31 January 2028</td><td>Balancing payment for 2026/27: <span class="wk"><span class="wk-calc">£3,999.00 &minus; (£1,627.50 + £1,627.50) = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£744.00</button></span>, plus the first payment on account for 2027/28: <span class="wk"><span class="wk-calc">£3,999.00 &times; 50% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£1,999.50</button></span>. Total: £744.00 + £1,999.50</td><td><strong>£2,743.50</strong></td></tr>
-          <tr><td>31 July 2028</td><td>Second payment on account for 2027/28: £3,999.00 &times; 50%</td><td><strong>£1,999.50</strong></td></tr>
+          <tr><td>31 January 2027</td><td>2025/26 tax of £3,255.00, plus the first payment on account for 2026/27: <span class="wk"><span class="wk-calc">£3,255.00 &times; 50% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£1,627.50</button></span><span class="wk-col">. Total: £3,255.00 + £1,627.50</span></td><td><strong>£4,882.50</strong></td></tr>
+          <tr><td>31 July 2027</td><td>Second payment on account for 2026/27<span class="wk-col">: £3,255.00 &times; 50%</span></td><td><strong>£1,627.50</strong></td></tr>
+          <tr><td>31 January 2028</td><td>Balancing payment for 2026/27: <span class="wk"><span class="wk-calc">£3,999.00 &minus; (£1,627.50 + £1,627.50) = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£744.00</button></span>, plus the first payment on account for 2027/28: <span class="wk"><span class="wk-calc">£3,999.00 &times; 50% = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£1,999.50</button></span><span class="wk-col">. Total: £744.00 + £1,999.50</span></td><td><strong>£2,743.50</strong></td></tr>
+          <tr><td>31 July 2028</td><td>Second payment on account for 2027/28<span class="wk-col">: £3,999.00 &times; 50%</span></td><td><strong>£1,999.50</strong></td></tr>
         </tbody>
       </table>
+      <button type="button" class="wk-tbl-toggle wk-ui" aria-expanded="false">Show the workings</button>
       <p>The first January is the big one:</p>
       <ul>
         <li>January 2027: one and a half times the year's tax, <span class="wk"><span class="wk-calc">£3,255.00 &times; 1.5 = </span><button type="button" class="wk-ans" aria-expanded="false" title="Show the working">£4,882.50</button></span>.</li>

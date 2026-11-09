@@ -505,7 +505,7 @@
       </details>
     </div>
 
-    <div class="calc-results"><button type="button" class="wk-all-calc" aria-pressed="false">Show all workings</button><button type="button" class="wk-all-calc" aria-pressed="false">Show all workings</button><button type="button" class="wk-all-calc" aria-pressed="false">Show all workings</button><button type="button" class="wk-all-calc" aria-pressed="false">Show all workings</button><button type="button" class="wk-all-calc" aria-pressed="false">Show all workings</button><button type="button" class="wk-all-calc" aria-pressed="false">Show all workings</button><button type="button" class="wk-all-calc" aria-pressed="false">Show all workings</button><button type="button" class="wk-all-calc" aria-pressed="false">Show all workings</button><button type="button" class="wk-all-calc" aria-pressed="false">Show all workings</button>
+    <div class="calc-results">
       <div class="routes">
         <div class="route best">
           <p class="kicker">Route A</p>
@@ -542,7 +542,7 @@
       <div class="headline-diff">
         <b id="diff">£44,119.46</b>
         <div class="d-title" id="diff-title">more for you by having the company pay into your pension</div>
-        <div class="d-sub" id="diff-sub"><strong style="color:#fff">The pension wins if you pay the basic rate (20%) or less in retirement; dividends win if you pay the higher rate (40%) or more. You have chosen the basic rate (20%), so the pension comes out ahead.</strong> Every year the pension route invests the full £10,000.00; the dividend route invests only £7,229.25 after Corporation Tax and dividend tax: <span class="wks"><span class="wks-calc">£7,229.25 ÷ £10,000.00 = </span><span class="wks-ans" role="button" tabindex="0">72p</span></span> in every £1. Over 20 years that difference compounds, even after tax on the pension when you take it. The trade-off: pension money is locked away until your minimum pension age, 57 from April 2028, while ISA money is available whenever you need it.</div>
+        <div class="d-sub" id="diff-sub"><strong style="color:#fff">The pension wins if you pay the basic rate (20%) or less in retirement; dividends win if you pay the higher rate (40%) or more. You have chosen the basic rate (20%), so the pension comes out ahead.</strong> Every year the pension route invests the full £10,000.00; the dividend route invests only £7,229.25 after Corporation Tax and dividend tax: £7,229.25 ÷ £10,000.00 = 72p in every £1. Over 20 years that difference compounds, even after tax on the pension when you take it. The trade-off: pension money is locked away until your minimum pension age, 57 from April 2028, while ISA money is available whenever you need it.</div>
       </div>
 
       <div class="chart">
@@ -733,6 +733,7 @@
   var d=document.documentElement; d.classList.add('js'); d.classList.remove('no-js');
   var res=document.querySelector('.calc-results'); if(!res) return;
   var KEY='sje-workings', allOpen=false; try{ allOpen=localStorage.getItem(KEY)==='1'; }catch(e){}
+  res.querySelectorAll('.wk-all-calc').forEach(function(x){ x.remove(); });
   var sw=document.createElement('button'); sw.type='button'; sw.className='wk-all-calc';
   res.insertBefore(sw,res.firstChild);
   function label(){ sw.textContent=allOpen?'Hide all workings':'Show all workings'; sw.setAttribute('aria-pressed',allOpen?'true':'false'); }

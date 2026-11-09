@@ -459,7 +459,7 @@
       </details>
     </div>
 
-    <div class="calc-results"><button type="button" class="wk-all-calc" aria-pressed="false">Show all workings</button><button type="button" class="wk-all-calc" aria-pressed="false">Show all workings</button><button type="button" class="wk-all-calc" aria-pressed="false">Show all workings</button><button type="button" class="wk-all-calc" aria-pressed="false">Show all workings</button><button type="button" class="wk-all-calc" aria-pressed="false">Show all workings</button><button type="button" class="wk-all-calc" aria-pressed="false">Show all workings</button><button type="button" class="wk-all-calc" aria-pressed="false">Show all workings</button><button type="button" class="wk-all-calc" aria-pressed="false">Show all workings</button><button type="button" class="wk-all-calc" aria-pressed="false">Show all workings</button>
+    <div class="calc-results">
       <div class="routes" id="routes">
         <div class="route" id="card-sole">
           <p class="kicker">Sole trader</p>
@@ -770,6 +770,7 @@
   var d=document.documentElement; d.classList.add('js'); d.classList.remove('no-js');
   var res=document.querySelector('.calc-results'); if(!res) return;
   var KEY='sje-workings', allOpen=false; try{ allOpen=localStorage.getItem(KEY)==='1'; }catch(e){}
+  res.querySelectorAll('.wk-all-calc').forEach(function(x){ x.remove(); });
   var sw=document.createElement('button'); sw.type='button'; sw.className='wk-all-calc';
   res.insertBefore(sw,res.firstChild);
   function label(){ sw.textContent=allOpen?'Hide all workings':'Show all workings'; sw.setAttribute('aria-pressed',allOpen?'true':'false'); }

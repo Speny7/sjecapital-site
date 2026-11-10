@@ -46,6 +46,7 @@
   }
   a{ color:var(--leaf); text-decoration-thickness:1px; text-underline-offset:3px; }
   a:hover{ color:var(--leaf-deep); }
+  h1,h2,h3{ font-family:"EB Garamond", "EB Garamond Fallback", Georgia, serif; }
   :focus-visible{ outline:3px solid var(--focus); outline-offset:3px; border-radius:2px; }
   .wrap{ max-width:1200px; margin:0 auto; padding:0 24px; }
 
@@ -210,6 +211,7 @@
   .enquiry input:focus, .enquiry select:focus, .enquiry textarea:focus{ outline:none; border-color:#9FD8B7; box-shadow:0 0 0 3px rgba(159,216,183,.25); }
   .enquiry .btn{ width:100%; text-align:center; margin-top:4px; cursor:pointer; font-family:inherit; }
   .enquiry .f-note{ font-size:.85rem; color:#9FBFA8; margin-top:12px; line-height:1.5; }
+  .enquiry .f-note a{ color:#9FD8B7; }
   .enquiry .hp{ position:absolute; left:-9999px; }
   .contact-grid dl{ margin-top:8px; }
   /* ---------- contact ---------- */
@@ -239,7 +241,7 @@
   .text-link{ color:var(--leaf-deep); text-decoration:underline; text-underline-offset:3px; font-size:1rem; }
   .objections{ list-style:none; margin:26px 0 0; padding:0; display:grid; gap:10px; max-width:560px; }
   .objections li{ position:relative; padding-left:26px; font-size:.98rem; line-height:1.5; color:var(--ink-soft); }
-  .objections li::before{ content:"\2713"; position:absolute; left:0; top:0; color:var(--leaf); font-weight:700; }
+  .objections li::before{ content:""; position:absolute; left:6px; top:.32em; width:6px; height:11px; border:solid var(--leaf); border-width:0 2px 2px 0; transform:rotate(45deg); }
   .objections b{ color:var(--ink); }
   .hero-quote{ display:block; margin-top:10px; font-style:italic; color:var(--ink); quotes:"\201C" "\201D"; }
   .hero-quote-by{ font-size:.8rem !important; }
@@ -417,20 +419,19 @@
   <section class="lp-hero">
     <div class="wrap">
       <div>
-        <p class="hero-kicker">Accountants for UK limited companies turning over £100k+</p>
+        <p class="hero-kicker">Bookkeepers for UK limited companies turning over £100k+</p>
         <h1>Keep more of your profit. Never miss a tax deadline.</h1>
-        <p class="lede">A qualified accountant who handles your books, tax, payroll and director pay, for a fixed monthly fee from £500. You work with me directly, not a junior.</p>
+        <p class="lede">An ICB Certified Bookkeeper and Xero Certified Advisor who handles your books, tax, payroll and director pay, for a fixed monthly fee from £500. You work with me directly, not a junior.</p>
         <div class="actions" style="margin-top:22px;"><a class="btn" href="#quote">Get your fixed-price quote within 1 working day</a></div>
         <ul class="objections">
           <li><b>Switching is easy.</b> I handle the handover with your current accountant and HMRC. Most switches take two to four weeks.</li>
           <li><b>No surprise bills.</b> One fixed monthly fee, agreed before we start.</li>
-          <li><b>No juniors.</b> The qualified accountant you speak to is the one doing your books.</li>
+          <li><b>No juniors.</b> The person you speak to is the one doing your books.</li>
         </ul>
       </div>
       <figure class="hero-portrait">
         <img src="/img/spencer-elbert-2026.webp" width="520" height="520" alt="Spencer Elbert, founder of SJE Capital" fetchpriority="high">
-        <figcaption><b>Spencer Elbert</b><span>Founder. ICB Certified, Xero Certified Advisor, CIMA Dip MA.</span>
-          <q class="hero-quote">They explained everything thoroughly and answered all my questions.</q><span class="hero-quote-by">Michael, director, Greenhill Foot Care Ltd</span></figcaption>
+        <figcaption><b>Spencer Elbert</b><span>Founder. ICB Certified, Xero Certified Advisor, CIMA Dip MA.</span></figcaption>
       </figure>
     </div>
   </section>
@@ -489,7 +490,7 @@
           </div>
           <div class="step-actions"><button type="submit" class="btn">Send me my quote</button><button type="button" class="back" id="to-step1">Back</button></div>
         </div>
-        <p class="f-note">Your details are used only to prepare your quote.</p>
+        <p class="f-note">Your details are used only to prepare your quote. See our <a href="/privacy">privacy notice</a>.</p>
       </form>
     </div>
   </section>
@@ -501,19 +502,46 @@
     </div>
   </section>
 </main>
-<footer class="lp-foot"><div class="wrap">&copy; 2026 SJE Capital Limited. Registered in England &amp; Wales, company no. 15837169. Registered office: 78 Church Lane East, Aldershot, Hampshire, GU11 3HB, United Kingdom. HMRC recognised agent. Fully insured.</div></footer>
+<footer>
+  <div class="wrap">
+    <span>© 2026 SJE Capital Limited. Registered in England &amp; Wales, company no. 15837169. Registered office: 78 Church Lane East, Aldershot, Hampshire, GU11 3HB, United Kingdom. HMRC recognised agent. Fully insured.</span>
+    <span>ICB Certified · Xero Certified Advisor · CIMA Dip MA. Supervised for anti-money laundering by the Institute of Certified Bookkeepers, practice licence 24492. ICO registration ZB807956.</span>
+    <span><a href="/privacy">Privacy</a> · <a href="/complaints">Complaints</a> · <a href="mailto:spencer@sjecapital.co.uk">spencer@sjecapital.co.uk</a> · <a href="https://www.linkedin.com/company/sje-capital-limited" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+  </div>
+</footer>
 <script>
 (function(){
   document.documentElement.classList.add('js');
   var form=document.getElementById('lp-form'), next=document.getElementById('to-step2'), back=document.getElementById('to-step1');
   var s1=form.querySelectorAll('.step1 [required]');
   next.addEventListener('click',function(){
-    for(var i=0;i<s1.length;i++){ if(!s1[i].checkValidity()){ s1[i].reportValidity(); return; } }
+    for(var i=0;i<s1.length;i++){ if(!s1[i].checkValidity()){ var bad=s1[i]; setTimeout(function(){ bad.reportValidity(); },0); return; } }
     form.classList.add('on-step2'); document.getElementById('f-name').focus();
   });
-  back.addEventListener('click',function(){ form.classList.remove('on-step2'); document.getElementById('f-need').focus(); });
+  back.addEventListener('click',function(){ form.classList.remove('on-step2'); var n=document.getElementById('f-need'); (n.parentNode.querySelector('.bs-btn')||n).focus(); });
 })();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "00529846a08f42db871a69a17e005ffd"}'></script><!-- End Cloudflare Web Analytics -->
+<script>
+(function(){
+  document.querySelectorAll('.enquiry select').forEach(function(sel){
+    var wrap=document.createElement('div'); wrap.className='bs'; sel.parentNode.insertBefore(wrap,sel); wrap.appendChild(sel);
+    var btn=document.createElement('button'); btn.type='button'; btn.className='bs-btn'; btn.setAttribute('aria-haspopup','listbox'); btn.setAttribute('aria-expanded','false');
+    if(sel.id){ var lab=document.querySelector('label[for="'+sel.id+'"]'); if(lab){ lab.addEventListener('click',function(e){ e.preventDefault(); btn.focus(); }); } }
+    var list=document.createElement('div'); list.className='bs-list'; list.hidden=true; list.setAttribute('role','listbox');
+    wrap.appendChild(btn); wrap.appendChild(list);
+    function label(){ var o=sel.options[sel.selectedIndex]; btn.textContent=o?o.textContent:''; btn.classList.toggle('placeholder', !o || o.disabled); }
+    function build(){ list.innerHTML=''; Array.prototype.forEach.call(sel.options,function(o,i){ if(o.disabled) return; var b=document.createElement('button'); b.type='button'; b.setAttribute('role','option'); b.textContent=o.textContent; if(i===sel.selectedIndex) b.className='sel';
+      b.addEventListener('click',function(){ sel.selectedIndex=i; sel.dispatchEvent(new Event('change')); label(); close(); btn.focus(); }); list.appendChild(b); }); }
+    function open(){ build(); list.hidden=false; wrap.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+    function close(){ list.hidden=true; wrap.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+    btn.addEventListener('click',function(){ list.hidden?open():close(); });
+    btn.addEventListener('keydown',function(e){ if(e.key==='ArrowDown'||e.key==='ArrowUp'){ e.preventDefault(); var n=sel.selectedIndex, step=e.key==='ArrowDown'?1:-1; do{ n+=step; }while(sel.options[n]&&sel.options[n].disabled); if(sel.options[n]){ sel.selectedIndex=n; label(); if(!list.hidden) build(); } } if(e.key==='Escape') close(); });
+    document.addEventListener('click',function(e){ if(!wrap.contains(e.target)) close(); });
+    sel.addEventListener('invalid',function(){ btn.focus(); open(); });
+    label();
+  });
+})();
+</script>
 </body>
 </html>

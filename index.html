@@ -146,7 +146,7 @@
   }
   a{ color:var(--leaf); text-decoration-thickness:1px; text-underline-offset:3px; }
   a:hover{ color:var(--leaf-deep); }
-  h1,h2,h3{ font-family:"EB Garamond", "EB Garamond Fallback", Georgia, serif; }
+  h1,h2,h3{ font-family:"EB Garamond", "EB Garamond Fallback", Georgia, serif; line-height:1.2; }
   :focus-visible{ outline:3px solid var(--focus); outline-offset:3px; border-radius:2px; }
   .wrap{ max-width:1200px; margin:0 auto; padding:0 24px; }
 
@@ -198,7 +198,7 @@
   /* ---------- credentials strip ---------- */
   .credentials{ background:var(--paper-hi); border-bottom:1px solid var(--rule); padding:34px 0; }
   .credentials .wrap{ display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; }
-  @media (max-width:760px){ .credentials .wrap{ grid-template-columns:1fr; gap:26px; } }
+  @media (max-width:760px){ .credentials{ padding:22px 0; } .credentials .wrap{ grid-template-columns:repeat(3, minmax(0,1fr)); gap:10px; align-items:start; } .cred{ gap:6px; } .cred img{ height:32px; max-width:100%; object-fit:contain; } .cred img.icb{ height:44px; margin:0; } .cred b{ font-size:.78rem; line-height:1.25; } .cred > div > span{ display:none; } .cred .icb-crest .icb-no{ font-size:.56rem; letter-spacing:.03em; margin-top:4px; } }
   .cred{ display:flex; flex-direction:column; align-items:center; text-align:center; gap:10px; }
   .cred img{ height:48px; width:auto; }
   .cred img.icb{ height:60px; margin:-6px 0; }
@@ -467,6 +467,8 @@
     .mobile-cta .mc-btn{ flex:1; text-align:center; background:var(--leaf); color:#fff; border:1px solid #9FD8B7; padding:11px 12px; border-radius:3px; text-decoration:none; font-weight:600; font-size:.95rem; }
     .mobile-cta .mc-link{ color:#CBDACD; font-size:.9rem; text-decoration:underline; white-space:nowrap; }
     body{ padding-bottom:calc(72px + env(safe-area-inset-bottom, 0px)); }
+    .mobile-cta.js-wait{ transform:translateY(110%); visibility:hidden; transition:transform .25s ease, visibility 0s linear .25s; }
+    .mobile-cta.js-wait.show{ transform:none; visibility:visible; transition:transform .25s ease, visibility 0s; }
   }
   @media print{ .mobile-cta{ display:none !important; } }
   .proof{ padding:8px 0 56px; }
@@ -495,6 +497,15 @@
   .listed{ margin-top:14px; font-size:.92rem; color:var(--ink-soft); }
   .listed a{ color:var(--leaf); font-weight:600; }
   .vat-note{ margin-top:18px; font-size:.88rem; color:var(--ink-soft); text-align:center; }
+  /* compact phone header: logo and quote button on one row, links beneath */
+  @media (max-width:760px){
+    .masthead{ display:grid; grid-template-columns:repeat(5, auto); justify-content:space-between; align-items:center; gap:12px 8px; padding-top:12px; padding-bottom:12px; }
+    .masthead nav{ display:contents; }
+    .masthead .wordmark{ grid-column:1 / 4; grid-row:1; justify-content:flex-start; }
+    .masthead .wordmark img{ width:168px; height:auto; }
+    .masthead .nav-cta{ grid-column:4 / 6; grid-row:1; justify-self:end; flex:none; margin-top:0; padding:9px 14px 10px; font-size:.9rem; }
+    .masthead nav a:not(.nav-cta){ grid-row:2; font-size:.88rem; padding:2px 0; }
+  }
 </style>
 </head>
 <body>
@@ -555,7 +566,7 @@
         <div class="meet">
           <div>
             <p class="meet-title">You work directly with me</p>
-            <p class="meet-text"><b>Spencer Elbert</b>, founder. ICB Certified, Xero Certified Advisor, CIMA Dip MA. No juniors and no call centre: the person you speak to is the one looking after your company.</p>
+            <p class="meet-text"><b>Spencer Elbert</b>, founder. One person from start to finish: the person you speak to is the one looking after your company.</p>
           </div>
         </div>
         <figure class="quote">
@@ -598,7 +609,7 @@
       <div class="plans">
         <div class="plan">
           <h3>Startup</h3>
-          <p class="for">Perfect for early-stage businesses</p>
+          <p class="for">For companies with straightforward needs</p>
           <p class="price"><small>from </small>£<span data-monthly="500" data-annual="425">500</span><small>/month</small></p>
           <p class="annual-note" data-note></p>
           <ul>
@@ -625,8 +636,7 @@
             <li>Management accounts</li>
             <li>Quarterly business reviews</li>
             <li>Tax planning advice</li>
-            <li>Priority email &amp; phone support</li>
-            <li>Direct line to Spencer</li>
+            <li>Email and phone support</li>
           </ul>
           <a class="btn" href="#contact">Get started</a>
         </div>
@@ -728,10 +738,10 @@
   <section id="about">
     <div class="wrap about-grid">
       <div>
-        <h2>Your trusted financial partner</h2>
-        <p class="section-intro">At SJE Capital, we understand that managing finances can be overwhelming for business owners. That's why we're here to take the burden off your shoulders with comprehensive accountancy and bookkeeping services.</p>
-        <p>We don't just manage your numbers. We provide insights that help you make informed business decisions, with books that are always accurate, compliant and ready for HMRC submissions. We are also a modern practice: AI and cloud automation handle the repetitive heavy lifting, and Spencer checks every number himself before anything is filed.</p>
-        <p>And you deal directly with the person doing the work: one point of contact who knows your business, your numbers and your deadlines, not a rotating cast at a large firm.</p>
+        <h2>Who looks after your company</h2>
+        <p class="section-intro">I'm Spencer Elbert, and I run SJE Capital. I have worked in finance for over 8 years, and I am ICB Certified, a Xero Certified Advisor and hold the CIMA Diploma in Management Accounting.</p>
+        <p>Your books are kept up to date in Xero every month, so your figures are ready when you need to make a decision and ready for HMRC when a return is due. Automation handles the repetitive work, and I check every number myself before anything is filed.</p>
+        <p>You deal directly with me: one point of contact who knows your business, your numbers and your deadlines.</p>
         <div style="margin-top:30px;"><a class="btn" href="#contact">Book a free consultation</a>
           <p class="listed">Find SJE Capital on the <a href="https://www.xero.com/uk/advisors/e9534436-555f-4234-8bc3-03fb45e500c2/" target="_blank" rel="noopener noreferrer">Xero Advisor Directory</a>.</p></div>
       </div>
@@ -1001,6 +1011,18 @@
   <a class="mc-btn" href="https://calendar.app.google/MgqokbUqk9WwncKk8" target="_blank" rel="noopener noreferrer" data-booking>Book a free 15-minute call</a>
   <a class="mc-link" href="#contact">Get a quote</a>
 </div>
+<script>
+(function(){
+  // Bottom bar on phones: appears once the hero button has scrolled away, hides again while the enquiry form is on screen
+  var bar=document.querySelector('.mobile-cta'), hero=document.querySelector('.hero .actions'), form=document.getElementById('contact');
+  if(!bar||!hero||!('IntersectionObserver' in window)) return;
+  bar.classList.add('js-wait');
+  var heroVis=true, formVis=false;
+  function upd(){ bar.classList.toggle('show', !heroVis && !formVis); }
+  new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.target===hero) heroVis=e.isIntersecting||e.boundingClientRect.top>0; else formVis=e.isIntersecting; }); upd(); }).observe(hero);
+  if(form){ new IntersectionObserver(function(es){ formVis=es[0].isIntersecting; upd(); }).observe(form); }
+})();
+</script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "00529846a08f42db871a69a17e005ffd"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

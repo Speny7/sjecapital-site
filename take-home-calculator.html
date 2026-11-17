@@ -656,6 +656,7 @@
     var slB=studentLoan(i.other+sal, sal, i.planT, i.pg); if(i.other<=2000) slB={total:slB.viaPaye,viaPaye:slB.viaPaye,viaSA:0};
     return {sal:sal,leftover:leftover,erni:erni,pt:pt,eeni:eeni,sl:slB,take:sal-pt.itCompany-eeni-pt.cb-slB.total,tax:erni+pt.itCompany+eeni+pt.cb};
   }
+  (function(){ try{ var q=new URLSearchParams(location.search).get('profit'); if(q&&/^\d+$/.test(q)){ var e=document.getElementById('profit-num'); e.value=(+q).toLocaleString('en-GB'); } }catch(err){} })();
   function read(){
     var raw={salIn:num('salary'), penIn:num('pension'), other:num('other'), retain:num('retain'),
             kids:+document.getElementById('kids').value, region:document.getElementById('region').value, ea:document.getElementById('ea').checked, planT:+document.getElementById('plan').value, pg:document.getElementById('pg').checked};
@@ -906,5 +907,6 @@ document.querySelectorAll('.calc-input label').forEach(function(l){
 });
 </script>
 <script src="/consent.js" defer></script>
+<script src="/sticky-result.js" data-target="a-take" data-label="Take-home, salary and dividends:" defer></script>
 </body>
 </html>

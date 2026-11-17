@@ -230,10 +230,14 @@
   @media (max-width:760px){ .ledger-row{ grid-template-columns:1fr; gap:10px; } }
 
   /* ---------- about / trust ---------- */
-  .about-grid{ display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,1fr); gap:56px; align-items:start; }
+  .about-grid{ display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,1fr); gap:40px 56px; align-items:center; }
   .about-grid .section-intro{ margin-bottom:20px; }
   .about-grid p + p{ margin-top:16px; color:var(--ink-soft); }
   .about-grid .figures{ margin-top:26px; }
+  .about-grid .figures-row{ grid-column:1 / -1; margin-top:8px; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:0 32px; }
+  .about-grid .figures-row div{ flex-direction:column; align-items:flex-start; justify-content:flex-start; gap:4px; padding:18px 4px; }
+  .about-grid .figures-row span{ text-align:left; }
+  @media (max-width:820px){ .about-grid .figures-row{ grid-template-columns:1fr; } .about-grid .figures-row div{ flex-direction:row; align-items:baseline; justify-content:space-between; } .about-grid .figures-row span{ text-align:right; } }
   .portrait{ border:1px solid var(--rule); background:var(--paper-hi); padding:10px 10px 8px; margin:8px 0 0; }
   .portrait img{ display:block; width:100%; height:auto; }
   .portrait figcaption{ font-size:.875rem; color:var(--ink-soft); text-align:center; padding-top:8px; }
@@ -451,7 +455,7 @@
   @media (hover:hover){ .chooser-opts a:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(20,56,43,.10); border-top-color:var(--leaf); } }
   .chooser-opts b{ display:block; font-family:"EB Garamond", "EB Garamond Fallback", Georgia, serif; font-size:1.15rem; font-weight:600; }
   .chooser-opts span{ font-size:.85rem; color:var(--ink-soft); }
-  .flow{ padding:72px 0 24px; }
+  .flow{ padding:72px 0; }
   .steps{ list-style:none; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px; margin-top:22px; counter-reset:none; }
   .steps li{ background:var(--paper-hi); border-top:2px solid var(--ink); padding:18px 18px 20px; transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
   @media (hover:hover){ .steps li:hover{ transform:translateY(-3px); box-shadow:0 10px 24px rgba(20,56,43,.10); border-top-color:var(--leaf); } }
@@ -474,7 +478,7 @@
   }
   @media print{ .mobile-cta{ display:none !important; } }
   .proof{ padding:56px 0; }
-  .proof-grid{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.25fr); gap:22px; align-items:stretch; }
+  .proof-grid{ display:grid; grid-template-columns:minmax(0,1fr); max-width:820px; margin:0 auto; gap:22px; align-items:stretch; }
   .meet{ display:flex; gap:18px; align-items:flex-start; background:var(--paper-hi); border-top:2px solid var(--ink); padding:22px 22px; }
   .meet img{ width:76px; height:76px; border-radius:50%; object-fit:cover; flex:none; }
   .meet-title{ font-family:"EB Garamond", "EB Garamond Fallback", Georgia, serif; font-size:1.35rem; font-weight:600; color:var(--ink); margin:0 0 6px; }
@@ -508,6 +512,26 @@
     .masthead .nav-cta{ grid-column:4 / 6; grid-row:1; justify-self:end; flex:none; margin-top:0; padding:9px 14px 10px; font-size:.9rem; }
     .masthead nav a:not(.nav-cta){ grid-row:2; font-size:.88rem; padding:2px 0; }
   }
+  .step-label{ font-size:.8rem; letter-spacing:.08em; text-transform:uppercase; color:#9FD8B7; margin-bottom:12px; }
+  .step-actions{ display:flex; gap:12px; align-items:center; }
+  .step-actions .back{ background:none; border:none; color:#9FD8B7; text-decoration:underline; cursor:pointer; font:inherit; padding:0; }
+  .js .step2{ display:none; }
+  .js .on-step2 .step1{ display:none; }
+  .js .on-step2 .step2{ display:block; }
+  /* hero quick check */
+  .mini-calc{ margin-top:26px; max-width:560px; background:var(--paper-hi); border:1px solid var(--rule); border-top:3px solid var(--leaf); padding:16px 18px 14px; }
+  .mc-kicker{ font-size:.75rem; letter-spacing:.1em; text-transform:uppercase; color:var(--leaf-deep); font-weight:600; margin:0 0 6px; }
+  .mc-label{ display:block; font-weight:600; font-size:.95rem; margin-bottom:6px; }
+  .mc-row{ display:flex; align-items:center; border:1px solid var(--rule); background:#fff; border-radius:3px; max-width:240px; }
+  .mc-pound{ padding:0 4px 0 12px; color:var(--ink-soft); }
+  .mc-row input{ border:0; outline:0; font:inherit; font-size:1.05rem; padding:9px 10px 9px 2px; width:100%; background:transparent; color:var(--ink); }
+  .mc-row:focus-within{ border-color:var(--leaf); box-shadow:0 0 0 3px rgba(31,107,74,.15); }
+  .mc-out{ margin:12px 0 6px; line-height:1.5; }
+  .mc-out b{ font-family:"EB Garamond", "EB Garamond Fallback", Georgia, serif; font-size:1.25rem; color:var(--leaf-deep); font-variant-numeric:tabular-nums; }
+  .mc-work summary{ cursor:pointer; color:var(--leaf-deep); text-decoration:underline; text-underline-offset:3px; font-size:.9rem; }
+  .mc-work div{ font-size:.88rem; color:var(--ink-soft); margin-top:6px; }
+  .mc-work div p{ margin:3px 0; }
+  .mc-link{ display:inline-block; margin-top:8px; font-size:.92rem; color:var(--leaf-deep); }
 </style>
 </head>
 <body>
@@ -546,6 +570,14 @@
           <li><b>No surprise bills.</b> One fixed monthly fee, agreed before we start.</li>
           <li><b>No juniors.</b> The person you speak to is the one doing your books.</li>
         </ul>
+        <div class="mini-calc" id="mini-calc">
+          <p class="mc-kicker">Quick check</p>
+          <label for="mc-profit" class="mc-label">Your company&rsquo;s yearly profit before paying you</label>
+          <div class="mc-row"><span class="mc-pound">£</span><input id="mc-profit" type="text" inputmode="numeric" value="80,000" autocomplete="off"></div>
+          <p class="mc-out">You could take home <b id="mc-year">£0.00</b> a year, which is <b id="mc-month">£0.00</b> a month, as a £12,570 salary plus dividends.</p>
+          <details class="mc-work"><summary>Show the working</summary><div id="mc-work"></div></details>
+          <a class="mc-link" id="mc-link" href="/take-home-calculator">Tailor it in the full calculator &rarr;</a>
+        </div>
       </div>
       <figure class="hero-portrait">
         <img src="/img/spencer-elbert-2026.webp" width="520" height="520" alt="Spencer Elbert, founder of SJE Capital" fetchpriority="high">
@@ -565,12 +597,6 @@
   <section class="proof">
     <div class="wrap">
       <div class="proof-grid">
-        <div class="meet">
-          <div>
-            <p class="meet-title">You work directly with me</p>
-            <p class="meet-text"><b>Spencer Elbert</b>, founder. One person from start to finish: the person you speak to is the one looking after your company.</p>
-          </div>
-        </div>
         <figure class="quote">
           <p class="proof-kicker">What clients say</p>
           <blockquote>SJE Capital has been amazing with helping me start my limited company. They explained everything thoroughly and answered all my questions regarding tax, invoicing, PAYE and accounting. Many thanks!</blockquote>
@@ -752,12 +778,12 @@
           <img src="/img/spencer-elbert-2026.webp" width="520" height="520" alt="Spencer Elbert, founder of SJE Capital" loading="lazy">
           <figcaption>Spencer, founder of SJE Capital</figcaption>
         </figure>
-        <div class="figures" aria-label="Practice figures">
+      </div>
+        <div class="figures figures-row" aria-label="Practice figures">
           <div><b>200+</b><span>businesses supported across the UK</span></div>
           <div><b>8+ years</b><span>professional experience</span></div>
           <div><b>24hr</b><span>typical response time</span></div>
         </div>
-      </div>
     </div>
   </section>
 
@@ -798,21 +824,11 @@
             </div>
           </dl>
         </div>
-        <form class="enquiry" name="quote" method="POST" action="/thanks" data-netlify="true" netlify-honeypot="bot-field">
+        <form class="enquiry" id="home-form" name="quote" method="POST" action="/thanks" data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="quote">
           <p class="hp"><label>Leave this empty <input name="bot-field"></label></p>
-          <div class="f-row">
-            <label for="f-name">Your name</label>
-            <input id="f-name" name="name" type="text" autocomplete="name" required>
-          </div>
-          <div class="f-row">
-            <label for="f-email">Email</label>
-            <input id="f-email" name="email" type="email" autocomplete="email" required>
-          </div>
-          <div class="f-row">
-            <label for="f-company">Company name <span class="opt">(or "not formed yet")</span></label>
-            <input id="f-company" name="company" type="text" autocomplete="organization">
-          </div>
+          <div class="step1">
+            <p class="step-label">Step 1 of 2: your company</p>
           <div class="f-row">
             <label for="f-need">What do you need help with?</label>
             <select id="f-need" name="need" required>
@@ -838,10 +854,27 @@
             <details class="info"><summary><span>What is turnover?</span></summary><p class="hint">Your company's total sales for a year, before any costs are taken off. A rough figure is fine.</p></details>
           </div>
           <div class="f-row">
+            <label for="f-company">Company name <span class="opt">(or "not formed yet")</span></label>
+            <input id="f-company" name="company" type="text" autocomplete="organization">
+          </div>
+            <div class="step-actions"><button type="button" class="btn" id="home-to-step2">Next: where to send your quote</button></div>
+          </div>
+          <div class="step2">
+            <p class="step-label">Step 2 of 2: where to send it</p>
+          <div class="f-row">
+            <label for="f-name">Your name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="f-row">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="f-row">
             <label for="f-msg">Anything else we should know? <span class="opt">(optional)</span></label>
             <textarea id="f-msg" name="message" rows="4"></textarea>
           </div>
-          <button type="submit" class="btn">Send my enquiry</button>
+            <div class="step-actions"><button type="submit" class="btn">Send my enquiry</button><button type="button" class="back" id="home-to-step1">Back</button></div>
+          </div>
           <p class="f-note">We reply within one working day. Your details are used only to answer your enquiry. See our <a href="/privacy">privacy notice</a>.</p>
         </form>
       </div>
@@ -1026,6 +1059,53 @@
 })();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "00529846a08f42db871a69a17e005ffd"}'></script><!-- End Cloudflare Web Analytics -->
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var form=document.getElementById('home-form'); if(!form) return;
+  var next=document.getElementById('home-to-step2'), back=document.getElementById('home-to-step1'), s1=form.querySelectorAll('.step1 [required]');
+  next.addEventListener('click',function(){
+    for(var i=0;i<s1.length;i++){ if(!s1[i].checkValidity()){ var bad=s1[i]; setTimeout(function(){ bad.reportValidity(); },0); return; } }
+    form.classList.add('on-step2'); document.getElementById('f-name').focus();
+  });
+  back.addEventListener('click',function(){ form.classList.remove('on-step2'); var n=document.getElementById('f-need'); (n.parentNode.querySelector('.bs-btn')||n).focus(); });
+})();
+</script>
+<script>
+/* hero quick check: same rules as the take-home calculator's default (England, £12,570 salary, no Employment Allowance) */
+(function(){
+  var el=document.getElementById('mc-profit'); if(!el) return;
+  var PT=12570, UEL=50270, ST=5000, PA=12570, UK=[37700,125140,Infinity], UKR=[0.2,0.4,0.45], DV=[0.1075,0.3575,0.3935];
+  function r2(x){ return Math.round((x+(x>=0?1e-9:-1e-9))*100)/100; }
+  function f(n){ return '£'+n.toLocaleString('en-GB',{minimumFractionDigits:2,maximumFractionDigits:2}); }
+  function pa(ani){ return ani<=100000?PA:Math.max(0,r2(PA-(ani-100000)/2)); }
+  function band(amount,pos,rates){ var t=0,rem=amount,p=pos; for(var i=0;i<UK.length;i++){ var amt=Math.min(rem,Math.max(0,UK[i]-p)); if(amt>0) t=r2(t+r2(amt*rates[i])); p+=amt; rem-=amt; if(rem<=0) break; } return t; }
+  function ct(p){ p=r2(p); if(p<=0) return 0; if(p<=50000) return r2(p*0.19); if(p>=250000) return r2(p*0.25); return r2(p*0.25-(250000-p)*0.015); }
+  function erNI(s){ return r2(Math.max(0,(s-ST)*0.15)); }
+  function calc(profit){
+    var sal=12570;
+    if(sal+erNI(sal)>profit+1e-9){ sal=r2(profit<=ST?profit:(profit+ST*0.15)/1.15); while(sal>0&&sal+erNI(sal)>profit+1e-9) sal=r2(sal-0.01); }
+    var er=erNI(sal), tp=Math.max(0,profit-sal-er), c=ct(tp), div=Math.max(0,tp-c);
+    var ani=sal+div, allow=pa(ani), nd=Math.max(0,sal-allow), paLeft=Math.max(0,allow-sal);
+    var it=band(nd,0,UKR), dtx=Math.max(0,div-paLeft), al=Math.min(500,dtx), dt=band(dtx-al,nd+al,DV);
+    var ee=r2(Math.max(0,Math.min(sal,UEL)-PT)*0.08)+r2(Math.max(0,sal-UEL)*0.02);
+    var take=r2(sal+div-it-ee-dt);
+    return {sal:sal,er:er,tp:tp,ct:c,div:div,it:it,ee:ee,dt:dt,take:take};
+  }
+  function run(){
+    var p=Math.min(10000000,Math.max(0,+String(el.value).replace(/[^\d.]/g,'')||0)), r=calc(p), m=r2(r.take/12);
+    document.getElementById('mc-year').textContent=f(r.take); document.getElementById('mc-month').textContent=f(m);
+    document.getElementById('mc-link').href='/take-home-calculator?profit='+Math.round(p);
+    document.getElementById('mc-work').innerHTML='<p>Profit '+f(p)+' &minus; salary '+f(r.sal)+' &minus; employer National Insurance '+f(r.er)+' = '+f(r.tp)+' taxable profit.</p>'
+      +'<p>Corporation Tax on '+f(r.tp)+' = '+f(r.ct)+', leaving '+f(r.tp)+' &minus; '+f(r.ct)+' = '+f(r.div)+' to pay as dividends.</p>'
+      +'<p>Your tax: Income Tax '+f(r.it)+', employee National Insurance '+f(r.ee)+', dividend tax '+f(r.dt)+'.</p>'
+      +'<p>Take-home: '+f(r.sal)+' + '+f(r.div)+' &minus; '+f(r.it)+' &minus; '+f(r.ee)+' &minus; '+f(r.dt)+' = '+f(r.take)+', and '+f(r.take)+' &divide; 12 = '+f(m)+' a month.</p>';
+  }
+  el.addEventListener('input',function(){ var v=String(el.value).replace(/[^\d]/g,''); el.value=v?(+v).toLocaleString('en-GB'):''; run(); });
+  run();
+  window.__miniCalc=calc;
+})();
+</script>
 <script src="/consent.js" defer></script>
 </body>
 </html>

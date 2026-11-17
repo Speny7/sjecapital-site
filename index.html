@@ -534,7 +534,8 @@
   .mc-link{ display:inline-block; margin-top:8px; font-size:.92rem; color:var(--leaf-deep); }
 
   /* ---------- homepage refresh (18 Nov 2026) ---------- */
-  .hero .wrap{ grid-template-columns:minmax(0,1.25fr) minmax(0,1fr); gap:56px; }
+  @media (min-width:901px){ .hero .wrap{ grid-template-columns:minmax(0,1.25fr) minmax(0,1fr); gap:56px; } }
+  @media (max-width:900px){ .hero-side{ margin-top:30px; } .hero-side .mini-calc{ padding:20px 18px 18px; } .mc-row{ max-width:none; } }
   .founder-line{ display:flex; align-items:center; gap:14px; margin-top:26px; }
   .founder-line img{ width:56px; height:56px; border-radius:50%; object-fit:cover; border:2px solid var(--paper-hi); flex:none; }
   .founder-line p{ margin:0; font-size:.95rem; color:var(--ink-soft); }
@@ -574,7 +575,7 @@
   #pricing .plan.popular a.btn{ background:var(--leaf); color:#fff; border-color:var(--leaf-deep); }
   #pricing .plan.popular a.btn:hover{ background:var(--leaf-deep); color:#fff; }
   #pricing .plan h3, #pricing .plan .price{ color:var(--ink); font-family:"EB Garamond", "EB Garamond Fallback", Georgia, serif; }
-  .about-grid{ grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); align-items:center; }
+  @media (min-width:821px){ .about-grid{ grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); align-items:center; } }
   .about-grid .figures-row{ grid-column:auto; margin-top:22px; }
   .about-photo .portrait{ margin:0; max-width:440px; }
   @media (max-width:820px){ .about-photo{ order:2; } }

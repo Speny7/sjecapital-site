@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="no-js">
+<head>
+<meta charset="UTF-8">
+<link rel="preload" href="/logo-header.svg" as="image" type="image/svg+xml" fetchpriority="high">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>Company car tax calculator for directors 2026/27</title>
+<meta property="og:title" content="Company car tax calculator for directors 2026/27">
+<meta property="og:description" content="Is a company car worth it? See the 2026/27 benefit-in-kind tax and compare a company car with your own car plus mileage, worked to the penny.">
+<meta property="og:url" content="https://www.sjecapital.co.uk/company-car-tax-calculator">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.sjecapital.co.uk/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://www.sjecapital.co.uk/company-car-tax-calculator">
+<link rel="icon" href="favicon-512.png" type="image/png" sizes="512x512">
+<meta property="og:site_name" content="SJE Capital">
+<meta name="description" content="Is a company car worth it? See the 2026/27 benefit-in-kind tax and compare a company car with your own car plus mileage, worked to the penny.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/eb-garamond.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{ font-family:"EB Garamond"; src:url(/fonts/eb-garamond.woff2) format("woff2"); font-weight:500 700; font-style:normal; font-display:swap; }
+  @font-face{ font-family:"Source Serif 4"; src:url(/fonts/source-serif-4.woff2) format("woff2"); font-weight:400 700; font-style:normal; font-display:swap; }
+
+  :root{ color-scheme:light;
+    --ink:#14382B; --ink-soft:#2A5340; --leaf:#1E6B4A; --leaf-deep:#155238;
+    --paper:#F2F5EF; --paper-hi:#FBFCF9; --rule:#C7D4C6; --rule-soft:#DCE5DA; --focus:#0E8A5F;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  body{ font-family:"Source Serif 4", Georgia, serif; background:var(--paper); color:var(--ink); font-size:1.0625rem; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3{ font-family:"EB Garamond", "EB Garamond Fallback", Georgia, serif; line-height:1.2; }
+  a{ color:var(--leaf); text-decoration-thickness:1px; text-underline-offset:3px; }
+  a:hover{ color:var(--leaf-deep); }
+  :focus-visible{ outline:3px solid var(--focus); outline-offset:3px; border-radius:2px; }
+  .wrap{ max-width:1200px; margin:0 auto; padding:0 24px; }
+  header{ background:var(--ink); border-bottom:1px solid #2A5340; }
+  .masthead{ display:flex; align-items:center; justify-content:space-between; gap:24px; padding:18px 24px; max-width:1200px; margin:0 auto; }
+  .wordmark{ display:flex; align-items:center; text-decoration:none; }
+  nav{ display:flex; gap:26px; align-items:center; }
+  nav a{ color:#DCE8DE; text-decoration:none; font-size:.9375rem; font-weight:500; border-bottom:2px solid transparent; padding-bottom:2px; }
+  nav a:hover{ border-bottom-color:#9FD8B7; color:#fff; }
+  .nav-cta{ background:var(--paper-hi); color:var(--ink) !important; padding:9px 18px 10px; border-radius:3px; border-bottom:none !important; }
+  .nav-cta:hover{ background:#fff; color:var(--leaf-deep) !important; }
+  @media (max-width:760px){
+    .masthead{ flex-direction:column; align-items:center; gap:16px; padding-top:18px; padding-bottom:18px; }
+    .wordmark{ justify-content:center; }
+    nav{ width:100%; justify-content:center; gap:10px 18px; flex-wrap:wrap; align-items:center; }
+    nav a{ padding:4px 0; font-size:.9rem; }
+    .nav-cta{ flex:1 0 100%; text-align:center; margin-top:6px; padding:12px 16px 13px; }
+  }
+  .page-head{ padding-top:64px; padding-bottom:10px; }
+  h1{ font-size:clamp(2rem, 4.5vw, 3rem); font-weight:600; letter-spacing:-.015em; }
+  .page-head p{ color:var(--ink-soft); margin-top:10px; max-width:60ch; }
+  .dates{ padding-top:34px; padding-bottom:60px; }
+  .dates{ display:grid; grid-template-columns:1fr 1fr; gap:0 64px; align-items:start; }
+  .dates > h2, .timeline-wrap, .timeline-note, .disclaimer{ grid-column:1 / -1; }
+  .date-block:last-child{ grid-column:1 / -1; }
+  @media (max-width:820px){ .dates{ grid-template-columns:1fr; } }
+
+  .date-block{ border-top:2px solid var(--ink); padding:24px 4px 26px; }
+  .date-block + .date-block{ border-top:1px solid var(--rule); }
+  .date-block h2{ font-size:1.4rem; font-weight:600; margin-bottom:12px; }
+  .date-block dl div{ display:grid; grid-template-columns:minmax(0,200px) 1fr; gap:18px; padding:9px 0; border-bottom:1px solid var(--rule-soft); }
+  .date-block dt{ font-weight:600; font-size:.9875rem; }
+  .date-block dd{ font-size:.9875rem; color:var(--ink-soft); max-width:64ch; }
+  @media (max-width:600px){ .date-block dl div{ grid-template-columns:1fr; gap:2px; } }
+  .timeline-wrap{ overflow-x:auto; margin:18px 0 40px; }
+  .timeline-wrap svg{ min-width:760px; width:100%; height:auto; display:block; }
+  .timeline-note{ font-size:.875rem; color:var(--ink-soft); margin:-18px 0 40px; }
+  .disclaimer{ max-width:78ch; font-size:.875rem; color:var(--ink-soft); border:1px solid var(--rule); border-left:3px solid var(--leaf); background:var(--paper-hi); padding:14px 18px; margin-bottom:34px; }
+  .cta-band{ background:var(--ink); color:var(--paper-hi); padding:48px 0 54px; }
+  .cta-band h2{ color:#fff; font-size:1.6rem; margin-bottom:8px; }
+  .cta-band p{ color:#CBDACD; margin-bottom:22px; max-width:56ch; }
+  .btn{ display:inline-block; background:var(--paper-hi); color:var(--ink); text-decoration:none; padding:13px 24px 14px; font-weight:600; border-radius:3px; }
+  .btn:hover{ background:#fff; color:var(--leaf-deep); }
+  footer{ background:var(--ink); color:#9FBFA8; font-size:.875rem; padding:26px 0; border-top:1px solid #2A5340; }
+  footer .wrap{ display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; max-width:1200px; }
+
+  @media (max-width:760px){
+    .page-head{ padding-top:36px; padding-bottom:6px; }
+    .page-head h1{ font-size:2rem; }
+    .dates{ padding-top:22px; padding-bottom:44px; }
+    .date-block{ padding:20px 0 22px; }
+    .timeline-wrap{ margin:14px 0 22px; }
+    .timeline-note{ margin:0 0 28px; }
+    .disclaimer{ padding:12px 14px; margin-bottom:26px; }
+    .cta-band{ padding:40px 0 44px; }
+    .posts{ padding-top:20px; padding-bottom:56px; }
+    .res-grid{ padding-top:20px; padding-bottom:50px; }
+    .calc-layout{ padding-top:14px; padding-bottom:50px; }
+    .article-head{ padding-top:36px; padding-bottom:6px; }
+    .article-head h1{ font-size:2rem; }
+    .article-body{ padding-top:24px; margin-top:26px; }
+    .quick-read{ padding:20px 18px 22px; }
+    .article{ gap:32px; }
+    footer .wrap{ flex-direction:column; gap:6px; }
+  }
+
+  .calc-layout{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.6fr); gap:56px; align-items:start; padding-top:20px; padding-bottom:70px; }
+  .calc-results{ position:sticky; top:24px; }
+  .calc-input label{ display:block; font-size:.9375rem; font-weight:600; color:var(--ink); margin:22px 0 6px; }
+  .calc-input > label:first-child{ margin-top:0; }
+  .calc-input .amount{ font-family:"EB Garamond", Georgia, serif; font-size:2.3rem; font-weight:600; letter-spacing:-.02em; font-variant-numeric:tabular-nums; margin-bottom:4px; }
+  .calc-input input[type=range]{ width:100%; accent-color:var(--leaf); cursor:pointer; margin:4px 0 6px; }
+  .calc-input input[type=number], .calc-input input[type=text], .calc-input select{ font-family:inherit; font-size:1rem; padding:10px 12px; border:1px solid var(--rule); border-radius:3px; width:100%; background:var(--paper-hi); color:var(--ink); transition:border-color .15s, box-shadow .15s; }
+  .calc-input input[type=number]:focus, .calc-input input[type=text]:focus, .calc-input select:focus, .calc-input input[type=number]:focus-visible, .calc-input input[type=text]:focus-visible, .calc-input select:focus-visible{ outline:none; border-color:var(--leaf); box-shadow:0 0 0 3px rgba(30,107,74,.14); }
+  input[type=number]{ -moz-appearance:textfield; appearance:textfield; }
+  input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button{ -webkit-appearance:none; margin:0; }
+  .calc-input .row{ display:grid; grid-template-columns:1fr 1fr; gap:14px; align-items:end; }
+  .calc-input .row label{ margin-top:0; }
+  .calc-input .check{ display:flex; gap:10px; align-items:flex-start; margin-top:14px; font-size:.9375rem; }
+  .calc-input .check input{ margin-top:5px; accent-color:var(--leaf); width:16px; height:16px; }
+  .calc-input .hint{ font-size:.85rem; line-height:1.5; color:var(--ink-soft); margin-top:6px; }
+  .calc-input .hint a{ color:var(--leaf); }
+  .calc-input .explain{ font-size:.875rem; line-height:1.55; color:var(--ink-soft); background:var(--paper-hi); border:1px solid var(--rule); border-left:3px solid var(--leaf); padding:12px 14px; margin-top:10px; }
+  .calc-input .explain strong{ color:var(--ink); }
+  .calc-input .sub{ margin-left:0; padding:14px 16px 4px; border-left:2px solid var(--rule); margin-top:8px; }
+  .seg{ display:inline-flex; border:1px solid var(--ink); border-radius:3px; overflow:hidden; margin-top:8px; }
+  .seg button{ font-family:inherit; font-size:.9rem; font-weight:600; padding:8px 14px 9px; background:transparent; color:var(--ink); border:none; cursor:pointer; }
+  .seg button[aria-pressed="true"]{ background:var(--ink); color:var(--paper-hi); }
+  .seg button:focus-visible{ outline:3px solid var(--focus); outline-offset:-3px; }
+  details.more{ margin-top:26px; }
+  details.more > summary{ cursor:pointer; list-style:none; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 16px; border:1px solid var(--ink); border-radius:3px; background:var(--paper-hi); font-weight:600; color:var(--ink); }
+  details.more > summary:hover{ background:var(--ink); color:var(--paper-hi); }
+  details.more > summary::-webkit-details-marker{ display:none; }
+  details.more > summary::after{ content:"\25BE"; font-size:1.1rem; transition:transform .2s; }
+  details[open].more > summary::after{ transform:rotate(180deg); }
+  details[open].more > summary{ border-bottom-left-radius:0; border-bottom-right-radius:0; }
+  details.more .more-body{ border:1px solid var(--rule); border-top:none; padding:6px 16px 18px; background:var(--paper-hi); }
+  .assume{ font-size:.875rem; color:var(--ink-soft); margin-top:24px; border-top:1px solid var(--rule); padding-top:14px; }
+  .assume li{ margin-left:18px; margin-bottom:4px; }
+  .view-switch{ display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap; margin-bottom:16px; }
+  .view-switch .lbl{ font-size:.9rem; color:var(--ink-soft); }
+  .routes{ display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  .routes.one{ grid-template-columns:1fr; }
+  .route{ border:1px solid var(--rule); border-top:2px solid var(--ink); background:var(--paper-hi); padding:24px 24px 26px; }
+  .route.best{ background:var(--ink); color:var(--paper-hi); border-color:var(--ink); }
+  .route .kicker{ font-size:.8rem; letter-spacing:.08em; text-transform:uppercase; color:var(--leaf); margin-bottom:6px; }
+  .route.best .kicker{ color:#9FD8B7; }
+  .route h2{ font-size:1.25rem; font-weight:600; margin-bottom:14px; }
+  .route .big{ font-family:"EB Garamond", Georgia, serif; font-size:2.3rem; font-weight:600; letter-spacing:-.02em; font-variant-numeric:tabular-nums; line-height:1; }
+  .route .biglabel{ font-size:.875rem; color:var(--ink-soft); margin:6px 0 18px; }
+  .route.best .biglabel{ color:#CBDACD; }
+  .route dl div{ display:flex; justify-content:space-between; gap:12px; padding:7px 0; border-bottom:1px solid var(--rule-soft); font-size:.9375rem; font-variant-numeric:tabular-nums; }
+  .route.best dl div{ border-bottom-color:#2A5340; }
+  .route dl div.total{ font-weight:600; border-bottom:2px solid currentColor; }
+  .route dl div[hidden], .route[hidden]{ display:none; }
+  .route .note{ font-size:.85rem; color:var(--ink-soft); margin-top:12px; line-height:1.5; }
+  .route.best .note{ color:#CBDACD; }
+  .route.best .note a{ color:#9FD8B7; font-weight:600; }
+  .marginal{ margin-top:24px; border:1px solid var(--rule); border-left:3px solid var(--leaf); background:var(--paper-hi); padding:16px 20px; display:grid; grid-template-columns:auto 1fr; gap:6px 20px; align-items:center; }
+  .marginal b{ font-family:"EB Garamond", Georgia, serif; font-size:2rem; font-weight:600; font-variant-numeric:tabular-nums; line-height:1; grid-row:span 2; }
+  .marginal .m-title{ font-weight:600; }
+  .marginal .m-sub{ font-size:.875rem; color:var(--ink-soft); line-height:1.5; }
+  details.workings{ margin-top:22px; border:1px solid var(--rule); background:var(--paper-hi); }
+  details.workings summary{ cursor:pointer; padding:14px 18px; font-weight:600; list-style:none; }
+  details.workings summary::-webkit-details-marker{ display:none; }
+  details.workings summary::before{ content:"+"; display:inline-block; width:18px; color:var(--leaf); font-weight:700; }
+  details[open].workings summary::before{ content:"\2212"; }
+  details.workings .inner{ padding:0 18px 18px; font-size:.9375rem; }
+  details.workings h3{ font-size:1.05rem; font-weight:600; margin:14px 0 8px; }
+  details.workings ol{ margin-left:20px; }
+  details.workings li{ margin-bottom:6px; font-variant-numeric:tabular-nums; }
+  .related{ margin-top:14px; font-size:.9375rem; color:var(--ink-soft); }
+  @media (max-width:900px){ .calc-layout{ grid-template-columns:1fr; gap:36px; } .calc-results{ position:static; } .routes{ grid-template-columns:1fr; } }
+  @media (max-width:760px){ .calc-layout{ padding-top:14px; padding-bottom:50px; } .page-head{ padding-top:36px; padding-bottom:6px; } .page-head h1{ font-size:2rem; } .cta-band{ padding:40px 0 44px; } footer .wrap{ flex-direction:column; gap:6px; } }
+
+  /* distinct tab-style buttons */
+  .tabs{ display:flex; gap:8px; flex-wrap:wrap; }
+  .tabs button{ font-family:inherit; font-size:.9rem; font-weight:600; padding:9px 16px 10px; background:var(--paper-hi); color:var(--ink); border:1px solid var(--ink); border-radius:3px; cursor:pointer; transition:background .15s, color .15s; }
+  .tabs button:hover{ background:var(--rule-soft); }
+  .tabs button[aria-pressed="true"]{ background:var(--ink); color:var(--paper-hi); }
+  .tabs button:focus-visible{ outline:3px solid var(--focus); outline-offset:2px; }
+  /* where to find it callout */
+  .findit{ margin-top:8px; font-size:.85rem; line-height:1.5; background:var(--paper-hi); border:1px solid var(--rule); border-left:3px solid var(--leaf); padding:10px 12px; color:var(--ink); }
+  .findit strong{ color:var(--leaf); display:block; margin-bottom:2px; letter-spacing:.02em; }
+  /* headline difference panel (director) */
+  .headline-diff{ margin-top:24px; background:var(--ink); color:var(--paper-hi); padding:22px 24px; display:grid; grid-template-columns:auto 1fr; gap:4px 22px; align-items:center; }
+  .headline-diff b{ font-family:"EB Garamond", Georgia, serif; font-size:2.6rem; font-weight:600; font-variant-numeric:tabular-nums; line-height:1; color:#fff; grid-row:span 2; }
+  .headline-diff .d-title{ font-weight:600; font-size:1.05rem; color:#fff; }
+  .headline-diff .d-sub{ font-size:.9rem; color:#CBDACD; line-height:1.5; }
+  .calc-input .taxcode{ text-transform:uppercase; letter-spacing:.06em; font-variant-numeric:tabular-nums; }
+  .calc-input .warn{ color:var(--ink); font-weight:600; font-size:.85rem; margin-top:6px; }
+  .workings-part[hidden]{ display:none; }
+
+  details.info{ margin-top:6px; }
+  details.info summary{ list-style:none; cursor:pointer; display:inline-flex; align-items:center; gap:6px; font-size:.85rem; font-weight:600; color:var(--leaf); padding:2px 0; }
+  details.info summary::-webkit-details-marker{ display:none; }
+  details.info summary::after{ content:"\25BE"; font-size:.9rem; transition:transform .2s; display:inline-block; text-decoration:none; }
+  details[open].info summary::after{ transform:rotate(180deg); }
+  details.info summary:hover span{ text-decoration:underline; text-underline-offset:3px; }
+  details.info .hint, details.info .findit, details.info .explain{ margin-top:8px; }
+
+  .money-wrap{ position:relative; display:block; }
+  .money-wrap::before{ content:"£"; position:absolute; left:12px; top:50%; transform:translateY(-50%); color:var(--ink-soft); font-size:1rem; pointer-events:none; }
+  .money-wrap input.money{ padding-left:26px; }
+
+  .wk{ border-top:1px solid var(--rule); margin:6px 0 14px; font-variant-numeric:tabular-nums; }
+  .wk div{ display:grid; grid-template-columns:1fr auto; gap:12px; padding:7px 0; border-bottom:1px solid var(--rule-soft); font-size:.9375rem; align-items:start; }
+  .wk .lbl small{ display:block; font-size:.8rem; color:var(--ink-soft); line-height:1.45; margin-top:2px; }
+  .wk .amt{ white-space:nowrap; text-align:right; }
+  .wk div.sub{ font-weight:600; border-top:1px solid var(--rule); }
+  .wk div.tot{ font-weight:700; border-bottom:3px double var(--ink); }
+  .wk div.info .amt{ color:var(--ink-soft); }
+  details.workings h3{ margin-top:18px; }
+  details.workings .aside{ font-size:.875rem; color:var(--ink-soft); margin-top:6px; line-height:1.5; }
+
+  .dl-row{ margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; }
+  .dl-row button.btn{ cursor:pointer; font-family:inherit; background:var(--paper-hi); color:var(--ink); border:1px solid var(--ink); }
+  .dl-row button.btn:hover{ background:var(--ink); color:var(--paper-hi); }
+  .sched{ margin-top:10px; border-top:1px solid var(--rule); }
+  .sched-row{ display:grid; grid-template-columns:150px 1fr auto; gap:16px; padding:11px 0; border-bottom:1px solid var(--rule-soft); align-items:start; font-size:.9375rem; }
+  .sched-row strong{ font-family:"EB Garamond", Georgia, serif; font-size:1.05rem; font-weight:600; line-height:1.3; }
+  .sched-row p{ font-size:.875rem; color:var(--ink-soft); line-height:1.5; margin:0; }
+  .sched-row span{ font-weight:600; white-space:nowrap; text-align:right; font-variant-numeric:tabular-nums; }
+  @media (max-width:700px){ .sched-row{ grid-template-columns:1fr; gap:4px; } .sched-row span{ text-align:left; } }
+  .print-only{ display:none; font-size:.85rem; color:var(--ink-soft); margin-top:16px; }
+  @media print{
+    header nav, .cta-band, footer, .dl-row, .calc-input, .related, details.info, .calc-results details.workings summary, .view-switch{ display:none !important; }
+    body{ background:#fff; color:#000; font-size:11pt; }
+    .calc-layout{ display:block; padding-top:10px; }
+    .calc-results{ position:static; }
+    .route.best{ background:#fff; color:#000; border:1px solid #000; }
+    .route.best .kicker, .route.best .biglabel, .route.best .note{ color:#000; }
+    .headline-diff{ background:#fff; color:#000; border:1px solid #000; }
+    .headline-diff b, .headline-diff .d-title, .headline-diff .d-sub{ color:#000; }
+    details.workings{ border:none; } details.workings .inner{ display:block !important; padding:0; }
+    .print-only{ display:block !important; }
+  }
+
+  /* ---------- brand select (replaces native dropdown) ---------- */
+  .bs{ position:relative; }
+  .bs select{ position:absolute; opacity:0; pointer-events:none; width:1px; height:1px; }
+  .bs-btn{ width:100%; text-align:left; font-family:inherit; font-size:1rem; padding:10px 40px 10px 12px; border:1px solid var(--rule); border-radius:3px; background:var(--paper-hi); color:var(--ink); cursor:pointer; position:relative; }
+  .bs-btn::after{ content:"\25BE"; position:absolute; right:12px; top:50%; transform:translateY(-50%); color:var(--ink-soft); }
+  .bs-btn:focus-visible, .bs.open .bs-btn{ outline:none; border-color:var(--leaf); box-shadow:0 0 0 3px rgba(30,107,74,.14); }
+  .bs-list{ position:absolute; z-index:30; top:calc(100% + 6px); left:0; right:0; background:var(--paper-hi); border:1px solid var(--rule); border-top:2px solid var(--ink); box-shadow:0 10px 30px rgba(20,56,43,.14); padding:6px; max-height:280px; overflow:auto; }
+  .bs-list[hidden]{ display:none; }
+  .bs-list button{ display:block; width:100%; text-align:left; font-family:inherit; font-size:.95rem; padding:9px 10px; border:none; border-radius:3px; background:none; color:var(--ink); cursor:pointer; }
+  .bs-list button:hover{ background:var(--rule-soft); }
+  .bs-list button.sel{ background:var(--ink); color:var(--paper-hi); }
+  .bs-list button.sel:hover{ background:var(--ink); }
+  @media print{ .bs-list{ display:none !important; } }
+
+  @media (max-width:700px){ .headline-diff{ grid-template-columns:1fr; gap:8px; } .headline-diff b{ grid-row:auto; } }
+  footer a{ color:#CBDACD; }
+  footer a:hover{ color:#fff; }
+  .next-step{ margin-top:24px; background:var(--paper-hi); border-top:2px solid var(--leaf); padding:18px 20px 20px; }
+  .next-step .ns-kicker{ font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; color:var(--leaf); font-weight:600; margin:0 0 4px; }
+  .next-step .ns-title{ font-family:"EB Garamond", Georgia, serif; font-size:1.35rem; font-weight:600; line-height:1.25; color:var(--ink); margin:0; }
+  .next-step .ns-text{ color:var(--ink-soft); margin:6px 0 14px; font-size:.95rem; line-height:1.55; }
+  .next-step .ns-actions{ display:flex; flex-wrap:wrap; align-items:center; gap:10px 18px; }
+  .next-step .ns-btn{ display:inline-block; background:var(--leaf); color:#fff; border:1px solid var(--leaf-deep); padding:11px 18px; border-radius:3px; text-decoration:none; font-weight:600; }
+  .next-step .ns-btn:hover{ background:var(--leaf-deep); }
+  .next-step .ns-link{ color:var(--leaf); font-weight:600; text-decoration:none; }
+  .next-step .ns-link:hover{ text-decoration:underline; }
+  @media print{ .next-step{ display:none !important; } }
+  .feedback{ font-size:.85rem; color:var(--ink-soft); margin-top:10px; }
+  .feedback a{ color:var(--leaf); font-weight:600; }
+  @media print{ .feedback{ display:none; } }
+  .wk-card{ background:var(--paper-hi); border-top:2px solid var(--ink); padding:14px 18px; }
+  .wk-h{ font-weight:600; margin:0 0 8px; }
+  .feedback{ font-size:.85rem; color:var(--ink-soft); margin-top:10px; }
+  .feedback a{ color:var(--leaf); font-weight:600; }
+  @media print{ .feedback{ display:none; } }
+/* sje-motion */
+  .res-card, .thanks-card, .plan, .posts article, .next-step, .tools li a{ transition:transform .2s cubic-bezier(.2,.7,.2,1), box-shadow .2s cubic-bezier(.2,.7,.2,1), border-color .2s ease, color .2s ease; }
+  .res-card:hover, .thanks-card:hover, .plan:hover, .posts article:hover{ transform:translateY(-3px); box-shadow:0 10px 24px rgba(20,56,43,.10); border-top-color:var(--leaf); }
+  .plan.popular:hover{ border-top-color:var(--mint, #9FD8B7); }
+  .arr{ display:inline-block; transition:transform .2s cubic-bezier(.2,.7,.2,1); }
+  a:hover .arr, button:hover .arr, a:focus-visible .arr{ transform:translateX(4px); }
+  .btn, .ns-btn, .thanks-book-btn, .tabs button, .bs-btn, .row-link, .more{ transition:background-color .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease; }
+  .wk > div{ transition:background-color .15s ease; }
+  .wk > div:hover{ background-color:rgba(30,107,74,.06); }
+  details[open] > *:not(summary){ animation:sje-reveal .25s cubic-bezier(.2,.7,.2,1); }
+  .bs-list:not([hidden]){ animation:sje-drop .16s cubic-bezier(.2,.7,.2,1); }
+  .sje-flash{ animation:sje-flash .8s ease; border-radius:3px; }
+  .sje-reveal{ opacity:0; transform:translateY(14px); transition:opacity .5s cubic-bezier(.2,.7,.2,1), transform .5s cubic-bezier(.2,.7,.2,1); }
+  .sje-reveal.in{ opacity:1; transform:none; }
+  @keyframes sje-reveal{ from{ opacity:0; transform:translateY(-4px); } to{ opacity:1; transform:none; } }
+  @keyframes sje-drop{ from{ opacity:0; transform:translateY(-4px); } to{ opacity:1; transform:none; } }
+  @keyframes sje-flash{ 0%{ background-color:rgba(159,216,183,.45); } 100%{ background-color:transparent; } }
+  @media (prefers-reduced-motion: reduce){
+    *, *::before, *::after{ animation:none !important; transition:none !important; }
+    .sje-reveal{ opacity:1 !important; transform:none !important; }
+    .res-card:hover, .thanks-card:hover, .plan:hover, .posts article:hover, a:hover .arr, button:hover .arr{ transform:none !important; }
+  }
+  @media print{ .sje-reveal{ opacity:1 !important; transform:none !important; } }
+  .check-hmrc{ margin-top:18px; border-top:1px solid var(--rule); padding-top:14px; font-size:.95rem; }
+  .check-hmrc h3{ font-family:"EB Garamond", Georgia, serif; font-size:1.2rem; margin-bottom:6px; }
+  .check-hmrc ul{ margin:8px 0 10px 20px; }
+  .check-hmrc li{ margin-bottom:4px; }
+  .bs-group{ font-size:.75rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); padding:10px 14px 4px; }
+
+  /* fold-away workings in results */
+  .js .wk-row:not(.open) .wk-small{ display:none !important; }
+  .wk-row .wk-hit{ cursor:pointer; border-bottom:1px dotted var(--ink-soft); }
+  .wk-row .wk-hit:focus-visible{ outline:2px solid var(--leaf); outline-offset:2px; }
+  .wk-all-calc{ font:inherit; font-size:.85rem; background:none; border:0; padding:0; margin:0 0 10px; color:var(--leaf-deep); cursor:pointer; text-decoration:underline; text-underline-offset:3px; }
+  .no-js .wk-all-calc{ display:none; }
+  @media print{ .wk-row .wk-small{ display:block !important; } .wk-all-calc{ display:none; } }
+  .js .wks:not(.open) .wks-calc{ display:none; }
+  .calc-results .wks-ans{ cursor:pointer; border-bottom:1px dotted currentColor; }
+  .calc-results .wks-ans:focus-visible{ outline:2px solid var(--leaf); outline-offset:2px; }
+  @media print{ .wks .wks-calc{ display:inline !important; } }
+  .fair-note{ border-left:3px solid var(--leaf); background:var(--paper-hi); padding:10px 14px; font-size:.95rem; margin:14px 0 18px; }
+  .calc-input label{ -webkit-user-select:none; user-select:none; cursor:default; }
+  .calc-input label{ -webkit-tap-highlight-color:transparent; }
+  .calc-input label.static-label{ pointer-events:none; }
+  details.assume > summary{ list-style:none; cursor:pointer; display:inline-flex; align-items:center; gap:8px; }
+  details.assume > summary::-webkit-details-marker{ display:none; }
+  details.assume > summary::after{ content:"Show"; font-size:.8rem; color:var(--leaf-deep); text-decoration:underline; text-underline-offset:3px; }
+  details.assume[open] > summary::after{ content:"Hide"; }
+  details.assume[open] > ul{ margin-top:10px; }
+  @media print{ details.assume > ul{ display:block !important; } }
+  /* compact phone header: logo and quote button on one row, links beneath */
+  @media (max-width:760px){
+    .masthead{ display:grid; grid-template-columns:repeat(5, auto); justify-content:space-between; align-items:center; gap:12px 8px; padding-top:12px; padding-bottom:12px; }
+    .masthead nav{ display:contents; }
+    .masthead .wordmark{ grid-column:1 / 4; grid-row:1; justify-content:flex-start; }
+    .masthead .wordmark img{ width:168px; height:auto; }
+    .masthead .nav-cta{ grid-column:4 / 6; grid-row:1; justify-self:end; flex:none; margin-top:0; padding:9px 14px 10px; font-size:.9rem; }
+    .masthead nav a:not(.nav-cta){ grid-row:2; font-size:.88rem; padding:2px 0; }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "SJE Capital",
+   "item": "https://www.sjecapital.co.uk/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Resources",
+   "item": "https://www.sjecapital.co.uk/resources"
+  },
+  {
+   "@type": "ListItem",
+   "position": 3,
+   "name": "Company car tax calculator",
+   "item": "https://www.sjecapital.co.uk/company-car-tax-calculator"
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "WebApplication",
+ "name": "Company car tax calculator",
+ "url": "https://www.sjecapital.co.uk/company-car-tax-calculator",
+ "description": "Is a company car worth it? See the 2026/27 benefit-in-kind tax and compare a company car with your own car plus mileage, worked to the penny.",
+ "applicationCategory": "FinanceApplication",
+ "operatingSystem": "Any (runs in the browser)",
+ "isAccessibleForFree": true,
+ "offers": {
+  "@type": "Offer",
+  "price": "0",
+  "priceCurrency": "GBP"
+ },
+ "inLanguage": "en-GB",
+ "provider": {
+  "@type": "Organization",
+  "name": "SJE Capital",
+  "legalName": "SJE Capital Limited",
+  "url": "https://www.sjecapital.co.uk/"
+ }
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="masthead">
+    <a class="wordmark" href="/" aria-label="SJE Capital Limited home">
+      <img src="/logo-header.svg" width="272" height="90" alt="" fetchpriority="high">
+    </a>
+    <nav aria-label="Main">
+      <a href="/#about">About</a>
+      <a href="/#services">Services</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/blog">Blog</a>
+      <a href="/resources">Resources</a>
+      <a class="nav-cta" href="/#contact">Get a quote</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap page-head">
+    <h1>Company car tax calculator for directors 2026/27</h1>
+    <p>See the tax on a company car, and whether it leaves you better or worse off than running your own car and claiming mileage. Every step of the working is shown, using HMRC's 2026/27 rates.</p>
+    <p class="fair-note"><strong>A like-for-like comparison.</strong> Both options are measured in the same after-tax money: how much less you end up with personally each year. The company&rsquo;s Corporation Tax relief is already counted, because every pound it spends on the car is a pound it cannot pay you as a dividend.</p>
+  </div>
+
+  <div class="wrap calc-layout">
+    <div class="calc-input">
+      <label for="fuel">Type of car</label>
+      <select id="fuel"><option value="ev">Fully electric</option><option value="phev">Plug-in hybrid</option><option value="petrol">Petrol (including standard hybrids)</option><option value="diesel">Diesel</option></select>
+
+      <div id="co2-box" hidden>
+        <label for="co2">CO2 emissions (g/km)</label>
+        <input type="text" inputmode="numeric" id="co2" value="120">
+        <p class="warn" id="co2-warn" hidden></p>
+        <details class="info"><summary><span>Where to find it</span></summary>
+          <div class="findit"><strong>Where to find it</strong>On the car&rsquo;s V5C logbook (section V.7), the manufacturer&rsquo;s specification, or a lease quote. For a car you already have, the DVLA&rsquo;s free online vehicle checker shows it from the number plate. Use the WLTP figure for cars registered from April 2020. A fully electric car is always 0g/km.</div>
+        </details>
+      </div>
+      <div id="range-box" hidden>
+        <label for="range">Electric range (miles)</label>
+        <input type="text" inputmode="numeric" id="range" value="45">
+        <p class="warn" id="range-warn" hidden></p>
+        <details class="info"><summary><span>More info</span></summary><p class="hint">For plug-in hybrids with CO2 of 50g/km or less, the tax depends on how far the car can travel on electric power alone. It is the &ldquo;WLTP electric range&rdquo; (sometimes called EAER) on the manufacturer&rsquo;s specification or a lease quote.</p></details>
+      </div>
+      <div id="rde2-box" hidden>
+        <label for="rde2">Does the diesel meet the RDE2 standard?</label>
+        <select id="rde2"><option value="no">No, or not sure</option><option value="yes">Yes (Euro 6d)</option></select>
+        <details class="info"><summary><span>More info</span></summary><p class="hint">Diesel cars that do not meet the RDE2 standard pay a 4% supplement. Most diesels registered from September 2018 onwards with a Euro status of 6d meet it; the V5C shows the Euro status.</p></details>
+      </div>
+
+      <label for="p11d">P11D value (list price)</label>
+      <input type="text" inputmode="numeric" class="money" id="p11d" value="45,000">
+      <details class="info"><summary><span>Where to find it</span></summary>
+        <div class="findit"><strong>Where to find it</strong>The P11D value is the car's list price when new, including VAT, delivery and any optional extras, but not the first registration fee or road tax. You will find it on a company car lease quote, the dealer&rsquo;s or manufacturer&rsquo;s price list, or last year&rsquo;s P11D form if the company already has the car. It is the list price, not what the company actually pays, even for a used car.</div>
+      </details>
+
+      <label for="band">Your Income Tax band</label>
+      <select id="band">
+        <optgroup label="England, Wales and Northern Ireland">
+          <option value="basic">Basic rate (20%; dividends 10.75%)</option>
+          <option value="higher" selected>Higher rate (40%; dividends 35.75%)</option>
+          <option value="additional">Additional rate (45%; dividends 39.35%)</option>
+        </optgroup>
+        <optgroup label="Scotland">
+          <option value="scot-starter">Starter rate (19%; dividends 10.75%)</option>
+          <option value="scot-basic">Basic rate (20%; dividends 10.75%)</option>
+          <option value="scot-intermediate">Intermediate rate (21%; dividends 10.75%)</option>
+          <option value="scot-higher">Higher rate (42%; dividends 35.75%)</option>
+          <option value="scot-advanced">Advanced rate (45%; dividends 35.75%)</option>
+          <option value="scot-top">Top rate (48%; dividends 39.35%)</option>
+        </optgroup>
+      </select>
+      <details class="info"><summary><span>More info</span></summary><p class="hint">The rate on the top slice of your income. With a £12,570 salary, dividends above £37,700 are in the higher rate band. If you live in Scotland, the car benefit is taxed at Scottish Income Tax rates, but dividends are taxed at UK rates wherever you live, so the Scottish options pair each Scottish rate with the UK dividend rate it usually sits alongside. For example, a director in the Scottish higher rate band (income from £43,663 to £75,000) usually has dividends above £50,270, taxed at 35.75%.</p></details>
+
+      <label>How does the company get the car?</label>
+      <div class="tabs" role="group" aria-label="How the company gets the car">
+        <button type="button" id="how-lease" aria-pressed="true">Lease</button>
+        <button type="button" id="how-buy" aria-pressed="false">Buy</button>
+      </div>
+      <div class="sub" id="lease-box">
+        <label for="rental">Monthly lease payment</label>
+        <input type="text" inputmode="numeric" class="money" id="rental" value="550">
+        <label for="miles">Business miles a year</label>
+        <input type="text" inputmode="numeric" id="miles" value="0">
+        <p class="warn" id="miles-warn" hidden></p>
+        <details class="info"><summary><span>More info</span></summary><p class="hint">Journeys for work, not your normal commute. If you ran your own car, the company could pay you 55p a mile tax-free for the first 10,000 business miles and 25p after that.</p></details>
+      </div>
+      <div class="sub" id="buy-box" hidden>
+        <label for="price">Price the company pays</label>
+        <input type="text" inputmode="numeric" class="money" id="price" value="45,000">
+        <label for="cond">New or used?</label>
+        <select id="cond"><option value="new">New and unused</option><option value="used">Used</option></select>
+      </div>
+
+      <details class="more">
+        <summary>Tailor it to you: running costs, fuel and Corporation Tax</summary>
+        <div class="more-body">
+          <label for="running">Insurance, servicing and road tax (per year)</label>
+          <input type="text" inputmode="numeric" class="money" id="running" value="1,200">
+          <label for="pfuel">Fuel for private journeys (per year)</label>
+          <input type="text" inputmode="numeric" class="money" id="pfuel" value="0">
+          <label for="fuelpaid">Who pays for private fuel in the company car?</label>
+          <select id="fuelpaid"><option value="me">I do</option><option value="co">The company</option></select>
+          <details class="info"><summary><span>More info</span></summary><p class="hint">If the company pays for fuel for private journeys in a petrol, diesel or hybrid car, there is an extra fuel benefit charge of £29,200 &times; the car's percentage, whatever the fuel actually costs. It rarely pays. Electricity for an electric car is not treated as fuel.</p></details>
+          <label for="bfuel">Fuel or charging for business journeys (per year)</label>
+          <input type="text" inputmode="numeric" class="money" id="bfuel" value="0">
+          <label for="ct">Your company's Corporation Tax rate</label>
+          <select id="ct"><option value="0.19">19% (profits up to £50,000)</option><option value="0.265">26.5% (profits between £50,000 and £250,000)</option><option value="0.25">25% (profits over £250,000)</option></select>
+        </div>
+      </details>
+
+      <details class="assume"><summary><strong>Assumptions</strong> <span class="assume-count">(5)</span></summary>
+        <ul>
+          <li>HMRC's 2026/27 company car percentages, with CO2 rounded down to the nearest 5g/km; the 4% diesel supplement; the £29,200 fuel benefit multiplier; Class 1A National Insurance at 15%; mileage at 55p for the first 10,000 business miles and 25p after.</li>
+          <li>The comparison measures how much less you end up with each year. Money the company spends is money it cannot pay you as dividends, so it is converted at your dividend tax rate. The monthly cost of the car is assumed to be the same whether the company or you lease it.</li>
+          <li>Leased cars over 50g/km: 15% of the lease payments are not deductible for Corporation Tax. Bought cars: new electric cars get a 100% first-year allowance until 31 March 2027; other cars get 14% a year (50g/km or less) or 6% a year (over 50g/km).</li>
+          <li>Not included: VAT (the company may reclaim some VAT on a lease), and HMRC's temporary easement for some plug-in hybrids tested under the newer Euro 6e-bis standard.</li>
+          <li>Figures are worked to the penny: each amount is rounded to the nearest penny as it is calculated, and every later figure is built from those amounts.</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="calc-results">
+      <div class="headline-diff">
+        <b id="h-main">£0.00</b>
+        <div class="d-title" id="h-title"></div>
+        <div class="d-sub" id="h-sub"></div>
+      </div>
+      <div class="wk-card" style="margin-top:24px;"><p class="wk-h">The company car tax</p><div class="wk" id="bik"></div></div>
+      <div class="wk-card" style="margin-top:16px;" id="card-a"><p class="wk-h" id="a-h">Option 1: a company car</p><div class="wk" id="wa"></div></div>
+      <div class="wk-card" style="margin-top:16px;" id="card-b"><p class="wk-h">Option 2: your own car, with mileage paid by the company</p><div class="wk" id="wb"></div></div>
+      <aside class="next-step" aria-label="Next step">
+        <p class="ns-kicker">Next step</p>
+        <p class="ns-title">Thinking about a company car?</p>
+        <p class="ns-text">We work out the most tax-efficient way to run your car, set up the benefit reporting and mileage records, and claim every allowance for the company.</p>
+        <div class="ns-actions"><a class="ns-btn" href="https://calendar.app.google/MgqokbUqk9WwncKk8" target="_blank" rel="noopener noreferrer" data-booking>Book a free 15-minute call</a><a class="ns-link" href="/#contact">or get a free quote</a></div>
+      </aside>
+      <div class="dl-row"><button type="button" class="btn" id="print">Print or save as PDF</button></div>
+      <details class="workings">
+        <summary>Show the workings</summary>
+        <div class="inner" id="workings"></div>
+      </details>
+      <div class="check-hmrc">
+        <h3>Check it with HMRC</h3>
+        <p>These figures follow HMRC's published rules and rates. To read them in full, or to check a figure:</p>
+        <ul>
+          <li>Company car tax: <a href="https://www.gov.uk/hmrc-internal-manuals/employment-income-manual/eim24705" target="_blank" rel="noopener noreferrer">company car appropriate percentages</a> (HMRC manual)</li>
+          <li>Scottish Income Tax: <a href="https://www.gov.uk/scottish-income-tax" target="_blank" rel="noopener noreferrer">Scottish Income Tax rates</a></li>
+          <li>National Insurance and payroll thresholds: <a href="https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2026-to-2027" target="_blank" rel="noopener noreferrer">Rates and thresholds for employers 2026 to 2027</a></li>
+        </ul>
+      </div>
+      <p class="print-only">Calculated at sjecapital.co.uk/company-car-tax-calculator. 2026/27 rates. Illustrative, not advice. SJE Capital Limited, company no. 15837169.</p>
+      <p class="related">Sources: HMRC, <a href="https://www.gov.uk/hmrc-internal-manuals/employment-income-manual/eim24705" target="_blank" rel="noopener noreferrer">company car appropriate percentages 2026/27</a> and <a href="https://www.gov.uk/government/publications/increase-to-van-benefit-charge-and-fuel-benefit-charges-for-cars-and-vans/van-benefit-charge-and-fuel-benefit-charges-for-cars-and-vans-for-tax-year-2026-to-2027" target="_blank" rel="noopener noreferrer">fuel benefit charge 2026/27</a>.</p>
+      <p class="feedback">Spotted something that looks wrong? <a href="mailto:spencer@sjecapital.co.uk?subject=Calculator%20feedback%3A%20Company%20car%20tax">Tell us</a> and we will check it straight away.</p>
+    </div>
+  </div>
+</main>
+
+<div class="cta-band">
+  <div class="wrap">
+    <h2>Get the car decision right</h2>
+    <p>Lease or buy, company or personal, electric or not: the answer depends on your numbers. We look at them for every director we work with. Free initial conversation.</p>
+    <a class="btn" href="/#contact">Get a free consultation</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 SJE Capital Limited. Registered in England &amp; Wales, company no. 15837169. Registered office: 78 Church Lane East, Aldershot, Hampshire, GU11 3HB, United Kingdom. Serving companies across the UK.</span>
+    <span>ICB Certified · Xero Certified Advisor · CIMA Dip MA. Supervised for anti-money laundering by the Institute of Certified Bookkeepers, practice licence 24492. ICO registration ZB807956.</span>
+    <span><a href="/privacy">Privacy</a> · <a href="/complaints">Complaints</a> · <a href="mailto:spencer@sjecapital.co.uk">spencer@sjecapital.co.uk</a> · <a href="https://www.linkedin.com/company/sje-capital-limited" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+  </div>
+</footer>
+<script>
+(function(){
+  function r2(x){ return Math.round((x+(x>=0?1e-9:-1e-9))*100)/100; }
+  var fmt=function(n){ var v=Math.abs(n)<0.005?0:n; return (v<0?'\u2212':'')+'£'+Math.abs(v).toLocaleString('en-GB',{minimumFractionDigits:2,maximumFractionDigits:2}); };
+  var fmtR=function(n){ return '£'+Math.round(n).toLocaleString('en-GB'); };
+  var M='\u2212';
+  function num(id){ return Math.max(0,+String(document.getElementById(id).value).replace(/[^\d.]/g,'')||0); }
+  function fmtInput(e){ var v=String(e.value).replace(/[^\d.]/g,''), i=v.indexOf('.'), ip=i<0?v:v.slice(0,i), dp=i<0?null:v.slice(i+1).replace(/\./g,'').slice(0,2); ip=ip.replace(/^0+(?=\d)/,''); var out=ip?(+ip).toLocaleString('en-GB'):(dp!==null?'0':''); if(dp!==null) out+='.'+dp; e.value=out; }
+  document.querySelectorAll('input.money').forEach(function(e){ if(!e.parentElement.classList.contains('money-wrap')){ var w=document.createElement('span'); w.className='money-wrap'; e.parentNode.insertBefore(w,e); w.appendChild(e); } fmtInput(e); e.addEventListener('input',function(){ fmtInput(e); }); });
+  function wrow(label,amt,cls,small){ return '<div'+(cls?' class="'+cls+'"':'')+'><span class="lbl">'+label+(small?'<small>'+small+'</small>':'')+'</span><span class="amt">'+amt+'</span></div>'; }
+  function set(id,v){ document.getElementById(id).textContent=v; }
+  function tabs(a,b,cb){ var A=document.getElementById(a),Bb=document.getElementById(b); A.addEventListener('click',function(){ A.setAttribute('aria-pressed',true); Bb.setAttribute('aria-pressed',false); cb(false); }); Bb.addEventListener('click',function(){ Bb.setAttribute('aria-pressed',true); A.setAttribute('aria-pressed',false); cb(true); }); }
+  var FUEL_MULT=29200, C1A=0.15, BANDS={basic:[0.20,0.1075],higher:[0.40,0.3575],additional:[0.45,0.3935],'scot-starter':[0.19,0.1075],'scot-basic':[0.20,0.1075],'scot-intermediate':[0.21,0.1075],'scot-higher':[0.42,0.3575],'scot-advanced':[0.45,0.3575],'scot-top':[0.48,0.3935]};
+  var lease=true;
+  function warn(id,msg){ var e=document.getElementById(id); e.hidden=!msg; if(msg) e.textContent=msg; }
+  function whole(id,warnId,label){ var raw=String(document.getElementById(id).value).trim().replace(/,/g,'');
+    if(raw===''){ warn(warnId,'Enter the '+label+'.'); return null; }
+    raw=raw.replace(/\s*(g\/km|gkm|g|miles|mile|mi)\.?$/i,'');
+    if(!/^\d+(\.\d+)?$/.test(raw)){ warn(warnId,'Enter the '+label+' as a number.'); return null; }
+    var x=parseFloat(raw), v=Math.floor(x); warn(warnId, x!==v?'Enter whole numbers only, so '+raw+' has been read as '+v+'.':''); return v; }
+  function pctFor(fuel,co2,range,rde2){
+    var p;
+    if(fuel==='ev'||co2===0) p=4;
+    else if(co2<=50) p= range>=130?4: range>=70?7: range>=40?10: range>=30?14: 16;
+    else if(co2<=54) p=17; else if(co2<=59) p=18; else if(co2<=64) p=19; else if(co2<=69) p=20; else if(co2<=79) p=21;
+    else p=Math.min(37,22+Math.floor((co2-80)/5));
+    var sup=(fuel==='diesel'&&!rde2&&p<37)?Math.min(4,37-p):0;
+    return {base:p,sup:sup,pct:p+sup};
+  }
+  function calc(){
+    var fuel=document.getElementById('fuel').value, stop='';
+    var co2=0, range=0;
+    if(fuel!=='ev'){ co2=whole('co2','co2-warn','CO2 emissions'); if(co2===null) stop='co2'; } else warn('co2-warn','');
+    if(fuel!=='ev'&&co2!==null&&co2<=50&&co2>0){ range=whole('range','range-warn','electric range'); if(range===null) stop='range'; } else warn('range-warn','');
+    var rde2=document.getElementById('rde2').value==='yes';
+    var P=num('p11d'), band=document.getElementById('band').value, it=BANDS[band][0], dr=BANDS[band][1], ct=+document.getElementById('ct').value;
+    var R=num('running'), Pf=num('pfuel'), Fb=num('bfuel'), coFuel=document.getElementById('fuelpaid').value==='co'&&fuel!=='ev';
+    var miles=0; if(lease){ var mv=whole('miles','miles-warn','business miles'); miles=mv===null?0:mv; if(String(document.getElementById('miles').value).trim()===''){ warn('miles-warn',''); miles=0; } } else warn('miles-warn','');
+    var pc=pctFor(fuel,co2||0,range||0,rde2);
+    var bik=r2(P*pc.pct/100), fb=coFuel?r2(FUEL_MULT*pc.pct/100):0;
+    var itCar=r2(bik*it), itFuel=r2(fb*it), c1aCar=r2(bik*C1A), c1aFuel=r2(fb*C1A);
+    var r={stop:stop,fuel:fuel,co2:co2||0,range:range||0,rde2:rde2,P:P,band:band,it:it,dr:dr,ct:ct,R:R,Pf:Pf,Fb:Fb,coFuel:coFuel,miles:miles,pc:pc,bik:bik,fb:fb,itCar:itCar,itFuel:itFuel,c1aCar:c1aCar,c1aFuel:c1aFuel};
+    if(lease){
+      var L=r2(num('rental')*12), restricted=(r.co2>50)?r2(L*0.15):0, Ld=r2(L-restricted);
+      var ded=r2(Ld+R+(coFuel?Pf:0)+Fb+c1aCar+c1aFuel), relief=r2(ded*ct), compCost=r2(ded-relief+restricted);
+      var divTax=r2(compCost*dr), pocketDiv=r2(compCost-divTax), personal=r2(itCar+itFuel+(coFuel?0:Pf)), A=r2(pocketDiv+personal);
+      var amap=r2(0.55*Math.min(miles,10000))+r2(0.25*Math.max(0,miles-10000)); amap=r2(amap);
+      var ctB=r2(amap*ct), compB=r2(amap-ctB), divTaxB=r2(compB*dr), pocketB=r2(compB-divTaxB), own=r2(L+R+Pf+Fb), personalB=r2(own-amap), B=r2(pocketB+personalB);
+      Object.assign(r,{L:L,restricted:restricted,Ld:Ld,ded:ded,relief:relief,compCost:compCost,divTax:divTax,pocketDiv:pocketDiv,personal:personal,A:A,amap:amap,ctB:ctB,compB:compB,divTaxB:divTaxB,pocketB:pocketB,own:own,personalB:personalB,B:B,diff:r2(B-A)});
+    } else {
+      var price=num('price'), isNew=document.getElementById('cond').value==='new';
+      var rate=(isNew&&r.co2===0)?1:(r.co2<=50?0.14:0.06), allowance=r2(price*rate), caRelief=r2(allowance*ct);
+      Object.assign(r,{price:price,isNew:isNew,rate:rate,allowance:allowance,caRelief:caRelief});
+    }
+    return r;
+  }
+  function pctTxt(x){ return (Math.round(x*10000)/100).toString()+'%'; }
+  function render(){
+    var fuel=document.getElementById('fuel').value;
+    document.getElementById('co2-box').hidden=fuel==='ev';
+    var craw=String(document.getElementById('co2').value).trim().replace(/,/g,'').replace(/\s*(g\/km|gkm|g)\.?$/i,''), co2v=/^\d+(\.\d+)?$/.test(craw)?Math.floor(parseFloat(craw)):NaN;
+    document.getElementById('range-box').hidden=!(fuel!=='ev'&&co2v>0&&co2v<=50);
+    document.getElementById('rde2-box').hidden=fuel!=='diesel';
+    document.getElementById('lease-box').hidden=!lease; document.getElementById('buy-box').hidden=lease;
+    document.getElementById('card-b').hidden=!lease;
+    var r=calc();
+    if(r.stop){ document.getElementById('h-main').textContent='\u2014'; document.getElementById('h-title').textContent='Enter the car\'s details to see the result'; document.getElementById('h-sub').textContent=''; ['bik','wa','wb','workings'].forEach(function(id){ document.getElementById(id).innerHTML=''; }); return; }
+    var bandTxt=r.fuel==='ev'?'fully electric: 4%':(r.co2===0?'0g/km: 4%':(r.co2<=50?r.co2+'g/km with '+r.range+' miles of electric range: '+r.pc.base+'%':(r.co2%5?r.co2+'g/km, rounded down to '+(Math.floor(r.co2/5)*5)+'g/km':r.co2+'g/km')+': '+r.pc.base+'%'));
+    var b=wrow('Company car percentage',r.pc.pct+'%','',bandTxt+(r.pc.sup?'; plus the '+r.pc.sup+'% diesel supplement: '+r.pc.base+'% + '+r.pc.sup+'% = '+r.pc.pct+'%':''))
+      +wrow('Taxable benefit (benefit in kind)',fmt(r.bik),'sub',fmt(r.P)+' \u00d7 '+r.pc.pct+'% = '+fmt(r.bik))
+      +wrow('Your Income Tax on the car',fmt(r.itCar),'',fmt(r.bik)+' \u00d7 '+pctTxt(r.it)+'; that is '+fmt(r.itCar)+' \u00f7 12 = '+fmt(r2(r.itCar/12))+' a month')
+      +wrow('Company\'s Class 1A National Insurance',fmt(r.c1aCar),'',fmt(r.bik)+' \u00d7 15%');
+    if(r.coFuel) b+=wrow('Fuel benefit',fmt(r.fb),'sub','£29,200 \u00d7 '+r.pc.pct+'% = '+fmt(r.fb))+wrow('Your Income Tax on the fuel benefit',fmt(r.itFuel),'',fmt(r.fb)+' \u00d7 '+pctTxt(r.it))+wrow('Class 1A on the fuel benefit',fmt(r.c1aFuel),'',fmt(r.fb)+' \u00d7 15%');
+    document.getElementById('bik').innerHTML=b;
+    if(lease){
+      var better=r.diff>0.004?'a':(r.diff<-0.004?'b':'same');
+      document.getElementById('h-main').textContent=fmt(Math.abs(r.diff));
+      document.getElementById('h-title').textContent= better==='a'?'a year better off with a company car':(better==='b'?'a year better off running your own car':'no difference either way');
+      document.getElementById('h-sub').textContent='A company car costs you '+fmt(r.A)+' a year; your own car costs you '+fmt(r.B)+' a year: '+fmt(r.B)+' '+M+' '+fmt(r.A)+' = '+(r.diff<0?M:'')+fmt(Math.abs(r.diff))+'. Your tax on the company car is '+fmt(r.itCar)+' a year, or '+fmt(r2(r.itCar/12))+' a month.';
+      document.getElementById('a-h').textContent='Option 1: a company car';
+      var a=wrow('Lease payments paid by the company',fmt(r.L),'',fmt(r.L/12)+' \u00d7 12')
+        +(r.restricted?wrow('of which not deductible (over 50g/km)',fmt(r.restricted),'info',fmt(r.L)+' \u00d7 15%'):'')
+        +wrow('Plus insurance, servicing and road tax',fmt(r.R))
+        +(r.coFuel?wrow('Plus private fuel paid by the company',fmt(r.Pf)):'')
+        +(r.Fb?wrow('Plus business fuel or charging',fmt(r.Fb)):'')
+        +wrow('Plus Class 1A National Insurance',fmt(r2(r.c1aCar+r.c1aFuel)))
+        +wrow('Costs the company can deduct',fmt(r.ded),'sub',[fmt(r.Ld)+' lease'+(r.restricted?' ('+fmt(r.L)+' '+M+' '+fmt(r.restricted)+')':''),fmt(r.R),r.coFuel?fmt(r.Pf):null,r.Fb?fmt(r.Fb):null,fmt(r2(r.c1aCar+r.c1aFuel))].filter(Boolean).join(' + ')+' = '+fmt(r.ded))
+        +wrow('Less Corporation Tax saved',M+fmt(r.relief),'',fmt(r.ded)+' \u00d7 '+pctTxt(r.ct))
+        +wrow('Cost to the company after tax',fmt(r.compCost),'sub',fmt(r.ded)+' '+M+' '+fmt(r.relief)+(r.restricted?' + '+fmt(r.restricted):'')+' = '+fmt(r.compCost))
+        +wrow('Dividends you lose, after dividend tax',fmt(r.pocketDiv),'',fmt(r.compCost)+' '+M+' ('+fmt(r.compCost)+' \u00d7 '+pctTxt(r.dr)+' = '+fmt(r.divTax)+') = '+fmt(r.pocketDiv))
+        +wrow('Plus your Income Tax on the car'+(r.coFuel?' and fuel':''),fmt(r2(r.itCar+r.itFuel)))
+        +(!r.coFuel&&r.Pf?wrow('Plus private fuel you pay yourself',fmt(r.Pf)):'')
+        +wrow('Cost to you each year',fmt(r.A),'tot',fmt(r.pocketDiv)+' + '+fmt(r2(r.itCar+r.itFuel))+(!r.coFuel&&r.Pf?' + '+fmt(r.Pf):'')+' = '+fmt(r.A));
+      document.getElementById('wa').innerHTML=a;
+      var bb=wrow('Lease, insurance, servicing, road tax and fuel you pay',fmt(r.own),'',[fmt(r.L),fmt(r.R),r.Pf?fmt(r.Pf):null,r.Fb?fmt(r.Fb):null].filter(Boolean).join(' + ')+' = '+fmt(r.own))
+        +wrow('Less mileage paid by the company, tax-free',M+fmt(r.amap),'',r.miles?Math.min(r.miles,10000).toLocaleString('en-GB')+' miles \u00d7 55p'+(r.miles>10000?' + '+(r.miles-10000).toLocaleString('en-GB')+' miles \u00d7 25p':'')+' = '+fmt(r.amap):'no business miles entered')
+        +wrow(r.personalB<0?'Mileage payments are more than your costs by':'Your own money spent on the car',fmt(r.personalB),'sub',fmt(r.own)+' '+M+' '+fmt(r.amap)+' = '+fmt(r.personalB)+(r.personalB<0&&!r.Fb?'. The mileage rate is meant to cover fuel too, so check you have included fuel or charging for business journeys under "Tailor it to you"':''))
+        +(r.amap?wrow('Plus dividends you lose because the company pays the mileage',fmt(r.pocketB),'',fmt(r.amap)+' '+M+' Corporation Tax saved '+fmt(r.ctB)+' = '+fmt(r.compB)+'; '+fmt(r.compB)+' '+M+' dividend tax '+fmt(r.divTaxB)+' = '+fmt(r.pocketB)):'')
+        +wrow('Cost to you each year',fmt(r.B),'tot',r.amap?fmt(r.personalB)+' + '+fmt(r.pocketB)+' = '+fmt(r.B):'');
+      document.getElementById('wb').innerHTML=bb;
+    } else {
+      document.getElementById('h-main').textContent=fmt(r.itCar);
+      document.getElementById('h-title').textContent='a year of Income Tax on the company car';
+      document.getElementById('h-sub').textContent=fmt(r.itCar)+' \u00f7 12 = '+fmt(r2(r.itCar/12))+' a month. In its first year, the company saves '+fmt(r.caRelief)+' of Corporation Tax through capital allowances.';
+      document.getElementById('a-h').textContent='Tax relief for the company in the first year';
+      var rateTxt=r.rate===1?'100% first-year allowance: new, unused and fully electric (for purchases up to 31 March 2027)':(r.rate===0.14?'14% main rate: 50g/km or less'+(r.co2===0&&!r.isNew?', used':''):'6% special rate: over 50g/km');
+      document.getElementById('wa').innerHTML=wrow('Price paid',fmt(r.price))+wrow('Capital allowance in the first year',fmt(r.allowance),'',fmt(r.price)+' \u00d7 '+pctTxt(r.rate)+' ('+rateTxt+')')+wrow('Corporation Tax saved in the first year',fmt(r.caRelief),'tot',fmt(r.allowance)+' \u00d7 '+pctTxt(r.ct))+wrow('Company\'s Class 1A each year',fmt(r2(r.c1aCar+r.c1aFuel)),'info','deductible for Corporation Tax');
+      document.getElementById('wb').innerHTML='';
+    }
+    document.getElementById('workings').innerHTML='<h3>How the comparison works</h3><p class="aside">Money the company spends is money it cannot pay you as dividends. So each option is measured as how much less you end up with each year: the company\'s cost after Corporation Tax relief, less the dividend tax you would have paid on it, plus any tax or costs you pay yourself.</p><p class="aside">For a car the company buys, the comparison depends on how long you keep it and what it is worth when sold, so the calculator shows the yearly tax and the first-year tax relief instead.</p>';
+  }
+  tabs('how-lease','how-buy',function(v){ lease=!v; render(); });
+  ['co2','range','p11d','rental','miles','price','running','pfuel','bfuel'].forEach(function(id){ document.getElementById(id).addEventListener('input',render); });
+  ['fuel','rde2','band','cond','fuelpaid','ct'].forEach(function(id){ document.getElementById(id).addEventListener('change',render); });
+  document.getElementById('print').addEventListener('click',function(){ document.querySelector('details.workings').open=true; document.querySelectorAll('details.assume').forEach(function(x){ x.open=true; }); window.print(); });
+  // ---- brand select: enhances every <select> in the inputs ----
+  (function(){
+    document.querySelectorAll('.calc-input select').forEach(function(sel){
+      var wrap=document.createElement('div'); wrap.className='bs'; sel.parentNode.insertBefore(wrap,sel); wrap.appendChild(sel);
+      var btn=document.createElement('button'); btn.type='button'; btn.className='bs-btn'; btn.setAttribute('aria-haspopup','listbox'); btn.setAttribute('aria-expanded','false');
+      var list=document.createElement('div'); list.className='bs-list'; list.hidden=true; list.setAttribute('role','listbox');
+      wrap.appendChild(btn); wrap.appendChild(list);
+      if(sel.id){ btn.id=sel.id+'-pick'; var lb=document.querySelector('label[for="'+sel.id+'"]'); if(lb) lb.htmlFor=btn.id; sel.tabIndex=-1; sel.setAttribute('aria-hidden','true'); }
+      function label(){ var o=sel.options[sel.selectedIndex]; var g=o&&o.parentNode.tagName==='OPTGROUP'&&o.parentNode.label==='Scotland'?'Scotland: ':''; btn.textContent=o?g+o.textContent:''; }
+      function build(){ list.innerHTML=''; var lastG=null; Array.prototype.forEach.call(sel.options,function(o,i){ if(o.disabled) return; var g=o.parentNode.tagName==='OPTGROUP'?o.parentNode:null; if(g&&g!==lastG){ var h=document.createElement('div'); h.className='bs-group'; h.setAttribute('role','presentation'); h.textContent=g.label; list.appendChild(h); } lastG=g; var b=document.createElement('button'); b.type='button'; b.setAttribute('role','option'); b.textContent=o.textContent; if(i===sel.selectedIndex) b.className='sel'; b.addEventListener('click',function(){ sel.selectedIndex=i; sel.dispatchEvent(new Event('change')); label(); close(); btn.focus(); }); list.appendChild(b); }); }
+      function open(){ build(); list.hidden=false; wrap.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+      function close(){ list.hidden=true; wrap.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+      btn.addEventListener('click',function(){ list.hidden?open():close(); });
+      btn.addEventListener('keydown',function(e){ if(e.key==='ArrowDown'||e.key==='ArrowUp'){ e.preventDefault(); var n=sel.selectedIndex+(e.key==='ArrowDown'?1:-1); while(sel.options[n]&&sel.options[n].disabled) n+=(e.key==='ArrowDown'?1:-1); if(sel.options[n]){ sel.selectedIndex=n; sel.dispatchEvent(new Event('change')); label(); if(!list.hidden) build(); } } if(e.key==='Escape') close(); });
+      document.addEventListener('click',function(e){ if(!wrap.contains(e.target)) close(); });
+      sel.addEventListener('change',label);
+      label();
+    });
+  })();
+  render();
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "00529846a08f42db871a69a17e005ffd"}'></script><!-- End Cloudflare Web Analytics -->
+<script>/* sje-motion */
+(function(){
+  var reduce=false; try{ reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(e){}
+  // Typing: wait for a short pause before recalculating (real keystrokes only; programmatic input is untouched)
+  var timer=null;
+  document.addEventListener('input',function(e){ var el=e.target;
+    if(!e.isTrusted||!el||el.tagName!=='INPUT'||!el.closest||!el.closest('.calc-input')) return;
+    e.stopImmediatePropagation(); clearTimeout(timer);
+    timer=setTimeout(function(){ el.dispatchEvent(new Event('input',{bubbles:true})); },120); },true);
+  if(reduce) return;
+  // Results: brief highlight when a headline figure changes
+  if('MutationObserver' in window){ document.querySelectorAll('.headline-diff b, .big, #next-in').forEach(function(el){ var last=el.textContent;
+    new MutationObserver(function(){ if(el.textContent===last) return; last=el.textContent; el.classList.remove('sje-flash'); void el.offsetWidth; el.classList.add('sje-flash'); }).observe(el,{childList:true,characterData:true,subtree:true}); }); }
+  // Scroll: sections below the fold fade up once as they come into view
+  if(!('IntersectionObserver' in window)) return;
+  var io=new IntersectionObserver(function(entries){ entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } }); },{rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('main > section, .res-group, .tools, .article-body > h2, .article-body > table, .article-body > figure, .faq, .author-box, .thanks-more').forEach(function(el){
+    if(el.getBoundingClientRect().top>window.innerHeight){ el.classList.add('sje-reveal'); io.observe(el); } });
+})();
+</script>
+<script>
+(function(){
+  var d=document.documentElement; d.classList.add('js'); d.classList.remove('no-js');
+  var res=document.querySelector('.calc-results'); if(!res) return;
+  var KEY='sje-workings', allOpen=false; try{ allOpen=localStorage.getItem(KEY)==='1'; }catch(e){}
+  res.querySelectorAll('.wk-all-calc').forEach(function(x){ x.remove(); });
+  var sw=document.createElement('button'); sw.type='button'; sw.className='wk-all-calc';
+  res.insertBefore(sw,res.firstChild);
+  function label(){ sw.textContent=allOpen?'Hide all workings':'Show all workings'; sw.setAttribute('aria-pressed',allOpen?'true':'false'); }
+  function mark(){
+    foldSentences();
+    res.querySelectorAll('small').forEach(function(s){
+      if(s.closest('details.workings')||s.classList.contains('wk-small')) return;
+      if(!/[=\u00d7\u00f7\u2212]/.test(s.textContent)) return;
+      var row=s.parentElement; while(row.parentElement && row.parentElement!==res && row.parentElement.querySelectorAll('small').length===1) row=row.parentElement; if(!row) return;
+      s.classList.add('wk-small'); row.classList.add('wk-row'); if(allOpen) row.classList.add('open');
+      var hit=row.querySelector('.amt')||s.parentElement;
+      hit.classList.add('wk-hit'); hit.setAttribute('role','button'); hit.setAttribute('tabindex','0'); hit.setAttribute('aria-expanded',allOpen?'true':'false'); hit.title='Show the working';
+    });
+  }
+
+  // fold sums written into sentences: "sum = answer" and "answer (sum)"
+  var NUM='(?:£\\s?[\\d,]+(?:\\.\\d+)?(?:bn|m)?|\\d[\\d,]*(?:\\.\\d+)?(?:%|p)?|\\d+/\\d+)', TERM='(?:\\(\\s*)*'+NUM+'(?:\\s*\\))*(?:\\^\\d+)?', OP='\\s*[\u00d7\u00f7\u2212+]\\s*', EXPR=TERM+'(?:'+OP+TERM+')+';
+  var RE_EQ=new RegExp('('+EXPR+'(?:\\s*=\\s*'+EXPR+')*\\s*=\\s*)('+NUM+')','g'), RE_PAR=new RegExp('('+NUM+')([^()£=×÷−+]{0,40}?)(\\s*\\((?:'+EXPR+')(?:,\\s*rounded)?\\))','g');
+  function esc(t){ return t.replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+  function foldSentences(){
+    var w=document.createTreeWalker(res,4), nodes=[], n;
+    while(n=w.nextNode()){ var p=n.parentElement; if(!p||p.closest('details.workings')||p.closest('.wks')||p.closest('.wk-small')||p.closest('script')) continue; if(/[\u00d7\u00f7\u2212+]/.test(n.textContent)) nodes.push(n); }
+    nodes.forEach(function(node){
+      var h=esc(node.textContent), changed=false;
+      h=h.replace(RE_EQ,function(m,c,a){ changed=true; return '<span class="wks"><span class="wks-calc">'+c+'</span><span class="wks-ans" role="button" tabindex="0">'+a+'</span></span>'; });
+      h=h.replace(RE_PAR,function(m,a,words,c){ changed=true; return '<span class="wks"><span class="wks-ans" role="button" tabindex="0">'+a+'</span>'+words+'<span class="wks-calc">'+c+'</span></span>'; });
+      if(!changed) return;
+      var tmp=document.createElement('span'); tmp.innerHTML=h; var frag=document.createDocumentFragment();
+      while(tmp.firstChild) frag.appendChild(tmp.firstChild);
+      if(allOpen) frag.querySelectorAll && Array.prototype.forEach.call(frag.childNodes,function(c){ if(c.classList&&c.classList.contains('wks')) c.classList.add('open'); });
+      node.parentNode.replaceChild(frag,node);
+    });
+  }
+  function toggle(row,open){ row.classList.toggle('open',open); var h=row.querySelector('.wk-hit'); if(h) h.setAttribute('aria-expanded',open?'true':'false'); }
+  res.addEventListener('click',function(e){
+    if(e.target===sw){ allOpen=!allOpen; try{ localStorage.setItem(KEY,allOpen?'1':'0'); }catch(err){} res.querySelectorAll('.wk-row').forEach(function(r){ toggle(r,allOpen); }); res.querySelectorAll('.wks').forEach(function(w){ w.classList.toggle('open',allOpen); }); document.querySelectorAll('details.workings').forEach(function(x){ x.open=allOpen; }); label(); return; }
+    var sa=e.target.closest('.wks-ans'); if(sa){ var wk=sa.closest('.wks'); wk.classList.toggle('open'); return; }
+    var h=e.target.closest('.wk-hit'); if(h){ var r=h.closest('.wk-row'); toggle(r,!r.classList.contains('open')); }
+  });
+  res.addEventListener('keydown',function(e){ var sa=e.target.closest&&e.target.closest('.wks-ans'); if(sa&&(e.key==='Enter'||e.key===' ')){ e.preventDefault(); sa.closest('.wks').classList.toggle('open'); return; } var h=e.target.closest&&e.target.closest('.wk-hit'); if(h&&(e.key==='Enter'||e.key===' ')){ e.preventDefault(); var r=h.closest('.wk-row'); toggle(r,!r.classList.contains('open')); } });
+  ['input','change','click'].forEach(function(ev){ document.addEventListener(ev,function(){ mark(); setTimeout(mark,250); }); });
+  label(); mark(); if(allOpen) document.querySelectorAll('details.workings').forEach(function(x){ x.open=true; });
+})();
+</script>
+<script>
+/* titles above the boxes are labels only: tapping them does not open the box or the picker (tick boxes still toggle) */
+document.addEventListener('click',function(e){
+  var l=e.target.closest&&e.target.closest('.calc-input label'); if(!l) return;
+  if(e.target.closest('input,select,textarea,button,a')) return;
+  if(l.querySelector('input')) return;
+  var c=l.htmlFor&&document.getElementById(l.htmlFor); if(c&&(c.type==='checkbox'||c.type==='radio')) return;
+  e.preventDefault();
+},true);
+</script>
+<script>
+/* field titles are plain text: not tappable at all (tick-box wording still is) */
+document.querySelectorAll('.calc-input label').forEach(function(l){
+  if(l.querySelector('input')) return;
+  var c=l.htmlFor&&document.getElementById(l.htmlFor); if(c&&(c.type==='checkbox'||c.type==='radio')) return;
+  l.classList.add('static-label');
+});
+</script>
+</body>
+</html>

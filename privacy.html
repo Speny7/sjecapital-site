@@ -268,7 +268,7 @@
     <p class="standfirst">What personal information we collect when you use this site, enquire or become a client, why we need it, who sees it and how long we keep it. In plain English.</p>
   </div>
     <div class="article-body">
-      <p><em>Last updated 10 November 2026.</em></p>
+      <p><em>Last updated 17 November 2026.</em></p>
 
       <h2>Who we are</h2>
       <p>SJE Capital Limited (&ldquo;we&rdquo;, &ldquo;us&rdquo;) is the controller of the personal information described here. We are registered in England &amp; Wales, company no. 15837169, registered office 78 Church Lane East, Aldershot, Hampshire, GU11 3HB. We are registered with the Information Commissioner's Office (ICO), registration reference <strong>ZB807956</strong>.</p>
@@ -296,7 +296,7 @@
       <h2>Who we share it with</h2>
       <p>Only the services we use to run the practice, and only as far as they need it:</p>
       <ul>
-        <li>Netlify (website hosting and enquiry forms), Google Workspace (email and calendar) and Cloudflare (anonymous site statistics).</li>
+        <li>Netlify (website hosting and enquiry forms), Google Workspace (email and calendar), Cloudflare (anonymous site statistics) and, only if you accept advertising cookies, Google Ads (measuring which ads lead to enquiries).</li>
         <li>For clients: Xero (accounting software), HMRC and Companies House when we file on your behalf, and the Institute of Certified Bookkeepers, our anti-money laundering supervisor, if it asks to review our records.</li>
       </ul>
       <p>Some of these providers process information outside the UK, including in the United States. Where they do, the transfer is covered by UK adequacy regulations or the UK's approved data transfer agreements.</p>
@@ -310,8 +310,10 @@
       <h2>Your rights</h2>
       <p>You can ask us for a copy of your information, ask us to correct it, delete it or limit how we use it, object to how we use it, or ask for it in a format you can take elsewhere. Email <a href="mailto:spencer@sjecapital.co.uk">spencer@sjecapital.co.uk</a> and we will reply within one month. Some information, such as anti-money laundering records, we must keep by law even if you ask us to delete it.</p>
 
-      <h2>Cookies</h2>
-      <p>This site does not set cookies for tracking or advertising. Cloudflare Web Analytics counts visits without cookies, so there is no cookie banner.</p>
+      <h2 id="cookies">Cookies</h2>
+      <p>Cloudflare Web Analytics counts visits without cookies. We do not set any cookies for tracking or advertising unless you agree to them.</p>
+      <p>If we advertise on Google, we may ask whether you accept advertising cookies. If you accept, Google Ads sets cookies so we can see which of our ads led to an enquiry or a booked call. We do not use them to show you personalised ads. If you reject them, or do not answer, none are set. You can change your choice at any time with the &ldquo;Cookie settings&rdquo; link at the foot of every page, which appears when we are asking.</p>
+      <p>Our lawful basis for advertising cookies is your consent. Google processes this information as described in its own privacy policy.</p>
 
       <h2>Complaints</h2>
       <p>If you are unhappy with how we have handled your information, please tell us first. You can also complain to the Information Commissioner's Office at <a href="https://ico.org.uk/make-a-complaint/" target="_blank" rel="noopener noreferrer">ico.org.uk/make-a-complaint</a> or on 0303 123 1113.</p>
@@ -350,7 +352,7 @@
   <div class="wrap">
     <span>© 2026 SJE Capital Limited. Registered in England &amp; Wales, company no. 15837169. Registered office: 78 Church Lane East, Aldershot, Hampshire, GU11 3HB, United Kingdom. Serving companies across the UK.</span>
     <span>ICB Certified · Xero Certified Advisor · CIMA Dip MA. Supervised for anti-money laundering by the Institute of Certified Bookkeepers, practice licence 24492. ICO registration ZB807956.</span>
-    <span><a href="/privacy">Privacy</a> · <a href="/complaints">Complaints</a> · <a href="mailto:spencer@sjecapital.co.uk">spencer@sjecapital.co.uk</a> · <a href="https://www.linkedin.com/company/sje-capital-limited" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+    <span><a href="/privacy">Privacy</a> · <a href="/complaints">Complaints</a> · <a href="#" class="cookie-settings" hidden>Cookie settings</a> · <a href="mailto:spencer@sjecapital.co.uk">spencer@sjecapital.co.uk</a> · <a href="https://www.linkedin.com/company/sje-capital-limited" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
   </div>
 </footer>
 
@@ -425,5 +427,6 @@
     if(el.getBoundingClientRect().top>window.innerHeight){ el.classList.add('sje-reveal'); io.observe(el); } });
 })();
 </script>
+<script src="/consent.js" defer></script>
 </body>
 </html>

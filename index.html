@@ -567,7 +567,13 @@
   #pricing .plan.popular .flag{ color:var(--leaf-deep); }
   #pricing .plan li{ border-bottom-color:var(--rule-soft); }
   #pricing .plan li::before{ color:var(--leaf); }
-  #pricing .plan a.btn{ color:var(--paper-hi); }
+  #pricing .plan a.btn{ color:#fff; background:var(--leaf); border:1px solid var(--leaf-deep); }
+  #pricing .plan a.btn:hover{ background:var(--leaf-deep); color:#fff; }
+  #pricing .plan a.btn.ghost{ background:transparent; color:var(--ink); border:1px solid var(--ink); }
+  #pricing .plan a.btn.ghost:hover{ background:var(--ink); color:var(--paper-hi); }
+  #pricing .plan.popular a.btn{ background:var(--leaf); color:#fff; border-color:var(--leaf-deep); }
+  #pricing .plan.popular a.btn:hover{ background:var(--leaf-deep); color:#fff; }
+  #pricing .plan h3, #pricing .plan .price{ color:var(--ink); font-family:"EB Garamond", "EB Garamond Fallback", Georgia, serif; }
   .about-grid{ grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); align-items:center; }
   .about-grid .figures-row{ grid-column:auto; margin-top:22px; }
   .about-photo .portrait{ margin:0; max-width:440px; }

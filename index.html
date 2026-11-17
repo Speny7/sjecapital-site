@@ -202,6 +202,8 @@
   .cred{ display:flex; flex-direction:column; align-items:center; text-align:center; gap:10px; }
   .cred img{ height:48px; width:auto; }
   .cred img.icb{ height:60px; margin:-6px 0; }
+  .cred > img, .cred > img.icb{ height:60px !important; width:auto !important; margin:0 !important; }
+  @media (max-width:720px){ .cred > img, .cred > img.icb{ height:44px !important; } }
   .cred .icb-crest{ display:flex; flex-direction:column; align-items:center; margin:0; }
   .cred .icb-crest .icb-no{ font-size:.7rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); margin-top:6px; }
   .cred b{ font-weight:600; font-size:1rem; display:block; }
@@ -471,7 +473,7 @@
     .mobile-cta.js-wait.show{ transform:none; visibility:visible; transition:transform .25s ease, visibility 0s; }
   }
   @media print{ .mobile-cta{ display:none !important; } }
-  .proof{ padding:8px 0 56px; }
+  .proof{ padding:56px 0; }
   .proof-grid{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.25fr); gap:22px; align-items:stretch; }
   .meet{ display:flex; gap:18px; align-items:flex-start; background:var(--paper-hi); border-top:2px solid var(--ink); padding:22px 22px; }
   .meet img{ width:76px; height:76px; border-radius:50%; object-fit:cover; flex:none; }
@@ -554,7 +556,7 @@
 
   <div class="credentials" aria-label="Professional credentials">
     <div class="wrap">
-      <div class="cred"><span class="icb-crest"><img class="icb" src="/img/icb.webp" width="87" height="96" alt="Institute of Certified Bookkeepers crest"><span class="icb-no">Practice Licence 24492</span></span><div><b>ICB Certified</b><span>Institute of Certified Bookkeepers</span></div></div>
+      <div class="cred"><img class="icb" src="/img/icb.webp" width="87" height="96" alt="Institute of Certified Bookkeepers crest"><div><b>ICB Certified</b><span>Institute of Certified Bookkeepers, licence 24492</span></div></div>
       <div class="cred"><img src="/img/xero.webp" width="96" height="96" alt="Xero logo"><div><b>Xero Certified Advisor</b><span>Cloud accounting in Xero</span></div></div>
       <div class="cred"><img src="/img/cima.webp" width="233" height="96" alt="CIMA logo"><div><b>CIMA Dip MA</b><span>Diploma in Management Accounting</span></div></div>
     </div>
@@ -858,7 +860,7 @@
             <li><a href="/dividend-tax-calculator">Dividend tax calculator <span>2026/27 rates</span></a></li>
             <li><a href="/first-year-deadlines-calculator">First-year deadlines <span>for new companies</span></a></li>
           </ul>
-          <a class="more" href="/resources">All eight calculators <span class="arr">&rarr;</span></a>
+          <a class="more" href="/resources">All 11 calculators <span class="arr">&rarr;</span></a>
         </div>
         <div>
           <h3>Latest guides</h3>
@@ -879,7 +881,7 @@
   <div class="wrap">
     <span>© 2026 SJE Capital Limited. Registered in England &amp; Wales, company no. 15837169. Registered office: 78 Church Lane East, Aldershot, Hampshire, GU11 3HB, United Kingdom. Serving companies across the UK.</span>
     <span>ICB Certified · Xero Certified Advisor · CIMA Dip MA. Supervised for anti-money laundering by the Institute of Certified Bookkeepers, practice licence 24492. ICO registration ZB807956.</span>
-    <span><a href="/privacy">Privacy</a> · <a href="/complaints">Complaints</a> · <a href="#" class="cookie-settings" hidden>Cookie settings</a> · <a href="mailto:spencer@sjecapital.co.uk">spencer@sjecapital.co.uk</a> · <a href="https://www.linkedin.com/company/sje-capital-limited" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+    <span><a href="/privacy">Privacy</a> · <a href="/complaints">Complaints</a> · <span class="cookie-settings" hidden><a href="#">Cookie settings</a> · </span><a href="mailto:spencer@sjecapital.co.uk">spencer@sjecapital.co.uk</a> · <a href="https://www.linkedin.com/company/sje-capital-limited" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
   </div>
 </footer>
 
